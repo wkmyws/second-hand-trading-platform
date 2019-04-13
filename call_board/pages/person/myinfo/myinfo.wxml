@@ -12,25 +12,39 @@
 
   </view>
 
-  <view class='item'>
-    <text class='left'>姓名：</text>
+  <view class='menu'>
+    <view class='item'>
+      <text class='left'>姓名：</text>
+    </view>
+
+    <view class='item'>
+      <text class='left'>性别：</text>
+    </view>
+
+
+    <view class='item'>
+      <text class='left'>学号：</text>
+    </view>
+
+    <view class='item'>
+      <text class='left'>书院：</text>
+    </view>
+
+    <view class='item'>
+      <text class='left'>微信号：</text>
+    </view>
+
+    <view class='item'>
+      <text class='left'>QQ号：</text>
+    </view>
+
+    <view class='item'>
+      <text class='left'>电话号码：</text>
+    </view>
   </view>
 
-  <view class='item'>
-    <text class='left'>性别：</text>
-  </view>
 
 
-  <view class='item'>
-    <text class='left'>学号：</text>
-  </view>
-
-  <view class='item'>
-    <text class='left'>电话号码：</text>
-  </view>
-
-  <view class='item'>
   <button class='butt' bindtap='ToEdit'>编辑信息</button>
-  </view>
 
 </view>

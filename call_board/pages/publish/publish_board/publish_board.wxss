@@ -4,20 +4,47 @@ page {
 
 .single {
   background: white;
+  align-content: center;
+  height: 30px;
   margin: 2px 1%;
 }
 
 .multiple {
   background: white;
   width: 98%;
-  height: 200px;
-  margin: 2px 1%;
+  margin-left: 1%;
 }
 
-.handle {
+.image_content{
+  background: white;
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1%;
+}
+
+.image{
+  width:32%;
+  height: 120px;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.moment_img{
+  width: 100%;
+  height: 100%;
+}
+
+.select{
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+
+.send {
   background: rgb(255, 209, 97);
   width: 90%;
-  margin-left: 5%;
-  position: fixed;
-  bottom: 2%;
+  margin: 10% 5%;
 }

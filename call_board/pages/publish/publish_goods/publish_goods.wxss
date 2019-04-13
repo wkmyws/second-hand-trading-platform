@@ -12,7 +12,27 @@ page {
 .multiple {
   background: white;
   width: 98%;
-  margin: 2px 1%;
+  margin-left:1%;
+}
+
+.image_content{
+  background: white;
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1%;
+}
+
+.image{
+  width:32%;
+  height: 120px;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.moment_img{
+  width: 100%;
+  height: 100%;
 }
 
 .select{
@@ -23,41 +43,8 @@ page {
   height: 30px;
 }
 
-.wall {
-  background: white;
-  display: flex;
-  align-items: center;
-  margin: 2px;
-}
-
-.wrap {
-  width: 32%;
-  margin-left: 1%;
-}
-
-.pictures {
-  flex: 1;
-  height: 200px;
-  width: 100%;
-}
-
-.remover {
-  background: #eee;
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.addpic{
-  background:rgb(255, 209, 97);
-  width: 90%; 
-}
-
-.handle {
+.send {
   background: rgb(255, 209, 97);
   width: 90%;
-  margin-left: 5%;
-  margin-bottom: 2%;
+  margin: 10% 5%;
 }

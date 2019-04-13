@@ -9,7 +9,7 @@ Page({
     balance: null
   },
 
-  onLoad: function() {
+  onLoad: function () {
 
     this.setData({
       extraData: {
@@ -20,33 +20,44 @@ Page({
       }
     })
   },
-  
-  onShow: function() {
+
+  onShow: function () {
 
   },
 
-  tomyinfo: function() {        //跳转至 个人信息
+  tomyinfo: function () {        //跳转至 个人信息
     wx.navigateTo({
       url: '../person/myinfo/myinfo'
     })
   },
 
-  tomyissue: function() {       //跳转至 我的发布
+  tomyissue: function () {       //跳转至 我的发布
     wx.navigateTo({
       url: '../person/myissue/myissue'
     })
   },
 
+  tocollect: function () {       //跳转至 我的发布
+    wx.navigateTo({
+      url: '../person/collect/collect'
+    })
+  },
 
-  showabout: function() {       //跳转至 关于
+  showabout: function () {       //跳转至 关于
     wx.navigateTo({
       url: '../person/about/about'
     })
   },
 
-  tohelp: function() {        //跳转至 使用帮助
+  tohelp: function () {        //跳转至 使用帮助
     wx.navigateTo({
       url: '../person/help/help'
+    })
+  },
+
+  toadmin: function () {
+    wx.navigateTo({
+      url: '../person/admin/admin'
     })
   }
 

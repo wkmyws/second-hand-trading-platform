@@ -1,6 +1,4 @@
-
-
-var app=getApp()
+var app = getApp()
 
 Page({
 
@@ -8,11 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-   userN: '',
+    userN: '',
 
   },
 
-  plus: function () {
+  plus: function() {
     if (this.data.isPopping) { //缩回动画        
       this.popp();
       this.setData({
@@ -29,7 +27,7 @@ Page({
     })
     console.log("plus")
   },
-  popp: function () { //plus顺时针旋转    
+  popp: function() { //plus顺时针旋转    
     var animationPlus = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease-out'
@@ -46,7 +44,7 @@ Page({
       duration: 500,
       timingFunction: 'ease-out'
     })
-    animationPlus.rotateZ(360).step();//各个旋转角度
+    animationPlus.rotateZ(360).step(); //各个旋转角度
     animationcollect.translate(0, -70).rotateZ(360).opacity(1).step();
     animationTranspond.translate(-10, -70).rotateZ(360).opacity(1).step();
     animationInput.translate(-70, -10).rotateZ(360).opacity(1).step();
@@ -57,7 +55,7 @@ Page({
       animInput: animationInput.export(),
     })
   }, //收回动画   
-  takeback: function () { //plus逆时针旋转  
+  takeback: function() { //plus逆时针旋转  
     var animationPlus = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease-out'
@@ -74,7 +72,7 @@ Page({
       duration: 500,
       timingFunction: 'ease-out'
     })
-    animationPlus.rotateZ(0).step();//收回旋转角度
+    animationPlus.rotateZ(0).step(); //收回旋转角度
     animationcollect.translate(0, 0).rotateZ(0).opacity(0).step();
     animationTranspond.translate(0, 0).rotateZ(0).opacity(0).step();
     animationInput.translate(0, 0).rotateZ(0).opacity(0).step();
@@ -90,55 +88,55 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
 
   /**用户输入 */
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
-  userNameInput: function (e) {
+  userNameInput: function(e) {
     this.setData({
       userN: e.detail.value
     })
@@ -146,17 +144,16 @@ Page({
 
   /*公告栏的详细界面* */
   go: function(e) {
-    wx.redirectTo({
-      url:'pages/detail/detail',
-    }
+    wx.navigateTo({
+        url: '../board/detail/detail',
+      })
 
-    )
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 

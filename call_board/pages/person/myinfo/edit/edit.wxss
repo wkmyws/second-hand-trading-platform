@@ -2,15 +2,15 @@ page{
   background: #eee;
 }
 
-.top{
-  height: 100%;
-  background: linear-gradient(rgb(255, 209, 97), #eee);
+.menu{
+  margin-top: 20rpx;
 }
 
 .item{
+  background: white;
   height: 70rpx;
   display: flex;
-  border-radius: 5rpx;
+  border-bottom: 1px #eee solid;
 }
 
 .left{

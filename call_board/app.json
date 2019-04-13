@@ -12,7 +12,11 @@
     "pages/goods/advertise/advertise",
     "pages/publish/publish_goods/publish_goods",
     "pages/publish/publish_board/publish_board",
-    "pages/person/myinfo/edit/edit"
+    "pages/person/myinfo/edit/edit",
+    "pages/person/admin/admin",
+    "pages/person/admin/admin-detail/admin-detail",
+    "pages/person/collect/collect",
+    "pages/board/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,8 +43,8 @@
       {
         "pagePath": "pages/person/person",
         "text": "个人",
-        "iconPath":"images/person1.png",
-        "selectedIconPath":"images/person2.png"
+        "iconPath": "images/person1.png",
+        "selectedIconPath": "images/person2.png"
       }
     ]
   },

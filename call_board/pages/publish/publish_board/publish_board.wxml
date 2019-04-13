@@ -1,10 +1,19 @@
 <view class='publish'>
-  <input class='single' maxlength='15' placeholder='标题'></input>
-
-
+  <!--公告简介-->
   <textarea class='multiple' maxlength='400' placeholder='公告描述'></textarea>
 
-  <picker class='single' bindchange='ChangeCollege' range='{{College}}'>书院：{{College[CollegeIndex]}}</picker>
-</view>
+  <!--图片展示区域-->
+  <view class="image_content">
+    <!--上传的图片-->
+    <view class='image' wx:for="{{img_url}}" >
+      <image class="moment_img" src="{{item}}" data-idx="{{index}}" bindtap='Preview'></image>
+    </view>
+    <!--添加图片-->
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='/images/add.png'></image>
+    </view>
+  </view>
 
-<button class='handle' bindtap='gethandle'>确认发布</button>
+  <button class='send' bindtap='gethandle'>确认发布</button>
+
+</view>

@@ -12,14 +12,14 @@ page {
 .top .user .avatar {
   width: 120rpx;
   height: 120rpx;
-  border-radius: 120px;
+  border-radius: 120rpx;
   display: block;
   margin: auto 30rpx;
   overflow: hidden;
 }
 
 .top .user .name {
-  font-size: 30rpx;
+  font-size: 32rpx;
   color: rgb(0, 0, 0);
   line-height: 200rpx;
   font-weight: bold;
@@ -33,10 +33,14 @@ page {
 .menu .item {
   border-bottom: 1px #eee solid;
   background: #fff;
-  padding: 16rpx;
+  display: flex;
+  padding-left: 16rpx;
+  height: 70rpx;
 }
 
 .menu .item .sub-title {
+  display: flex;
+  align-items: center;
   font-size: 32rpx;
   line-height: 1.75em;
   color: #333;

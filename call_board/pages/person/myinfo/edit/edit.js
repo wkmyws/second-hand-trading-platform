@@ -6,7 +6,21 @@ Page({
    */
   data: {
     sex: ['男', '女'],
-    index: 0
+    index1: 0,
+    college: ['润园', '澄园', '泽园', '沁园'],
+    index2: 0
+  },
+
+  ChangeSex(e) {
+    this.setData({
+      index1: e.detail.value
+    })
+  },
+
+  ChangeCollege(e) {
+    this.setData({
+      index2: e.detail.value
+    })
   },
 
   //将个人信息上传到服务器
@@ -29,56 +43,35 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
+  onUnload: function () {
 
   }
 })

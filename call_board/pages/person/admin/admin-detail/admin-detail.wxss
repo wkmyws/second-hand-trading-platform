@@ -1,0 +1,49 @@
+page{
+  background: rgb(221, 238, 253);
+}
+
+.body{
+  padding: 15rpx;
+}
+
+.board{
+  background: rgb(253, 221, 221);
+  min-height: 300px;
+  margin-bottom: 15rpx;
+  border-radius: 2px;
+  position: relative;
+}
+
+.passage{
+  margin: 15rpx;
+  font-size: 32rpx;
+}
+
+.passage.time{
+  color: #bbb;
+  position: absolute;
+  bottom: 10rpx;
+}
+
+/*用户*/
+.top{
+  display: flex;
+}
+
+.userhead{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100px;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.username{
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}

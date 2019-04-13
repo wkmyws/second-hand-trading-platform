@@ -1,108 +1,110 @@
-// pages/publish/publish_goods.js
-import { $init, $digest } from '../../../utils/common.util'
 Page({
 
   /* 页面的初始数据 */
   data: {
     Class: ['书本', '化妆品', '其他'],
-    College:['润园','沁园','澄园','泽园'],
-    images:[]
+    ClassIndex: 2,
+    img_url: [],
+    images: []
   },
 
-  ChangeClass: function(e) {
+  ChangeClass: function (e) {
     this.setData({
       ClassIndex: e.detail.value
     })
   },
 
-  ChangeCollege:function(e){
-    this.setData({
-      CollegeIndex:e.detail.value
-    })
-  },
-
-  chooseImage(e) {
+  chooseimage: function () {
+    var that = this;
     wx.chooseImage({
-      count:3,
-      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
-      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
-      success: res => {
-        const images = this.data.images.concat(res.tempFilePaths)
-        // 限制最多只能留下5张照片
-        this.data.images = images.length <= 3 ? images : images.slice(0, 3)
-        $digest(this)
+      count: 6, // 默认6
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
+      success: function (res) {
+        if (res.tempFilePaths.length > 0) { //图如果满了6张，不显示加图  
+          if (res.tempFilePaths.length == 6) {
+            that.setData({
+              hideAdd: 1
+            })
+          } else {
+            that.setData({
+              hideAdd: 0
+            })
+          } //把每次选择的图push进数组 
+          let img_url = that.data.img_url;
+          for (let i = 0; i < res.tempFilePaths.length; i++) {
+            img_url.push(res.tempFilePaths[i])
+          }
+          that.setData({
+            img_url: img_url
+          })
+        }
       }
     })
   },
 
-  removeImage(e) {
-    const idx = e.target.dataset.idx
-    this.data.images.splice(idx, 1)
-    $digest(this)
-  },
-
-  handleImagePreview(e) {
+  /*图片预览 */
+  Preview(e) {
     const idx = e.target.dataset.idx
     const images = this.data.images
+    const img_url = this.data.img_url
     wx.previewImage({
-      current: images[idx],  //当前预览的图片
-      urls: images //所有要预览的图片
+      current: images[idx], //当前预览的图片
+      urls: img_url //所有要预览的图片
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    $init(this)
-  },
+  onLoad: function (options) { },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
     $init(this)
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
-  },
+  }
 
 })
