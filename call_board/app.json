@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/board/board",
+    "pages/goods/goods",
+    "pages/logs/logs",
+    "pages/person/person",
+    "pages/person/myinfo/myinfo",
+    "pages/person/myissue/myissue",
+    "pages/person/about/about",
+    "pages/person/help/help",
+    "pages/goods/detail/detail",
+    "pages/goods/advertise/advertise",
+    "pages/publish/publish_goods/publish_goods",
+    "pages/publish/publish_board/publish_board",
+    "pages/person/myinfo/edit/edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFD161",
+    "navigationBarTitleText": "Natal",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "blue",
+    "list": [
+      {
+        "pagePath": "pages/board/board",
+        "text": "公告",
+        "iconPath": "images/board1.png",
+        "selectedIconPath": "images/board2.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "商品",
+        "iconPath": "images/goods1.png",
+        "selectedIconPath": "images/goods2.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人",
+        "iconPath":"images/person1.png",
+        "selectedIconPath":"images/person2.png"
+      }
+    ]
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx8abaf00ee8c3202e"
+  ]
+}

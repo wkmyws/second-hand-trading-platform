@@ -1,0 +1,111 @@
+.titletotal{
+  margin-top:10rpx;
+  margin-left:10rpx;
+  text-align:center;
+  padding:10rpx;
+  font-weight:700;
+}
+
+.title{
+  margin-top:10rpx;
+  margin-left:10rpx;
+  text-align:left;
+  font-size:small;
+  font-weight:700;
+}
+
+.blanket{
+  position: relative;
+  width:710rpx;
+  height:900rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  padding-top: 30rpx;
+  margin-bottom: 20rpx;
+  border-radius:1%;
+  background-color: rgb(221, 238, 253);
+  z-index:-1;
+}
+
+
+.passage{
+  margin-top:60rpx;
+  margin-bottom:10rpx;
+  margin-left:20rpx;
+  font-size:smaller;
+  z-index:unset;
+}
+
+
+
+.share{
+  position:absolute;
+  bottom: 390rpx;
+  right: 21rpx;
+  width:70rpx;
+  height:70rpx
+}
+
+
+.like{
+  position:absolute;
+  bottom: 390rpx;
+  right: 95rpx;
+  width:70rpx;
+  height:70rpx
+}
+
+.review{
+  position:absolute;
+  bottom: 395rpx;
+  right: 190rpx;
+  width:40rpx;
+  height:40rpx
+}
+
+
+
+.input{
+  font-size: smaller;
+  position:absolute;
+  bottom:10rpx;
+  width:92%;
+  height:20rpx;
+  margin-left:23rpx; 
+  margin-right:27rpx;
+  margin-bottom: 20rpx;
+  padding: 10rpx 1rpx 20rpx 10rpx ;
+
+   border-radius:2%;
+
+  
+  background-color: rgb(253, 255, 255);
+}
+
+
+
+
+.log{
+  position:absolute;
+  width:96%;
+  height:40%;
+  bottom:10rpx;
+
+  margin-left:15rpx;
+  margin-right: 10rpx;
+  white-space: nowrap;
+  background-color: rgb(241, 250, 255);
+    box-sizing: border-box
+  
+  
+
+}
+
+.img-plus-style {
+  position: fixed;
+  height: 100rpx;
+  width: 100rpx;
+  bottom: 50rpx;
+  right: 50rpx;
+  z-index: 100;
+}

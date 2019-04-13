@@ -1,0 +1,20 @@
+<view class='help'>
+
+  <view class='top'>
+    <image class='pic' src='/images/question-mark.png'></image>
+    <view class='subtitle'>使用帮助</view>
+    <view class='subtext'>仔细阅读【使用帮助】，解决使用问题</view>
+
+  </view>
+
+  <view class='section'>
+    <view class='title'>如何发表公告和商品？</view>
+    <view class='text'>点击悬浮按钮【+】，选择相应的模板，输入相关信息后确认提交，等待审核即可</view>
+  </view>
+
+  <view class='section'>
+    <view class='title'>如何找到【NAU公告板】小程序？</view>
+    <view class='text'>进入微信界面，点击底部导航栏【发现小程序】中的发现，点击小程序，搜索并找到【NAU公告板】打开即可</view>
+  </view>
+
+</view>

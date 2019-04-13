@@ -1,0 +1,44 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">苹果笔记本电脑</text>
+    <text class="price">￥5000</text>
+  </view>
+  <view class='detail'>
+  <view class="separate">商品的的数量</view>
+  <text >1台</text>
+  </view>
+  <view class='detail'>
+  <view class="separate">商品详情</view>
+  <text>苹果笔记本，质量超群</text>
+</view>
+ <view class='detail'>
+  <view class="separate">商品评论</view>
+  <text>质量还可以</text>
+</view>
+
+
+</scroll-view>
+<view class="detail-nav">
+  <image bindtap="toCar" src="http://xcx.nau.edu.cn/images/dianzan.png?" />
+  <view class="line_nav"></view>
+  <image bindtap="addLike" src="{{}}" />
+  <button class="button-red" bindtap="clickme" form-type='submit'>我想购买</button>
+</view>
+<view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
+  <view>卖者的联系方式</view>
+  <view>手机号：
+    <text catchtap='callPhone' catchlongpress="copyIt" id='{{tel}}'>{{tel}}</text>
+  </view>
+    <view>微信号：
+    <text catchlongpress="copyIt">jironggen</text>
+  </view>
+</view>

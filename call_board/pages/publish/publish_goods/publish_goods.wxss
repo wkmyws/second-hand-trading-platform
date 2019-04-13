@@ -1,0 +1,63 @@
+page {
+  background: rgb(250, 248, 248);
+}
+
+.single {
+  background: white;
+  align-content: center;
+  height: 30px;
+  margin: 2px 1%;
+}
+
+.multiple {
+  background: white;
+  width: 98%;
+  margin: 2px 1%;
+}
+
+.select{
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+
+.wall {
+  background: white;
+  display: flex;
+  align-items: center;
+  margin: 2px;
+}
+
+.wrap {
+  width: 32%;
+  margin-left: 1%;
+}
+
+.pictures {
+  flex: 1;
+  height: 200px;
+  width: 100%;
+}
+
+.remover {
+  background: #eee;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.addpic{
+  background:rgb(255, 209, 97);
+  width: 90%; 
+}
+
+.handle {
+  background: rgb(255, 209, 97);
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+}

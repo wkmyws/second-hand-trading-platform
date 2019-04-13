@@ -1,0 +1,32 @@
+<view class="publish">
+
+  <input class='single' maxlength='15' placeholder='标题'></input>
+
+  <textarea class='multiple' maxlength='150' placeholder='描述宝贝的磨损状况、转手原因等'></textarea>
+
+  <view class="wall">
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="wrap">
+        <!-- 图片缩略图  -->
+        <image class="pictures" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+        <!-- 移除图片的按钮  -->
+        <view class="remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+      </view>
+    </block>
+  </view>
+
+  <button class='addpic' bindtap="chooseImage" wx:if="{{images.length < 5}}">添加图片</button>
+
+  <input class='single' maxlength='10' placeholder='价格' type='number'></input>
+
+  <view class='single'>
+    <picker class='select' bindchange='ChangeClass' range='{{Class}}'>类别：{{Class[ClassIndex]}}</picker>
+  </view>
+
+  <picker class='select' bindchange='ChangeCollege' range='{{College}}'>书院：{{College[CollegeIndex]}}</picker>
+
+  <input class='single' placeholder='电话号码' maxlength='11' type='number'></input>
+
+  <button class='handle' bindtap='gethandle'>确认发布</button>
+
+</view>

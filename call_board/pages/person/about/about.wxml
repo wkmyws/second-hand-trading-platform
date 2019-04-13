@@ -1,0 +1,35 @@
+<view class='about'>
+
+  <view class='top'>
+<image class='pic' src='/images/about.png'></image>
+
+    <view class='subtitle'>NAU公告板</view>
+
+    <view class='subtext'>提供南京审计大学在校师生发布公告和发布商品信息等服务</view>
+
+  </view>
+
+<view class='section'>
+  <view class='title'>应用介绍</view>
+  <view class='text'>NAU公告板小程序是南审Natal信息与技术协会携手南审信息化办公室为南审师生量身打造的校园网络及信息资源获取平台，完善便捷校园信息，优化师生交流体系，提供优质的网络资源共享服务，从而助力南审校园信息化建设。</view>
+</view>
+
+<view class='section'>
+  <view class='title'>数据来源</view>
+  <view class='text'>·南京审计大学信息化办公室</view>
+</view>
+
+<view class='section'>
+  <view class='title'>技术支持</view>
+  <view class='text'>·Natal团队</view>
+  <view class='text'>·南京审计大学信息化办公室</view>
+  <view class='text'>QQ群：893521976</view>
+</view>
+
+<view class='section'>
+  <view class='title'>版权声明</view>
+  <view class='text'>NAU公告板小程序最终解释权归Natal团队所有</view>
+  <view class='text'>南京审计大学信息话办公室提供技术支持</view>
+</view>
+
+</view>

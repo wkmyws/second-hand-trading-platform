@@ -1,0 +1,79 @@
+<view class="rubclass">
+  <!--顶部搜索栏-->
+  <view class="search">
+    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
+    </input>
+    <image class="image" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
+  </view>
+
+  <view>
+    <!--顶部的导航栏-->
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+        <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+        <!--tab之间的切换-->
+      </block>
+    </scroll-view>
+    <!-- 页面内容 -->
+    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+      <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+        {{tabItem}}
+      </swiper-item>
+    </swiper>
+
+  </view>
+ <!--广告牌的位置-->
+ <!--
+  <view class="autoplay">
+    <swiper current='{{curr}}' class='swiper' autoplay="false" previous-margin='60rpx' next-margin='130rpx' bindchange="swiperChange" interval="2500" duration="350">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item class="swiper-item">
+          <image src="{{item}}" class="img {{swiperIndex == index ? 'active' : ''}}" mode="scaleToFill" bindtap='swiperAd'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+-->
+  <view>
+    <!--悬浮按钮-->
+ <!--<image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animCollect}}" bindtap="collect"> 
+    </image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animTranspond}}" bindtap="transpond"></image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animInput}}" bindtap="input"></image> -->
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
+  </view>
+  <view>
+    <!--下面的瀑布流-->
+    <view class="content">
+      <view class="left">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+        </block>
+      </view>
+    </view>
+    <template name="item" >
+      <view class="item" >
+        <image class="item-img" src="{{url}}" mode="widthFix"></image>
+        <view class="item-title-box" catchtap='swithDetail'>
+          <navigator url="../goods/detail/detail?"class="item-tit">{{tit}}</navigator>
+        </view>
+        <view class="item-title-box">
+          <navigator url="../goods/detail/detail?"  class="item-title"catchtap='swithDetail'>{{title}}</navigator>
+        </view>
+        <view class="name">
+          <image class="item-ava" src="{{avatar}}"></image>
+          <text class="name-title">{{name}}</text>
+          <view class="heart_">
+            <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?"catchtap='swithDetail' ></image>
+            <text>{{heart_num}}</text>
+          </view>
+        </view>
+      </view>
+    </template>
+  </view>
+</view>

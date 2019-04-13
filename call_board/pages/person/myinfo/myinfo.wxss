@@ -1,0 +1,44 @@
+page{
+  background: #eee;
+}
+
+.top{
+  background: linear-gradient(rgb(255, 209, 97), #eee);
+}
+
+.nickpic{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0 auto;
+}
+
+.nickname{
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.item{
+  height: 70rpx;
+  background-color: #eee;
+  display: flex;
+  border-radius: 5rpx;
+  margin-top: 2px;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  color: rgb(136, 136, 136);
+}
+
+.butt{
+  position: fixed;
+  bottom: 5px;
+  width: 96%;
+  margin-left: 2%;
+}

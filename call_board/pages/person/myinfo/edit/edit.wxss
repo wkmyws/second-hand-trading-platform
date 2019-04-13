@@ -1,0 +1,32 @@
+page{
+  background: #eee;
+}
+
+.top{
+  height: 100%;
+  background: linear-gradient(rgb(255, 209, 97), #eee);
+}
+
+.item{
+  height: 70rpx;
+  display: flex;
+  border-radius: 5rpx;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  color: rgb(136, 136, 136);
+}
+
+.butt{
+  position: fixed;
+  bottom: 5px;
+  width: 96%;
+  margin-left: 2%;
+}
