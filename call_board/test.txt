@@ -6,3 +6,5 @@ gx reapair
 
 gx add1
 soapdx add..
+
+gg.add
