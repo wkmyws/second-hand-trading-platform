@@ -84,6 +84,11 @@ Page({
     })
   },
 
+  go:function(){
+    wx.navigateTo({
+      url: '../board/detail/detail',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -128,33 +133,5 @@ Page({
    */
   onPullDownRefresh: function() {
 
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-  userNameInput: function(e) {
-    this.setData({
-      userN: e.detail.value
-    })
-  },
-
-  /*公告栏的详细界面* */
-  go: function(e) {
-    wx.navigateTo({
-        url: '../board/detail/detail',
-      })
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
   }
-
 })

@@ -1,104 +1,36 @@
-.titletotal{
-  margin-top:10rpx;
-  margin-left:10rpx;
-  text-align:center;
-  padding:10rpx;
-  font-weight:700;
+page {
 }
 
-.title{
-  margin-top:10rpx;
-  margin-left:10rpx;
-  text-align:left;
-  font-size:small;
-  font-weight:700;
+.all {
+  padding: 15rpx;
 }
 
-.blanket{
+.board {
   position: relative;
-  width:710rpx;
-  height:900rpx;
-  margin-left:20rpx;
-  margin-right:20rpx;
-  padding-top: 30rpx;
-  margin-bottom: 20rpx;
-  border-radius:1%;
+  width: 96%;
+  height: 300rpx;
+  margin-left: 2%;
+  margin-top: 20rpx;
+  border-radius: 2px;
   background-color: rgb(221, 238, 253);
-  z-index:-1;
 }
 
-
-.passage{
-  margin-top:60rpx;
-  margin-bottom:10rpx;
-  margin-left:20rpx;
-  font-size:smaller;
-  z-index:unset;
+.body{
+  display: flex;
 }
 
-
-
-.share{
-  position:absolute;
-  bottom: 390rpx;
-  right: 21rpx;
-  width:70rpx;
-  height:70rpx
+.passage {
+  margin: auto 15rpx;
+  font-size: 32rpx;
 }
 
-
-.like{
-  position:absolute;
-  bottom: 390rpx;
-  right: 95rpx;
-  width:70rpx;
-  height:70rpx
+.passage.text {
 }
 
-.review{
-  position:absolute;
-  bottom: 395rpx;
-  right: 190rpx;
-  width:40rpx;
-  height:40rpx
-}
-
-
-
-.input{
-  font-size: smaller;
-  position:absolute;
-  bottom:10rpx;
-  width:92%;
-  height:20rpx;
-  margin-left:23rpx; 
-  margin-right:27rpx;
-  margin-bottom: 20rpx;
-  padding: 10rpx 1rpx 20rpx 10rpx ;
-
-   border-radius:2%;
-
-  
-  background-color: rgb(253, 255, 255);
-}
-
-
-
-
-.log{
-  position:absolute;
-  width:96%;
-  height:40%;
-  bottom:10rpx;
-
-  margin-left:15rpx;
-  margin-right: 10rpx;
-  white-space: nowrap;
-  background-color: rgb(241, 250, 255);
-    box-sizing: border-box
-  
-  
-
+.passage.time {
+  color: #bbb;
+  position: absolute;
+  right: 15rpx;
 }
 
 .img-plus-style {
@@ -108,4 +40,68 @@
   bottom: 50rpx;
   right: 50rpx;
   z-index: 100;
+}
+
+/*图片*/
+.bottom{
+  height: 80rpx;
+}
+
+.image {
+  margin-top: 15rpx;
+  width: 32%;
+  margin-left: 1%;
+  display: flex;
+}
+
+.img {
+  height: 100rpx;
+  margin-left: 1%;
+}
+
+/*图标*/
+
+.pic {
+  position: absolute;
+  bottom: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 10rpx;
+}
+
+.like {
+  right: 70rpx;
+}
+
+.collect {
+  right: 10rpx;
+}
+
+.report {
+  top: 15rpx;
+  right: 10rpx;
+}
+
+/*用户*/
+
+.top {
+  display: flex;
+}
+
+.userhead {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80px;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.username {
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }

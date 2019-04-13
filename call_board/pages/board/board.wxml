@@ -1,66 +1,53 @@
-<view class="titletotal">公告栏</view>
+<view class='all'>
+
+  <!--悬浮按钮-->
+  <view>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
+  </view>
+
+  <!--公告栏视图1-->
+  <view class="board" bindtap='go'>
+
+    <!--头像昵称-->
+    <view class='top'>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <text class='username'>你未来的男朋友</text>
+      <!--时间显示栏-->
+      <view class='passage time'>2019.02.15</view>
+    </view>
+    
+    <!--图片-->
+    <view class='image'>
+      <image class='img' src='/images/test/1.png'></image>
+    </view>
+
+    <!--公告的简介-->
+    <view class='body'>
+      <view class='passage text'>2月31号晚上8点南京南站到学校有人拼车吗？</view>
+    </view>
+
+  </view>
 
 
-<!--公告栏视图1-->
-<view class="blanket">
-  <view class="title">【主题】请在这里输入标题</view>
-  <view class="passage" bindtap="go">请在这里输入文字，内容不得超过二百字</view>
-  <view class="log">
+  <!--公告栏视图2-->
+  <view class="board">
+
+    <!--头像昵称-->
+    <view class='top'>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <text class='username'>WXS34XHY</text>
+      <image class='pic report' src='/images/report.png'></image>
+    </view>
+
+    <!--正文-->
+    <view class="passage">请在这里输入文字，内容不得超过二百字</view>
+
+    <!--时间显示栏-->
+    <view class='passage time'>2019.02.15</view>
+
     <!--图标-->
-    <image class="like" src="/images/点赞.png"></image>
-    <image class="share" src="/images/转发 (1).png"></image>
-    <image class="review" src="/images/回复.png"></image>
-    <!--图标-->
-    <input class="input" placeholder="我也说一句"></input>
-  </view>
-  <view class="scroll_view">
+    <image class='pic like' src="/images/点赞1.png"></image>
+    <image class='pic collect' src='/images/收藏1.png'></image>
 
   </view>
-
-</view>
-<view>
-  <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
-</view>
-
-
-
-
-
-<!--公告栏视图2-->
-<!--标题-->
-<view class="blanket">
-  <view class="title">【主题】请在这里输入标题</view>
-  <!--标题-->
-
-
-  <!--正文-->
-  <view class="passage">请在这里输入文字，内容不得超过二百字</view>
-  <image class="like" src=""></image>
-  <image class="share" src=""></image>
-  <image class="review" src=""></image>
-  <!--对话框-->
-  <view class="log">
-    <input class="input" name="userInput" placeholder="我也说一句" bindinput="userInput" />
-  </view>
-  <image class="like" src=""></image>
-  <image class="share" src=""></image>
-  <image class="review" src=""></image>
-
-</view>
-
-<!--公告栏视图3-->
-<view class="blanket">
-  <view class="title">【主题】请在这里输入标题</view>
-  <view class="passage">请在这里输入文字，内容不得超过二百字</view>
-  <image class="like" src=""></image>
-  <image class="share" src=""></image>
-  <image class="review" src=""></image>
-
-  <!--对话框-->
-  <view class="log">
-    <input class="input" name="userInput" placeholder="我也说一句" bindinput="userInput" />
-  </view>
-  <image class="like" src=""></image>
-  <image class="share" src=""></image>
-  <image class="review" src=""></image>
 </view>

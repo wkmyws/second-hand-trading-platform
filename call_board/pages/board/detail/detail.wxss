@@ -102,10 +102,6 @@ page {
   border-radius: 2px;
 }
 
-/*评论*/
-
-
-
 /*用户*/
 
 .top {
