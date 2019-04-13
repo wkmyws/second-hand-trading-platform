@@ -20,9 +20,11 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FFD161",
+    "navigationBarBackgroundColor": "#eee",
     "navigationBarTitleText": "Natal",
     "navigationBarTextStyle": "black"
+
+  
   },
   "tabBar": {
     "color": "black",

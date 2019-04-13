@@ -109,3 +109,12 @@
   right: 50rpx;
   z-index: 100;
 }
+
+.img-style {
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+  opacity: 0;
+}

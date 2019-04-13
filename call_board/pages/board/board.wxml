@@ -2,12 +2,12 @@
 
 
 <!--公告栏视图1-->
-<view class="blanket">
+<view class="blanket" >
   <view class="title">【主题】请在这里输入标题</view>
   <view class="passage" bindtap="go">请在这里输入文字，内容不得超过二百字</view>
   <view class="log">
     <!--图标-->
-    <image class="like" src="/images/点赞.png"></image>
+    <image class="like" src="/images/点赞.png" bindtap='go'></image>
     <image class="share" src="/images/转发 (1).png"></image>
     <image class="review" src="/images/回复.png"></image>
     <!--图标-->
@@ -18,9 +18,14 @@
   </view>
 
 </view>
-<view>
-  <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
-</view>
+  <view>
+    <!--悬浮按钮-->
+ <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animCollect}}" bindtap="collect"> 
+    </image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animTranspond}}" bindtap="transpond"></image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animInput}}" bindtap="input"></image> -->
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
+  </view>
 
 
 
