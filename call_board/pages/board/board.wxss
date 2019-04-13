@@ -105,3 +105,12 @@ page {
   display: flex;
   align-items: center;
 }
+
+.img-style {
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+  opacity: 0;
+}

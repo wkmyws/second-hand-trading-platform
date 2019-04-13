@@ -10,7 +10,7 @@ Page({
 
   },
 
-  plus: function() {
+  plus: function () {
     if (this.data.isPopping) { //缩回动画        
       this.popp();
       this.setData({
@@ -22,12 +22,31 @@ Page({
         isPopping: true
       })
     }
+    console.log("plus")
+  },
+
+  //跳转至【商品发布】页面
+  input: function () {
+    wx.navigateTo({
+      url: '../board/detail/detail',
+    })
+    console.log("input")
+  },
+
+  //跳转至【公告发布】页面
+  transpond: function () {
+    wx.navigateTo({
+      url: '../publish/publish_goods/publish_goods',
+    })
+    console.log("transpond")
+  },
+  collect: function () {
     wx.navigateTo({
       url: '../publish/publish_board/publish_board',
     })
-    console.log("plus")
-  },
-  popp: function() { //plus顺时针旋转    
+    console.log("collect")
+  }, //弹出动画 
+  popp: function () { //plus顺时针旋转    
     var animationPlus = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease-out'
@@ -44,10 +63,10 @@ Page({
       duration: 500,
       timingFunction: 'ease-out'
     })
-    animationPlus.rotateZ(360).step(); //各个旋转角度
-    animationcollect.translate(0, -70).rotateZ(360).opacity(1).step();
-    animationTranspond.translate(-10, -70).rotateZ(360).opacity(1).step();
-    animationInput.translate(-70, -10).rotateZ(360).opacity(1).step();
+    animationPlus.rotateZ(360).step();//各个旋转角度
+    animationcollect.translate(0, -80).rotateZ(360).opacity(1).step();
+    animationTranspond.translate(-56, -56).rotateZ(360).opacity(1).step();
+    animationInput.translate(-80, -0).rotateZ(360).opacity(1).step();
     this.setData({
       animPlus: animationPlus.export(),
       animCollect: animationcollect.export(),
@@ -55,7 +74,7 @@ Page({
       animInput: animationInput.export(),
     })
   }, //收回动画   
-  takeback: function() { //plus逆时针旋转  
+  takeback: function () { //plus逆时针旋转  
     var animationPlus = wx.createAnimation({
       duration: 500,
       timingFunction: 'ease-out'
@@ -72,7 +91,7 @@ Page({
       duration: 500,
       timingFunction: 'ease-out'
     })
-    animationPlus.rotateZ(0).step(); //收回旋转角度
+    animationPlus.rotateZ(0).step();//收回旋转角度
     animationcollect.translate(0, 0).rotateZ(0).opacity(0).step();
     animationTranspond.translate(0, 0).rotateZ(0).opacity(0).step();
     animationInput.translate(0, 0).rotateZ(0).opacity(0).step();
