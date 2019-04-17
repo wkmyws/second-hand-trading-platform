@@ -1,11 +1,9 @@
-.top .user {
+.user {
   width: 100%;
   flex-direction: flex;
-  background-color: #eee;
 }
 
-.top .user .avatar {
-  background-image: url("https://xcx.nau.edu.cn/images/background1.jpg");
+.user .avatar {
   width: 150rpx;
   height: 150rpx;
   border-radius: 12rpx;
@@ -16,7 +14,15 @@
   box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
-.top .user .name {
+.attest {
+  position: absolute;
+  margin-left: 80%;
+  line-height: 200rpx;
+  color: rgba(90, 86, 86, 0.63);
+  font-size: 30rpx;
+}
+
+.user .name {
   font-size: 32rpx;
   color: rgb(0, 0, 0);
   line-height: 200rpx;

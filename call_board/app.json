@@ -17,7 +17,8 @@
     "pages/person/admin/admin-detail/admin-detail",
     "pages/person/collect/collect",
     "pages/board/detail/detail",
-    "pages/person/accredit/accredit"
+    "pages/person/accredit/accredit",
+    "pages/person/attest/attest"
   ],
   "window": {
     "backgroundTextStyle": "light",
