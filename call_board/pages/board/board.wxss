@@ -13,24 +13,17 @@ page {
   margin-top: 20rpx;
   border-radius: 2px;
   background-color: rgb(221, 238, 253);
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
-.body{
+.body {
   display: flex;
 }
 
-.passage {
-  margin: auto 15rpx;
+.text {
   font-size: 32rpx;
-}
-
-.passage.text {
-}
-
-.passage.time {
-  color: #bbb;
-  position: absolute;
-  right: 15rpx;
+  text-indent: 64rpx;
+  margin: auto 15rpx;
 }
 
 .img-plus-style {
@@ -43,20 +36,16 @@ page {
 }
 
 /*图片*/
-.bottom{
+
+.bottom {
   height: 80rpx;
 }
 
-.image {
-  margin-top: 15rpx;
-  width: 32%;
-  margin-left: 1%;
-  display: flex;
-}
-
 .img {
-  height: 100rpx;
+  width: 160rpx;
+  height: 185rpx;
   margin-left: 1%;
+  float: left;
 }
 
 /*图标*/
@@ -66,7 +55,7 @@ page {
   bottom: 10rpx;
   width: 50rpx;
   height: 50rpx;
-  margin-top: 10rpx;
+  text-align: auto;
 }
 
 .like {
@@ -86,16 +75,15 @@ page {
 
 .top {
   display: flex;
+  height: 100rpx;
 }
 
 .userhead {
   width: 80rpx;
   height: 80rpx;
   border-radius: 80px;
-  margin-top: 15rpx;
-  margin-left: 15rpx;
-  margin-right: 15rpx;
-  display: block;
+  margin: auto 15rpx;
+  display: flex;
   overflow: hidden;
 }
 
@@ -105,6 +93,16 @@ page {
   display: flex;
   align-items: center;
 }
+
+.time {
+  font-size: 32rpx;
+  color: #bbb;
+  position: absolute;
+  right: 15rpx;
+  line-height: 100rpx;
+}
+
+/*悬浮按钮*/
 
 .img-style {
   height: 100rpx;

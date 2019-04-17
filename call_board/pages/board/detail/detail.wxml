@@ -34,6 +34,10 @@
   </view>
 
   <view class='forum'>
+    <view class='talk'>评论</view>
+  </view>
+
+  <view class='forum'>
     <view class='passage'>最好是小姐姐！</view>
     <view class='username friend'>--你未来的男朋友</view>
   </view>

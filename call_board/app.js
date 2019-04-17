@@ -1,39 +1,47 @@
-//app.js
+var util = require("utils/util.js");
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
+  onLaunch: function (options) {
+    var that = this;
+    var timestamp = Date.parse(new Date());
+    timestamp = String(timestamp / 1000);
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
+        var login_data = {
+          "wechat_login_token":res.code,
+          "wechat_user_name": "soapdx"
         }
+        login_data = JSON.stringify(login_data)
+        login_data = util.base64_encode(login_data) 
+        var sign = util.sha1(login_data + timestamp)
+        wx.request({
+          url: that.globalData.URL+"/user/login.php",
+          data:{
+            "version":1,
+            "time":timestamp,
+            "data":login_data,
+            "sign":sign,
+            "token":null
+          },
+          method: 'POST',
+          header: {
+            "content-type": "application/json"
+          },
+          success: res => {
+            var res_data = util.base64_decode(res.data.data)
+            res_data = JSON.parse(res_data)
+            that.globalData.token = res_data.token
+            console.log(res_data)
+          }
+        })
       }
     })
+
+
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token: "token",
+    URL:"http://47.100.40.86/HighSchoolMarket/api/interface",
   }
 })
