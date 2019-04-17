@@ -16,15 +16,14 @@
     "pages/person/admin/admin",
     "pages/person/admin/admin-detail/admin-detail",
     "pages/person/collect/collect",
-    "pages/board/detail/detail"
+    "pages/board/detail/detail",
+    "pages/person/accredit/accredit"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eee",
     "navigationBarTitleText": "Natal",
     "navigationBarTextStyle": "black"
-
-  
   },
   "tabBar": {
     "color": "black",
