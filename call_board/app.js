@@ -5,6 +5,10 @@ App({
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
     // 登录
+    wx.showLoading({
+      title: '登录中',
+      mask: true
+    })
     wx.login({
       success: res => {
         var login_data = {
@@ -14,7 +18,7 @@ App({
         login_data = util.base64_encode(login_data)
         var sign = util.sha1(login_data + timestamp)
         wx.request({
-          url: that.globalData.URL + "/user/login.php",
+          url: that.globalData.URL + "user/login.php",
           data: {
             "version": 1,
             "time": timestamp,
@@ -32,10 +36,16 @@ App({
               res_data = JSON.parse(res_data)
               that.globalData.token = res_data.token
               that.globalData.user_info = res_data.user_info
+              wx.hideLoading()
               console.log(that.globalData)
             }
             catch(err){
-              console.log(err)
+              wx.hideLoading()
+              wx.showModal({
+                title: '登陆失败',
+                content: res.data.err_msg,
+              })
+              console.log(res.data)
             }
           }
         })
@@ -46,6 +56,6 @@ App({
     user_info: null,
     user_info_wx:null,
     token: "token",
-    URL: "http://47.100.40.86/HighSchoolMarket/api/interface",
+    URL: "http://47.100.40.86/HighSchoolMarket/api/interface/",
   }
 })

@@ -14,11 +14,11 @@
 
   <view class='menu'>
     <view class='item'>
-      <text class='left'>姓名：</text>
+      <text class='left'>姓名：{{my_info.user_name}}</text>
     </view>
 
     <view class='item'>
-      <text class='left'>性别：</text>
+      <text class='left'>性别：{{my_info.user_sex}}</text>
     </view>
 
 
