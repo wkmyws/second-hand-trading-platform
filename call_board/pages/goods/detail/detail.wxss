@@ -137,7 +137,7 @@ text {
   top: 0;
   left: 0;
   background: #000;
-  opacity: 0.2;
+  opacity: 0.4;
   overflow: hidden;
   z-index: 1000;
   color: #fff;
@@ -152,4 +152,6 @@ text {
   z-index: 2000;
   background: #fff;
   padding-top: 20rpx;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
 }

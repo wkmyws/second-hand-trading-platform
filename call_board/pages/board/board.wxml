@@ -1,7 +1,12 @@
 <view class='all'>
 
-  <!--悬浮按钮-->
-  <view>
+
+   <view>
+    <!--悬浮按钮-->
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animCollect}}" bindtap="collect">
+    </image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animTranspond}}" bindtap="transpond"></image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animInput}}" bindtap="input"></image> 
     <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
   </view>
 

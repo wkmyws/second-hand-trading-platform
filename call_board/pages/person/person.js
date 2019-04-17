@@ -59,6 +59,12 @@ Page({
     wx.navigateTo({
       url: '../person/admin/admin'
     })
+  },
+  toattest:function () {
+    wx.navigateTo({
+      url: '../person/attest/attest'
+    })
   }
+
 
 })

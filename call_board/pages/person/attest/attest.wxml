@@ -1,0 +1,32 @@
+<view class="user">
+  <view class="user-item">
+    <label class="name">学校:</label>
+    <label class='icon'></label>
+
+    <picker class='number' bindchange='ChangeCollege' range='{{college}}'>{{college[index1]}}</picker>
+  </view>
+</view>
+<view class="user">
+  <view class="user-item">
+    <label class="name">学校邮箱:</label>
+    <label class='icon'></label>
+    <input class="number" placeholder='学号+@stu.nau.edu.cn'></input>
+  </view>
+</view>
+<view class="proto" bindtap='showPopup'>最终用户许可协议</view>
+<button class='butt' bindtap='Toattest'>同意协议并认证</button>
+<view class="shade" hidden='{{popup}}' bindtap="hidePopup"></view>
+<view class="box popup" hidden="{{popup}}">
+  <view class="title">
+    <text>最终用户许可协议</text>
+  </view>
+  <view class="content" style="color:#43B0D1;">免责声明</view>
+  <view class="content content-item">本微信小程序由“Natal团队"提供，不提供任何形式的担保。拒绝承认任何明示、暗示或法定的担保，包括但不限于对适销性、特定用途的适用性、所有权、非侵权性的暗示担保，拒绝承认小程序将不间断或无错误地运行或由于贸易惯例或使用过程而产生的责任。与您使用本小程序相关的全部风险由您承担。
+  </view>
+  <view class="content" style="color:#43B0D1;">责任限制和赔偿责任限制</view>
+  <view class="content content-item">对于因使用本小程序或本协议而导致的任何惩罚性、直接、附带、间接或特殊或后果性的损害，本方方均不对您承担任何责任，即使其许可方已被告知这种损害的可能性。在任何情况下，本小程序对您的所有损害赔偿、损失和诉讼原因（无论是合同、侵权（包括疏忽）或其他方面）的全部责任均不超过 100 人民币。对于您使用本软件或违反本协议的条款和条件而导致的所有损失、损害、债务和其他费用（包括合理的律师费），您同意进行辩护和赔偿，并确保 其许可人以及他们的员工、关联公司或代理商免受影响。
+  </view>
+  <view class="content" style="color:#43B0D1;">软件的所有权和版权</view>
+  <view class="content content-item">除非本协议明确规定，否则本软件（包括所有知识产权）始终是“Natal团队”或其许可人的专有财产，您不享有其中的任何权利、所有权或利益。 您同意不对本软件进行任何未经授权的复制。 软件及其所有副本（全部或部分，以任何形式）的全部所有权，以及其中的所有权利和知识产权均应归属于“Natal团队”。
+  </view>
+</view>

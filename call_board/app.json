@@ -16,7 +16,8 @@
     "pages/person/admin/admin",
     "pages/person/admin/admin-detail/admin-detail",
     "pages/person/collect/collect",
-    "pages/board/detail/detail"
+    "pages/board/detail/detail",
+    "pages/person/attest/attest"
   ],
   "window": {
     "backgroundTextStyle": "light",
