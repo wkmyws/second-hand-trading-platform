@@ -13,7 +13,6 @@ page {
   margin-top: 20rpx;
   border-radius: 2px;
   background-color: rgb(221, 238, 253);
-  box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
 .body {

@@ -118,9 +118,9 @@ page {
 }
 
 .userhead {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 100px;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80px;
   margin-top: 15rpx;
   margin-left: 15rpx;
   margin-right: 15rpx;
@@ -129,11 +129,23 @@ page {
 }
 
 .username {
-  font-size: 40rpx;
+  font-size: 32rpx;
   font-weight: bold;
   display: flex;
   align-items: center;
   margin-right: 15rpx;
+}
+
+.critize{
+  
+}
+
+.mini{
+  color: #bbb;
+  font-size: 25rpx;
+  position: absolute;
+  top: 70rpx;
+  right: 10rpx;
 }
 
 .friend {

@@ -5,7 +5,13 @@
     <view class='top'>
       <image class='userhead' src='/images/test/user1.jpg'></image>
       <text class='username'>你未来的男朋友</text>
+      <view class='critize' bindtap='showPopup'>
       <image class='pic report' src='/images/report.png'></image>
+      <view class='mini'>举报</view>
+      </view>
+      <view class="box popup" hidden="{{popup}}">
+
+      </view>
     </view>
 
     <!--公告的简介-->
