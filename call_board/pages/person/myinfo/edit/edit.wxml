@@ -1,7 +1,7 @@
 <view class='menu'>
   <view class='item'>
     <text class='left'>昵称：</text>
-    <input class='right' maxlength='10' placeholder='{{my_info.user_name}}' bindchange='change_name'></input>
+    <input class='right' maxlength='10'  bindchange='change_name' value="{{my_info.user_name}}"></input>
   </view>
 
   <view class='item'>
@@ -16,14 +16,14 @@
 
   <view class='item'>
     <text class='left'>QQ号：</text>
-    <input class='right' type='number'bindchange='change_qq' placeholder='{{my_info.user_qq}}'></input>
+    <input class='right' type='number'bindchange='change_qq' value='{{my_info.user_qq}}'></input>
   </view>
 
   <view class='item'>
     <text class='left'>电话号码：</text>
-    <input class='right' type='number' maxlength='11' bindchange='change_phone' placeholder='{{my_info.user_phone}}'></input>
+    <input class='right' type='number' maxlength='11' bindchange='change_phone' value='{{my_info.user_phone}}'></input>
   </view>
 
-  <button class='butt1' open-type="getUserInfo" bindgetuserinfo="get_user_info">授权使用微信信息</button>
+  <button class='butt1' open-type="getUserInfo" bindgetuserinfo="get_user_info">使用微信信息</button>
   <button class='butt' bindtap='save'>保存修改</button>
 </view>
