@@ -30,3 +30,9 @@ page{
   width: 96%;
   margin-left: 2%;
 }
+.butt1{
+  position: fixed;
+  bottom: 9%;
+  width: 96%;
+  margin-left: 2%;
+}

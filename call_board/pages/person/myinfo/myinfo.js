@@ -43,6 +43,8 @@ Page({
     wx.navigateTo({
       url: '../myinfo/edit/edit?detail='+JSON.stringify(this.data.my_info)
     })
+  },
+  change_data(){
+    this.onLoad();
   }
-
 })
