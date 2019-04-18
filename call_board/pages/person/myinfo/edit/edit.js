@@ -6,9 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sex: ['男', '女'],
+    my_info:null,
+    sex: ['未知','男', '女'],
     index1: 0,
-    college: ['润园', '澄园', '泽园', '沁园'],
+    college: ['南京审计大学'],
     index2: 0
   },
 
@@ -45,7 +46,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      my_info:JSON.parse(options.detail)
+    })
   },
 
   /**

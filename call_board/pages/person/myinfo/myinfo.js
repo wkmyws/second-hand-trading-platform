@@ -30,7 +30,6 @@ Page({
           that.setData({
             my_info:res_data
           })
-          console.log(app.globalData)
         }
         catch (err) {
           console.log(err)
@@ -42,7 +41,7 @@ Page({
   //跳转至【修改信息】页面
   ToEdit(e) {
     wx.navigateTo({
-      url: '../myinfo/edit/edit'
+      url: '../myinfo/edit/edit?detail='+JSON.stringify(this.data.my_info)
     })
   }
 
