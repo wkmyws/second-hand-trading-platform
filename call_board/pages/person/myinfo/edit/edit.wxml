@@ -1,7 +1,7 @@
 <view class='menu'>
   <view class='item'>
-    <text class='left'>姓名：</text>
-    <input class='right' maxlength='10'></input>
+    <text class='left'>昵称：</text>
+    <input class='right' maxlength='10' placeholder='{{my_info.user_name}}'></input>
   </view>
 
   <view class='item'>
@@ -9,15 +9,14 @@
     <picker class='right' bindchange='ChangeSex' range='{{sex}}'>{{sex[index1]}}</picker>
   </view>
 
-
   <view class='item'>
-    <text class='left'>学号：</text>
-    <input class='right' maxlength='10'></input>
+    <text class='left'>学校：</text>
+    <picker class='right' bindchange='ChangeCollege' range='{{college}}'>{{college[index2]}}</picker>
   </view>
 
   <view class='item'>
-    <text class='left'>书院：</text>
-    <picker class='right' bindchange='ChangeCollege' range='{{college}}'>{{college[index2]}}</picker>
+    <text class='left'>学号：</text>
+    <input class='right' maxlength='10' tpye='number'></input>
   </view>
 
   <view class='item'>
@@ -27,12 +26,12 @@
 
   <view class='item'>
     <text class='left'>QQ号：</text>
-    <input class='right'></input>
+    <input class='right' tpye='number'></input>
   </view>
 
   <view class='item'>
     <text class='left'>电话号码：</text>
-    <input class='right' maxlength='11'></input>
+    <input class='right' tpye='number' maxlength='11'></input>
   </view>
 
   <button class='butt' bindtap='Save'>保存修改</button>

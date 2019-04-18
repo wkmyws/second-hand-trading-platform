@@ -2,7 +2,8 @@
   <view >
     <view class="user" style='display:flex'>
       <open-data type="userAvatarUrl" class="avatar"></open-data>
-      <open-data type="userNickName" class="name"></open-data>
+      <view class="name">{{myinfo.user_name}}</view>
+      <!--<open-data type="userNickName" class="name"></open-data>-->
       <view class='attest'>已认证</view>
     </view>
   </view>
