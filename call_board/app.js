@@ -37,9 +37,11 @@ App({
               that.globalData.token = res_data.token
               that.globalData.user_info = res_data.user_info
               wx.hideLoading()
-              console.log(that.globalData)
-            }
-            catch(err){
+              if (this.getInfoCallback) {
+                //data 为需要传入的数据
+                this.getInfoCallback(that.globalData.user_info)
+              }
+            } catch (err) {
               wx.hideLoading()
               wx.showModal({
                 title: '登陆失败',
@@ -54,7 +56,7 @@ App({
   },
   globalData: {
     user_info: null,
-    user_info_wx:null,
+    user_info_wx: null,
     token: "token",
     URL: "http://47.100.40.86/HighSchoolMarket/api/interface/",
   }

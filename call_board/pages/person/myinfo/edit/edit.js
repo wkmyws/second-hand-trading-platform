@@ -53,7 +53,6 @@ Page({
     that.setData({
       my_info
     })
-    
     app.globalData.user_info_wx = e.detail.userInfo
   },
 
