@@ -9,3 +9,4 @@ soapdx add..
 
 gg.add
 gg.change
+xx.add
