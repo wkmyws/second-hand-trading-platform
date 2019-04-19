@@ -1,38 +1,51 @@
-<view class="search">
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
-    </input>
-    <image class="image" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
+<view class='all'>
+
+
+   <view>
+    <!--悬浮按钮-->
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animCollect}}" bindtap="collect">
+    </image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animTranspond}}" bindtap="transpond"></image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animInput}}" bindtap="input"></image> 
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
   </view>
 
-<view class="titletotal">v-talk</view>
-<!--框图1-->
-<view class="passage1" display="flex"  bindtap="go">
-<image class="user_headsculpture" src="/images/Smile.jpg"></image>
-<text class="user-name">gold_jack</text>
+  <!--公告栏视图1-->
+  <view class="board" bindtap='go'>
 
-<text class="line1">1、认真贯彻国家有关职业病防治的法律、法规、政策和标准，落实各级职业病防治责任制，确保劳动者在劳动过程中的健康与安全。2.必须坚持以人为本，坚持四个目标不动摇，全心全意为企业服务，认真负责。</text>
+    <!--头像昵称-->
+    <view class='top'>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <text class='username'>你未来的男朋友</text>
+      <!--时间显示栏-->
+      <view class='passage time'>2019.02.15</view>
+    </view>
 
-<image class="like1" src="/images/点赞2.png"></image>
-<image class="save1" src="/images/点赞3.png"></image>
+    <!--图片-->
+    <view class='image'>
+      <image class='img' src='/images/test/1.png' mode='scaleToFill'></image>
+    </view>
+
+    <!--公告的简介-->
+    <view class='body'>
+      <view class='passage text'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！</view>
+    </view>
+
+  </view>
+
+
+  <!--公告栏视图2-->
+  <view class="board">
+
+    <!--头像昵称-->
+    <view class='top'>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <text class='username'>WXS34XHY</text>
+      <!--时间显示栏-->
+      <view class='passage time'>2019.02.15</view>
+    </view>
+
+    <!--正文-->
+    <view class="passage text">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧</view>
+  </view>
 </view>
-
-<!--框图2-->
-<view class="passage2" >
-<image class="user_headsculpture" src="/images/goods2.png"></image>
-<text class="user-name">大脑先生</text>
-<image class="post-picture" src="/images/9a3ea92533ea6664cc10c8e043858885.jpg"></image>
-<image class="like2" src="/images/点赞2.png"></image>
-<text class="line2">NAU的雨天，可还行。不过要说吗，就是没有雨，而且这里也不是南审，222233333</text>
-<image class="save1" src="/images/点赞3.png"></image>
-</view>
-
-<!--框图3-->
-<view class="passage3" >
-<image class="user_headsculpture" src="/images/about.png"></image>
-<text class="user-name">PPTXOk</text>
-<image class="like3" src="/images/点赞2.png"></image>
-<image class="save1" src="/images/点赞3.png"></image>
-</view>
-
-
-

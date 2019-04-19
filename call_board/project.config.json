@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
-	"appid": "wx831497e9b0bb2594",
-	"projectname": "board2",
+	"appid": "wx24ade5da2c52bc2f",
+	"projectname": "call_board",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -36,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
@@ -70,6 +71,13 @@
 					"id": -1,
 					"name": "edit",
 					"pathName": "pages/person/myinfo/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "test",
+					"pathName": "pages/myissue/myissue",
 					"query": "",
 					"scene": null
 				}

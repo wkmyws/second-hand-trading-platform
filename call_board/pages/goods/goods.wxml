@@ -1,3 +1,4 @@
+<view>
 <view class="rubclass">
   <!--顶部搜索栏-->
   <view class="search">
@@ -22,8 +23,9 @@
     </swiper>
 
   </view>
+  <!--广告牌的位置-->
+  <!--
   <view class="autoplay">
-    <!--广告牌的位置-->
     <swiper current='{{curr}}' class='swiper' autoplay="false" previous-margin='60rpx' next-margin='130rpx' bindchange="swiperChange" interval="2500" duration="350">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item class="swiper-item">
@@ -32,13 +34,13 @@
       </block>
     </swiper>
   </view>
-
+-->
   <view>
     <!--悬浮按钮-->
     <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animCollect}}" bindtap="collect">
     </image>
     <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animTranspond}}" bindtap="transpond"></image>
-    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animInput}}" bindtap="input"></image>
+    <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-style" animation="{{animInput}}" bindtap="input"></image> 
     <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
   </view>
   <view>
@@ -55,24 +57,25 @@
         </block>
       </view>
     </view>
-    <template name="item" >
-      <view class="item" >
-        <image class="item-img" src="{{url}}" mode="widthFix" catchtap='swithDetail'></image>
+    <template name="item">
+      <view class="item">
+        <image class="item-img" src="{{url}}" mode="widthFix"></image>
         <view class="item-title-box" catchtap='swithDetail'>
-          <navigator url="url"class="item-tit" catchtap='swithDetail'>{{tit}}</navigator>
+          <navigator url="../goods/detail/detail?" class="item-tit">{{tit}}</navigator>
         </view>
         <view class="item-title-box">
-          <navigator url="../goods/detail/detail"  class="item-title">{{title}}</navigator>
+          <navigator url="../goods/detail/detail?" class="item-title" catchtap='swithDetail'>{{title}}</navigator>
         </view>
         <view class="name">
           <image class="item-ava" src="{{avatar}}"></image>
           <text class="name-title">{{name}}</text>
           <view class="heart_">
-            <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?"catchtap='swithDetail' ></image>
+            <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='swithDetail'></image>
             <text>{{heart_num}}</text>
           </view>
         </view>
       </view>
     </template>
   </view>
+</view>
 </view>

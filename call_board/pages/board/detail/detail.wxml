@@ -1,1 +1,62 @@
-<!--公告栏详细界面-->
+<view class='body'>
+
+  <view class='board'>
+    <!--头像昵称-->
+    <view class='top'>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <text class='username'>你未来的男朋友</text>
+      <view class='critize' bindtap='showPopup'>
+      <image class='pic report' src='/images/report.png'></image>
+      <view class='mini'>举报</view>
+      </view>
+      <view class="box popup" hidden="{{popup}}">
+
+      </view>
+    </view>
+
+    <!--公告的简介-->
+    <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！</view>
+
+    <!--图片-->
+    <view class='image'>
+      <image class='img' src='/images/test/1.png'></image>
+      <image class='img' src='/images/test/2.jpeg'></image>
+      <image class='img' src='/images/test/3.jpg'></image>
+      <image class='img' src='/images/test/4.jpg'></image>
+      <image class='img' src='/images/test/5.jpg'></image>
+      <image class='img' src='/images/test/6.jpg'></image>
+    </view>
+
+    <view class='bottom'>
+      <!--时间显示栏-->
+      <view class='passage time'>2019.02.15</view>
+
+      <!--图标-->
+      <image class='pic like' src="/images/点赞1.png"></image>
+      <image class='pic collect' src='/images/收藏1.png'></image>
+    </view>
+
+
+  </view>
+
+  <view class='forum'>
+    <view class='talk'>评论</view>
+  </view>
+
+  <view class='forum'>
+    <view class='passage'>最好是小姐姐！</view>
+    <view class='username friend'>--你未来的男朋友</view>
+  </view>
+
+  <view class='forum'>
+    <view class='passage'>MDZZ</view>
+    <view class='username friend'>--一位不愿透露姓名的沙雕网友</view>
+  </view>
+
+</view>
+
+<view class='reply'>
+  <!--回复-->
+  <input class="input" placeholder="我也说一句"></input>
+  <button class='send' size='mini' type='primary' bindtap='sendmessage'>发送</button>
+</view>

@@ -3,16 +3,14 @@ page{
 }
 
 .menu{
-
   margin-top: 20rpx;
 }
 
 .item{
-    position: relative;
   background: white;
   height: 70rpx;
   display: flex;
-  border-radius: 5rpx;
+  border-bottom: 1px #eee solid;
 }
 
 .left{
@@ -29,6 +27,12 @@ page{
 .butt{
   position: fixed;
   bottom: 5px;
+  width: 96%;
+  margin-left: 2%;
+}
+.butt1{
+  position: fixed;
+  bottom: 9%;
   width: 96%;
   margin-left: 2%;
 }

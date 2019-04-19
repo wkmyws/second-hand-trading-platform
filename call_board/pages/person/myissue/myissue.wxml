@@ -5,9 +5,38 @@
   </view>
 
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+
+    <!--公告-->
     <swiper-item>
-      <view>我的公告</view>
+      <view class='body'>
+        <view class='board'>
+          <!--公告的简介-->
+          <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？</view>
+
+          <!--时间显示栏-->
+          <view class='passage time'>2019.02.15</view>
+
+          <!--图标-->
+          <image class='pic like' src="/images/点赞1.png"></image>
+          <image class='pic collect' src='/images/收藏1.png'></image>
+        </view>
+
+        <view class='board'>
+          <!--公告的简介-->
+          <view class='passage'>啊啊啊我又失恋啦！有没有小姐姐能够陪我散散心啊啊！！！男生也行哟~！哎呀呀一不小心就超过了字数限制显示不出</view>
+
+          <!--时间显示栏-->
+          <view class='passage time'>2019.02.15</view>
+
+          <!--图标-->
+          <image class='pic like' src="/images/点赞1.png"></image>
+          <image class='pic collect' src='/images/收藏1.png'></image>
+        </view>
+      </view>
+
     </swiper-item>
+
+    <!--商品-->
     <swiper-item>
       <view>我的商品</view>
     </swiper-item>
