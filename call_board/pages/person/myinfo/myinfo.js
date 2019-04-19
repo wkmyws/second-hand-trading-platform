@@ -1,50 +1,24 @@
-const app = getApp();
-var util = require("../../../utils/util.js");
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    my_info:null
+
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    var that = this;
-    var timestamp = Date.parse(new Date());
-    timestamp = String(timestamp / 1000);
-    var sign = util.sha1(""+timestamp+app.globalData.user_info.user_id)
-    wx.request({
-      url: app.globalData.URL + "user/getUserInfo.php",
-      data: {
-        "version": 1,
-        "time": timestamp,
-        "data": "",
-        "sign": sign,
-        "token": app.globalData.token
-      },
-      method: 'POST',
-      header: {
-        "content-type": "application/json"
-      },
-      success: res => {
-        try {
-          var res_data = util.base64_decode(res.data.data)
-          res_data = JSON.parse(res_data)
-          that.setData({
-            my_info:res_data
-          })
-        }
-        catch (err) {
-          console.log(err)
-        }
-      }
-    })
+    
   },
 
   //跳转至【修改信息】页面
-  ToEdit(e) {
+  ToEdit(e){
     wx.navigateTo({
-      url: '../myinfo/edit/edit?detail='+JSON.stringify(this.data.my_info)
+      url: '../myinfo/edit/edit'
     })
-  },
-  change_data(){
-    this.onLoad();
   }
+
 })

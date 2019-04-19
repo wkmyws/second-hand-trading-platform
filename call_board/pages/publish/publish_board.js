@@ -1,20 +1,18 @@
-
-
-var app=getApp()
-
+// pages/publish/publish_board.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-   userN: '',
-
+    College: ['润园', '沁园', '澄园', '泽园']
   },
 
-
-
-
+  ChangeCollege: function (e) {
+    this.setData({
+      CollegeIndex: e.detail.value
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -23,9 +21,6 @@ Page({
 
   },
 
-
-  /**用户输入 */
-  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -67,18 +62,6 @@ Page({
   onReachBottom: function () {
 
   },
-  userNameInput: function (e) {
-    this.setData({
-      userN: e.detail.value
-    })
-  },
-
-  /*公告栏的详细界面* */
-  go: function (e) {
-    wx.navigateTo({
-      url: '../person/help/help' ,
-    })
-  },
 
   /**
    * 用户点击右上角分享
@@ -86,5 +69,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-
 })

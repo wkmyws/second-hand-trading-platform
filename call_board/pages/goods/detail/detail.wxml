@@ -1,5 +1,5 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="index">
+ <block wx:for="{{imgUrls}}" wx:key="index">
     <swiper-item>
       <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
     </swiper-item>
@@ -9,36 +9,24 @@
 <scroll-view scroll-y="true">
   <view class="detail">
     <text class="title">苹果笔记本电脑</text>
-    <text class="price">￥5000</text>
+    <text class="price">5000</text>
   </view>
-  <view class='detail'>
-  <view class="separate">商品的的数量</view>
-  <text >1台</text>
-  </view>
-  <view class='detail'>
-  <view class="separate">商品详情</view>
-  <text>苹果笔记本，质量超群</text>
-</view>
- <view class='detail'>
-  <view class="separate">商品评论</view>
-  <text>质量还可以</text>
-</view>
-
-
+  <view class="separate">可行好好</view>
+  <text bindtap="toggleDialog">选择需要购买的数量</text>
+  <view class="separate">性好啊</view>
+  <text>商品的评价</text>
+  <text class="text-remark">商品还可以</text>
+  <view class="separate"></view>
+  <text>商品详情</text>
+  <block wx:for-items="{{detailImg}}" wx:key="name">
+    <image class="image_detail" src="{{item}}" />
+  </block>
+  <view class="temp">生活很美好</view>
 </scroll-view>
 <view class="detail-nav">
-  <image bindtap="toCar" src="http://xcx.nau.edu.cn/images/dianzan.png?" />
-  <view class="line_nav"></view>
-  <image bindtap="addLike" src="{{}}" />
-  <button class="button-red" bindtap="clickme" form-type='submit'>我想购买</button>
-</view>
-<view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
-<view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
-  <view>卖者的联系方式</view>
-  <view>手机号：
-    <text catchtap='callPhone' catchlongpress="copyIt" id='{{tel}}'>{{tel}}</text>
-  </view>
-    <view>微信号：
-    <text catchlongpress="copyIt">jironggen</text>
-  </view>
+  <image bindtap="toCar" src="http://xcx.nau.edu.cn/images/dianzan.png?"/>
+    <view class="line_nav"></view>
+    <image bindtap="addLike" src="{{}}"/>
+      <button class="buton-green" bindtap="addCar" form-type='submit'>加入购物车</button>
+      <button class="button-red" bindtap="immeBuy" form-type='submit'>立即股买</button>
 </view>

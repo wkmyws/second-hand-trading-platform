@@ -1,0 +1,23 @@
+page {
+  background: rgb(250, 248, 248);
+}
+
+.single {
+  background: white;
+  margin: 2px 1%;
+}
+
+.multiple {
+  background: white;
+  width: 98%;
+  height: 200px;
+  margin: 2px 1%;
+}
+
+.handle {
+  background: rgb(255, 209, 97);
+  width: 90%;
+  margin-left: 5%;
+  position: fixed;
+  bottom: 2%;
+}

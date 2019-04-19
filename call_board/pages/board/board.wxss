@@ -1,113 +1,183 @@
-page {
-}
-
-.all {
-  padding: 15rpx;
-}
-
-.board {
-  position: relative;
-  width: 96%;
-  height: 300rpx;
-  margin-left: 2%;
-  margin-top: 20rpx;
-  border-radius: 2px;
-  background-color: rgb(221, 238, 253);
-}
-
-.body {
+.search {
   display: flex;
+  flex-direction: row;
+  border: 3rpx solid #fff;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+  margin: 10rpx;
+  position: sticky;
+  top: 0rpx;
+  z-index: 999;
 }
 
-.text {
-  font-size: 32rpx;
-  text-indent: 64rpx;
-  margin: auto 15rpx;
-}
 
-.img-plus-style {
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
 
-/*图片*/
-
-.bottom {
+.image {
+  width: 120rpx;
   height: 80rpx;
-}
-
-.img {
-  width: 160rpx;
-  height: 185rpx;
-  margin-left: 1%;
-  float: left;
-}
-
-/*图标*/
-
-.pic {
-  position: absolute;
-  bottom: 10rpx;
-  width: 50rpx;
-  height: 50rpx;
-  text-align: auto;
-}
-
-.like {
-  right: 70rpx;
-}
-
-.collect {
-  right: 10rpx;
-}
-
-.report {
-  top: 15rpx;
-  right: 10rpx;
-}
-
-/*用户*/
-
-.top {
-  display: flex;
-  height: 100rpx;
-}
-
-.userhead {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 80px;
-  margin: auto 15rpx;
-  display: flex;
+  display: inline-block;
   overflow: hidden;
 }
 
-.username {
-  font-size: 32rpx;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
+.search input {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  padding-left: 32rpx;
 }
 
-.time {
-  font-size: 32rpx;
-  color: #bbb;
+.titletotal {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.title {
+  position: relative;
+  top:10rpx;
+  height: 60rpx;
+  width: 95%;
+  
+  
+  
+
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  text-align:center;
+  font-size: small;
+  line-height: 60rpx;
+  
+  
+  box-shadow:1px 1px 1px 1px rgb(222, 224, 226);
+  border-radius: 5px;
+}
+
+
+
+
+/*第一框图*/
+.passage1 {
+  position:relative;
+  top:0rpx;
+  background-color: rgb(241, 248, 255);
+  
+  
+  height: 400rpx;
+  width: 95%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  font-size:x-small;
+  
+  box-shadow:1px 1px 1px 1px rgb(222, 224, 226);
+  border-radius: 5px;
+}
+
+.user_headsculpture {
   position: absolute;
-  right: 15rpx;
-  line-height: 100rpx;
+  top: 30rpx;
+  left: 30rpx;
+  height: 50rpx;
+  width:50rpx;
+  border-radius: 100rpx;
+  overflow: hidden;
+}
+.user-name {
+position: absolute;
+left:100rpx;
+top:38rpx;
 }
 
-/*悬浮按钮*/
 
-.img-style {
-  height: 100rpx;
-  width: 100rpx;
-  position: fixed;
-  bottom: 50rpx;
-  right: 50rpx;
-  opacity: 0;
+.line1{
+  position: absolute;
+  top: 140rpx;
+  
+  
+  left: 20rpx;
+  width: 96%;
+}
+
+
+
+.like1 {
+  position:absolute;
+  bottom:10rpx;
+  right: 10rpx;
+  width: 70rpx;
+  height: 70rpx;
+  
+}
+
+.save1 {
+  position:absolute;
+  bottom:15rpx;
+  right: 90rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+
+/*第二框图*/
+.passage2 {
+  position:relative;
+  top:10rpx;
+  background-color: rgb(255, 252, 244);
+
+  
+  height: 400rpx;
+  width: 95%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  font-size:x-small;
+  
+  box-shadow:1px 1px 1px 1px rgb(222, 224, 226);
+  border-radius: 5px;
+}
+
+.post-picture {
+  position: absolute;
+  left: 30rpx;
+  top: 110rpx;
+  width: 45%;
+  height: 50%;
+}
+.line2{
+  position: absolute;
+  top: 120rpx;
+  left: 360rpx;
+  right: 20rpx;
+}
+.like2 {
+  position:absolute;
+  bottom:10rpx;
+  right: 10rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+
+.passage3 {
+  position:relative;
+  top:20rpx;
+  background-color: rgb(241, 248, 255);
+  text-align: center;
+  
+  height: 250rpx;
+  width: 95%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  font-size:x-small;
+  
+  box-shadow:1px 1px 1px 1px rgb(222, 224, 226);
+  border-radius: 5px;
+}
+.like3 {
+  position:absolute;
+  bottom:10rpx;
+  right: 10rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
