@@ -1,23 +1,8 @@
-page {
-  background: #eee;
-}
-
-swiper {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.body{
-  padding: 15rpx;
-}
-/*tab的设置*/
-
 .swiper-tab {
-  background: white;
   width: 100%;
   border-bottom: 2rpx solid #ccc;
   text-align: center;
+  height: 88rpx;
   line-height: 88rpx;
   display: flex;
   flex-flow: row;
@@ -34,41 +19,6 @@ swiper {
   border-bottom: 4rpx solid #f65959;
 }
 
-/*公告的设置*/
-
-.board {
-  background: rgb(253, 221, 221);
-  height: 100px;
-  width: 96%;
-  margin: auto;
-  margin-bottom: 15rpx;
-  border-radius: 2px;
-  position: relative;
-}
-
-.passage{
-  margin: 15rpx;
-  font-size: 32rpx;
-}
-
-.passage.time{
-  color: #bbb;
-  position: absolute;
-  bottom: 10rpx;
-}
-
-.pic {
-  position: absolute;
-  bottom: 10rpx;
-  width: 50rpx;
-  height: 50rpx;
-  margin-top: 10rpx;
-}
-
-.like {
-  right: 70rpx;
-}
-
-.collect{
-  right: 10rpx
+swiper {
+  text-align: center;
 }

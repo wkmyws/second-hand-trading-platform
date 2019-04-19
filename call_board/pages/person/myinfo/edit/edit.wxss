@@ -12,7 +12,7 @@ page{
   background: white;
   height: 70rpx;
   display: flex;
-  border-bottom: 1px #eee solid;
+  border-radius: 5rpx;
 }
 
 .left{
@@ -29,12 +29,6 @@ page{
 .butt{
   position: fixed;
   bottom: 5px;
-  width: 96%;
-  margin-left: 2%;
-}
-.butt1{
-  position: fixed;
-  bottom: 9%;
   width: 96%;
   margin-left: 2%;
 }

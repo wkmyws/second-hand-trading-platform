@@ -125,13 +125,12 @@ Page({
         isPopping: true
       })
     }
-    console.log("plus")
   },
 
   //跳转至【商品发布】页面
   input: function() {
     wx.navigateTo({
-      url: '../goods/detail/detail',
+      url: '../publish/publish_goods',
     })
     console.log("input")
   },
@@ -139,13 +138,13 @@ Page({
   //跳转至【公告发布】页面
   transpond: function() {
     wx.navigateTo({
-      url: '../publish/publish_goods/publish_goods',
+      url: '../publish/publish_board',
     })
     console.log("transpond")
   },
   collect: function() {
     wx.navigateTo({
-      url: '../publish/publish_board/publish_board',
+      url: '../goods/detail/detail',
     })
     console.log("collect")
   }, //弹出动画 
@@ -167,9 +166,9 @@ Page({
       timingFunction: 'ease-out'
     })
     animationPlus.rotateZ(360).step();//各个旋转角度
-    animationcollect.translate(0, -80).rotateZ(360).opacity(1).step();
-    animationTranspond.translate(-56, -56).rotateZ(360).opacity(1).step();
-    animationInput.translate(-80, -0).rotateZ(360).opacity(1).step();
+    animationcollect.translate(0, -70).rotateZ(360).opacity(1).step();
+    animationTranspond.translate(-60, -60).rotateZ(360).opacity(1).step();
+    animationInput.translate(-70, 0).rotateZ(360).opacity(1).step();
     this.setData({
       animPlus: animationPlus.export(),
       animCollect: animationcollect.export(),
@@ -240,7 +239,7 @@ Page({
     }),
     wx.setNavigationBarColor({
       frontColor: '#000000',
-      backgroundColor: '#eee'
+      backgroundColor: '#FFD161'
     })
   },
 
@@ -279,7 +278,7 @@ Page({
     })
   },//广澳牌
   
-  switchDetail: (e) =>{
+switchDetail:function(){
   wx.navigateTo({
     url: '../goods/detail/detail',
   })

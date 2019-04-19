@@ -3,8 +3,7 @@ page{
 }
 
 .top{
-  background: rgb(255, 209, 97);
-  margin-bottom: 20rpx;
+  background: linear-gradient(rgb(255, 209, 97), #eee);
 }
 
 .nickpic{
@@ -14,21 +13,21 @@ page{
 }
 
 .nickname{
+  margin-bottom: 10rpx;
   text-align: center;
 }
 
 .item{
   height: 70rpx;
-  background-color: white;
+  background-color: #eee;
   display: flex;
-  margin-top: 1px;
+  border-radius: 5rpx;
+  margin-top: 2px;
 }
 
 .left{
   display: flex;
   align-items: center;
-  padding-left: 16rpx;
-  font-size: 32rpx;
 }
 
 .right{
