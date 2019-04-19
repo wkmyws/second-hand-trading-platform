@@ -3,10 +3,12 @@ page{
 }
 
 .menu{
+
   margin-top: 20rpx;
 }
 
 .item{
+    position: relative;
   background: white;
   height: 70rpx;
   display: flex;

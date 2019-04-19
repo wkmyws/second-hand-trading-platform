@@ -17,7 +17,7 @@ page {
   margin-bottom: 15rpx;
   border-radius: 2px;
   position: relative;
-  box-shadow: 6rpx 8rpx 9rpx #ccc;
+
 }
 
 .passage {
@@ -72,7 +72,7 @@ page {
   background: white;
   margin-top: 2rpx;
   border-top-color: #eee;
-  box-shadow: 6rpx 8rpx 9rpx #ccc;
+
 }
 
 .talk {
