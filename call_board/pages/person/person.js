@@ -8,6 +8,16 @@ Page({
     myinfo: null,
     balance: null
   },
+<<<<<<< HEAD
+=======
+  
+  onLoad: function() {
+    app.getInfoCallback = res => {
+      this.setData({
+        myinfo: app.globalData.user_info
+      })
+    }
+>>>>>>> parent of 20dce6d... 回调修复
 
   onLoad: function() {
 
