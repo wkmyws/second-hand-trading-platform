@@ -10,12 +10,13 @@ Page({
   onLoad: function() {
     app.getInfoCallback = res => {
       this.setData({
-        myinfo: app.globalData.user_info
+        myinfo:res
       })
     }
 
 
     this.setData({
+      myinfo: app.globalData.user_info,
       extraData: {
         id: '38516', // 来源为吐个槽上申请的产品ID ，查看路径：tucao.qq.com ->产品管理->ID
         customData: {
