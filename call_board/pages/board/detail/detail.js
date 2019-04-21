@@ -6,12 +6,7 @@ Page({
    */
   data: {
     img_url: [
-      '/images/test/1.png',
-      '/images/test/2.jpeg',
-      '/images/test/3.jpg',
-      '/images/test/4.jpg',
-      '/images/test/5.jpg',
-      '/images/test/6.jpg'
+      "http://xcx.nau.edu.cn/images/plus.png?"
     ],
     popup: true
   },
