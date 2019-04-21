@@ -18,13 +18,8 @@
     <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！</view>
 
     <!--图片-->
-    <view class='image'>
-      <image class='img' src='/images/test/1.png'></image>
-      <image class='img' src='/images/test/2.jpeg'></image>
-      <image class='img' src='/images/test/3.jpg'></image>
-      <image class='img' src='/images/test/4.jpg'></image>
-      <image class='img' src='/images/test/5.jpg'></image>
-      <image class='img' src='/images/test/6.jpg'></image>
+    <view class='image' wx:for='{{img_url}}'>
+      <image class='img' src='{{img_url}}' data-index='{{idx}}' bindtap='Preview'></image>
     </view>
 
     <view class='bottom'>
