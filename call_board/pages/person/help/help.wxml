@@ -1,20 +1,56 @@
-<view class='help'>
-
-  <view class='top'>
-    <image class='pic' src='/images/question-mark.png'></image>
-    <view class='subtitle'>使用帮助</view>
-    <view class='subtext'>仔细阅读【使用帮助】，解决使用问题</view>
-
+<view class="page__hd">
+  <image class="weui-media-box__thumb" src="http://xcx.nau.edu.cn/images/help.png" />
+  <view class="page__title">使用帮助</view>
+  <view class="page__desc">仔细阅读【使用帮助】，解决使用问题</view>
+</view>
+<view class="page__bd">
+  <view class="weui-article">
+    <view class="weui-article__h3" style="color:#43B0D1;">1. 如何更方便地使用小程序?</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+        <view class="weui-article__h3">1.1 如何发布公告和商品</view>
+        <view class="weui-article__p">
+          在每个公告和商品页面的底部都有发布按钮，点击即可发布。小程序在允许发布前需要用户进行学生认证以及完善个人信息。
+        </view>
+      </view>
+   
+      <view class="weui-article__section">
+        <view class="weui-article__h3">1.2 如何转发分享给朋友? </view>
+        <view class="weui-article__p">
+           在[校园微集市]小程序中，很多个页面都有转发分享按钮，点击即可转发分享。也可点击右上角「···」，点击转发，即可转发分享。
+        </view>
+      </view>
+    </view>
+    <view class="weui-article__h3" style="color:#43B0D1;">2. 添加到桌面</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+      <view class="weui-article__h3">2.1直接添加到桌面</view>
+        <view class="weui-article__p">
+         如果是安卓手机，在[校园微集市]中点击右上角「···」，点击添加到桌面，即可将[校园微集市]添加到桌面，之后直接在桌面点击[校园微集市]小程序即可进入。  </view>
+          <view class="weui-article__h3">2.2无法添加到桌面的情况</view>
+          <view class="weui-article__p">
+          如果有部分安卓手机禁止添加到桌面，可在 手机管家-应用权限-添加桌面快捷方式中，增加微信，设置完成后，可将小程序添加到桌面。
+          </view>
+      
+      </view>
+    </view>
+    <view class="weui-article__h3" style="color:#43B0D1;">3. 如何找到[校园微集市]小程序?</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+        <view class="weui-article__h3">3.1 通过微信打开</view>
+        <view class="weui-article__p">
+          进入微信界面，点击底部导航栏 发现-小程序 中的发现，点击小程序，搜索并找到[校园微集市]即可打开
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="weui-article__h3">3.2 通过搜索打开</view>
+        <view class="weui-article__p">
+          进入微信界面，点击右上角搜索图标，输入[校园微集市]即可打开
+        </view>
+      </view>
+    </view>
   </view>
-
-  <view class='section'>
-    <view class='title'>如何发表公告和商品？</view>
-    <view class='text'>点击悬浮按钮【+】，选择相应的模板，输入相关信息后确认提交，等待审核即可</view>
-  </view>
-
-  <view class='section'>
-    <view class='title'>如何找到【NAU公告板】小程序？</view>
-    <view class='text'>进入微信界面，点击底部导航栏【发现小程序】中的发现，点击小程序，搜索并找到【NAU公告板】打开即可</view>
-  </view>
-
+    <!-->  <view class="button-sp-area">
+        <button open-type="share" class="weui-btn" type="primary" plain="true">分享帮助</button>
+      </view>-->
 </view>

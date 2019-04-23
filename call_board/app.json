@@ -28,7 +28,7 @@
   },
   "tabBar": {
     "color": "black",
-    "selectedColor": "blue",
+    "selectedColor": "red",
     "list": [
       {
         "pagePath": "pages/board/board",

@@ -3,14 +3,16 @@ page{
 }
 
 .top{
-  background: rgb(255, 209, 97);
+ background-image: linear-gradient(to top, #db86bd 10% ,#0991c1 100%);
   margin-bottom: 20rpx;
+
 }
 
 .nickpic{
   width: 250rpx;
   height: 250rpx;
   margin: 0 auto;
+  border-radius: 20rpx;
 }
 
 .nickname{

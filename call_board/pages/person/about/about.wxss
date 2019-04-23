@@ -1,37 +1,45 @@
-page {
-  background: #eee;
+page{
+  background-color: #fff
 }
 
-.top {
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(rgb(255, 209, 97), #eee);
-}
-
-.section{
-  margin-top: 10px;
-}
-
-.pic {
-  display: flex;
-  margin: 0 auto;
-  width: 120rpx;
-  height: 120rpx;
-}
-
-.subtitle{
+.page__hd {
+  padding: 30rpx 35rpx;
   text-align: center;
+  background-image: linear-gradient(to top, #db86bd 10% ,#0991c1 100%);
+  box-shadow: 0 10rpx 35rpx #dee1e8;
+
 }
 
-.subtext{
+.page__title {
+  color: #333;
+}
+
+.page__desc {
+  font-size: 13px;
+  color: #333;
+}
+
+.weui-media-box__thumb {
+  height: 35px;
+  width: 35px;
+}
+
+.weui-center {
+  display:flex;
+  justify-content:space-around;
   text-align: center;
-  font-size: 14px;
+  padding:10px;
 }
 
-.title{
-  color: rgb(26, 201, 207);
+.weui-article {
+  padding: 20px 15px;
+  font-size: 27rpx;
 }
 
-.text{
-  font-size: 14px;
+.weui-article__p {
+  color: #333;
+  
+}
+.weui-article__pa{
+  text-indent: 6%;
 }

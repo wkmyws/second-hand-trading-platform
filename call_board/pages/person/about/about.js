@@ -1,4 +1,4 @@
-// pages/more/about.js
+
 Page({
   data: {
 
@@ -7,7 +7,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-  
+
   },
 
   /**
@@ -50,6 +50,16 @@ Page({
    */
   onReachBottom: function () {
 
-  }
+  },
 
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '关于课表',
+      desc: '「NAU信息服务」提供南京审计大学在校生各类信息查询服务。',
+      path: '/pages/about/about'
+    }
+  }
 })
