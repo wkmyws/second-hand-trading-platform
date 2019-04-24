@@ -23,7 +23,7 @@
     <text class='left'>电话号码：</text>
     <input class='input' type='number' maxlength='11' bindchange='change_phone' value='{{my_info.user_phone}}'></input>
   </view>
-
+  <view >
     <button class='butt1' open-type="getUserInfo" bindgetuserinfo="get_user_info">使用微信信息</button>
     <button class='butt' bindtap='save'>保存修改</button>
   </view>

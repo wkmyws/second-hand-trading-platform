@@ -25,6 +25,7 @@ page{
 .input{
   height: 100%;
   display: flex;
+   font-size: 32rpx;
   color: rgb(136, 136, 136);
 }
 
