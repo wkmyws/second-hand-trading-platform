@@ -22,12 +22,14 @@ page{
   font-size: 32rpx;
 }
 
+.input{
+  height: 100%;
+  display: flex;
+  color: rgb(136, 136, 136);
+}
 
-.right{
-
-margin: auto;
-margin-left: 10rpx;
-   display: flex;
+.picker{
+  display: flex;
   align-items: center;
     font-size: 32rpx;
   color: rgb(136, 136, 136);
