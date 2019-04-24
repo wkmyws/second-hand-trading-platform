@@ -39,6 +39,6 @@
     <text catchtap='callPhone' catchlongpress="copyIt" id='{{tel}}'>{{tel}}</text>
   </view>
     <view>微信号：
-    <text catchlongpress="copyIt">jironggen</text>
+    <text catchlongpress="copyIt" id='{{number}}'>{{number}}</text>
   </view>
 </view>

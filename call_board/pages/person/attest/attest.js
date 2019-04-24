@@ -8,7 +8,10 @@ Page({
     popup: true,
     college_list: null,
     mail_addr: null,
-    id: null
+    id: null,
+    site:[
+      "http://mail.stu.nau.edu.cn"
+    ]
   },
 
   ChangeCollege(e) {
@@ -114,6 +117,16 @@ Page({
         return parseInt(sch_id)
       }
     }
+  },
+  copyIt: function (event) {
+    wx.setClipboardData({
+      data: event.target.id
+    })
+    wx.showToast({
+      title: '已复制到粘贴版',
+      icon: 'none',
+      duration: 1000
+    });
   },
   mail_send: function() {
     var that = this;

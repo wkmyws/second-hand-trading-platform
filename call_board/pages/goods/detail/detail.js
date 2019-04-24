@@ -27,6 +27,9 @@ Page({
     ],
     tel:[
       "18851962112"
+    ],
+    number:[
+      "jironggen"
     ]
 
   },
