@@ -3,6 +3,7 @@ page{
 }
 
 .menu{
+  
   margin-top: 20rpx;
 }
 
@@ -13,14 +14,22 @@ page{
   border-bottom: 1px #eee solid;
 }
 
+
 .left{
   display: flex;
   align-items: center;
+  padding-left: 16rpx;
+  font-size: 32rpx;
 }
 
+
 .right{
-  display: flex;
+
+margin: auto;
+margin-left: 10rpx;
+   display: flex;
   align-items: center;
+    font-size: 32rpx;
   color: rgb(136, 136, 136);
 }
 

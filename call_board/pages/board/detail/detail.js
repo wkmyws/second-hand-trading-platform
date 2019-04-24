@@ -29,7 +29,7 @@ Page({
     wx.showModal({
       title: '举报提示',
       content: '确认举报这条公告？',
-      confirmText:"确认删除",
+      confirmText:"确认",
       cancelText:"取消"
     })
   },
