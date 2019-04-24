@@ -25,6 +25,15 @@ Page({
     })
   },
 
+  ToReport(e){
+    wx.showModal({
+      title: '举报提示',
+      content: '确认举报这条公告？',
+      confirmText:"确认删除",
+      cancelText:"取消"
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

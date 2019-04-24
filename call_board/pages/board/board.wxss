@@ -75,10 +75,6 @@ page {
   text-align: auto;
 }
 
-.like {
-  right: 70rpx;
-}
-
 .save1{
   position: absolute;
   right:10rpx;
@@ -92,15 +88,6 @@ page {
   height: 40rpx;
   width: 40rpx;
   bottom: 10rpx;
-}
-
-.collect {
-  right: 10rpx;
-}
-
-.report {
-  top: 15rpx;
-  right: 10rpx;
 }
 
 /*用户*/

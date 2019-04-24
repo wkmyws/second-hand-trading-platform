@@ -1,17 +1,16 @@
 <view class='body'>
 
   <view class='board'>
-    <!--头像昵称-->
     <view class='top'>
+      <!--头像昵称-->
       <image class='userhead' src='/images/test/user1.jpg'></image>
       <text class='username'>你未来的男朋友</text>
-      <view class='critize' bindtap='showPopup'>
-      <image class='pic report' src='/images/report.png'></image>
-      <view class='mini'>举报</view>
+      <!--举报功能-->
+      <view bindtap='ToReport'>
+        <image class='pic report' src='/images/report.png'></image>
+        <view class='mini'>举报</view>
       </view>
-      <view class="box popup" hidden="{{popup}}">
 
-      </view>
     </view>
 
     <!--公告的简介-->
