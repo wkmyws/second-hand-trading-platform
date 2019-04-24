@@ -2,19 +2,30 @@
   <view class="user-item">
     <label class="name">学校:</label>
     <label class='icon'></label>
-
-    <picker class='number' bindchange='ChangeCollege' range='{{college}}'>{{college[index1]}}</picker>
+    <picker class='number' bindchange='ChangeCollege' range='{{college}}'>{{selected_school}}</picker>
   </view>
 </view>
+
 <view class="user">
   <view class="user-item">
-    <label class="name">学校邮箱:</label>
+    <label class="name">学号:</label>
     <label class='icon'></label>
-    <input class="number" placeholder='学号+@stu.nau.edu.cn'></input>
+    <input class="number" bindinput="id_input"></input>
   </view>
 </view>
+
+<view class="user">
+  <view class="user-item">
+    <label class="name">邮箱地址:</label>
+    <label class='icon'></label>
+    <picker class='number' bindchange='mail_change' range='{{mail_example}}'>@{{mail_addr}}</picker>
+  </view>
+</view>
+
 <view class="proto" bindtap='showPopup'>最终用户许可协议</view>
-<button class='butt' bindtap='Toattest'>同意协议并认证</button>
+
+<button class='butt' bindtap='mail_send'>同意协议并认证</button>
+
 <view class="shade" hidden='{{popup}}' bindtap="hidePopup"></view>
 <view class="box popup" hidden="{{popup}}">
   <view class="title">

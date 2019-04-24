@@ -24,7 +24,7 @@ Page({
   change_wx(e) {
     var that = this
     var my_info = that.data.my_info
-    my_info.user_wx = e.detail.value
+    my_info.user_wechat = e.detail.value
     that.setData({
       my_info
     })

@@ -58,6 +58,6 @@ App({
     user_info: null,
     user_info_wx: null,
     token: "token",
-    URL: "http://47.100.40.86/HighSchoolMarket/api/interface/",
+    URL: "https://xcx.natal.tech/HighSchoolMarket/api/interface/",
   }
 })

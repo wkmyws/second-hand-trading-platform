@@ -11,7 +11,7 @@
 
   <view class='item'>
     <text class='left'>微信号：</text>
-    <input class='right'></input>
+    <input class='right' bindchange='change_wx' value='{{my_info.user_wechat}}'></input>
   </view>
 
   <view class='item'>

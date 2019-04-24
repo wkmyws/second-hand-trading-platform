@@ -35,12 +35,8 @@
     </view>
 
     <view class='item'>
-      <text class='left'>学号：</text>
-      <text class='right' wx:if="{{my_info.user_school_id!=null}}">{{my_info.user_school_id}}</text>
-    </view>
-
-    <view class='item'>
       <text class='left' >微信号：</text>
+      <text class='right' wx:if="{{my_info.user_wechat!=null}}">{{my_info.user_wechat}}</text>
     </view>
 
     <view class='item'>
