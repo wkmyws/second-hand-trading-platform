@@ -136,10 +136,6 @@ page {
   margin-right: 15rpx;
 }
 
-.critize{
-  
-}
-
 .mini{
   color: #bbb;
   font-size: 25rpx;
