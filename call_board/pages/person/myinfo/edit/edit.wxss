@@ -16,9 +16,17 @@ page{
 .left{
   display: flex;
   align-items: center;
+  padding-left: 16rpx;
+  font-size: 32rpx;
 }
 
-.right{
+.input{
+  height: 100%;
+  display: flex;
+  color: rgb(136, 136, 136);
+}
+
+.picker{
   display: flex;
   align-items: center;
   color: rgb(136, 136, 136);
