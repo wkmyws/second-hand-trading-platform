@@ -77,16 +77,33 @@ page {
 
 .save1{
   position: absolute;
-  right:10rpx;
+  right:50rpx;
   height: 40rpx;
   width: 40rpx;
   bottom: 10rpx;
 }
+
+.SaveNum{
+  font-size: 32rpx;
+  color: #bbb;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+}
+
 .thumbs_up1{
   position: absolute;
-  right: 60rpx;
+  right: 140rpx;
   height: 40rpx;
   width: 40rpx;
+  bottom: 10rpx;
+}
+
+.ThumbNum{
+  font-size: 32rpx;
+  color: #bbb;
+  position: absolute;
+  right: 100rpx;
   bottom: 10rpx;
 }
 
