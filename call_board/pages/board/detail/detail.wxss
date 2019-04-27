@@ -4,7 +4,8 @@ page {
 
 .body {
   padding: 15rpx;
-  margin-bottom: 130rpx;
+  margin-bottom: 15rpx;
+
 }
 
 .bottom {
@@ -13,13 +14,25 @@ page {
 
 .board {
   background: white;
-  min-height: 300px;
   margin-bottom: 15rpx;
   border-radius: 2px;
   position: relative;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
+   z-index: 90;
 }
-
+.box{
+  background:#ffffff;
+  height:auto;
+  margin-bottom: 15rpx;
+  border-radius: 0 0 5% 5%;
+  padding: 5rpx 5rpx 5rpx 10rpx;
+box-shadow: 6rpx 8rpx 9rpx #ccc;
+z-index: 999;
+ position: sticky;
+}
+.comment{
+  
+}
 .passage {
   margin: auto 15rpx;
   font-size: 32rpx;
@@ -35,6 +48,7 @@ page {
 
 .image {
   margin-top: 15rpx;
+
 }
 
 .img {

@@ -5,9 +5,9 @@ page{
 .page__hd {
   padding: 30rpx 35rpx;
   text-align: center;
-  background-image: linear-gradient(to top, #db86bd 10% ,#0991c1 100%);
+    background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
   box-shadow: 0 10rpx 35rpx #dee1e8;
-
+  border-radius: 0% 0% 20% 20%;
 }
 
 .page__title {

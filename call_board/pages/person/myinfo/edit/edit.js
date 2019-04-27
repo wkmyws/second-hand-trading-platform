@@ -54,6 +54,7 @@ Page({
       my_info
     })
     app.globalData.user_info_wx = e.detail.userInfo
+    console.log(app.globalData.user_info_wx)
   },
 
   //将个人信息上传到服务器

@@ -6,9 +6,15 @@ Page({
    */
   data: {
     img_url: [
+      "http://xcx.nau.edu.cn/images/adv4.jpg?",
+      "http://xcx.nau.edu.cn/images/plus.png?",
+      "http://xcx.nau.edu.cn/images/adv1.jpg?",
+      "http://xcx.nau.edu.cn/images/adv2.jpg?",
+      "http://xcx.nau.edu.cn/images/school1.jpg?",
       "http://xcx.nau.edu.cn/images/plus.png?"
     ],
-    popup: true
+    popup: true,
+    
   },
 
   showPopup() {
@@ -17,10 +23,11 @@ Page({
 
   /*图片预览 */
   Preview(e) {
-    var idx = e.target.dataset.idx
-    var img_url = this.data.img_url
+    console.log(e.currentTarget.dataset.index);
+    var index = e.currentTarget.dataset.index;
+    var img_url = this.data.img_url;
     wx.previewImage({
-      current: img_url[idx], //当前预览的图片
+      current: img_url[index], //当前预览的图片
       urls: img_url //所有要预览的图片
     })
   },
