@@ -21,12 +21,17 @@ page {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-shadow: 6rpx 8rpx 9rpx #ccc;
   z-index: 90;
 =======
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 =======
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+=======
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+   z-index: 90;
+>>>>>>> parent of 2d5120f... 0.9.4
 =======
   box-shadow: 6rpx 8rpx 9rpx #ccc;
    z-index: 90;
@@ -42,6 +47,7 @@ page {
   margin-bottom: 15rpx;
   border-radius: 0 0 5% 5%;
   padding: 5rpx 5rpx 5rpx 10rpx;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   box-shadow: 6rpx 8rpx 9rpx #ccc;
@@ -89,6 +95,15 @@ z-index: 999;
 >>>>>>> parent of 2d5120f... 0.9.4
 =======
 >>>>>>> parent of 2d5120f... 0.9.4
+=======
+box-shadow: 6rpx 8rpx 9rpx #ccc;
+z-index: 999;
+ position: sticky;
+}
+.comment{
+  
+}
+>>>>>>> parent of 2d5120f... 0.9.4
 .passage {
   margin: auto 15rpx;
   font-size: 32rpx;
@@ -110,6 +125,7 @@ z-index: 999;
 .image {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   background: white;
   width: 100%;
 <<<<<<< HEAD
@@ -127,12 +143,17 @@ z-index: 999;
   margin-top: 15rpx;
 
 >>>>>>> parent of 2d5120f... 0.9.4
+=======
+  margin-top: 15rpx;
+
+>>>>>>> parent of 2d5120f... 0.9.4
 }
 
 <<<<<<< HEAD
 .image{
 =======
 .img {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,6 +178,11 @@ z-index: 999;
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 =======
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+=======
+  width: 32%;
+  height: 120px;
+  margin-left: 1%;
+>>>>>>> parent of 2d5120f... 0.9.4
 =======
   width: 32%;
   height: 120px;

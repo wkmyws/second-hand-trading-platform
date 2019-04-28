@@ -6,6 +6,7 @@ page {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .board {
   position: relative;
   width: 100%;
@@ -74,6 +75,9 @@ page {
   right: 15rpx;
   line-height: 70rpx;
 }
+=======
+
+>>>>>>> parent of 2d5120f... 0.9.4
 
 /*BODY*/
 =======
@@ -90,6 +94,7 @@ page {
   border-bottom: 1rpx #eee;
   box-shadow:1.5rpx 0rpx 1.5rpx 0px #eee;
   
+<<<<<<< HEAD
 >>>>>>> parent of 2d5120f... 0.9.4
 }
 
@@ -107,14 +112,23 @@ page {
 >>>>>>> parent of 2d5120f... 0.9.4
 }
 
+=======
+}
+
+>>>>>>> parent of 2d5120f... 0.9.4
 .body {
   display: flex;
   flex-direction: row;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 .text1 {
+=======
+
+.text1{
+>>>>>>> parent of 2d5120f... 0.9.4
 =======
 
 .text1{
@@ -135,6 +149,7 @@ page {
   word-break: break-all;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .text2 {
@@ -163,6 +178,9 @@ page {
 =======
 
 >>>>>>> parent of 2d5120f... 0.9.4
+=======
+
+>>>>>>> parent of 2d5120f... 0.9.4
 
 .img-plus-style {
   position: fixed;
@@ -174,10 +192,17 @@ page {
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 }
 
+<<<<<<< HEAD
 .title {
   font-size: 35rpx;
   font-weight: 600;
   text-align: center;
+=======
+/*图片*/
+
+.bottom {
+  height: 80rpx;
+>>>>>>> parent of 2d5120f... 0.9.4
 }
 
 .img {
@@ -186,6 +211,7 @@ page {
   height: 189rpx;
   margin-left: 1%;
   float: left;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
@@ -202,6 +228,8 @@ page {
   border-radius: 9rpx;
   overflow: hidden;
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+=======
+>>>>>>> parent of 2d5120f... 0.9.4
 =======
 >>>>>>> parent of 2d5120f... 0.9.4
 =======
@@ -241,6 +269,7 @@ page {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .thumbs_up1 {
   position: absolute;
   right: 160rpx;
@@ -264,11 +293,17 @@ page {
   position: absolute;
   right:50rpx;
 >>>>>>> parent of 2d5120f... 0.9.4
+=======
+.save1{
+  position: absolute;
+  right:50rpx;
+>>>>>>> parent of 2d5120f... 0.9.4
   height: 40rpx;
   width: 40rpx;
   bottom: 10rpx;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -335,12 +370,24 @@ page {
 =======
 .thumbs_up1{
 >>>>>>> parent of 2d5120f... 0.9.4
+=======
+.SaveNum{
+  font-size: 32rpx;
+  color: #bbb;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+}
+
+.thumbs_up1{
+>>>>>>> parent of 2d5120f... 0.9.4
   position: absolute;
   right: 140rpx;
   height: 40rpx;
   width: 40rpx;
   bottom: 10rpx;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .thumbs_up2 {
@@ -351,11 +398,16 @@ page {
 =======
 =======
 >>>>>>> parent of 2d5120f... 0.9.4
+=======
+>>>>>>> parent of 2d5120f... 0.9.4
 
 .ThumbNum{
   font-size: 32rpx;
   color: #bbb;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 2d5120f... 0.9.4
+=======
 >>>>>>> parent of 2d5120f... 0.9.4
 =======
 >>>>>>> parent of 2d5120f... 0.9.4
@@ -397,6 +449,7 @@ page {
   font-size: 32rpx;
   color: #bbb;
   position: absolute;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   float: right;
@@ -482,8 +535,19 @@ page {
   background: #fff;
   padding-left: 32rpx;
 <<<<<<< HEAD
+=======
+  right: 15rpx;
+  line-height: 100rpx;
 }
+.title{
+  font-size: 35rpx;
+  font-weight: 600;
+  margin: -35rpx 10rpx 8rpx 5rpx;
+>>>>>>> parent of 2d5120f... 0.9.4
+}
+/*悬浮按钮*/
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .img-plus-style {
   position: fixed;
@@ -544,6 +608,16 @@ page {
 }
 /*悬浮按钮*/
 
+.img-style {
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+  opacity: 0;
+}
+>>>>>>> parent of 2d5120f... 0.9.4
+=======
 .img-style {
   height: 100rpx;
   width: 100rpx;

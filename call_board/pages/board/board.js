@@ -12,6 +12,7 @@ Page({
     ThumbStatus: 'false', //点赞的状态
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ThumbNum: 200, //点赞的数量
     SaveStatus1:'false',
     SaveNum1: 5,
@@ -21,6 +22,9 @@ Page({
     currentTab:0,
     navbar:['首页','热榜','搜索'],
     currentTab:0,
+=======
+    ThumbNum: 20 //点赞的数量
+>>>>>>> parent of 2d5120f... 0.9.4
 =======
     ThumbNum: 20 //点赞的数量
 >>>>>>> parent of 2d5120f... 0.9.4
@@ -53,6 +57,7 @@ Page({
     var num=this.data.ThumbNum
     if(sta){
 <<<<<<< HEAD
+<<<<<<< HEAD
       this.setData({
         ThumbStatus:false,
         ThumbNum:num+1
@@ -64,6 +69,32 @@ Page({
         ThumbNum:num-1
       })
     }
+  },
+
+  plus: function () {
+    if (this.data.isPopping) { //缩回动画        
+      this.popp();
+      this.setData({
+        isPopping: false
+      })
+    } else if (!this.data.isPopping) { //弹出动画        
+      this.takeback();
+      this.setData({
+        isPopping: true
+=======
+      this.setData({
+        ThumbStatus:false,
+        ThumbNum:num+1
+      })
+    }
+    else{
+      this.setData({
+        ThumbStatus:true,
+        ThumbNum:num-1
+>>>>>>> parent of 2d5120f... 0.9.4
+      })
+    }
+    console.log("plus")
   },
 
   plus: function () {

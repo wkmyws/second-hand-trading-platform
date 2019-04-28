@@ -1,6 +1,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   拼车的小伙伴，就带？
 </view>
 
@@ -49,6 +50,9 @@
     <text class='SaveNum'>{{SaveNum}}</text>
   </view>
   <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
+=======
+<view class='box'>拼车的小伙伴，就带？
+>>>>>>> parent of 2d5120f... 0.9.4
 =======
 <view class='box'>拼车的小伙伴，就带？
 >>>>>>> parent of 2d5120f... 0.9.4
