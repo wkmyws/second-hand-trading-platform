@@ -14,53 +14,47 @@
       <image class='userhead' src='/images/test/user1.jpg'></image>
       <text class='username'>你未来的男朋友</text>
       <!--推荐-->
+      <!--公告栏视图1:有图片的模板-->
+      <view class="board" bindtap='go'>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!--公告栏视图1:有图片的模板-->
-<view class="board" bindtap='go'>
-
-  <!--头像昵称-->
-  <view class='top'>
-    <image class='userhead' src='/images/test/user1.jpg'></image>
-    <text class='username'>你未来的男朋友</text>
-    <!--时间显示栏-->
-    <text class='time'>2019.02.15</text>
-  </view>
-
-  <view class="title">约拼车的小伙伴，求带？</view>
-
-  <view class='body'>
-    <!--图片-->
-=======
-=======
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-      <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
-
-    </view>
-    <!--小图标-->
-    <!--收藏-->
-    <view class="title">约拼车的小伙伴，求带？</view>
-    <!--图片-->
-    <view class='body'>
-      <!--公告的简介-->
-      <view>
-        <view class='text1'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢!就到个惊动个按实际递交阿斯加迪静安寺基调是降低偶家爱哦的简欧埃及达四大家按察使大大上帝厚爱似乎都个少个活动个爱仕达还搜狐地哦啊哈搜IDhi1
+        <!--头像昵称-->
+        <view class='top'>
+          <image class='userhead' src='/images/test/user1.jpg'></image>
+          <text class='username'>你未来的男朋友</text>
+          <!--时间显示栏-->
+          <text class='time'>2019.02.15</text>
         </view>
-      </view>
-      <view class='image'>
-        <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
-      </view>
-    </view>
 
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='SaveNum'>{{SaveNum}}</text>
-      <text class='time'>2019.02.15</text>
-    </view>
-    <!--
+        <view class="title">约拼车的小伙伴，求带？</view>
+
+        <view class='body'>
+          <!--图片-->
+          <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
+
+        </view>
+        <!--小图标-->
+        <!--收藏-->
+        <view class="title">约拼车的小伙伴，求带？</view>
+        <!--图片-->
+        <view class='body'>
+          <!--公告的简介-->
+          <view>
+            <view class='text1'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢!就到个惊动个按实际递交阿斯加迪静安寺基调是降低偶家爱哦的简欧埃及达四大家按察使大大上帝厚爱似乎都个少个活动个爱仕达还搜狐地哦啊哈搜IDhi1
+            </view>
+          </view>
+          <view class='image'>
+            <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
+          </view>
+        </view>
+
+        <view class="SaveNum">点赞数
+          <text class='ThumbNum'>{{ThumbNum}}</text>
+          <!--点赞-->
+          收藏数
+          <text class='SaveNum'>{{SaveNum}}</text>
+          <text class='time'>2019.02.15</text>
+        </view>
+        <!--
     <image wx:if='{{SaveStatus}}' src='/images/save.png' class='save1' catchtap='ChangeSave'></image>
     <image wx:else src='/images/save1.png' class='save1' catchtap='ChangeSave'></image>
     <text class='SaveNum'>{{SaveNum}}</text>
@@ -68,193 +62,186 @@
     <image wx:else src='/images/点赞1.png' class='thumbs_up1' catchtap='ChangeThumb'></image>
     <text class='ThumbNum'>{{ThumbNum}}</text> 
     -->
-  </view>
-  <!--公告栏视图2：没有图片的模板-->
-  <view class="board">
-    <!--头像昵称-->
-    <view class='top'>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
-      <text class='username'>WXS34XHY</text>
-    </view>
-    <view class="title">约拼车的小伙伴，求带？科士大夫的范德萨发的开发金额额封口费即可法</view>
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-    <view class='image'>
-      <image class='butt' src="http://xcx.nau.edu.cn/images/adv1.jpg?" mode='scaleToFill'></image>
-    </view>
-<<<<<<< HEAD
+      </view>
+      <!--公告栏视图2：没有图片的模板-->
+      <view class="board">
+        <!--头像昵称-->
+        <view class='top'>
+          <image class='userhead' src='/images/test/user1.jpg'></image>
+          <text class='username'>WXS34XHY</text>
+        </view>
+        <view class="title">约拼车的小伙伴，求带？科士大夫的范德萨发的开发金额额封口费即可法</view>
+        <<<<<<< HEAD>>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+          <view class='image'>
+            <image class='butt' src="http://xcx.nau.edu.cn/images/adv1.jpg?" mode='scaleToFill'></image>
+          </view>
+          <<<<<<< HEAD <!--公告的简介-->
+            <view>
+              <view class='text1'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢!就到个惊动个按实际递交阿斯加迪静安寺基调是降低偶家爱哦的简欧埃及达四大家按察使大大上帝厚爱似乎都个少个活动个爱仕达还搜狐地哦啊哈搜IDhi1
+              </view>
+            </view>
+            <!--小图标-->
+            <!--点赞-->
+            <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='pic thumbs_up1' catchtap='ChangeThumb'></image>
+            <image wx:else src='/images/点赞1.png' class='pic thumbs_up1' catchtap='ChangeThumb'></image>
+            <view class='Num'>
+              <text class='ThumbNum'>{{ThumbNum}}</text>
+            </view>
 
-    <!--公告的简介-->
-    <view>
-      <view class='text1'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢!就到个惊动个按实际递交阿斯加迪静安寺基调是降低偶家爱哦的简欧埃及达四大家按察使大大上帝厚爱似乎都个少个活动个爱仕达还搜狐地哦啊哈搜IDhi1
+            <!--收藏-->
+            <image wx:if='{{SaveStatus}}' src='/images/save.png' class='pic save1' catchtap='ChangeSave'></image>
+            <image wx:else src='/images/save1.png' class='pic save1' catchtap='ChangeSave'></image>
+            <view class='Num'>
+              <text class='SaveNum'>{{SaveNum}}</text>
+            </view>
+            =======
+            <!--正文-->
+            <view class="text2">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
+            <view class="SaveNum">点赞数
+              <text class='ThumbNum'>{{ThumbNum}}</text>
+              <!--点赞-->
+              收藏数
+              <text class='ThumbNum'>{{SaveNum}}</text>
+              <!--时间显示栏-->
+              <text class='time'>2019.02.15</text>
+            </view>
+            >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423 =======
+            <view class='image'>
+              <image class='butt' src="http://xcx.nau.edu.cn/images/adv1.jpg?" mode='scaleToFill'></image>
+            </view>
+            <!--正文-->
+            <view class="text2">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
+            <view class="SaveNum">点赞数
+              <text class='ThumbNum'>{{ThumbNum}}</text>
+              <!--点赞-->
+              收藏数
+              <text class='ThumbNum'>{{SaveNum}}</text>
+              <!--时间显示栏-->
+              <text class='time'>2019.02.15</text>
+            </view>
+            >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+      </view>
+      <view class="board">
+        <!--头像昵称-->
+        <view class='top'>
+          <image class='userhead' src='/images/test/user1.jpg'></image>
+          <text class='username'>WXS34XHY</text>
+
+          <<<<<<< HEAD <<<<<<< HEAD </view>
+
+
+            <!--公告栏视图2：没有图片的模板-->
+            <view class="board">
+
+              <!--头像昵称-->
+              <view class='top'>
+                <image class='userhead' src='/images/test/user1.jpg'></image>
+                <text class='username'>WXS34XHY</text>
+                <!--时间显示栏-->
+                <view class='passage time'>2019.02.15</view>
+                <!--收藏-->
+                <image wx:if='{{SaveStatus1}}' src='/images/save.png' class='pic save1' catchtap='ChangeSave1'></image>
+                <image wx:else src='/images/save1.png' class='pic save1' catchtap='ChangeSave1'></image>
+                <view class='Num'>
+                  <text class='SaveNum'>{{SaveNum1}}</text>
+                </view>
+
+                <!--点赞-->
+                <image wx:if='{{ThumbStatus1}}' src='/images/点赞.png' class='pic thumbs_up1' catchtap='ChangeThumb1'></image>
+                <image wx:else src='/images/点赞1.png' class='pic thumbs_up1' catchtap='ChangeThumb1'></image>
+                <view class='Num'>
+                  <text class='ThumbNum'>{{ThumbNum1}}</text>
+                </view>
+
+              </view>
+
+              <!--简介-->
+              <view>
+                <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧
+                </view>
+              </view>
+
+              =======
+            </view>
+            <view class="title"></view>
+            <!--正文-->
+            <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧</view>
+            <view class="SaveNum">点赞数
+              <text class='ThumbNum'>{{ThumbNum}}</text>
+              <!--点赞-->
+              收藏数
+              <text class='ThumbNum'>{{SaveNum}}</text>
+              <!--时间显示栏-->
+              <text class='time'>2019.02.15</text>
+            </view>
+        </view>
+      </view>
+      <view hidden='{{currentTab !==1}}'>
+        <view class="board" bindtap='go'>
+          <!--头像昵称-->
+          <view class='top'>
+            <text class='num'>1</text>
+            <text class='username' style="color:#000;">南审猫竟然会游泳</text>
+            <text class='thumbs_up2'>2515105</text>
+            <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
+          </view>
+        </view>
+        <view class="board" bindtap='go'>
+          <!--头像昵称-->
+          <view class='top'>
+            <text class='num'>2</text>
+            <text class='username' style="color:#000;">南京应用技术学院</text>
+            <text class='thumbs_up2'>2412505</text>
+            <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+      <view hidden='{{currentTab !==2}}'>
+        <view class="search">
+          <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="搜一搜" selection-start="-1" selection-end="-1" cursor="-1">
+          </input>
+          <image class="miniimg" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
+        </view>
+        >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423 =======
+      </view>
+      <view class="title"></view>
+      <!--正文-->
+      <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧</view>
+      <view class="SaveNum">点赞数
+        <text class='ThumbNum'>{{ThumbNum}}</text>
+        <!--点赞-->
+        收藏数
+        <text class='ThumbNum'>{{SaveNum}}</text>
+        <!--时间显示栏-->
+        <text class='time'>2019.02.15</text>
       </view>
     </view>
-    <!--小图标-->
-    <!--点赞-->
-    <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='pic thumbs_up1' catchtap='ChangeThumb'></image>
-    <image wx:else src='/images/点赞1.png' class='pic thumbs_up1' catchtap='ChangeThumb'></image>
-    <view class='Num'>
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-    </view>
-
-    <!--收藏-->
-    <image wx:if='{{SaveStatus}}' src='/images/save.png' class='pic save1' catchtap='ChangeSave'></image>
-    <image wx:else src='/images/save1.png' class='pic save1' catchtap='ChangeSave'></image>
-    <view class='Num'>
-      <text class='SaveNum'>{{SaveNum}}</text>
-    </view>
-=======
-    <!--正文-->
-    <view class="text2">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='ThumbNum'>{{SaveNum}}</text>
-      <!--时间显示栏-->
-      <text class='time'>2019.02.15</text>
-    </view>
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-    <view class='image'>
-      <image class='butt' src="http://xcx.nau.edu.cn/images/adv1.jpg?" mode='scaleToFill'></image>
-    </view>
-    <!--正文-->
-    <view class="text2">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='ThumbNum'>{{SaveNum}}</text>
-      <!--时间显示栏-->
-      <text class='time'>2019.02.15</text>
-    </view>
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
   </view>
-  <view class="board">
-    <!--头像昵称-->
-    <view class='top'>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
-      <text class='username'>WXS34XHY</text>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-</view>
-
-
-<!--公告栏视图2：没有图片的模板-->
-<view class="board">
-
-  <!--头像昵称-->
-  <view class='top'>
-    <image class='userhead' src='/images/test/user1.jpg'></image>
-    <text class='username'>WXS34XHY</text>
-    <!--时间显示栏-->
-    <view class='passage time'>2019.02.15</view>
-    <!--收藏-->
-    <image wx:if='{{SaveStatus1}}' src='/images/save.png' class='pic save1' catchtap='ChangeSave1'></image>
-    <image wx:else src='/images/save1.png' class='pic save1' catchtap='ChangeSave1'></image>
-    <view class='Num'>
-      <text class='SaveNum'>{{SaveNum1}}</text>
+  <view hidden='{{currentTab !==1}}'>
+    <view class="board" bindtap='go'>
+      <!--头像昵称-->
+      <view class='top'>
+        <text class='num'>1</text>
+        <text class='username' style="color:#000;">南审猫竟然会游泳</text>
+        <text class='thumbs_up2'>2515105</text>
+        <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
+      </view>
     </view>
-
-    <!--点赞-->
-    <image wx:if='{{ThumbStatus1}}' src='/images/点赞.png' class='pic thumbs_up1' catchtap='ChangeThumb1'></image>
-    <image wx:else src='/images/点赞1.png' class='pic thumbs_up1' catchtap='ChangeThumb1'></image>
-    <view class='Num'>
-      <text class='ThumbNum'>{{ThumbNum1}}</text>
-    </view>
-
-  </view>
-
-  <!--简介-->
-  <view>
-    <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧
+    <view class="board" bindtap='go'>
+      <!--头像昵称-->
+      <view class='top'>
+        <text class='num'>2</text>
+        <text class='username' style="color:#000;">南京应用技术学院</text>
+        <text class='thumbs_up2'>2412505</text>
+        <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
+      </view>
     </view>
   </view>
-
-=======
+  <view hidden='{{currentTab !==2}}'>
+    <view class="search">
+      <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="搜一搜" selection-start="-1" selection-end="-1" cursor="-1">
+      </input>
+      <image class="miniimg" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
     </view>
-    <view class="title"></view>
-    <!--正文-->
-    <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧</view>
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='ThumbNum'>{{SaveNum}}</text>
-      <!--时间显示栏-->
-      <text class='time'>2019.02.15</text>
-    </view>
+    >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
   </view>
-</view>
-<view hidden='{{currentTab !==1}}'>
-  <view class="board" bindtap='go'>
-    <!--头像昵称-->
-    <view class='top'>
-      <text class='num'>1</text>
-      <text class='username' style="color:#000;">南审猫竟然会游泳</text>
-      <text class='thumbs_up2'>2515105</text>
-      <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
-    </view>
-  </view>
-   <view class="board" bindtap='go'>
-    <!--头像昵称-->
-    <view class='top'>
-      <text class='num'>2</text>
-      <text class='username' style="color:#000;">南京应用技术学院</text>
-      <text class='thumbs_up2'>2412505</text>
-      <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
-    </view>
-  </view>
-</view>
-<view hidden='{{currentTab !==2}}'>
-  <view class="search">
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="搜一搜" selection-start="-1" selection-end="-1" cursor="-1">
-    </input>
-    <image class="miniimg" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
-  </view>
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-    </view>
-    <view class="title"></view>
-    <!--正文-->
-    <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧</view>
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='ThumbNum'>{{SaveNum}}</text>
-      <!--时间显示栏-->
-      <text class='time'>2019.02.15</text>
-    </view>
-  </view>
-</view>
-<view hidden='{{currentTab !==1}}'>
-  <view class="board" bindtap='go'>
-    <!--头像昵称-->
-    <view class='top'>
-      <text class='num'>1</text>
-      <text class='username' style="color:#000;">南审猫竟然会游泳</text>
-      <text class='thumbs_up2'>2515105</text>
-      <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
-    </view>
-  </view>
-   <view class="board" bindtap='go'>
-    <!--头像昵称-->
-    <view class='top'>
-      <text class='num'>2</text>
-      <text class='username' style="color:#000;">南京应用技术学院</text>
-      <text class='thumbs_up2'>2412505</text>
-      <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
-    </view>
-  </view>
-</view>
-<view hidden='{{currentTab !==2}}'>
-  <view class="search">
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="搜一搜" selection-start="-1" selection-end="-1" cursor="-1">
-    </input>
-    <image class="miniimg" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
-  </view>
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-</view>
