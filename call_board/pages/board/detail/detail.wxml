@@ -1,8 +1,53 @@
+<view class='box'>
+<<<<<<< HEAD
+  拼车的小伙伴，就带？
+</view>
 
-<view class='box'>拼车的小伙伴，就带？
+<view class='board'>
+  <view class='top'>
+    <!--头像昵称-->
+    <image class='userhead' src='/images/test/user1.jpg'></image>
+    <text class='username'>你未来的男朋友</text>
+    <!--举报功能-->
+    <view bindtap='ToReport'>
+      <image class='pic report' src='/images/report.png'></image>
+      <view class='mini'>举报</view>
+    </view>
+
+  </view>
+
+  <!--公告的简介-->
+  <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！近似世界反击审计的打覅额范饿死公司股份净额四规范就能发 风刀霜剑覅二十个解释给谁家戈水晶宫二是二三极管进 的及发送到if二纺机剑荡四方二分类福建师范水电费规范色粉丝过妇女节森规范色股份是</view>
+
+
+  <!--图片-->
+  <view class='iamge_content'>
+    <view class='image' wx:for='{{img_url}}'>
+      <image class='moment_img' src='{{item}}' data-index='{{index}}' bindtap='Preview'></image>
+    </view>
+  </view>
+
+  <view class='bottom'>
+    <!--时间显示栏-->
+    <view class='passage time'>2019.02.15</view>
+
+    <!--图标-->
+    <image class='pic like' src="/images/点赞1.png"></image>
+    <image class='pic collect' src='/images/save1.png'></image>
+  </view>
+
+
+=======
+  <view class="title">拼车的小伙伴，就带？</view>
+  <view class="SaveNum">点赞数
+    <text class='ThumbNum'>{{ThumbNum}}</text>
+    <!--点赞-->
+    收藏数
+    <text class='SaveNum'>{{SaveNum}}</text>
+  </view>
+  <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
 </view>
 <view class='body'>
-
   <view class='board'>
     <view class='top'>
       <!--头像昵称-->
@@ -13,47 +58,48 @@
         <image class='pic report' src='/images/report.png'></image>
         <view class='mini'>举报</view>
       </view>
-
     </view>
-
     <!--公告的简介-->
     <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！近似世界反击审计的打覅额范饿死公司股份净额四规范就能发 风刀霜剑覅二十个解释给谁家戈水晶宫二是二三极管进 的及发送到if二纺机剑荡四方二分类福建师范水电费规范色粉丝过妇女节森规范色股份是</view>
-
-
     <!--图片-->
-    <view class='image' wx:for='{{img_url}}'>
-      <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview'></image>
+ 
+      <view class='image' wx:for='{{img_url}}'>
+        <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview'></image>
+    
     </view>
-
     <view class='bottom'>
       <!--时间显示栏-->
       <view class='passage time'>2019.02.15</view>
 
       <!--图标-->
-      <image class='pic like' src="/images/点赞1.png"></image>
-      <image class='pic collect' src='/images/收藏1.png'></image>
+      <image wx:if='{{SaveStatus}}' src='/images/save.png' class='save1' catchtap='ChangeSave'></image>
+      <image wx:else src='/images/save1.png' class='save1' catchtap='ChangeSave'></image>
+      <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='thumbs_up1' catchtap='ChangeThumb'></image>
+      <image wx:else src='/images/点赞1.png' class='thumbs_up1' catchtap='ChangeThumb'></image>
     </view>
-
-
   </view>
+>>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 </view>
+
 <view class="comment">
   <view class='forum'>
     <view class='talk'>评论</view>
   </view>
-
   <view class='forum'>
-    <view class='passage'>最好是小姐姐！</view>
-    <view class='username friend'>--你未来的男朋友</view>
+    <view class="top">
+      <image class='comment_head' src='/images/test/user1.jpg'></image>
+      <text class='comment_name'>最好是小姐姐</text>
+    </view>
+    <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将诶过而根据施工方将诶够呢事故而是钢结构而是那个是个和说个事</view>
   </view>
-
   <view class='forum'>
-    <view class='passage'>MDZZ</view>
-    <view class='username friend'>--一位不愿透露姓名的沙雕网友</view>
+    <view class="top">
+      <image class='comment_head' src='/images/test/user1.jpg'></image>
+      <text class='comment_name'>最好是小姐姐</text>
+    </view>
+    <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
   </view>
-
 </view>
-
 <view class='reply'>
   <!--回复-->
   <input class="input" placeholder="我也说一句"></input>
