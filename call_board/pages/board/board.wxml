@@ -7,7 +7,7 @@
   </view>
 </view>
 <view hidden='{{currentTab !==0}}' class='content'>
-  <!--公告栏视图1:有图片的模板-->
+  <!--公告栏视图1: 有图片的模板-->
   <view class="board" bindtap='go'>
     <!--头像昵称-->
     <view class='top'>
