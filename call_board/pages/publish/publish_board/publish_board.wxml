@@ -1,4 +1,6 @@
 <view class='publish'>
+  <!--标题-->
+  <input class='single' placeholder='标题'></input>
   <!--公告简介-->
   <textarea class='multiple' maxlength='400' placeholder='公告描述'></textarea>
 
@@ -6,7 +8,7 @@
   <view class="image_content">
     <!--上传的图片-->
     <view class='image' wx:for="{{img_url}}" >
-      <image class="moment_img" src="{{item}}" data-idx="{{index}}" bindtap='Preview'></image>
+      <image class="moment_img" src="{{item}}" data-index="{{index}}" bindtap='Preview' bindlongpress='Delete'></image>
     </view>
     <!--添加图片-->
     <view class='image' style='display:{{hideAdd?"none":"block"}}'>

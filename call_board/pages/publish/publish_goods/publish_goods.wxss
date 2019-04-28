@@ -44,7 +44,8 @@ page {
 }
 
 .send {
-  background: rgb(255, 209, 97);
-  width: 90%;
-  margin: 10% 5%;
+  position: fixed;
+  bottom: 5px;
+  width: 96%;
+  margin-left: 2%;
 }

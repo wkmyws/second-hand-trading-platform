@@ -40,12 +40,34 @@ Page({
 
   /*图片预览 */
   Preview(e) {
-    const idx = e.target.dataset.idx
-    const images = this.data.images
+    const index = e.target.dataset.index
     const img_url = this.data.img_url
     wx.previewImage({
-      current: images[idx], //当前预览的图片
+      current: img_url[index], //当前预览的图片
       urls: img_url //所有要预览的图片
+    })
+  },
+
+  //删除图片
+  Delete: function (e) {
+    var that = this;
+    var img_url = that.data.img_url;
+    var index = e.currentTarget.dataset.index;//获取当前长按图片下标
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          img_url.splice(index, 1);
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+        that.setData({
+          img_url
+        });
+      }
     })
   },
   /**

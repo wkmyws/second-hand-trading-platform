@@ -17,12 +17,8 @@ Page({
     SaveNum: 10, //收藏的数量
     ThumbStatus: 'false', //点赞的状态
     ThumbNum: 20,//点赞的数量
-    popup: true,
-    
-  },
 
-  showPopup() {
-    this.hidePopup(false);
+    
   },
 
   /*图片预览 */

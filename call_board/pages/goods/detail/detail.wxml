@@ -12,17 +12,17 @@
     <text class="price">￥5000</text>
   </view>
   <view class='detail'>
-  <view class="separate">商品的的数量</view>
-  <text >1台</text>
+    <view class="separate">商品的的数量</view>
+    <text>1台</text>
   </view>
   <view class='detail'>
-  <view class="separate">商品详情</view>
-  <text>苹果笔记本，质量超群</text>
-</view>
- <view class='detail'>
-  <view class="separate">商品评论</view>
-  <text>质量还可以</text>
-</view>
+    <view class="separate">商品详情</view>
+    <text>苹果笔记本，质量超群</text>
+  </view>
+  <view class='detail'>
+    <view class="separate">商品评论</view>
+    <text>质量还可以</text>
+  </view>
 
 
 </scroll-view>
@@ -38,7 +38,7 @@
   <view>手机号：
     <text catchtap='callPhone' catchlongpress="copyIt" id='{{tel}}'>{{tel}}</text>
   </view>
-    <view>微信号：
+  <view>微信号：
     <text catchlongpress="copyIt" id='{{number}}'>{{number}}</text>
   </view>
 </view>
