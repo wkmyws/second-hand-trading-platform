@@ -16,7 +16,9 @@ Page({
     ThumbStatus1: 'flase',
     ThumbNum1: 12,
     navbar:['首页','热榜','搜索'],
-    currentTab:0
+    currentTab:0,
+    navbar:['首页','热榜','搜索'],
+    currentTab:0,
   },
 navbarTap:function(e){
   this.setData({

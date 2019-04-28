@@ -1,5 +1,6 @@
 <view class='box'>
 <<<<<<< HEAD
+<<<<<<< HEAD
   拼车的小伙伴，就带？
 </view>
 
@@ -38,6 +39,8 @@
 
 
 =======
+=======
+>>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
   <view class="title">拼车的小伙伴，就带？</view>
   <view class="SaveNum">点赞数
     <text class='ThumbNum'>{{ThumbNum}}</text>
