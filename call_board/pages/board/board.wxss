@@ -1,157 +1,81 @@
 page {
   background-color: #eee;
+
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.board {
-  position: relative;
-  width: 100%;
-  height: 320rpx;
-=======
-=======
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 .nav{
   padding-top: 50rpx;
   position: sticky;
   z-index: 999;
   }
-=======
->>>>>>> parent of 2d5120f... 0.9.4
 
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 3rpx solid #fff;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+  width: 100%;
+  position: fixed;
+  top:0;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.navbar .item{
+  width: 130rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.navbar .item.active{
+  color: #e00;
+  font-size: 35rpx;
+}
+
+.navbar .item.active:after{
+  content: '';
+  display: block;
+  position: relative;
+  top: 4rpx;
+  height: 4rpx;
+  background-color: #e00;
+}
 
 .board {
   position: relative;
   width: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-  height: 300rpx;
->>>>>>> parent of 2d5120f... 0.9.4
   margin-top: 20rpx;
-  background-color: #ffffff;
+  background-color: #fff;
   border-bottom: 1rpx #eee;
-<<<<<<< HEAD
   box-shadow: 1.5rpx 0rpx 1.5rpx 0px #eee;
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-
-/*TOP*/
-
-.top {
-  display: flex;
-  height: 70rpx;
-}
-
-.userhead {
-  width: 50rpx;
-  height: 50rpx;
-  border-radius: 50rpx;
-  box-shadow: 0px 0px 0.5px 1px #eee;
-  margin: auto 15rpx;
-  display: flex;
-  overflow: hidden;
-}
-
-.username {
-  font-size: 28rpx;
-  font-weight: bold;
-  display: flex;
-  color: rgb(196, 193, 193);
-  align-items: center;
-}
-
-.time {
-  font-size: 32rpx;
-  color: #bbb;
-  position: absolute;
-  right: 15rpx;
-  line-height: 70rpx;
-}
-=======
-
->>>>>>> parent of 2d5120f... 0.9.4
-
-/*BODY*/
-=======
   padding-bottom: 10rpx;
-=======
-
-
-.board {
-  position: relative;
-  width: 100%;
-  height: 300rpx;
-  margin-top: 20rpx;
-  background-color: #ffffff;
-  border-bottom: 1rpx #eee;
-  box-shadow:1.5rpx 0rpx 1.5rpx 0px #eee;
-  
-<<<<<<< HEAD
->>>>>>> parent of 2d5120f... 0.9.4
 }
+
 
 .body {
   display: flex;
-  flex-direction: row;
 }
 
-<<<<<<< HEAD
-=======
-  padding-bottom: 10rpx;
-=======
-  box-shadow:1.5rpx 0rpx 1.5rpx 0px #eee;
-  
->>>>>>> parent of 2d5120f... 0.9.4
-}
-
-=======
-}
-
->>>>>>> parent of 2d5120f... 0.9.4
-.body {
-  display: flex;
-  flex-direction: row;
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 .text1 {
-=======
-
-.text1{
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-
-.text1{
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-
-.text1{
->>>>>>> parent of 2d5120f... 0.9.4
   position: relative;
   font-size: 28rpx;
   left: 5rpx;
+  text-indent: 6%;
   margin-right: 5rpx;
-  overflow : hidden;
-  text-overflow:unset;
+  overflow: hidden;
+  text-overflow: unset;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   word-break: break-all;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .text2 {
   position: relative;
   font-size: 28rpx;
@@ -165,22 +89,6 @@ page {
   -webkit-box-orient: vertical;
   word-break: break-all;
 }
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-
-.body {
-  display: flex;
-  flex-direction: row;
-=======
-=======
-
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-
->>>>>>> parent of 2d5120f... 0.9.4
 
 .img-plus-style {
   position: fixed;
@@ -189,51 +97,32 @@ page {
   bottom: 50rpx;
   right: 50rpx;
   z-index: 100;
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 }
 
-<<<<<<< HEAD
-.title {
-  font-size: 35rpx;
-  font-weight: 600;
-  text-align: center;
-=======
 /*图片*/
 
 .bottom {
   height: 80rpx;
->>>>>>> parent of 2d5120f... 0.9.4
+}
+
+.image {
+  margin: -30rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #f4f4f4;
 }
 
 .img {
   position: relative;
   width: 160rpx;
-  height: 189rpx;
-  margin-left: 1%;
+  height: 210rpx;
+  margin: 0 -25rpx 0 -25rpx;
   float: left;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
   border-radius: 9rpx;
   overflow: hidden;
-<<<<<<< HEAD
-=======
-}
-
-.butt {
-  width: 100%; /* 670rpx */
-  height: 268rpx;
-  box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
-  border-radius: 9rpx;
-  overflow: hidden;
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
->>>>>>> parent of 2d5120f... 0.9.4
-=======
->>>>>>> parent of 2d5120f... 0.9.4
-=======
->>>>>>> parent of 2d5120f... 0.9.4
 }
 
 .butt {
@@ -244,194 +133,75 @@ page {
   overflow: hidden;
 }
 
-.text1 {
-  position: relative;
-  font-size: 28rpx;
-  left: 5rpx;
-  margin-right: 5rpx;
-  overflow: hidden;
-  text-overflow: unset;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-}
+/*图标*/
 
 .pic {
   position: absolute;
   bottom: 10rpx;
-  width: 40rpx;
-  height: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
   text-align: auto;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.thumbs_up1 {
-  position: absolute;
-  right: 160rpx;
-=======
 .save1 {
   position: absolute;
   right: 50rpx;
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-.save1 {
-  position: absolute;
-  right: 50rpx;
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-.save1{
-  position: absolute;
-  right:50rpx;
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-.save1{
-  position: absolute;
-  right:50rpx;
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-.save1{
-  position: absolute;
-  right:50rpx;
->>>>>>> parent of 2d5120f... 0.9.4
   height: 40rpx;
   width: 40rpx;
   bottom: 10rpx;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.ThumbNum {
-  font-size: 32rpx;
-  color: #bbb;
-  position: absolute;
-  right: 100rpx;
-  bottom: 10rpx;
-=======
 .SaveNum {
   font-size: 27rpx;
   color: #bbb;
   position: relative;
   margin-left: 15rpx;
   margin-bottom:3rpx;
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-.SaveNum{
-  font-size: 32rpx;
-  color: #bbb;
-  position: absolute;
-  right: 10rpx;
-  bottom: 10rpx;
->>>>>>> parent of 2d5120f... 0.9.4
 }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-.save1 {
-  right: 60rpx;
-=======
-.SaveNum {
-  font-size: 27rpx;
-  color: #bbb;
+.num{
+    font-size: 30rpx;
+  color:#e00;
   position: relative;
-  margin-left: 15rpx;
-  margin-bottom:3rpx;
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-.SaveNum{
-  font-size: 32rpx;
-  color: #bbb;
-  position: absolute;
-  right: 10rpx;
-  bottom: 10rpx;
->>>>>>> parent of 2d5120f... 0.9.4
-}
+  margin:15rpx 30rpx 15rpx 30rpx;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.SaveNum {
-  font-size: 32rpx;
-  color: #bbb;
-=======
-=======
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 }
 .thumbs_up1 {
-=======
-.thumbs_up1{
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-.thumbs_up1{
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-.SaveNum{
-  font-size: 32rpx;
-  color: #bbb;
-  position: absolute;
-  right: 10rpx;
-  bottom: 10rpx;
-}
-
-.thumbs_up1{
->>>>>>> parent of 2d5120f... 0.9.4
   position: absolute;
   right: 140rpx;
   height: 40rpx;
   width: 40rpx;
   bottom: 10rpx;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .thumbs_up2 {
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-=======
->>>>>>> parent of 2d5120f... 0.9.4
-=======
->>>>>>> parent of 2d5120f... 0.9.4
-
-.ThumbNum{
-  font-size: 32rpx;
-  color: #bbb;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 2d5120f... 0.9.4
-=======
->>>>>>> parent of 2d5120f... 0.9.4
-=======
->>>>>>> parent of 2d5120f... 0.9.4
   position: absolute;
-  right: 10rpx;
+  right: 100rpx;
   bottom: 10rpx;
+    font-size: 28rpx;
+  display: flex;
+  color: rgb(196, 193, 193);
+  align-items: center;
+  margin-top: 10rpx;
+}
+.ThumbNum {
+  font-size: 27rpx;
+  color: #bbb;
+  position: relative;
+  margin-bottom: 3rpx;
 }
 
-<<<<<<< HEAD
-/*悬浮按钮*/
-=======
 /*用户*/
 
 .top {
   display: flex;
-  height: 100rpx;
+  height: 60rpx;
 }
 
 .userhead {
   width: 50rpx;
   height: 50rpx;
   border-radius: 80px;
-  box-shadow:0px 0px 0.5px 1px #eee;
-  margin:10rpx 15rpx 10rpx 15rpx;
+  box-shadow: 0px 0px 0.5px 1px #eee;
+  margin: 10rpx 15rpx 10rpx 15rpx;
   display: flex;
   overflow: hidden;
 }
@@ -442,19 +212,15 @@ page {
   display: flex;
   color: rgb(196, 193, 193);
   align-items: center;
-  margin-top: -25rpx;
-  }
+  margin-top: 10rpx;
+}
 
 .time {
-  font-size: 32rpx;
+  font-size: 27rpx;
   color: #bbb;
   position: absolute;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   float: right;
   right: 20rpx;
-<<<<<<< HEAD
 }
 .icon{
    position: absolute;
@@ -464,17 +230,6 @@ page {
   top: 15rpx;
   right: 20rpx;
 }
-=======
-}
-.icon{
-   position: absolute;
-  float: right;
-  width: 40rpx;
-  height: 40rpx;
-  top: 15rpx;
-  right: 20rpx;
-}
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 .title {
   font-size: 35rpx;
   font-weight: 600;
@@ -491,26 +246,6 @@ page {
   height: 80rpx;
   display: inline-block;
   overflow: hidden;
-<<<<<<< HEAD
-}
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-
-
-/*搜索*/
-
-.search {
-  display: flex;
-  flex-direction: row;
-  border: 3rpx solid #fff;
-  border-radius: 10rpx;
-  background-color: #fff;
-  margin: 10rpx;
-  position: sticky;
-  top: 50rpx;
-   padding-top: 25rpx;
-}
-
-=======
 }
 
 
@@ -528,51 +263,13 @@ page {
    padding-top: 25rpx;
 }
 
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 .search input {
   width: 100%;
   height: 80rpx;
   background: #fff;
   padding-left: 32rpx;
-<<<<<<< HEAD
-=======
-  right: 15rpx;
-  line-height: 100rpx;
 }
-.title{
-  font-size: 35rpx;
-  font-weight: 600;
-  margin: -35rpx 10rpx 8rpx 5rpx;
->>>>>>> parent of 2d5120f... 0.9.4
-}
-/*悬浮按钮*/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.img-plus-style {
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-=======
-=======
-=======
-  right: 15rpx;
-  line-height: 100rpx;
-}
-.title{
-  font-size: 35rpx;
-  font-weight: 600;
-  margin: -35rpx 10rpx 8rpx 5rpx;
->>>>>>> parent of 2d5120f... 0.9.4
-}
-/*悬浮按钮*/
-
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 .input {
   display: block;
   text-overflow: clip;
@@ -583,47 +280,3 @@ page {
   min-height: 1.4rem;
 }
 
-<<<<<<< HEAD
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
->>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
-=======
-.img-style {
-  height: 100rpx;
-  width: 100rpx;
-  position: fixed;
-  bottom: 50rpx;
-  right: 50rpx;
-  opacity: 0;
-}
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-  right: 15rpx;
-  line-height: 100rpx;
-}
-.title{
-  font-size: 35rpx;
-  font-weight: 600;
-  margin: -35rpx 10rpx 8rpx 5rpx;
-}
-/*悬浮按钮*/
-
-.img-style {
-  height: 100rpx;
-  width: 100rpx;
-  position: fixed;
-  bottom: 50rpx;
-  right: 50rpx;
-  opacity: 0;
-}
->>>>>>> parent of 2d5120f... 0.9.4
-=======
-.img-style {
-  height: 100rpx;
-  width: 100rpx;
-  position: fixed;
-  bottom: 50rpx;
-  right: 50rpx;
-  opacity: 0;
-}
->>>>>>> parent of 2d5120f... 0.9.4
