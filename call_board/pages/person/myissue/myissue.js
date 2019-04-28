@@ -4,7 +4,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    SaveStatus: 'false', //收藏的状态
+    SaveNum: 10, //收藏的数量
+    ThumbStatus: 'false', //点赞的状态
+    ThumbNum: 20,//点赞的数量
   },
 
   /**
