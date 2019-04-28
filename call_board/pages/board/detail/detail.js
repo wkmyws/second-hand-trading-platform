@@ -16,10 +16,6 @@ Page({
     ]
 =======
     ],
-    SaveStatus: 'false', //收藏的状态
-    SaveNum: 10, //收藏的数量
-    ThumbStatus: 'false', //点赞的状态
-    ThumbNum: 20,//点赞的数量
     popup: true,
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
     
@@ -43,38 +39,6 @@ Page({
       confirmText:"确认",
       cancelText:"取消"
     })
-  },
-  ChangeSave: function () {
-    var sta = this.data.SaveStatus
-    var num = this.data.SaveNum
-    if (sta) {
-      this.setData({
-        SaveStatus: false,
-        SaveNum: num + 1
-      })
-    } else {
-      this.setData({
-        SaveStatus: true,
-        SaveNum: num - 1
-      })
-    }
-  },
-
-  //点赞和取消点赞，点赞数量
-  ChangeThumb: function () {
-    var sta = this.data.ThumbStatus
-    var num = this.data.ThumbNum
-    if (sta) {
-      this.setData({
-        ThumbStatus: false,
-        ThumbNum: num + 1
-      })
-    } else {
-      this.setData({
-        ThumbStatus: true,
-        ThumbNum: num - 1
-      })
-    }
   },
 
   /**

@@ -1,10 +1,11 @@
 page {
-  background: #eee;
+  background: rgb(221, 238, 253);
 }
 
 .body {
   padding: 15rpx;
   margin-bottom: 15rpx;
+
 }
 
 .bottom {
@@ -13,9 +14,10 @@ page {
 
 .board {
   background: white;
-  margin-bottom: 5rpx;
-  border-radius: 5rpx;
+  margin-bottom: 15rpx;
+  border-radius: 2px;
   position: relative;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   box-shadow: 6rpx 8rpx 9rpx #ccc;
@@ -24,13 +26,18 @@ page {
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 =======
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+=======
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+   z-index: 90;
+>>>>>>> parent of 2d5120f... 0.9.4
 }
-
-.box {
-  background: #fff;
-  height: auto;
+.box{
+  background:#ffffff;
+  height:auto;
   margin-bottom: 15rpx;
+  border-radius: 0 0 5% 5%;
   padding: 5rpx 5rpx 5rpx 10rpx;
+<<<<<<< HEAD
   box-shadow: 6rpx 8rpx 9rpx #ccc;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -58,24 +65,25 @@ page {
 
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 =======
+=======
+box-shadow: 6rpx 8rpx 9rpx #ccc;
+z-index: 999;
+ position: sticky;
+>>>>>>> parent of 2d5120f... 0.9.4
 }
-
-.icon {
-  position: absolute;
-  float: right;
-  width: 50rpx;
-  height: 50rpx;
-  top: 15rpx;
-  right: 20rpx;
+.comment{
+  
 }
+<<<<<<< HEAD
 
 
 
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+=======
+>>>>>>> parent of 2d5120f... 0.9.4
 .passage {
   margin: auto 15rpx;
   font-size: 32rpx;
-  text-indent: 6%;
 }
 
 .passage.time {
@@ -92,6 +100,7 @@ page {
   width: 98%;
 =======
 .image {
+<<<<<<< HEAD
   background: white;
   width: 100%;
 <<<<<<< HEAD
@@ -101,12 +110,17 @@ page {
   display: flex;
   flex-wrap: wrap;
   margin-left: 1%;
+=======
+  margin-top: 15rpx;
+
+>>>>>>> parent of 2d5120f... 0.9.4
 }
 
 <<<<<<< HEAD
 .image{
 =======
 .img {
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 =======
@@ -129,6 +143,11 @@ page {
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
 =======
 >>>>>>> 2d5120fc29c6292f5a2ef6cbf7ed42fd7a98c423
+=======
+  width: 32%;
+  height: 120px;
+  margin-left: 1%;
+>>>>>>> parent of 2d5120f... 0.9.4
 }
 
 /*图标*/
@@ -155,39 +174,12 @@ page {
 }
 
 /*评论*/
-.comment {
-  position: relative;
-  margin-bottom: 150rpx;
-}
-.comment_head{
-   width: 60rpx;
-  height: 60rpx;
-  border-radius: 60rpx;
-  margin:5rpx;
-  display: block;
-  overflow: hidden;
-}
-.comment_name{
-    font-size: 30rpx;
-  display: flex;
-  color: #bbb;
-  position: relative;
-  font-weight: bold;
-  align-items: center;
-  margin-right: 15rpx;
-  margin-top: -15rpx;
-}
-.comment_tent{
-  font-size:30rpx;
-  position: relative;
-  margin: -25rpx 10rpx 5rpx 60rpx;
-  text-indent: 6%;
 
-}
 .forum {
   background: white;
   margin-top: 2rpx;
   border-top-color: #eee;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
 .talk {
@@ -247,12 +239,11 @@ page {
   font-size: 32rpx;
   font-weight: bold;
   display: flex;
-  color: #bbb;
   align-items: center;
   margin-right: 15rpx;
 }
 
-.mini {
+.mini{
   color: #bbb;
   font-size: 25rpx;
   position: absolute;
@@ -260,46 +251,8 @@ page {
   right: 10rpx;
 }
 
-
-
-/*图标*/
-
-.save1 {
-  position: absolute;
-  right: 50rpx;
-  height: 50rpx;
-  width: 50rpx;
-  bottom: 10rpx;
-}
-
-.SaveNum {
-  font-size: 27rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 15rpx;
-  margin-bottom: 3rpx;
-}
-
-.thumbs_up1 {
-  position: absolute;
-  right: 140rpx;
-  height: 50rpx;
-  width: 50rpx;
-  bottom: 10rpx;
-}
-
-.ThumbNum {
-  font-size: 27rpx;
-  color: #bbb;
-  position: relative;
-  margin-bottom: 3rpx;
-}
-
-.title {
-  position: relative;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
-  font-size: 37rpx;
-  font-weight: 600;
-  margin: 0rpx 10rpx 8rpx 15rpx;
+.friend {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
