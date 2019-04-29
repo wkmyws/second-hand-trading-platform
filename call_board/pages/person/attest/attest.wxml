@@ -1,6 +1,6 @@
 <view class="user">
   <view class="user-item">
-    <label class="name">学校:</label>
+    <text class="name">学校:</text>
     <label class='icon'></label>
     <picker class='number' bindchange='ChangeCollege' range='{{college}}'>{{selected_school}}</picker>
   </view>
@@ -8,7 +8,7 @@
 
 <view class="user">
   <view class="user-item">
-    <label class="name">学号:</label>
+    <text class="name">学号:</text>
     <label class='icon'></label>
     <input class="number" bindinput="id_input"></input>
   </view>
@@ -16,7 +16,7 @@
 
 <view class="user">
   <view class="user-item">
-    <label class="name">邮箱后缀:</label>
+    <text class="name">邮箱后缀:</text>
     <label class='icon'></label>
     <picker class='number' bindchange='mail_change' range='{{mail_example}}'>@{{mail_addr}}</picker>
   </view>

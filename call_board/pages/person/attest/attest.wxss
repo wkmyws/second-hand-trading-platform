@@ -10,14 +10,17 @@
 .user-item {
   height: 117rpx;
   line-height: 117rpx;
+  display: flex;
 }
 
 .name {
+  width: 150rpx;
   font-size: 34rpx;
+  text-align: right;
 }
 
 .number {
-  float: right;
+  text-align: center;
   border: none;
   width: 70%;
   line-height: 117rpx;

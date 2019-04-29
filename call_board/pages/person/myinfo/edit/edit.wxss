@@ -32,7 +32,7 @@ page{
 .picker{
   display: flex;
   align-items: center;
-    font-size: 32rpx;
+  font-size: 32rpx;
   color: rgb(136, 136, 136);
 }
 
