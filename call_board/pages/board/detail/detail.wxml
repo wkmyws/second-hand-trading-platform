@@ -22,12 +22,14 @@
     </view>
     <!--公告的简介-->
     <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！近似世界反击审计的打覅额范饿死公司股份净额四规范就能发 风刀霜剑覅二十个解释给谁家戈水晶宫二是二三极管进 的及发送到if二纺机剑荡四方二分类福建师范水电费规范色粉丝过妇女节森规范色股份是</view>
+
     <!--图片-->
- 
+    <view class='image_content'>
       <view class='image' wx:for='{{img_url}}'>
         <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview'></image>
-    
+      </view>
     </view>
+
     <view class='bottom'>
       <!--时间显示栏-->
       <view class='passage time'>2019.02.15</view>
@@ -40,10 +42,12 @@
     </view>
   </view>
 </view>
+
 <view class="comment">
   <view class='forum'>
     <view class='talk'>评论</view>
   </view>
+  
   <view class='forum'>
     <view class="top">
       <image class='comment_head' src='/images/test/user1.jpg'></image>
@@ -59,6 +63,7 @@
     <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
   </view>
 </view>
+
 <view class='reply'>
   <!--回复-->
   <input class="input" placeholder="我也说一句"></input>
