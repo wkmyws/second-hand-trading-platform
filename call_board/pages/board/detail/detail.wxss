@@ -236,6 +236,6 @@ page {
   margin-top: 10rpx;
   margin-bottom: 10rpx;
   font-size: 37rpx;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0rpx 10rpx 8rpx 15rpx;
 }

@@ -8,40 +8,48 @@
     </view>
   </view>
   <view class="menu">
-    <view class='item about' bindtap='tomyinfo'>
+    <view class='item' bindtap='tomyinfo'>
       <text class='sub-title'>个人信息</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
-    <view class="item about" bindtap="tomyissue">
+    <view class="item" bindtap="tomyissue">
       <text class="sub-title">我的发布</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
-    <view class="item about" bindtap="tocollect">
+    <view class="item" bindtap="tocollect">
       <text class="sub-title">我的收藏</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
   </view>
   <view class="menu">
-    <view class="item about" bindtap="showabout">
+    <view class="item" bindtap="showabout">
       <text class="sub-title">关于</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
    
       <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}" version="0.9.3">
         <text class='sub-title'>我要吐槽</text>
+        <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </navigator>
    
 
-    <view class="item about" bindtap="tohelp">
+    <view class="item" bindtap="tohelp">
       <text class="sub-title">使用帮助</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
   </view>
 
   <view class='menu'>
-   <view class='item about' bindtap='toattest'>
+   <view class='item' bindtap='toattest'>
       <text class='sub-title'>学生认证</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
-    <view class='item about' bindtap='toadmin'>
+    <view class='item' bindtap='toadmin'>
       <text class='sub-title'>管理员审核</text>
+      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
   </view>
 
