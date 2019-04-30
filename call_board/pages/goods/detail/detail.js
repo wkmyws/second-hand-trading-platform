@@ -28,8 +28,11 @@ Page({
     tel:[
       "18851962112"
     ],
-    number:[
-      "jironggen"
+    wechat:[
+"jironggen"
+    ],
+    qq:[
+      "2944414576"
     ]
 
   },
