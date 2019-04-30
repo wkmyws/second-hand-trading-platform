@@ -14,25 +14,27 @@
 }
 
 .name {
-  width: 150rpx;
+
   font-size: 34rpx;
-  text-align: right;
+  text-align: left;
 }
 
 .number {
-  text-align: center;
+  float: left;
   border: none;
   width: 70%;
+  position: relative;
   line-height: 117rpx;
   height: 117rpx;
   margin-right: 30rpx;
+  margin-left: 20rpx;
   color: #888;
   font-size: 30rpx;
 }
 
 .icon {
-  position: absolute;
-  right: 6rpx;
+  position:absolute;
+ right: 6rpx;
   margin-top: -10rpx;
   width: 20rpx;
   height: 20rpx;

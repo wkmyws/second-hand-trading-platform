@@ -24,9 +24,9 @@
 
   </view>
   <!--广告牌的位置-->
-  <!--
+ <!--
   <view class="autoplay">
-    <swiper current='{{curr}}' class='swiper' autoplay="false" previous-margin='60rpx' next-margin='130rpx' bindchange="swiperChange" interval="2500" duration="350">
+    <swiper current='{{curr}}' class='swiper' autoplay="false" previous-margin='80rpx' next-margin='80rpx' bindchange="swiperChange" interval="2500" duration="350">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item class="swiper-item">
           <image src="{{item}}" class="img {{swiperIndex == index ? 'active' : ''}}" mode="scaleToFill" bindtap='swiperAd'/>
