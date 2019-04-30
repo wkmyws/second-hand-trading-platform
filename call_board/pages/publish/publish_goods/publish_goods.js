@@ -5,7 +5,8 @@ Page({
     Class: ['新品', '书籍', '日用品', '化妆品', '服装配饰', '食品', '文具', '电子产品', '电器', '游戏交易'],
     ClassIndex: 0,
     img_url: [],
-    images: 0
+    images: 0,
+    hideAdd: 0
   },
 
   ChangeClass: function(e) {
@@ -17,29 +18,24 @@ Page({
   chooseimage: function() {
     var that = this;
     var img = this.data.images;
-    var img_url=this.data.img_url;
+    var img_url = this.data.img_url;
     var i = 0;
     wx.chooseImage({
       count: 6 - img, // 默认6
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function(res) {
-        if (res.tempFilePaths.length > 0) { //图如果满了6张，不显示加图  
-          if (img == 6||res.tempFilePaths.length==6) {
-            that.setData({
-              hideAdd: 1
-            })
-          } else {
-            that.setData({
-              hideAdd: 0
-            })
-          } //把每次选择的图push进数组 
-          for (; i < res.tempFilePaths.length; i++) {
-            img_url.push(res.tempFilePaths[i])
-          }
+        for (; i < res.tempFilePaths.length; i++) {
+          img_url.push(res.tempFilePaths[i])
+        }
+        that.setData({
+          img_url: img_url,
+          images: img + i
+        })
+        img++;
+        if (img == 6) {
           that.setData({
-            img_url: img_url,
-            images: img + i
+            hideAdd: 1
           })
         }
       }
@@ -107,7 +103,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-    $init(this)
   },
 
   /**
