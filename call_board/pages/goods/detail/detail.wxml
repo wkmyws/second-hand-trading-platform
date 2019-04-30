@@ -11,10 +11,12 @@
     <text class="title">苹果笔记本电脑</text>
     <text class="price">￥5000</text>
   </view>
+
   <view class='detail'>
     <view class="separate">商品的的数量</view>
     <text>1台</text>
   </view>
+
   <view class='detail'>
     <view class="separate">商品详情</view>
     <text>苹果笔记本，质量超群</text>
@@ -37,12 +39,33 @@
   </view>
   </view>
 
+  <!--评论-->
+  <view class="comment">
+    <view class='detail'>
+      <view class='separate'>评论</view>
+    </view>
 
+    <view class='forum'>
+      <view class="top">
+        <image class='comment_head' src='/images/test/user1.jpg'></image>
+        <text class='comment_name'>最好是小姐姐</text>
+      </view>
+      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将诶过而根据施工方将诶够呢事故而是钢结构而是那个是个和说个事</view>
+    </view>
+
+    <view class='forum'>
+      <view class="top">
+        <image class='comment_head' src='/images/test/user1.jpg'></image>
+        <text class='comment_name'>最好是小姐姐</text>
+      </view>
+      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
+    </view>
+  </view>
 </scroll-view>
+
 <view class="detail-nav">
-  <image bindtap="toCar" src="http://xcx.nau.edu.cn/images/dianzan.png?" />
-  <view class="line_nav"></view>
-  <image bindtap="addLike" src="{{}}" />
+  <image class='save' bindtap="toCar" src="http://xcx.nau.edu.cn/images/dianzan.png?" />
+
   <button class="button-red" bindtap="clickme" form-type='submit'>我想购买</button>
 </view>
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>

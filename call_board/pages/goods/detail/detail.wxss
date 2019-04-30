@@ -21,7 +21,7 @@ swiper-item image {
   flex-direction: column;
   margin-top: 15rpx;
   margin-bottom: 0rpx;
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .detail .title {
@@ -29,23 +29,23 @@ swiper-item image {
   margin: 10rpx;
   color: black;
   text-align: justify;
-
 }
 
 .detail .price {
   color: red;
   font-size: 40rpx;
   margin: 10rpx;
-
 }
-.separate{
-    font-size: 35rpx;
+
+.separate {
+  font-size: 35rpx;
   color: black;
   text-align: justify;
   font-weight: 500;
   padding: 5rpx;
   border-bottom: 1rpx #eee solid;
 }
+
 .line_flag {
   width: 80rpx;
   height: 1rpx;
@@ -66,49 +66,34 @@ swiper-item image {
 
 .detail-nav {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  float: left;
   background-color: #fff;
   position: fixed;
   bottom: 0;
-  right: 0;
-  z-index: 1;
   width: 100%;
   height: 100rpx;
 }
 
+.icon{
+  width: 100rpx;
+}
+
+.save{
+  width: 70rpx;
+  height: 70rpx;
+  border-right: 2px #bbb solid
+}
 
 .button-red {
   background: linear-gradient(to right, #ff7a34, #ee32ff);
   color: #fff;
   border-radius: 50px;
-  padding: 0px;
   width: 150px;
   height: 35px;
+  position: fixed;
+  right: 20rpx;
   line-height: 35px;
-  margin-top: 5px;
-  margin-right: 15px;
-}
-
-
-
-button {
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30rpx;
-  border-radius: 0rpx;
-  width: 50%;
-  height: 100%;
-  line-height: 100rpx;
-}
-
-.detail-nav image {
-  width: 70rpx;
-  height: 50rpx;
-  margin: 20rpx 40rpx;
+  margin: auto 0px;
 }
 
 .line_nav {
@@ -119,7 +104,6 @@ button {
 
 /* 占位 */
 
-
 text {
   display: block;
   height: 60rpx;
@@ -127,8 +111,6 @@ text {
   font-size: 30rpx;
   margin: 10rpx;
 }
-
-
 
 .maskLayer {
   width: 100%;
@@ -142,6 +124,7 @@ text {
   z-index: 1000;
   color: #fff;
 }
+
 .choose {
 
   width: 100%;
@@ -194,7 +177,6 @@ text {
   margin-top: 2rpx;
   border-top-color: #eee;
 }
-
 
 .top {
   display: flex;
