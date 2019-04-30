@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -63,9 +63,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "publish-board",
-					"pathName": "pages/publish/publish_board",
+					"pathName": "pages/publish/publish_board/publish_board",
 					"query": "",
 					"scene": null
 				},

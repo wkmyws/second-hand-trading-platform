@@ -32,8 +32,9 @@ Page({
           img_url: img_url,
           images: img + i
         })
-        img++;
-        if (img == 6) {
+        img+=i;
+        console.log(img);
+        if (img >= 6) {
           that.setData({
             hideAdd: 1
           })
