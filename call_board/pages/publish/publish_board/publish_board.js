@@ -7,7 +7,7 @@ Page({
   data: {
     img_url: [],
     images: 0,
-    hideAdd:0
+    hideAdd: 0
   },
 
   chooseimage: function () {
@@ -27,7 +27,7 @@ Page({
           img_url: img_url,
           images: img + i
         })
-        img+=i;
+        img += i;
         if (img == 6) {
           that.setData({
             hideAdd: 1

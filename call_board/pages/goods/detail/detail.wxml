@@ -38,29 +38,6 @@
     <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
   </view>
   </view>
-
-  <!--评论-->
-  <view class="comment">
-    <view class='detail'>
-      <view class='separate'>评论</view>
-    </view>
-
-    <view class='forum'>
-      <view class="top">
-        <image class='comment_head' src='/images/test/user1.jpg'></image>
-        <text class='comment_name'>最好是小姐姐</text>
-      </view>
-      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将诶过而根据施工方将诶够呢事故而是钢结构而是那个是个和说个事</view>
-    </view>
-
-    <view class='forum'>
-      <view class="top">
-        <image class='comment_head' src='/images/test/user1.jpg'></image>
-        <text class='comment_name'>最好是小姐姐</text>
-      </view>
-      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
-    </view>
-  </view>
 </scroll-view>
 
 <view class="detail-nav">
