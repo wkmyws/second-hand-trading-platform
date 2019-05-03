@@ -9,13 +9,13 @@ Page({
     hideAdd: 0 //0为显示，1为隐藏
   },
 
-  ChangeClass: function(e) {
+  ChangeClass: function (e) {
     this.setData({
       ClassIndex: e.detail.value
     })
   },
 
-  chooseimage: function() {
+  chooseimage: function () {
     var that = this;
     var img = this.data.images;
     var img_url = this.data.img_url;
@@ -24,7 +24,7 @@ Page({
       count: 6 - img, // 默认6
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
-      success: function(res) {
+      success: function (res) {
         for (; i < res.tempFilePaths.length; i++) {
           img_url.push(res.tempFilePaths[i])
         }
@@ -53,7 +53,7 @@ Page({
     })
   },
   //删除图片
-  Delete: function(e) {
+  Delete: function (e) {
     var that = this;
     var img_url = that.data.img_url;
     var img = that.data.images;
@@ -61,7 +61,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确定要删除此图片吗？',
-      success: function(res) {
+      success: function (res) {
         if (res.confirm) {
           console.log('点击确定了');
           img_url.splice(index, 1);
@@ -87,52 +87,53 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function (options) { },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+  onUnload: function () {
+  },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 

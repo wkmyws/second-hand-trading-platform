@@ -21,28 +21,22 @@
     <view class="separate">商品详情</view>
     <text>苹果笔记本，质量超群</text>
   </view>
-
-  <!--评论-->
-  <view class="comment">
-    <view class='detail'>
-      <view class='separate'>评论</view>
+ <view class="comment">
+    <view class="separate">商品评论</view>
+     <view class='forum'>
+    <view class="top">
+      <image class='comment_head' src='/images/test/user1.jpg'></image>
+      <text class='comment_name'>最好是小姐姐</text>
     </view>
-
-    <view class='forum'>
-      <view class="top">
-        <image class='comment_head' src='/images/test/user1.jpg'></image>
-        <text class='comment_name'>最好是小姐姐</text>
-      </view>
-      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将诶过而根据施工方将诶够呢事故而是钢结构而是那个是个和说个事</view>
+    <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将诶过而根据施工方将诶够呢事故而是钢结构而是那个是个和说个事</view>
+  </view>
+  <view class='forum'>
+    <view class="top">
+      <image class='comment_head' src='/images/test/user1.jpg'></image>
+      <text class='comment_name'>最好是小姐姐</text>
     </view>
-
-    <view class='forum'>
-      <view class="top">
-        <image class='comment_head' src='/images/test/user1.jpg'></image>
-        <text class='comment_name'>最好是小姐姐</text>
-      </view>
-      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
-    </view>
+    <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将</view>
+  </view>
   </view>
 </scroll-view>
 
@@ -54,10 +48,13 @@
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
   <view>卖者的联系方式</view>
-  <view>手机号：
+  <view>手机号：(点击可拨打）
     <text catchtap='callPhone' catchlongpress="copyIt" id='{{tel}}'>{{tel}}</text>
   </view>
-  <view>微信号：
-    <text catchlongpress="copyIt" id='{{number}}'>{{number}}</text>
+  <view>微信号：（长按可复制）
+    <text catchlongpress="copyIt" id='{{number}}'>{{wechat}}</text>
+  </view>
+    <view>QQ:（长按可复制）
+    <text catchlongpress="copyIt" id='{{number}}'>{{qq}}</text>
   </view>
 </view>

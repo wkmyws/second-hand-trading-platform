@@ -40,22 +40,22 @@
 .menu .item {
   border-bottom: 1px #eee solid;
   background: #fff;
-  padding: 16rpx;
-
+  padding: 12rpx;
 }
 
 .menu .item .sub-title {
-
   font-size: 32rpx;
   line-height: 1.75em;
   color: #333;
 }
+
 .menu .item .arrow {
   float: right;
   height: 30rpx;
   width: 18rpx;
-  margin: 16rpx 24rpx;
+  margin: 16rpx 16rpx;
 }
+
 page {
   background: #eee;
 }

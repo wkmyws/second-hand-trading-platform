@@ -126,7 +126,7 @@ text {
 }
 
 .choose {
-  height: 300rpx;
+
   width: 100%;
   overflow: hidden;
   position: fixed;
@@ -138,40 +138,40 @@ text {
   border-top-right-radius: 20rpx;
   border-top-left-radius: 20rpx;
 }
-
 /*评论*/
-
 .comment {
   position: relative;
-  margin-bottom: 130rpx;
+  margin-bottom: 120rpx;
+    display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+    background-color: #fff;
 }
-
-.comment_head {
-  width: 60rpx;
+.comment_head{
+   width: 60rpx;
   height: 60rpx;
   border-radius: 60rpx;
-  margin: 5rpx;
+  margin:5rpx;
   display: block;
   overflow: hidden;
 }
-
-.comment_name {
-  font-size: 30rpx;
+.comment_name{
+    font-size: 30rpx;
   display: flex;
   color: #bbb;
   position: relative;
   font-weight: bold;
   align-items: center;
   margin-right: 15rpx;
-  margin-top: -10rpx;
+  margin-top: -15rpx;
 }
-
-.comment_tent {
-  font-size: 30rpx;
+.comment_tent{
+  font-size:30rpx;
+  position: relative;
   margin: -25rpx 10rpx 5rpx 60rpx;
   text-indent: 6%;
-}
 
+}
 .forum {
   background: white;
   margin-top: 2rpx;
