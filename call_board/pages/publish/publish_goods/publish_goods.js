@@ -6,7 +6,7 @@ Page({
     ClassIndex: 0,
     img_url: [],
     images: 0,
-    hideAdd: 0
+    hideAdd: 0 //0为显示，1为隐藏
   },
 
   ChangeClass: function(e) {
@@ -32,7 +32,7 @@ Page({
           img_url: img_url,
           images: img + i
         })
-        img+=i;
+        img += i;
         console.log(img);
         if (img >= 6) {
           that.setData({
@@ -56,6 +56,7 @@ Page({
   Delete: function(e) {
     var that = this;
     var img_url = that.data.img_url;
+    var img = that.data.images;
     var index = e.currentTarget.dataset.index; //获取当前长按图片下标
     wx.showModal({
       title: '提示',
@@ -64,13 +65,22 @@ Page({
         if (res.confirm) {
           console.log('点击确定了');
           img_url.splice(index, 1);
+          that.setData({
+            img_url
+          })
+          that.setData({
+            images: img - 1
+          })
+          img--;
+          if (img < 6) {
+            that.setData({
+              hideAdd: 0
+            })
+          }
         } else if (res.cancel) {
           console.log('点击取消了');
           return false;
         }
-        that.setData({
-          img_url
-        });
       }
     })
   },
@@ -103,8 +113,7 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
-  },
+  onUnload: function() {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
