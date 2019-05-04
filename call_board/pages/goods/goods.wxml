@@ -51,7 +51,7 @@
           <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
         </block>
       </view>
-      <view class="right">
+      <view class="right" bindtap='input'>
         <block wx:for="{{note}}" wx:key="">
           <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
         </block>

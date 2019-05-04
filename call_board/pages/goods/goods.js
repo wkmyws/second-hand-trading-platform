@@ -3,11 +3,11 @@ const app = getApp()
 Page({
   data: {
     currentTab: 0,
-    navScrollLeft: 0,//顶部栏的左边置左
+    navScrollLeft: 0, //顶部栏的左边置左
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    swiperH: '',//广告牌
+    swiperH: '', //广告牌
     swiperIndex: 0,
     isPopping: false, //是否已经弹出     
     animPlus: {}, //旋转动画   
@@ -41,18 +41,17 @@ Page({
       {
         text: '文具'
       }
-    ],//顶部栏的内容
+    ], //顶部栏的内容
     imgUrls: [
       "http://xcx.nau.edu.cn/images/school5.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school4.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school7.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school6.jpg?" + Math.random() / 9999
-    ],//广告牌的图片
-    note: [
-      {
+    ], //广告牌的图片
+    note: [{
         name: '繁星点点',
         heart_num: '1',
-        tit:'平凡的世界',
+        tit: '平凡的世界',
         title: '该书以中国70年代中期到80年代中期十年间为背景，通过复杂的矛盾纠葛，以孙少安和孙少平两兄弟为中心，刻画了当时社会各阶层众多普通人的形象；',
         url: 'http://xcx.nau.edu.cn/images/book.jpg?',
         avatar: 'http://img4.imgtn.bdimg.com/it/u=349345436,3394162868&fm=26&gp=0.jpg'
@@ -61,7 +60,7 @@ Page({
         name: '繁星点点',
         heart_num: '2',
         tit: '苹果笔记本',
-        title:  '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
+        title: '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
         url: 'http://xcx.nau.edu.cn/images/goods.jpg?',
         avatar: 'http://img4.imgtn.bdimg.com/it/u=349345436,3394162868&fm=26&gp=0.jpg'
       },
@@ -69,7 +68,7 @@ Page({
         name: '繁星点点',
         heart_num: '3',
         tit: '苹果笔记本',
-        title:  '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
+        title: '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
         url: 'http://xcx.nau.edu.cn/images/goods.jpg?',
         avatar: 'http://img4.imgtn.bdimg.com/it/u=349345436,3394162868&fm=26&gp=0.jpg'
       }, {
@@ -92,7 +91,7 @@ Page({
         name: '繁星点点',
         heart_num: '6',
         tit: '苹果笔记本',
-        title:    '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
+        title: '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
         url: 'http://xcx.nau.edu.cn/images/goods.jpg?',
         avatar: 'http://img4.imgtn.bdimg.com/it/u=349345436,3394162868&fm=26&gp=0.jpg'
       },
@@ -100,7 +99,7 @@ Page({
         name: '繁星点点好啊哈哈',
         heart_num: '7',
         tit: '苹果笔记本',
-        title:     '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
+        title: '苹果笔记本在用工用料和质量上面是非常不错的，而且它有它独特的macos系统；',
         url: 'http://xcx.nau.edu.cn/images/goods.jpg?',
         avatar: 'http://img4.imgtn.bdimg.com/it/u=349345436,3394162868&fm=26&gp=0.jpg'
       }, {
@@ -111,7 +110,7 @@ Page({
         url: 'http://xcx.nau.edu.cn/images/book.jpg?',
         avatar: 'http://img4.imgtn.bdimg.com/it/u=349345436,3394162868&fm=26&gp=0.jpg'
       }
-    ]//瀑布流的样式数据
+    ] //瀑布流的样式数据
   },
   plus: function() {
     if (this.data.isPopping) { //缩回动画        
@@ -166,7 +165,7 @@ Page({
       duration: 500,
       timingFunction: 'ease-out'
     })
-    animationPlus.rotateZ(360).step();//各个旋转角度
+    animationPlus.rotateZ(360).step(); //各个旋转角度
     animationcollect.translate(0, -80).rotateZ(360).opacity(1).step();
     animationTranspond.translate(-56, -56).rotateZ(360).opacity(1).step();
     animationInput.translate(-80, -0).rotateZ(360).opacity(1).step();
@@ -194,7 +193,7 @@ Page({
       duration: 500,
       timingFunction: 'ease-out'
     })
-    animationPlus.rotateZ(0).step();//收回旋转角度
+    animationPlus.rotateZ(0).step(); //收回旋转角度
     animationcollect.translate(0, 0).rotateZ(0).opacity(0).step();
     animationTranspond.translate(0, 0).rotateZ(0).opacity(0).step();
     animationInput.translate(0, 0).rotateZ(0).opacity(0).step();
@@ -230,18 +229,18 @@ Page({
       })
     }
     wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          pixelRatio: res.pixelRatio,
-          windowHeight: res.windowHeight,
-          windowWidth: res.windowWidth
-        })
-      },
-    }),
-    wx.setNavigationBarColor({
-      frontColor: '#000000',
-      backgroundColor: '#eee'
-    })
+        success: (res) => {
+          this.setData({
+            pixelRatio: res.pixelRatio,
+            windowHeight: res.windowHeight,
+            windowWidth: res.windowWidth
+          })
+        },
+      }),
+      wx.setNavigationBarColor({
+        frontColor: '#000000',
+        backgroundColor: '#eee'
+      })
   },
 
   switchNav(event) {
@@ -267,23 +266,23 @@ Page({
       currentTab: cur,
       navScrollLeft: (cur - 2) * singleNavWidth
     });
-  },//顶部栏
+  }, //顶部栏
   swiperChange: function(e) {
     this.setData({
       swiperIndex: e.detail.current
     })
   },
-  swiperAd: function () {
+  swiperAd: function() {
     wx.navigateTo({
       url: '../goods/advertise/advertise',
     })
-  },//广澳牌
-  
-  switchDetail: (e) =>{
-  wx.navigateTo({
-    url: '../goods/detail/detail',
-  })
-},
+  }, //广澳牌
+
+  switchDetail: (e) => {
+    wx.navigateTo({
+      url: '../goods/detail/detail',
+    })
+  },
   onReady: function() { // 生命周期函数--监听页面初次渲染完成  
   },
   onShow: function() { // 生命周期函数--监听页面显示  
@@ -305,7 +304,7 @@ Page({
       title: 'title', // 分享标题   
       desc: 'desc', // 分享描述        
       path: 'path', // 分享路径 
-      
+
     }
   }
 
