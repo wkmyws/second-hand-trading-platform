@@ -222,9 +222,7 @@
   font-family: 'PingFang SC-Medium';
 }
 
-.name image {
-  flex: 0 0 30rpx;
-}
+
 
 .item-title-box {
   display: flex;
