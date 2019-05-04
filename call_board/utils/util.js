@@ -208,6 +208,7 @@ function sha1(s) {
   return hex;
 }
 
+
 module.exports = {
   sha1:sha1,
   formatTime: formatTime,
@@ -215,5 +216,5 @@ module.exports = {
   base64_decode: base64_decode,
   utf8_decode: utf8_decode,
   utf16to8: utf16to8,
-  getCurrentPageUrl: getCurrentPageUrl
+  getCurrentPageUrl: getCurrentPageUrl,
 }

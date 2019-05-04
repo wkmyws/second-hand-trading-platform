@@ -10,6 +10,7 @@ Page({
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
     var sign = util.sha1(""+timestamp+app.globalData.user_info.user_id)
+    
     wx.request({
       url: app.globalData.URL + "user/getUserInfo.php",
       data: {
