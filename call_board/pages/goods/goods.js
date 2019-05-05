@@ -45,6 +45,7 @@ Page({
     timestamp = String(timestamp / 1000);
 
     var sign = util.sha1("" + timestamp )
+
     wx.request({
       url: app.globalData.URL + "goods/getGoodsTypeList.php",
       data: {
@@ -63,6 +64,10 @@ Page({
         //console.log(res_data)
         that.setData({
           navData:res_data
+        })
+        wx.setStorage({
+          key: 'goods_classes',
+          data: res_data,
         })
       }
     })
@@ -96,7 +101,7 @@ Page({
         that.setData({
           note: res_data.goods_list
         })
-        console.log(that.data.note)
+        //console.log(that.data.note)
       }
     })
 

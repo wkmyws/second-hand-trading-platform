@@ -1,12 +1,10 @@
 <view class="publish">
 
-  <input class='single' maxlength='15' placeholder='商品名称'></input>
+  <input bindinput = 'get_title' class='single' maxlength='20' placeholder='商品名称'></input>
 
-  <input class='single' maxlength='10' placeholder='价格' type='number'></input>
+  <input bindinput = 'get_price' class='single' maxlength='10' placeholder='价格' type='number'></input>
 
-  <input class='single' maxlength='10' placeholder='数量' type='number'></input>
-
-  <textarea class='multiple' maxlength='150' placeholder='描述宝贝的磨损状况、转手原因等'></textarea>
+  <textarea bindinput = 'get_content' class='multiple' maxlength='200' placeholder='描述宝贝的磨损状况、转手原因等'></textarea>
 
   <!--图片展示区域-->
   <view class="image_content">
@@ -21,11 +19,9 @@
   </view>
 
   <view class='single'>
-    <picker class='select' bindchange='ChangeClass' range='{{Class}}'>类别：{{Class[ClassIndex]}}</picker>
+    <picker class='select' bindchange='get_type' range='{{classes}}'>类别：{{classes[classes_index]}}</picker>
   </view>
 
-  <input class='single' placeholder='电话号码' maxlength='11' type='number'></input>
-
-  <button class='send' bindtap='gethandle'>确认发布</button>
+  <button class='send' bindtap='submit'>确认发布</button>
 
 </view>

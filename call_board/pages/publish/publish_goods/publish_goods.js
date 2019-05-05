@@ -1,44 +1,120 @@
+var util = require('../../../utils/util.js');
+const app = getApp()
 Page({
-
   /* 页面的初始数据 */
   data: {
-    Class: ['新品', '书籍', '日用品', '化妆品', '服装配饰', '食品', '文具', '电子产品', '电器', '游戏交易'],
-    ClassIndex: 0,
+    classes: [],
+    classes_index: 0,
     img_url: [],
     images: 0,
-    hideAdd: 0 //0为显示，1为隐藏
+    hideAdd: 0, //0为显示，1为隐藏
+    goods_title:null,
+    goods_price:null,
+    goods_content:null,
   },
 
-  ChangeClass: function (e) {
+  get_type: function (e) {
     this.setData({
-      ClassIndex: e.detail.value
+      classes_index: e.detail.value
     })
+  },
+  get_title: function (e) {
+    this.setData({
+      goods_title:e.detail.value
+    })
+  },
+  get_price: function (e) {
+    this.setData({
+      goods_price:e.detail.value
+    })
+  },
+  get_content: function (e) {
+    this.setData({
+      goods_content: e.detail.value
+    })
+  },
+  submit:function(e){
+    var that = this
+    console.log(that.data.img_url)
   },
 
   chooseimage: function () {
     var that = this;
-    var img = this.data.images;
-    var img_url = this.data.img_url;
-    var i = 0;
+    var img = that.data.images;
+    var img_url = that.data.img_url;
+
     wx.chooseImage({
-      count: 6 - img, // 默认6
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
+      count: 5 - img, // 默认5
+      sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function (res) {
-        for (; i < res.tempFilePaths.length; i++) {
-          img_url.push(res.tempFilePaths[i])
+        var image = new Object()
+
+        for (var i = 0; i < res.tempFilePaths.length; ) {
+          image = {}
+          image.url = res.tempFilePaths[i]
+          console.log(i + " " + image.url)
+          wx.getFileInfo({
+            filePath: image.url,
+            digestAlgorithm:'sha1',
+            success(res){
+              image.sha1 = res.digest
+
+
+              var timestamp = Date.parse(new Date());
+              timestamp = String(timestamp / 1000);
+              var data = {
+                "picture_sha1": image.sha1
+              }
+              data = JSON.stringify(data)
+              data = util.base64_encode(data)
+              var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+              wx.request({
+                url: app.globalData.URL + "upload/registerImage.php",
+                data: {
+                  "version": 1,
+                  "time": timestamp,
+                  "data": data,
+                  "sign": sign,
+                  "token": app.globalData.token
+                },
+                method: 'POST',
+                header: {
+                  "content-type": "application/json"
+                },
+                success:res=>{
+                  var res_data = util.base64_decode(res.data.data)
+                  res_data = JSON.parse(res_data)
+                  //console.log(res_data)
+                  image.id = res_data.picture_id
+                  //console.log(image)
+                },
+                complete:res=>{
+                  img_url.push(image)
+                  i++
+                }
+              })
+            },
+
+          })
+
+        
         }
+        console.log(img_url)
+
         that.setData({
           img_url: img_url,
           images: img + i
         })
+
         img += i;
-        console.log(img);
-        if (img >= 6) {
+
+        if (img >= 5) {
           that.setData({
             hideAdd: 1
           })
         }
+
       }
     })
   },
@@ -47,10 +123,12 @@ Page({
   Preview(e) {
     const index = e.target.dataset.index
     const img_url = this.data.img_url
+
     wx.previewImage({
-      current: img_url[index], //当前预览的图片
+      current: img_url[index].url, //当前预览的图片
       urls: img_url //所有要预览的图片
     })
+
   },
   //删除图片
   Delete: function (e) {
@@ -72,7 +150,7 @@ Page({
             images: img - 1
           })
           img--;
-          if (img < 6) {
+          if (img < 5) {
             that.setData({
               hideAdd: 0
             })
@@ -87,7 +165,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) { },
+  onLoad: function (options) { 
+    var that = this
+    wx.getStorage({
+      key: 'goods_classes',
+      success: function(res) {
+        console.log(res.data)
+        var data = []
+        for(var i in res.data){
+          data.push(res.data[i].type_name)
+        }
+        that.setData({
+          classes:data
+        })
+      },
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

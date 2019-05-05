@@ -62,9 +62,11 @@ Page({
     var that = this;
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
+    
     var data = that.data.my_info
     data = JSON.stringify(data)
     data = util.base64_encode(data)
+
     var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
     wx.request({
       url: app.globalData.URL + "user/setUserInfo.php",
