@@ -42,73 +42,72 @@ Page({
     var that = this;
     var img = that.data.images;
     var img_url = that.data.img_url;
-
     wx.chooseImage({
       count: 5 - img, // 默认5
       sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function (res) {
-        var image = new Object()
-
-        for (var i = 0; i < res.tempFilePaths.length; ) {
-          image = {}
-          image.url = res.tempFilePaths[i]
-          console.log(i + " " + image.url)
-          wx.getFileInfo({
-            filePath: image.url,
-            digestAlgorithm:'sha1',
-            success(res){
-              image.sha1 = res.digest
-
-
-              var timestamp = Date.parse(new Date());
-              timestamp = String(timestamp / 1000);
-              var data = {
-                "picture_sha1": image.sha1
-              }
-              data = JSON.stringify(data)
-              data = util.base64_encode(data)
-              var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-              wx.request({
-                url: app.globalData.URL + "upload/registerImage.php",
-                data: {
-                  "version": 1,
-                  "time": timestamp,
-                  "data": data,
-                  "sign": sign,
-                  "token": app.globalData.token
-                },
-                method: 'POST',
-                header: {
-                  "content-type": "application/json"
-                },
-                success:res=>{
-                  var res_data = util.base64_decode(res.data.data)
-                  res_data = JSON.parse(res_data)
-                  //console.log(res_data)
-                  image.id = res_data.picture_id
-                  //console.log(image)
-                },
-                complete:res=>{
-                  img_url.push(image)
-                  i++
+        function get_data(){
+          return new Promise((resolve,reject) => {
+            var image_url = res.tempFilePaths[i]
+            //console.log(image_url)
+            var data = {}
+            wx.getFileInfo({
+              filePath: image_url,
+              digestAlgorithm: 'sha1',
+              success(res) {
+                var image_sha1 = res.digest
+                var timestamp = Date.parse(new Date());
+                timestamp = String(timestamp / 1000);
+                var data = {
+                  "picture_sha1": image_sha1
                 }
-              })
-            },
-
+                data = JSON.stringify(data)
+                data = util.base64_encode(data)
+                var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+                wx.request({
+                  url: app.globalData.URL + "upload/registerImage.php",
+                  data: {
+                    "version": 1,
+                    "time": timestamp,
+                    "data": data,
+                    "sign": sign,
+                    "token": app.globalData.token
+                  },
+                  method: 'POST',
+                  header: {
+                    "content-type": "application/json"
+                  },
+                  success: res => {
+                    var res_data = util.base64_decode(res.data.data)
+                    res_data = JSON.parse(res_data)
+                    data = {
+                      url: image_url,
+                      id: res_data.picture_id,
+                      sha1: image_sha1
+                    }
+                    resolve(data)
+                  },
+                })
+              },
+            })  
           })
-
-        
         }
+        var promise_list = []
+        for (var i in res.tempFilePaths) {
+          promise_list.push(get_data())
+        }
+        Promise.all(promise_list).then(function (data) {
+          for (i = 0; i < data.length; i++)
+            img_url.push(data[i])
+        })
         console.log(img_url)
 
         that.setData({
           img_url: img_url,
           images: img + i
         })
-
         img += i;
-
         if (img >= 5) {
           that.setData({
             hideAdd: 1
