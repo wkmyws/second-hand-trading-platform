@@ -222,8 +222,6 @@
   font-family: 'PingFang SC-Medium';
 }
 
-
-
 .item-title-box {
   display: flex;
   position: relative;

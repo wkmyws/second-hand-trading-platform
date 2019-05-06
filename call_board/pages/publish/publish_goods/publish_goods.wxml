@@ -1,27 +1,27 @@
 <view class="publish">
 
-  <input bindinput = 'get_title' class='single' maxlength='20' placeholder='商品名称'></input>
+  <input bindinput = 'get_title' class='single-top' maxlength='20' placeholder='商品名称'></input>
 
   <input bindinput = 'get_price' class='single' maxlength='10' placeholder='价格' type='number'></input>
+   <input bindinput = 'get_price' class='single' maxlength='10' placeholder='数量' type='number'></input>
+   <picker class='single' bindchange='get_type' range='{{classes}}'>类别：{{classes[classes_index]}}</picker>
 
-  <textarea bindinput = 'get_content' class='multiple' maxlength='200' placeholder='描述宝贝的磨损状况、转手原因等'></textarea>
+  <textarea bindinput = 'get_content' class='multiple' maxlength='200' placeholder='描述宝贝的功能，特点及转手原因等'></textarea>
 
   <!--图片展示区域-->
   <view class="image_content">
   <!--上传的图片-->
     <view class='image' wx:for="{{img_url}}">
-      <image class="moment_img" src="{{item}}" data-index="{{index}}" bindtap='Preview' bindlongpress='Delete'></image>
+      <image class="moment_img" src="{{item}}" data-index="{{index}}" bindtap='Preview' bindlongpress='Delete' mode="aspectFill"></image>
     </view>
     <!--添加图片-->
     <view class='image' style='display:{{hideAdd?"none":"block"}}'>
-      <image bindtap="chooseimage" class="moment_img" src='/images/add.png'></image>
+      <image bindtap="chooseimage" class="moment_img"src="http://xcx.nau.edu.cn/images/untitled.png?"></image>
     </view>
   </view>
 
-  <view class='single'>
-    <picker class='select' bindchange='get_type' range='{{classes}}'>类别：{{classes[classes_index]}}</picker>
-  </view>
-
+</view>
+<view>
   <button class='send' bindtap='submit'>确认发布</button>
 
 </view>
