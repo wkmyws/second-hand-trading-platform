@@ -10,19 +10,14 @@
 
     <view>
       <!--顶部的导航栏-->
-      <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+     
+ <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
         <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
           <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.type_name}}</view>
           <!--tab之间的切换-->
         </block>
       </scroll-view>
-
-      <!-- 页面内容 -->
-      <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
-        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
-          {{tabItem}}
-        </swiper-item>
-      </swiper>
+    
 
     </view>
     <!--广告牌的位置-->
@@ -39,7 +34,7 @@
 -->
     <view>
       <!--悬浮按钮-->
-      <image src="http://xcx.nau.edu.cn/images/timge.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="publish"></image>
+      <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="publish"></image>
     </view>
     <view>
       <!--下面的瀑布流-->
