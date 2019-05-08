@@ -108,10 +108,6 @@ Page({
 
   },
 
-
-
-
-
   switchNav(event) {
     var cur = event.currentTarget.dataset.current;
     //每个tab选项宽度占1/5
@@ -136,6 +132,7 @@ Page({
       navScrollLeft: (cur - 2) * singleNavWidth
     });
   }, //顶部栏
+  
   swiperChange: function(e) {
     this.setData({
       swiperIndex: e.detail.current
