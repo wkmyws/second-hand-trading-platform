@@ -1,6 +1,6 @@
 <!--导航栏-->
 <!--悬浮按钮-->
-<image src="http://xcx.nau.edu.cn/images/timge.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus" ></image>
+<image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus" ></image>
 <view class='nav'>
   <view class="navbar">
     <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>

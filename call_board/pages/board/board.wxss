@@ -60,6 +60,7 @@ page {
 
 .body {
   display: flex;
+ 
 }
 
 .text1 {
@@ -240,6 +241,7 @@ page {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   word-break: break-all;
+
 }
 .miniimg {
   width: 120rpx;

@@ -61,15 +61,6 @@
   color: red;
 }
 
-.tab-box {
-  padding-top: 80rpx;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.tab-content {
-  overflow-y: scroll;
-}
 
 .autoplay {
   flex-direction: column;

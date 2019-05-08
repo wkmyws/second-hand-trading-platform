@@ -126,15 +126,7 @@ Page({
         currentTab: cur
       })
     }
-  },
-  switchTab(event) {
-    var cur = event.detail.current;
-    var singleNavWidth = this.data.windowWidth / 5;
-    this.setData({
-      currentTab: cur,
-      navScrollLeft: (cur - 2) * singleNavWidth
-    });
-  }, //顶部栏
+  },//顶部栏
   swiperChange: function(e) {
     this.setData({
       swiperIndex: e.detail.current
