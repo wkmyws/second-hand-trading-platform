@@ -1,6 +1,7 @@
 var util = require("utils/util.js");
 App({
   onLaunch: function(options) {
+    
     var that = this;
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
@@ -32,6 +33,7 @@ App({
           },
           success: res => {
             try {
+              //console.log(res.data)
               var res_data = util.base64_decode(res.data.data)
               res_data = JSON.parse(res_data)
               that.globalData.token = res_data.token
@@ -45,14 +47,15 @@ App({
               wx.hideLoading()
               wx.showModal({
                 title: '登陆失败',
-                content: res.data.err_msg,
+                showCancel:false
               })
-              console.log(res.data)
+              //console.log(res.data)
             }
           }
         })
       }
     })
+
   },
   globalData: {
     user_info: null,

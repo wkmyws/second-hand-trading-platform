@@ -44,7 +44,7 @@ Page({
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
 
-    var sign = util.sha1("" + timestamp )
+    var sign = util.sha1("" + timestamp)
 
     wx.request({
       url: app.globalData.URL + "goods/getGoodsTypeList.php",
@@ -63,7 +63,7 @@ Page({
         res_data = JSON.parse(res_data)
         //console.log(res_data)
         that.setData({
-          navData:res_data
+          navData: res_data
         })
         wx.setStorage({
           key: 'goods_classes',
@@ -74,10 +74,10 @@ Page({
 
 
     var data = {
-      "summary_sub":20,
-      "count_num":15,
-      "from_id":-1,
-      "goods_type":-1,
+      "summary_sub": 20,
+      "count_num": 15,
+      "from_id": -1,
+      "goods_type": -1,
     }
 
     data = JSON.stringify(data)
@@ -97,6 +97,7 @@ Page({
         "content-type": "application/json"
       },
       success: res => {
+        //console.log(res.data)
         var res_data = JSON.parse(util.base64_decode(res.data.data))
         that.setData({
           note: res_data.goods_list
