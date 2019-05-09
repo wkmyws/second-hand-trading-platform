@@ -1,13 +1,11 @@
 <view>
   <view class="rubclass">
-
     <!--顶部搜索栏-->
     <view class="search">
       <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
       </input>
       <image class="image" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
     </view>
-
     <view>
       <!--顶部的导航栏-->
 

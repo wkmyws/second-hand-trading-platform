@@ -3,7 +3,7 @@
   flex-direction: row;
   border: 3rpx solid #fff;
   border-radius: 10rpx;
-  background-color: #fff;
+  background:#fff;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
   margin: 10rpx;
   position: sticky;
@@ -42,7 +42,7 @@
   box-sizing: border-box;
   overflow: hidden;
   line-height: 80rpx;
-  background: #f7f7f7;
+  background: #eee;
   font-size: 16px;
   white-space: nowrap;
   top: 100rpx;
@@ -73,6 +73,7 @@
   height: 300rpx;
   text-align: center;
   margin-bottom: 20rpx;
+
   display: block;
   margin: 0;
 }
@@ -81,6 +82,7 @@
   width: 100%;
   height: 300rpx;
   transform: translate(0% 0) translateZ(0rpx);
+
   will-change: auto;
   position: absolute;
   display: block;
@@ -130,6 +132,7 @@
 .content {
   margin: 0 20rpx;
   text-align: justify;
+ 
 }
 
 .item {
@@ -139,8 +142,8 @@
   margin-bottom: 20rpx;
   display: inline-block;
   border: 3rpx solid #fff;
+       box-shadow: 6rpx 8rpx 9rpx #ccc;
   border-radius: 10rpx;
-  box-shadow: 6rpx 8rpx 9rpx #ccc;
   position: relative;
   z-index: 0;
 }

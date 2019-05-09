@@ -32,9 +32,10 @@
 .menu {
   margin: 10rpx;
   border: 3rpx solid #fff;
+    box-shadow: 6rpx 8rpx 9rpx #ccc;
   border-radius: 10rpx;
   background-color: #fff;
-  box-shadow: 6rpx 8rpx 9rpx #ccc;
+
 }
 
 .menu .item {

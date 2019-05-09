@@ -53,7 +53,7 @@ page {
   margin-top: 20rpx;
   background-color: #fff;
   border-bottom: 1rpx #eee;
-  box-shadow: 1.5rpx 0rpx 1.5rpx 0px #eee;
+ box-shadow: 0rpx 8rpx 9rpx #ccc;
   padding-bottom: 10rpx;
 }
 
