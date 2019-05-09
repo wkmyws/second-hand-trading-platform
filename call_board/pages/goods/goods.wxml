@@ -59,16 +59,15 @@
             <view class="item-title-box">
               <view class="item-title">{{goods_summary}}</view>
             </view>
-          </navigator>
-
           <view class="name">
             <image class="item-ava" src="{{user_avatar_url}}"></image>
             <text class="name-title">{{user_name}}</text>
-            <view class="heart_">
+            <view>
               <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
               <text>{{goods_collection_amount}}</text>
-            </view>
+           </view>
           </view>
+          </navigator>
         </view>
       </template>
 

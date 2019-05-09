@@ -2,17 +2,44 @@
 
   <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">
     <swiper-item>
-      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode='aspectFit'></image>
     </swiper-item>
   </block>
 
 </swiper>
 <scroll-view scroll-y="true">
   <view class="detail">
-    <text class="title">{{goods_detail.goods_title}}</text>
-    <text class="title">{{goods_detail.goods_publish_time}}</text>
-    <text class="price">{{goods_detail.goods_price}}</text>
+    <view class="price">
+      ￥{{goods_detail.goods_price}}
+    </view>
+    <view class="top">
+      <view class="title">
+        {{goods_detail.goods_title}}
+      </view>
+
+      <view class="title_sort">新品</view>
+    </view>
+    <view class="top">
+      <view class="SaveNum">浏览量{{ViewNum}}</view>
+      <view class="SaveNum">点赞量{{ThumbNum}}</view>
+    </view>
   </view>
+  <view class="detail">
+    <view class="infor">
+      <view>商品来自:</view>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <view class="infor_detail">
+        你未来的男朋友</view>
+    </view>
+
+    <view class="infor">
+      <view>发布时间：
+
+      </view>
+      <view class="infor_detail">{{goods_detail.goods_publish_time}}</view>
+    </view>
+  </view>
+
   <view class='detail'>
     <view class="separate">商品详情</view>
     <text>{{goods_detail.goods_content}}</text>
@@ -30,9 +57,13 @@
   </view>
 -->
 </scroll-view>
-
 <view class="detail-nav">
-  <image class='save' bindtap="set_fav" src="http://xcx.nau.edu.cn/images/dianzan.png?" hidden='{{hidden}}' />
+  <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='save' catchtap='ChangeThumb' hidden='{{hidden}}'></image>
+  <image wx:else src='/images/点赞1.png' class='save' catchtap='ChangeThumb' hidden='{{hidden}}'></image>
+  <view>点赞</view>
+
+  <image wx:if='{{SaveStatus}}' class='save' bindtap="set_fav" src='/images/save.png' hidden='{{hidden}}' />
+  <image wx:else src='/images/save1.png' class='save'></image>
   <view hidden='{{hidden}}'>收藏</view>
   <button class="button-red" bindtap="buy" form-type='submit'>我想购买</button>
 </view>

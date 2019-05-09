@@ -156,14 +156,11 @@
 
 .heart {
   width: 30rpx;
-  height: 26rpx;
+  height: 30rpx;
   margin-right: 8rpx;
 }
 
-.heart_ {
-  display: flex;
-  align-items: center;
-}
+
 
 .item-img {
   width: 100%;

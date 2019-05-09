@@ -12,7 +12,11 @@ Page({
     interval: 3000,
     duration: 1000,
     goods_detail: null,
-    seller_data: null
+    seller_data: null,
+    ThumbStatus: 'false', //点赞的状态
+    ThumbNum: 20, //点赞的数量
+    SaveStatus: 'false', //收藏的状态
+    ViewNum: 20,//点赞的数量
   },
 
   previewImage: function(e) {
@@ -114,6 +118,16 @@ Page({
     })
   },
   set_fav: function() {
+    var sta = this.data.SaveStatus
+    if (sta) {
+      this.setData({
+        SaveStatus: false,
+      })
+    } else {
+      this.setData({
+        SaveStatus: true,
+      })
+    }
     var that = this
     that.setData({
       is_fav: !that.data.is_fav
@@ -135,6 +149,22 @@ Page({
         })
       })
   },
+ ChangeThumb: function () {
+    var sta = this.data.ThumbStatus
+    var num = this.data.ThumbNum
+    if (sta) {
+      this.setData({
+        ThumbStatus: false,
+        ThumbNum: num + 1
+      })
+    } else {
+      this.setData({
+        ThumbStatus: true,
+        ThumbNum: num - 1
+      })
+    }
+  },
+
   get_detail: function(options) {
     return new Promise((resolve, reject) => {
       var that = this

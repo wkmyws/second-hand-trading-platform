@@ -26,7 +26,7 @@
     <!--图片-->
     <view class='image_content'>
       <view class='image' wx:for='{{img_url}}'>
-        <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview'></image>
+        <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview' mode="aspectFill"></image>
       </view>
     </view>
 

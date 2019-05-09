@@ -17,8 +17,6 @@ swiper-item image {
 }
 
 .detail {
-  display: flex;
-  flex-direction: column;
   margin-top: 15rpx;
   margin-bottom: 0rpx;
   background-color: #fff;
@@ -29,6 +27,17 @@ swiper-item image {
   margin: 10rpx;
   color: black;
   text-align: justify;
+}
+.title_sort{
+  top:23rpx;
+  text-align: justify;
+  justify-content: center;
+  height: 32rpx;
+  font-size: 25rpx;
+  position: relative;
+  border: 1rpx #000 solid;
+
+
 }
 
 .detail .price {
@@ -42,10 +51,20 @@ swiper-item image {
   color: black;
   text-align: justify;
   font-weight: 500;
+  border-bottom: 1rpx #eee solid;
+}
+.infor{
+display: flex;
+flex-direction: row;
+  font-size: 35rpx;
+  color: black;
+  text-align: justify;
   padding: 5rpx;
   border-bottom: 1rpx #eee solid;
 }
-
+.infor_detail{
+  color: #bbb;
+}
 .line_flag {
   width: 80rpx;
   height: 1rpx;
@@ -81,7 +100,7 @@ swiper-item image {
 .save{
   width: 70rpx;
   height: 70rpx;
-  border-right: 2px #bbb solid
+
 }
 
 .button-red {
@@ -180,4 +199,19 @@ text {
 
 .top {
   display: flex;
+
+}
+.SaveNum {
+  font-size: 27rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 15rpx;
+  margin-bottom:3rpx;
+}
+.userhead {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 80px;
+  overflow: hidden;
+margin:5rpx 5rpx 5rpx 15rpx;
 }
