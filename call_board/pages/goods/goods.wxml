@@ -17,11 +17,7 @@
           <!--tab之间的切换-->
         </block>
       </scroll-view>
-      <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
-        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
-          {{tabItem}}
-        </swiper-item>
-      </swiper>
+
     </view>
     <!--广告牌的位置-->
     <!--
@@ -39,36 +35,41 @@
       <!--悬浮按钮-->
       <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="publish"></image>
     </view>
+
     <view>
       <!--下面的瀑布流-->
       <view class="content">
         <view class="left">
+
           <block wx:for="{{note}}" wx:key="">
-            <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+            <template is="item" data="{{...item}}" wx:if="{{index%2==0}}" bindtap='switchDetail'></template>
           </block>
         </view>
+
         <view class="right">
           <block wx:for="{{note}}" wx:key="">
             <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
           </block>
         </view>
       </view>
-
       <template name="item">
         <view class="item">
-          <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>
-          <view class="item-title-box" catchtap='swithDetail'>
-            <navigator url="../goods/detail/detail?" class="item-tit">{{goods_title}}</navigator>
-          </view>
-          <view class="item-title-box">
-            <navigator url="../goods/detail/detail?" class="item-title" catchtap='swithDetail'>{{goods_summary}}</navigator>
-          </view>
+          <navigator url = '../goods/detail/detail?id={{goods_id}}'>
+            <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>
+            <view class="item-title-box">
+              <view class="item-tit">{{goods_title}}</view>
+            </view>
+            <view class="item-title-box">
+              <view class="item-title">{{goods_summary}}</view>
+            </view>
+          </navigator>
+
           <view class="name">
             <image class="item-ava" src="{{user_avatar_url}}"></image>
             <text class="name-title">{{user_name}}</text>
             <view class="heart_">
-              <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='swithDetail'></image>
-              <text>{{heart_num}}</text>
+              <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
+              <text>{{goods_collection_amount}}</text>
             </view>
           </view>
         </view>

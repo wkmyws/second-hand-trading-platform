@@ -16,7 +16,21 @@ Page({
     ], //广告牌的图片
     note: [] //瀑布流的样式数据
   },
+  onPullDownRefresh: function() {
+    var that = this
+    wx.showNavigationBarLoading();
 
+    var data = {
+      "summary_sub": 20,
+      "count_num": 15,
+      "from_id": -1,
+      "goods_type": cur+1,
+    }
+    that.get_goods_list(data)
+
+    wx.hideNavigationBarLoading();
+    wx.stopPullDownRefresh()
+  },
   //跳转至【商品发布】页面
   publish: function() {
     wx.navigateTo({
@@ -24,7 +38,37 @@ Page({
     })
     console.log("to_publish")
   },
-
+  get_goods_list: function(data) {
+    return new Promise((resolve, reject) => {
+      var that = this;
+      var timestamp = Date.parse(new Date());
+      timestamp = String(timestamp / 1000);
+      data = JSON.stringify(data)
+      data = util.base64_encode(data)
+      var sign = util.sha1(data + timestamp)
+      wx.request({
+        url: app.globalData.URL + "goods/getGoodsList.php",
+        data: {
+          "version": 1,
+          "time": timestamp,
+          "data": data,
+          "sign": sign,
+        },
+        method: 'POST',
+        header: {
+          "content-type": "application/json"
+        },
+        success: res => {
+          //console.log(res.data)
+          var res_data = JSON.parse(util.base64_decode(res.data.data))
+          that.setData({
+            note: res_data.goods_list
+          })
+          //console.log(that.data.note)
+        }
+      })
+    })
+  },
   onLoad: function() {
     wx.getSystemInfo({
       success: (res) => {
@@ -69,61 +113,45 @@ Page({
           key: 'goods_classes',
           data: res_data,
         })
+
+        var data = {
+          "summary_sub": 20,
+          "count_num": 15,
+          "from_id": -1,
+          "goods_type": 1,
+        }
+        that.get_goods_list(data)
       }
     })
 
-
-    var data = {
-      "summary_sub": 20,
-      "count_num": 15,
-      "from_id": -1,
-      "goods_type": -1,
-    }
-
-    data = JSON.stringify(data)
-    data = util.base64_encode(data)
-    sign = util.sha1(data + timestamp)
-
-    wx.request({
-      url: app.globalData.URL + "goods/getGoodsList.php",
-      data: {
-        "version": 1,
-        "time": timestamp,
-        "data": data,
-        "sign": sign,
-      },
-      method: 'POST',
-      header: {
-        "content-type": "application/json"
-      },
-      success: res => {
-        //console.log(res.data)
-        var res_data = JSON.parse(util.base64_decode(res.data.data))
-        that.setData({
-          note: res_data.goods_list
-        })
-        //console.log(that.data.note)
-      }
-    })
 
   },
 
   switchNav(event) {
+    var that = this
     var cur = event.currentTarget.dataset.current;
     //每个tab选项宽度占1/5
     var singleNavWidth = this.data.windowWidth / 5;
     //tab选项居中                            
-    this.setData({
+    that.setData({
       navScrollLeft: (cur - 2) * singleNavWidth
     })
     if (this.data.currentTab == cur) {
       return false;
     } else {
-      this.setData({
+      that.setData({
         currentTab: cur
       })
     }
-  },//顶部栏
+    var data = {
+      "summary_sub": 20,
+      "count_num": 15,
+      "from_id": -1,
+      "goods_type": cur + 1,
+    }
+    that.get_goods_list(data)
+    console.log(cur)
+  }, //顶部栏
   swiperChange: function(e) {
     this.setData({
       swiperIndex: e.detail.current
@@ -135,11 +163,6 @@ Page({
     })
   },
 
-  switchDetail: (e) => {
-    wx.navigateTo({
-      url: '../goods/detail/detail',
-    })
-  },
   onReady: function() { // 生命周期函数--监听页面初次渲染完成  
   },
   onShow: function() { // 生命周期函数--监听页面显示  

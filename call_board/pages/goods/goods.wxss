@@ -142,7 +142,7 @@
   border-radius: 10rpx;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 .item-ava {
@@ -238,18 +238,9 @@
   display: inline-block;
   vertical-align: top;
   width: 48%;
+  margin-top:80rpx;
 }
 
 .right {
   float: right;
-}
-
-.tab-box {
-  padding-top: 80rpx;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.tab-content {
-  overflow-y: scroll;
 }
