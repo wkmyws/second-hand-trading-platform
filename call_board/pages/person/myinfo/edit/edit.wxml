@@ -1,4 +1,8 @@
 <view class='menu'>
+<view class='item'>
+    <text class='left'>头像：</text>
+    <image class='header' type="userAvatarUrl" src="{{tempFilePaths}}" mode='aspectFill' bindtap="chooseimage"></image>
+  </view>
   <view class='item'>
     <text class='left'>昵称：</text>
     <input class='input' maxlength='10'  bindchange='change_name' value="{{my_info.user_name}}"></input>

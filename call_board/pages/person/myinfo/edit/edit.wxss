@@ -1,48 +1,56 @@
-page{
+page {
   background: #eee;
 }
 
-.menu{
-  
+.menu {
   margin-top: 20rpx;
 }
 
-.item{
+.item {
   background: white;
-  height: 70rpx;
   display: flex;
   border-bottom: 1px #eee solid;
 }
 
-
-.left{
+.left {
   display: flex;
   align-items: center;
   padding-left: 16rpx;
   font-size: 32rpx;
 }
 
-.input{
+.input {
   height: 100%;
   display: flex;
-   font-size: 32rpx;
+  font-size: 32rpx;
   color: rgb(136, 136, 136);
 }
 
-.picker{
+.picker {
   display: flex;
   align-items: center;
   font-size: 32rpx;
   color: rgb(136, 136, 136);
 }
 
-.butt{
+.header {
+  width: 140rpx;
+  height: 140rpx;
+  position: relative;
+ margin:10rpx;
+  left: 10rpx;
+  z-index: 20;
+  border-radius: 5rpx;
+}
+
+.butt {
   position: fixed;
   bottom: 5px;
   width: 96%;
   margin-left: 2%;
 }
-.butt1{
+
+.butt1 {
   position: fixed;
   bottom: 9%;
   width: 96%;

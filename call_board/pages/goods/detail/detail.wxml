@@ -58,10 +58,9 @@
 -->
 </scroll-view>
 <view class="detail-nav">
-  <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='save' catchtap='ChangeThumb' hidden='{{hidden}}'></image>
-  <image wx:else src='/images/点赞1.png' class='save' catchtap='ChangeThumb' hidden='{{hidden}}'></image>
+  <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='save' catchtap='ChangeThumb'></image>
+  <image wx:else src='/images/点赞1.png' class='save' catchtap='ChangeThumb' ></image>
   <view>点赞</view>
-
   <image wx:if='{{SaveStatus}}' class='save' bindtap="set_fav" src='/images/save.png' hidden='{{hidden}}' />
   <image wx:else src='/images/save1.png' class='save'></image>
   <view hidden='{{hidden}}'>收藏</view>

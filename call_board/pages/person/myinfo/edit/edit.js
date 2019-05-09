@@ -4,6 +4,7 @@ Page({
   data: {
     my_info:null,
     sex: ['未知','男', '女'],
+    tempFilePaths: "/images/add.png"
   },
   change_name(e){
     var that = this
@@ -130,6 +131,19 @@ Page({
       var beforePage = pages[pages.length - 2];//获取上一个页面实例对象
       beforePage.change_data();//触发父页面中的方法
     }
+  },
+  chooseimage:function(){
+    var _this = this;
+    wx.chooseImage({
+      count:1,
+      sizeType:['original','compressed'],
+      sourceType:['album','camera'],
+      success: function(res) {
+        _this.setData({
+          tempFilePaths:res.tempFilePaths
+        })
+      },
+    })
   }
 
 })
