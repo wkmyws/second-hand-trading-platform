@@ -1,20 +1,16 @@
 const app = getApp()
 var util = require('../../utils/util.js');
 Page({
-
   data: {
     myinfo: null,
     balance: null
   },
-  
   onLoad: function() {
     app.getInfoCallback = res => {
       this.setData({
         myinfo:res
       })
     }
-
-
     this.setData({
       myinfo: app.globalData.user_info,
       extraData: {
@@ -24,12 +20,19 @@ Page({
         }
       }
     })
+    if (this.data.myinfo.user_permission==50){
+      this.setData({
+        auth:'已认证'
+      })
+    }else{
+      this.setData({
+        auth: '游客'
+      })
+    }
   },
-
   onShow: function() {
 
   },
-
   tomyinfo: function() { //跳转至 个人信息
     wx.navigateTo({
       url: '../person/myinfo/myinfo'

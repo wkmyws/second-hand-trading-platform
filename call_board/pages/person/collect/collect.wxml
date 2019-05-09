@@ -1,14 +1,16 @@
 <view class='page-myissue'>
   <view class="swiper-tab">
-    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公告</view>
-    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">商品</view>
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商品</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">公告</view>
   </view>
 
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
-
+    <swiper-item>
+      <view>我的商品</view>
+    </swiper-item>
     <!--公告-->
     <swiper-item>
-           <view class="board" bindtap='go'>
+      <view class="board" bindtap='go'>
         <!--头像昵称-->
         <view class='top'>
           <image class='userhead' src='/images/test/user1.jpg'></image>
@@ -38,13 +40,11 @@
           <text class='SaveNum'>{{SaveNum}}</text>
           <text class='time'>2019.02.15</text>
         </view>
-        </view>
+      </view>
 
     </swiper-item>
 
     <!--商品-->
-    <swiper-item>
-      <view>我的商品</view>
-    </swiper-item>
+
   </swiper>
 </view>
