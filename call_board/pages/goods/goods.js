@@ -24,10 +24,9 @@ Page({
       "summary_sub": 20,
       "count_num": 15,
       "from_id": -1,
-      "goods_type": cur+1,
+      "goods_type": that.data.currentTab + 1,
     }
     that.get_goods_list(data)
-
     wx.hideNavigationBarLoading();
     wx.stopPullDownRefresh()
   },
@@ -64,7 +63,7 @@ Page({
           that.setData({
             note: res_data.goods_list
           })
-          //console.log(that.data.note)
+          console.log(that.data.note)
         }
       })
     })
@@ -171,9 +170,7 @@ Page({
     // 生命周期函数--监听页面隐藏   
   },
 
-  onPullDownRefresh: function() {
-    // 页面相关事件处理函数--监听用户下拉动作   
-  },
+
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数   
   },
