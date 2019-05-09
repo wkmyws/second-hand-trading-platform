@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "商品"
+  "navigationBarTitleText": "商品",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }
