@@ -1,5 +1,6 @@
 <view class='publish'>
   <!--标题-->
+  
   <input class='single' placeholder='小标题呢？'></input>
   <!--公告简介-->
   <textarea class='multiple' maxlength='400' placeholder='深情表白或分享趣事……'></textarea>
@@ -12,7 +13,7 @@
     </view>
     <!--添加图片-->
     <view class='image' style='display:{{hideAdd?"none":"block"}}'>
-      <image bindtap="chooseimage" class="moment_img" src="http://xcx.nau.edu.cn/images/untitled.png?"></image>
+      <image bindtap="chooseimage" class="moment_img" src="http://xcx.nau.edu.cn/images/add.png?"></image>
     </view>
   </view>
 

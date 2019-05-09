@@ -1,24 +1,19 @@
 <view>
   <view class="rubclass">
-
     <!--顶部搜索栏-->
     <view class="search">
       <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
       </input>
       <image class="image" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
     </view>
-
     <view>
       <!--顶部的导航栏-->
-     
  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
         <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
           <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.type_name}}</view>
           <!--tab之间的切换-->
         </block>
       </scroll-view>
-    
-
     </view>
     <!--广告牌的位置-->
     <!--
@@ -50,7 +45,6 @@
           </block>
         </view>
       </view>
-
       <template name="item">
         <view class="item">
           <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>

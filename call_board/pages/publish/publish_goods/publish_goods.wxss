@@ -21,6 +21,7 @@ page {
 }
 
 .multiple {
+  position: relative;
   background: white;
   width: 98%;
   margin-left: 1%;
@@ -41,7 +42,7 @@ page {
   height: 120px;
   margin-right: 1%;
   margin-bottom: 1%;
-  box-shadow: 6rpx 8rpx 9rpx #ccc;
+
 }
 .moment_img{
   width: 100%;
