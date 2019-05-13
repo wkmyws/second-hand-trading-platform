@@ -8,22 +8,30 @@
 
     <!--公告-->
     <swiper-item>
-      <view class='body'>
-        <view class='board' bindtap='toBoard1'>
-          <!--公告的简介-->
-          <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？</view>
-
-          <!--时间显示栏-->
-          <view class='passage time'>2019.02.15</view>
+      <view class="board" bindtap='go'>
+        <!--头像昵称-->
+        <view class='top'>
+          <image class='userhead' src='/images/test/user1.jpg'></image>
+          <text class='username'>你未来的男朋友</text>
         </view>
 
-        <view class='board'>
+        <!--收藏-->
+        <view class="title">约拼车的小伙伴，求带？</view>
+        <!--图片-->
+        <view class='body'>
           <!--公告的简介-->
-          <view class='passage'>啊啊啊我又失恋啦！有没有小姐姐能够陪我散散心啊啊！！！男生也行哟~！哎呀呀一不小心就超过了字数限制显示不出</view>
-
-          <!--时间显示栏-->
-          <view class='passage time'>2019.02.15</view>
+          <view>
+            <view class='text1'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢!就到个惊动个按实际递交阿斯加迪静安寺基调是降低偶家爱哦的简欧埃及达四大家按察使大大上帝厚爱似乎都个少个活动个爱仕达还搜狐地哦啊哈搜IDhi1
+            </view>
+          </view>
+          <view class='image'>
+            <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
+          </view>
         </view>
+
+        <!--时间显示栏-->
+        <view class='time'>2019.02.15</view>
+
       </view>
 
     </swiper-item>

@@ -16,12 +16,42 @@
           <!--推荐-->
           <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
         </view>
-        <!--小图标-->
-        <!--收藏-->
+
         <view class="title">约拼车的小伙伴，求带？</view>
         <!--图片-->
         <view class='body'>
           <!--公告的简介-->
+          <view>
+            <view class='text1'>2月31号 
+            </view>
+          </view>
+          <view class='image'>
+            <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
+          </view>
+        </view>
+
+        <view class="SaveNum">点赞数
+          <text class='ThumbNum'>{{ThumbNum}}</text>
+          <!--点赞-->
+          收藏数
+          <text class='SaveNum'>{{SaveNum}}</text>
+          <text class='time'>2019-02-15 16:22:14</text>
+        </view>
+      </view>
+    </swiper-item>
+
+    <!--商品-->
+    <swiper-item>
+      <view class='board'>
+        <!--头像昵称-->
+        <view class='top'>
+          <image class='userhead' src='/images/test/user1.jpg'></image>
+          <text class='username'>你未来的男朋友</text>
+        </view>
+
+        <view class="title">阿米驴</view>
+        <view class='body'>
+          <!--商品的简介-->
           <view>
             <view class='text1'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢!就到个惊动个按实际递交阿斯加迪静安寺基调是降低偶家爱哦的简欧埃及达四大家按察使大大上帝厚爱似乎都个少个活动个爱仕达还搜狐地哦啊哈搜IDhi1
             </view>
@@ -36,14 +66,11 @@
           <!--点赞-->
           收藏数
           <text class='SaveNum'>{{SaveNum}}</text>
-          <text class='time'>2019.02.15</text>
+          <text class='time'>2019-02-15 16:22:14</text>
         </view>
-        </view>
+
+      </view>
     </swiper-item>
 
-    <!--商品-->
-    <swiper-item>
-      <view>我的商品</view>
-    </swiper-item>
   </swiper>
-  </view>
+</view>

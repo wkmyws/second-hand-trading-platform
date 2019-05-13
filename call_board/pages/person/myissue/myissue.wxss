@@ -8,7 +8,6 @@ swiper {
   width: 100%;
 }
 
-
 /*tab的设置*/
 
 .swiper-tab {
@@ -44,9 +43,20 @@ swiper {
   padding-bottom: 10rpx;
 }
 
-
 .body {
   display: flex;
+}
+
+.title {
+  font-size: 35rpx;
+  font-weight: 600;
+  margin: 0rpx 10rpx 8rpx 15rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
 }
 
 .text1 {
@@ -63,29 +73,6 @@ swiper {
   word-break: break-all;
 }
 
-.text2 {
-  position: relative;
-  font-size: 28rpx;
-  left: 5rpx;
-  text-indent: 6%;
-  margin-right: 5rpx;
-  overflow: hidden;
-  text-overflow: unset;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-}
-
-.img-plus-style {
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
 /*图片*/
 
 .bottom {
@@ -97,24 +84,16 @@ swiper {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 35rpx 0;
   border-bottom: 1rpx solid #f4f4f4;
 }
 
 .img {
-  position: relative;
+  position:relative;
+  right:10rpx;
   width: 160rpx;
   height: 210rpx;
   margin: 0 -25rpx 0 -25rpx;
-  float: left;
-  box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
-  border-radius: 9rpx;
-  overflow: hidden;
-}
-
-.butt {
-  width: 100%; /* 670rpx */
-  height: 268rpx;
+  float: right;
   box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
   border-radius: 9rpx;
   overflow: hidden;
@@ -141,17 +120,18 @@ swiper {
 .SaveNum {
   font-size: 27rpx;
   color: #bbb;
-  position: relative;
-  margin-left: 15rpx;
-  margin-bottom:3rpx;
+  position: absolute;
+left: 15rpx;
+ bottom: 3rpx;
 }
-.num{
-    font-size: 30rpx;
-  color:#e00;
-  position: relative;
-  margin:15rpx 30rpx 15rpx 30rpx;
 
+.num {
+  font-size: 30rpx;
+  color: #e00;
+  position: relative;
+  margin: 15rpx 30rpx 15rpx 30rpx;
 }
+
 .thumbs_up1 {
   position: absolute;
   right: 140rpx;
@@ -159,16 +139,18 @@ swiper {
   width: 40rpx;
   bottom: 10rpx;
 }
+
 .thumbs_up2 {
   position: absolute;
   right: 100rpx;
   bottom: 10rpx;
-    font-size: 28rpx;
+  font-size: 28rpx;
   display: flex;
   color: rgb(196, 193, 193);
   align-items: center;
   margin-top: 10rpx;
 }
+
 .ThumbNum {
   font-size: 27rpx;
   color: #bbb;
@@ -206,31 +188,18 @@ swiper {
   font-size: 27rpx;
   color: #bbb;
   position: absolute;
-  float: right;
+
   right: 20rpx;
 }
-.icon{
-   position: absolute;
+
+.icon {
+  position: absolute;
   float: right;
   width: 40rpx;
   height: 40rpx;
   top: 15rpx;
   right: 20rpx;
 }
-.title {
-  font-size: 35rpx;
-  font-weight: 600;
-  margin: 0rpx 10rpx 8rpx 15rpx;
-  overflow: hidden;
-  text-overflow: unset;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-}
-
-
-
 
 .miniimg {
   width: 120rpx;
