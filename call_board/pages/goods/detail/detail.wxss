@@ -1,14 +1,17 @@
 page {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background-color: #eee;
+  background-color: rgb(248, 247, 247);
 }
 
+.scroll{
+  padding-bottom: 100rpx;
+}
 /* 直接设置swiper属性 */
 
 swiper {
   height: 500rpx;
+  background: #fff;
 }
 
 swiper-item image {
@@ -17,54 +20,69 @@ swiper-item image {
 }
 
 .detail {
-  margin-top: 15rpx;
-  margin-bottom: 0rpx;
+  margin-bottom: 15rpx;
   background-color: #fff;
+  padding:15rpx;
 }
 
 .detail .title {
-  font-size: 40rpx;
-  margin: 10rpx;
+  font-size: 37rpx;
+  font-weight: 700;
+  margin: 15rpx 45rpx 15rpx 15rpx;
   color: black;
   text-align: justify;
 }
-.title_sort{
-  top:23rpx;
+
+.title_sort {
+  top: 20rpx;
   text-align: justify;
   justify-content: center;
   height: 32rpx;
-  font-size: 25rpx;
+  font-size: 28rpx;
   position: relative;
-  border: 1rpx #000 solid;
-
-
+  padding: 5rpx;
+  border: 2rpx rgb(145, 143, 143) solid;
+  color: rgb(145, 143, 143);
 }
-
+.infor-in{
+  width:330rpx;
+}
 .detail .price {
   color: red;
-  font-size: 40rpx;
+  font-size: 44rpx;
   margin: 10rpx;
+  font-weight: 900;
 }
 
 .separate {
-  font-size: 35rpx;
+  font-size: 33rpx;
   color: black;
   text-align: justify;
-  font-weight: 500;
-  border-bottom: 1rpx #eee solid;
+  font-weight: 700;
+  margin:15rpx;
 }
-.infor{
-display: flex;
-flex-direction: row;
+.separate_detail{
+   color: rgb(121, 118, 118);
   font-size: 35rpx;
-  color: black;
+  margin:15rpx;
+  text-align: justify;
+}
+
+.infor {
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+  color: rgb(197, 195, 195);
   text-align: justify;
   padding: 5rpx;
-  border-bottom: 1rpx #eee solid;
+  margin:15rpx;
 }
-.infor_detail{
-  color: #bbb;
+
+.infor_detail {
+  color: rgb(121, 118, 118);
+  font-size: 35rpx;
 }
+
 .line_flag {
   width: 80rpx;
   height: 1rpx;
@@ -93,26 +111,26 @@ flex-direction: row;
   height: 100rpx;
 }
 
-.icon{
+.icon {
   width: 100rpx;
 }
 
-.save{
+.save {
   width: 70rpx;
   height: 70rpx;
-
+  margin:30rpx;
 }
 
 .button-red {
   background: linear-gradient(to right, #ff7a34, #ee32ff);
   color: #fff;
-  border-radius: 50px;
-  width: 150px;
-  height: 35px;
+  border-radius: 50rpx;
+  width: 280rpx;
+  height: 68rpx;
   position: fixed;
-  right: 20rpx;
-  line-height: 35px;
-  margin: auto 0px;
+  right: 30rpx;
+  line-height: 68rpx;
+  margin: auto 0rpx;
 }
 
 .line_nav {
@@ -144,8 +162,78 @@ text {
   color: #fff;
 }
 
-.choose {
 
+
+/*评论*/
+
+.comment {
+  position: relative;
+  margin-bottom: 120rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  background-color: #fff;
+}
+
+.comment_head {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  margin: 5rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.comment_name {
+  font-size: 30rpx;
+  display: flex;
+  color: #bbb;
+  position: relative;
+  font-weight: bold;
+  align-items: center;
+  margin-right: 15rpx;
+  margin-top: -15rpx;
+}
+
+.comment_tent {
+  font-size: 30rpx;
+  position: relative;
+  margin: -25rpx 10rpx 5rpx 60rpx;
+  text-indent: 6%;
+}
+
+.forum {
+  background: white;
+  margin-top: 2rpx;
+  border-top-color: #eee;
+}
+
+.top {
+  display: flex;
+}
+
+.SaveNum {
+  font-size: 29rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 15rpx;
+  margin-bottom: 3rpx;
+}
+
+.userhead {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 80px;
+  overflow: hidden;
+  margin: 5rpx 5rpx 5rpx 15rpx;
+}
+/*底部弹窗*/
+.user{
+    width: 100rpx;
+  height: 100rpx;
+  margin:20rpx 20rpx 0rpx 30rpx;
+}
+.choose {
   width: 100%;
   overflow: hidden;
   position: fixed;
@@ -157,61 +245,20 @@ text {
   border-top-right-radius: 20rpx;
   border-top-left-radius: 20rpx;
 }
-/*评论*/
-.comment {
-  position: relative;
-  margin-bottom: 120rpx;
-    display: flex;
-  flex-direction: column;
-  margin-top: 15rpx;
-    background-color: #fff;
-}
-.comment_head{
-   width: 60rpx;
-  height: 60rpx;
-  border-radius: 60rpx;
-  margin:5rpx;
-  display: block;
-  overflow: hidden;
-}
-.comment_name{
-    font-size: 30rpx;
+.information{
+  margin:10rpx 30rpx 0rpx 30rpx;
+  font-size: 36rpx;
+
   display: flex;
-  color: #bbb;
-  position: relative;
-  font-weight: bold;
-  align-items: center;
-  margin-right: 15rpx;
-  margin-top: -15rpx;
 }
-.comment_tent{
-  font-size:30rpx;
-  position: relative;
-  margin: -25rpx 10rpx 5rpx 60rpx;
-  text-indent: 6%;
+.information-next{
+  font-size: 35rpx;
 
+line-height: 50rpx;
+color:rgb(121, 118, 118);
 }
-.forum {
-  background: white;
-  margin-top: 2rpx;
-  border-top-color: #eee;
-}
-
-.top {
-  display: flex;
-
-}
-.SaveNum {
-  font-size: 27rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 15rpx;
-  margin-bottom:3rpx;
-}
-.userhead {
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 80px;
-  overflow: hidden;
-margin:5rpx 5rpx 5rpx 15rpx;
+.information-detail{
+  margin:0rpx 30rpx;
+  font-size:36rpx;
+  
 }

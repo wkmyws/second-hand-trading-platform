@@ -1,30 +1,40 @@
 page {
-  background:#eee;
+  background:rgb(248, 247, 247);
 }
-
+.publish{
+  font-size: 38rpx;
+  padding:5rpx;
+  background: #fff;
+    border-radius: 20rpx;
+    margin: 1%;
+    width: 97%;
+}
 .single-top{
   background: white;
-  align-content: center;
-  width: 98%;
-  margin-left: 1%;
-  height: 30px;
-     border-top-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
+ height: 80rpx;
+  width:97%;
+  margin: 1% ;
+  padding:7rpx 6rpx 10rpx 6rpx;
+font-weight: 700;
+line-height: 80rpx;
+border-bottom: 1rpx solid #eee;
 }
 .single {
   background: white;
-  align-content: center;
-  width: 98%;
-  margin-left: 1%;
-  height: 30px;
-
+ height: 80rpx;
+  width:97%;
+  margin: 1% ;
+  padding:7rpx 6rpx 10rpx 6rpx;
+line-height: 80rpx;
+border-bottom: 1rpx solid #eee;
 }
 
 .multiple {
-  position: relative;
   background: white;
   width: 98%;
   margin-left: 1%;
+min-height: 300rpx;
+padding:7rpx 6rpx 10rpx 6rpx;
 }
 
 .image_content {
@@ -60,10 +70,12 @@ page {
 }
 
 .send {
-    background: white;
-  position: fixed;
-  bottom: 10rpx;
-  width: 90%;
-  margin-left: 5%;
-   box-shadow: 6rpx 8rpx 9rpx #ccc;
+ position: fixed;
+  bottom: 5rpx;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  color: #fff;
+  z-index: 999;
 }

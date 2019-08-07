@@ -1,19 +1,41 @@
+.head{
+  position: sticky;
+  z-index: 999;
+  }
+
+.head-top {
+ display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 3rpx solid #fff;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+  width: 100%;
+  position: fixed;
+  padding-top: 15rpx;
+  padding-bottom: 12rpx;
+  align-items: flex-end;
+
+}
+
 .search {
+  width: 85%;
   display: flex;
+  background: #fff;
   flex-direction: row;
   border: 3rpx solid #fff;
-  border-radius: 10rpx;
-  background:#fff;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
-  margin: 10rpx;
-  position: sticky;
-  top: 0rpx;
+  border-radius: 10rpx;
+  margin: 5rpx 0rpx -25rpx 0rpx;
+  position: relative;
   z-index: 999;
 }
 
 .search input {
   width: 100%;
-  height: 80rpx;
+  height: 78rpx;
   background: #fff;
   padding-left: 32rpx;
 }
@@ -30,24 +52,24 @@
 
 .image {
   width: 120rpx;
-  height: 80rpx;
+  height: 78rpx;
   display: inline-block;
   overflow: hidden;
 }
 
 .nav {
-  position: absolute;
-  height: 80rpx;
+  position: relative;
+  height: 88rpx;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
   line-height: 80rpx;
-  background: #eee;
+  background: #fff;
   font-size: 16px;
   white-space: nowrap;
-  top: 100rpx;
+  top: 110rpx;
   left: 0;
-  z-index: 99;
+ 
 }
 
 .nav-item {
@@ -73,7 +95,6 @@
   height: 300rpx;
   text-align: center;
   margin-bottom: 20rpx;
-
   display: block;
   margin: 0;
 }
@@ -82,7 +103,6 @@
   width: 100%;
   height: 300rpx;
   transform: translate(0% 0) translateZ(0rpx);
-
   will-change: auto;
   position: absolute;
   display: block;
@@ -132,7 +152,6 @@
 .content {
   margin: 0 20rpx;
   text-align: justify;
- 
 }
 
 .item {
@@ -142,10 +161,10 @@
   margin-bottom: 20rpx;
   display: inline-block;
   border: 3rpx solid #fff;
-       box-shadow: 6rpx 8rpx 9rpx #ccc;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
   border-radius: 10rpx;
   position: relative;
-  z-index: 0;
+
 }
 
 .item-ava {
@@ -160,8 +179,6 @@
   margin-right: 8rpx;
 }
 
-
-
 .item-img {
   width: 100%;
   border-top-left-radius: 10rpx;
@@ -169,8 +186,8 @@
 }
 
 .item-tit {
-  font-size: 24rpx;
-  font-weight: 600;
+  font-size: 25rpx;
+  font-weight: 700;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -191,7 +208,7 @@
   overflow: hidden;
   font-family: 'PingFang SC-Medium';
   color: #1e1e1e;
-  margin: 15rpx;
+  margin: 13rpx;
   line-height: 27rpx;
 }
 
@@ -238,7 +255,7 @@
   display: inline-block;
   vertical-align: top;
   width: 48%;
-  margin-top:80rpx;
+  margin-top: 100rpx;
 }
 
 .right {

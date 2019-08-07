@@ -1,10 +1,42 @@
-const app = getApp()
-var util = require('../../../utils/util.js');
 Page({
 
+  /**
+   * 页面的初始数据
+   */
   data: {
-    currentTab:0,
-    goods_list:null
+    currentTab: 0,
+    SaveStatus: 'false', //收藏的状态
+    SaveNum: 10, //收藏的数量
+    ThumbStatus: 'false', //点赞的状态
+    ThumbNum: 20,//点赞的数量
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
   },
 
   swiperTab: function (e) {
@@ -24,52 +56,17 @@ Page({
       })
     }
   },
-  get_fav:function(type){
-    var that = this
-    return new Promise((resolve,reject)=>{
-      var data = {
-        type:type,
-        summary_sub:20
-      }
-      var timestamp = Date.parse(new Date());
-      timestamp = String(timestamp / 1000);
-      data = JSON.stringify(data)
-      data = util.base64_encode(data)
-      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-      wx.request({
-        url: app.globalData.URL + "user/getUserFavourite.php",
-        data: {
-          "version": 1,
-          "time": timestamp,
-          "data": data,
-          "sign": sign,
-          "token": app.globalData.token
-        },
-        method: 'POST',
-        header: {
-          "content-type": "application/json"
-        },
-        success: res => {
-          if (res.data.status == 0) {
-            var res_data = JSON.parse(util.base64_decode(res.data.data))
-            //console.log(res_data)
-            resolve(res_data)
-          } else {
-            reject(res.data.err_msg)
-          }
-        }
-      })
+
+  board: function () {
+    wx.navigateTo({
+      url: '../collect/collect-board/collect-board'
     })
   },
-  onLoad: function (options) {
-    var that = this
-    that.get_fav(that.data.currentTab).then((data)=>{
-      that.setData({
-        goods_list:data
-      })
-    }).catch((err)=>{
-      console.log(err)
+  good: function () {
+    wx.navigateTo({
+      url: '../collect/collect-good/collect-good'
     })
-  },
+  }
+
 
 })

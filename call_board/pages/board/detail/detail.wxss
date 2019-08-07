@@ -1,14 +1,15 @@
 page {
-  background: #eee;
+  background: rgb(248, 247, 247);
 }
 
 .body {
-  padding: 15rpx;
+  padding: 15rpx 0 15rpx 0;
   margin-bottom: 15rpx;
 }
 
 .bottom {
-  height: 80rpx;
+  height: auto;
+  padding:5rpx;
 }
 
 .board {
@@ -19,31 +20,39 @@ page {
 }
 
 .box {
+  position: sticky;
   background: #fff;
   height: auto;
   margin-bottom: 15rpx;
-  padding: 5rpx 5rpx 5rpx 10rpx;
+  padding: 20rpx 25rpx 20rpx 8rpx;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
 .icon {
   position: absolute;
   float: right;
-  width: 50rpx;
-  height: 50rpx;
-  top: 15rpx;
+  width: 40rpx;
+  height: 40rpx;
+  top: 55rpx;
   right: 20rpx;
 }
 
 .passage {
-  margin: auto 15rpx;
-  font-size: 32rpx;
+  margin:20rpx 20rpx 30rpx 20rpx;
+  font-size: 35rpx;
+  color: rgb(73, 73, 73);
   text-indent: 6%;
+  line-height: 50rpx;
+  font-family: "微软雅黑";
+    text-align: justify;
 }
 
-.passage.time {
+.time {
   color: #bbb;
-  position: absolute;
+  font-size: 35rpx;
+  position:relative;
+  left: 30rpx;
+  
   bottom: 10rpx;
 }
 
@@ -54,6 +63,7 @@ page {
   display: flex;
   flex-wrap: wrap;
   margin-left: 1%;
+  margin-bottom: 4%;
 }
 
 .image {
@@ -88,7 +98,7 @@ page {
 
 .report {
   top: 15rpx;
-  right: 10rpx;
+  right: 15rpx;
 }
 
 /*评论*/
@@ -96,43 +106,49 @@ page {
 .comment {
   position: relative;
   margin-bottom: 150rpx;
+  background: #ffffff;
+  padding-top:8rpx;
+  padding-bottom:8rpx;
 }
 
 .comment_head {
   width: 60rpx;
   height: 60rpx;
   border-radius: 60rpx;
-  margin: 5rpx;
+  margin: 10rpx;
   display: block;
   overflow: hidden;
 }
 
 .comment_name {
-  font-size: 30rpx;
+  font-size: 32rpx;
   display: flex;
   color: #bbb;
   position: relative;
-  font-weight: bold;
   align-items: center;
   margin-right: 15rpx;
   margin-top: -15rpx;
+    font-family: "微软雅黑";
 }
 
 .comment_tent {
-  font-size: 30rpx;
+  font-size: 32rpx;
+  color:rgb(73, 73, 73);
   position: relative;
-  margin: -25rpx 10rpx 5rpx 60rpx;
+  margin: -25rpx 10rpx 0rpx 65rpx;
   text-indent: 6%;
+    font-family: "微软雅黑";
+    text-align: justify;
 }
 
 .forum {
   background: white;
-  margin-top: 2rpx;
-  border-top-color: #eee;
+  margin-top: 3rpx;
+padding-bottom:3rpx;
 }
 
 .talk {
-  font-size: 40rpx;
+  font-size: 37rpx;
   font-weight: bold;
   margin-left: 15rpx;
 }
@@ -148,23 +164,27 @@ page {
 }
 
 .input {
-  height: 60rpx;
+  height: 70rpx;
+   font-size:32rpx;
   background: #eee;
   width: 70%;
   position: fixed;
-  bottom: 15px;
-  left: 10rpx;
-  border-radius: 2px;
+  bottom: 25rpx;
+  left: 27rpx;
+  border-radius: 20px;
+  padding-left: 15rpx;
 }
 
 .send {
-  height: 60rpx;
+  font-size:30rpx;
+  height: 70rpx;
   width: 20%;
-  text-align: center;
   position: fixed;
-  bottom: 15px;
-  right: 10rpx;
-  border-radius: 2px;
+  bottom: 25rpx;
+  right: 27rpx;
+ background: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  border-radius: 20px;
+
 }
 
 /*用户*/
@@ -185,7 +205,7 @@ page {
 }
 
 .username {
-  font-size: 32rpx;
+  font-size: 35rpx;
   font-weight: bold;
   display: flex;
   color: #bbb;
@@ -198,7 +218,7 @@ page {
   font-size: 25rpx;
   position: absolute;
   top: 70rpx;
-  right: 10rpx;
+  right: 15rpx;
 }
 
 /*图标*/
@@ -206,29 +226,31 @@ page {
 .save1 {
   position: absolute;
   right: 50rpx;
-  height: 50rpx;
-  width: 50rpx;
+  height:60rpx;
+  width:60rpx;
   bottom: 10rpx;
+  
 }
 
 .SaveNum {
-  font-size: 27rpx;
+  font-size: 30rpx;
   color: #bbb;
   position: relative;
-  margin-left: 15rpx;
+  margin-left: 25rpx;
   margin-bottom: 3rpx;
 }
 
 .thumbs_up1 {
   position: absolute;
   right: 140rpx;
-  height: 50rpx;
-  width: 50rpx;
-  bottom: 10rpx;
+  height: 70rpx;
+  width: 70rpx;
+  bottom: 5rpx;
+ 
 }
 
 .ThumbNum {
-  font-size: 27rpx;
+  font-size: 30rpx;
   color: #bbb;
   position: relative;
   margin-bottom: 3rpx;
@@ -236,9 +258,7 @@ page {
 
 .title {
   position: relative;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
-  font-size: 37rpx;
+  font-size: 42rpx;
   font-weight: 700;
-  margin: 0rpx 10rpx 8rpx 15rpx;
+  margin: 25rpx;
 }

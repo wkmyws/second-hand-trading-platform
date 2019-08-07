@@ -55,6 +55,18 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+  },
+
+  board: function () {
+    wx.navigateTo({
+      url: '../myissue/myissue-board/myissue-board'
+    })
+  },
+  good: function () {
+    wx.navigateTo({
+      url: '../myissue/myissue-good/myissue-good'
+    })
   }
+
 
 })

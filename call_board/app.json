@@ -4,8 +4,11 @@
     "pages/goods/goods",
     "pages/logs/logs",
     "pages/person/person",
+    "pages/person/attest/attest",
     "pages/person/myinfo/myinfo",
     "pages/person/myissue/myissue",
+    "pages/person/myissue/myissue-board/myissue-board",
+    "pages/person/myissue/myissue-good/myissue-good",
     "pages/person/about/about",
     "pages/person/help/help",
     "pages/goods/detail/detail",
@@ -14,10 +17,14 @@
     "pages/publish/publish_board/publish_board",
     "pages/person/myinfo/edit/edit",
     "pages/person/admin/admin",
-    "pages/person/admin/admin-detail/admin-detail",
+    "pages/person/admin/admin-board/admin-board",
+    "pages/person/admin/admin-good/admin-good",
     "pages/person/collect/collect",
-    "pages/board/detail/detail",
-    "pages/person/attest/attest"
+    "pages/person/collect/collect-board/collect-board",
+    "pages/person/collect/collect-good/collect-good",
+    "pages/board/detail/detail"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,26 +33,26 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "black",
-    "selectedColor": "red",
+    "color": "#aaaaaa",
+    "selectedColor": "#000000",
     "list": [
       {
         "pagePath": "pages/board/board",
         "text": "公告",
-        "iconPath": "images/board1.png",
-        "selectedIconPath": "images/board2.png"
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board1.png"
       },
       {
         "pagePath": "pages/goods/goods",
         "text": "商品",
-        "iconPath": "images/goods1.png",
-        "selectedIconPath": "images/goods2.png"
+        "iconPath": "images/good.png",
+        "selectedIconPath": "images/good1.png"
       },
       {
         "pagePath": "pages/person/person",
         "text": "个人",
-        "iconPath": "images/person1.png",
-        "selectedIconPath": "images/person2.png"
+        "iconPath": "images/person.png",
+        "selectedIconPath": "images/person1.png"
       }
     ]
   },

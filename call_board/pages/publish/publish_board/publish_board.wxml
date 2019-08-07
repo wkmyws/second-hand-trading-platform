@@ -1,10 +1,9 @@
 <view class='publish'>
   <!--标题-->
   
-  <input class='single' placeholder='小标题呢？'></input>
+  <textarea class='single' auto-height="auto" placeholder='小标题呢？'></textarea>
   <!--公告简介-->
-  <textarea class='multiple' maxlength='400' placeholder='深情表白或分享趣事……'></textarea>
-
+  <textarea class='multiple'auto-height="auto" maxlength='400' placeholder='深情表白或分享趣事……'></textarea>
   <!--图片展示区域-->
   <view class="image_content">
     <!--上传的图片-->

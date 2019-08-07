@@ -1,4 +1,3 @@
-// pages/person/admin/admin.js
 Page({
 
   /**
@@ -10,24 +9,6 @@ Page({
     SaveNum: 10, //收藏的数量
     ThumbStatus: 'false', //点赞的状态
     ThumbNum: 20,//点赞的数量
-  },
-
-  swiperTab: function (e) {
-    var that = this;
-    that.setData({
-      currentTab: e.detail.current
-    });
-  },
-
-  clickTab: function (e) {
-    var that = this;
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentTab: e.target.dataset.current
-      })
-    }
   },
 
   /**
@@ -51,10 +32,41 @@ Page({
 
   },
 
-  go: function () {
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  swiperTab: function (e) {
+    var that = this;
+    that.setData({
+      currentTab: e.detail.current
+    });
+  },
+
+  clickTab: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
+  },
+
+  board: function () {
     wx.navigateTo({
-      url: '../admin/admin-detail/admin-detail'
+      url: '../admin/admin-board/admin-board'
+    })
+  },
+  good: function () {
+    wx.navigateTo({
+      url: '../admin/admin-good/admin-good'
     })
   }
+
 
 })

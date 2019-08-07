@@ -1,21 +1,23 @@
-<view>
-  <view class="rubclass">
-    <!--顶部搜索栏-->
-    <view class="search">
-      <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
-      </input>
-      <image class="image" bindtap="startSearch" mode='scaleToFill' src="/images/icoss.png"></image>
+<view class='head'>
+<view class="head-top">
+  <!--顶部搜索栏-->
+  <view class="search">
+    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
+    </input>
+    <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>
+  </view>
+  </view>
     </view>
-    <view>
-      <!--顶部的导航栏-->
+    <!--顶部的导航栏-->
 
-      <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-        <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-          <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.type_name}}</view>
-          <!--tab之间的切换-->
-        </block>
-      </scroll-view>
-    </view>
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+        <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.type_name}}</view>
+        <!--tab之间的切换-->
+      </block>
+    </scroll-view>
+  
+
     <!--广告牌的位置-->
     <!--
   <view class="autoplay">
@@ -31,7 +33,7 @@
     <view>
       <!--悬浮按钮-->
       <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="publish"></image>
-    </view>
+  
 
     <view>
       <!--下面的瀑布流-->
@@ -51,7 +53,7 @@
       </view>
       <template name="item">
         <view class="item">
-          <navigator url = '../goods/detail/detail?id={{goods_id}}'>
+          <navigator url='../goods/detail/detail?id={{goods_id}}'>
             <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>
             <view class="item-title-box">
               <view class="item-tit">{{goods_title}}</view>
@@ -59,19 +61,16 @@
             <view class="item-title-box">
               <view class="item-title">{{goods_summary}}</view>
             </view>
-          <view class="name">
-            <image class="item-ava" src="{{user_avatar_url}}"></image>
-            <text class="name-title">{{user_name}}</text>
-            <view>
-              <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
-              <text>{{goods_collection_amount}}</text>
-           </view>
-          </view>
+            <view class="name">
+              <image class="item-ava" src="{{user_avatar_url}}"></image>
+              <text class="name-title">{{user_name}}</text>
+              <view>
+                <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
+                <text>{{goods_collection_amount}}</text>
+              </view>
+            </view>
           </navigator>
         </view>
       </template>
-
-
     </view>
   </view>
-</view>

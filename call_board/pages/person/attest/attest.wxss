@@ -1,8 +1,11 @@
+page{
+  background-color:rgb(248, 247, 247);
+}
 .user {
   position: relative;
-  padding-left: 3%;
-  padding-right: 3%;
-  border: 1rpx solid #d8d8d8;
+  padding-left: 8%;
+  padding-right: 8%;
+background: rgb(248, 247, 247);
   list-style: none;
   line-height: 40rpx;
 }
@@ -11,10 +14,11 @@
   height: 117rpx;
   line-height: 117rpx;
   display: flex;
+    border-bottom: 1rpx solid #d8d8d8;
 }
 
 .name {
-
+color:#333;
   font-size: 34rpx;
   text-align: left;
 }
@@ -26,7 +30,7 @@
   position: relative;
   line-height: 117rpx;
   height: 117rpx;
-  margin-right: 30rpx;
+ 
   margin-left: 20rpx;
   color: #888;
   font-size: 30rpx;
@@ -47,16 +51,18 @@
   position: relative;
 top:15rpx;
 text-align: center;
-  color: #8de6de;
+  color: #54b1d3;
 }
 
 .butt {
   position: fixed;
   bottom: 5rpx;
-  width: 90%;
-  margin-left: 5%;
-  background-color: #41b80e;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
   color: #fff;
+  z-index: 999;
 }
 
 .shade {
@@ -76,7 +82,6 @@ text-align: center;
   left: 0;
   bottom: 0;
   margin: auto;
-  border: #000 solid 1rpx;
   z-index: 11;
   min-width: 100rpx;
   min-height: 200rpx;
@@ -97,8 +102,10 @@ text-align: center;
 .popup {
   position: relative;
   width: 600rpx;
-  top:-100rpx;
+  top:15rpx;
   background-color: #fff;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+  border-radius: 20rpx;
 }
 
 .title {
@@ -107,13 +114,18 @@ text-align: center;
   height: 70rpx;
   line-height: 70rpx;
   font-size: 32rpx;
-  background-color: #f6f6f6;
+  font-weight: 700;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  background-color: #fff;
+  color: #000;
 }
 
 .content {
-  margin: 10rpx;
+  margin: 10rpx 20rpx 10rpx 20rpx;
   font-size: 30rpx;
-  color: #000;
+  text-align: justify;
+ 
 }
 .content-item{
    text-indent: 6%;
@@ -131,8 +143,8 @@ text-align: center;
   }
 }
 .remind{
-   color: rgba(90, 86, 86, 0.63);
+   color:rgb(121, 118, 118) ;
    font-size: 30rpx;
    font-family: Times;
-   margin: 15rpx;
+   margin: 2% 8% 14% 8%;
 }

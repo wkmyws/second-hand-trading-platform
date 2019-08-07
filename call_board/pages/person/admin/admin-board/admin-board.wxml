@@ -1,0 +1,42 @@
+<view>
+  <view class='box'>
+    <view class="title">拼车的小伙伴，就带？经过飞飞副教授积分法郭飞歌金盾股份</view>
+    <view class="SaveNum">点赞数
+      <text class='ThumbNum'>{{ThumbNum}}</text>
+      <!--点赞-->
+      收藏数
+      <text class='ThumbNum'>{{SaveNum}}</text>
+
+    </view>
+  </view>
+  <view class='body'>
+    <view class='board'>
+      <view class='top'>
+        <!--头像昵称-->
+        <image class='userhead' src='/images/test/user1.jpg'></image>
+        <text class='username'>你未来的男朋友</text>
+
+      </view>
+      <!--公告的简介-->
+      <view class='passage'>2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！2月31号晚上8点南京南站到学校有人拼车吗？最好能帮我全额买单谢谢！近似世界反击审计的打覅额范饿死公司股份净额四规范就能发 风刀霜剑覅二十个解释给谁家戈水晶宫二是二三极管进 的及发送到if二纺机剑荡四方二分类福建师范水电费规范色粉丝过妇女节森规范色股份是</view>
+      <!--图片-->
+      <view class='image_content'>
+        <view class='image' wx:for='{{img_url}}'>
+          <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview' mode="aspectFill"></image>
+        </view>
+      </view>
+
+      <view class='bottom'>
+        <!--时间显示栏-->
+        <view class='time'>2019-02-15 16:15:48</view>
+
+        <!--图标-->
+
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <button class='butt1'>通过</button>
+  <button class='butt'>否决</button>
+</view>

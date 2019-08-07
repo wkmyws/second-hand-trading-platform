@@ -1,0 +1,59 @@
+<scroll-view scroll-y="true" class="scroll">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode='aspectFit'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="detail">
+    <view class="price">
+      ￥{{goods_detail.goods_price}}
+    </view>
+    <view class="top">
+      <view class="title">
+        {{goods_detail.goods_title}}
+      </view>
+
+      <view class="title_sort">新品</view>
+    </view>
+    <view class="top">
+      <view class="SaveNum">浏览量{{ViewNum}}</view>
+      <view class="SaveNum">收藏量{{ThumbNum}}</view>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="infor">
+      <view>商品来自:</view>
+      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <view class="infor_detail">
+        你未来的男朋友</view>
+    </view>
+    <view class="infor">
+      <view>发布时间：
+      </view>
+      <view class="infor_detail">{{goods_detail.goods_publish_time}}</view>
+    </view>
+  </view>
+  <view class='detail'>
+    <view class="separate">商品详情</view>
+    <view class="separate_detail">{{goods_detail.goods_content}}</view>
+  </view>
+  <!--
+  <view class="comment">
+    <view class="separate">商品评论</view>
+    <view class='forum'>
+      <view class="top">
+        <image class='comment_head' src='/images/test/user1.jpg'></image>
+        <text class='comment_name'>最好是小姐姐</text>
+      </view>
+      <view class='comment_tent'>你未来的男朋友风景疼广东省规范化将诶过而根据施工方将诶够呢事故而是钢结构而是那个是个和说个事</view>
+    </view>
+  </view>
+-->
+</scroll-view>
+
+<view>
+  <button class='butt'>通过</button>
+  <button class='butt1'>否决</button>
+</view>

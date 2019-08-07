@@ -1,0 +1,172 @@
+page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(248, 247, 247);
+}
+
+.scroll{
+  padding-bottom: 10rpx;
+}
+/* 直接设置swiper属性 */
+
+swiper {
+  height: 500rpx;
+  background: #fff;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.detail {
+  margin-bottom: 15rpx;
+  background-color: #fff;
+  padding:15rpx;
+}
+
+.detail .title {
+  font-size: 37rpx;
+  font-weight: 700;
+  margin: 15rpx 45rpx 15rpx 15rpx;
+  color: black;
+  text-align: justify;
+}
+
+.title_sort {
+  top: 20rpx;
+  text-align: justify;
+  justify-content: center;
+  height: 32rpx;
+  font-size: 28rpx;
+  position: relative;
+  padding: 5rpx;
+  border: 2rpx rgb(145, 143, 143) solid;
+  color: rgb(145, 143, 143);
+}
+
+.detail .price {
+  color: red;
+  font-size: 44rpx;
+  margin: 10rpx;
+  font-weight: 900;
+}
+
+.separate {
+  font-size: 33rpx;
+  color: black;
+  text-align: justify;
+  font-weight: 700;
+  margin:15rpx;
+}
+.separate_detail{
+   color: rgb(121, 118, 118);
+  font-size: 35rpx;
+  margin:15rpx;
+  text-align: justify;
+}
+
+.infor {
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+  color: rgb(197, 195, 195);
+  text-align: justify;
+  padding: 5rpx;
+  margin:15rpx;
+}
+
+.infor_detail {
+  color: rgb(121, 118, 118);
+  font-size: 35rpx;
+}
+
+.line_flag {
+  width: 80rpx;
+  height: 1rpx;
+  display: inline-block;
+  margin: 20rpx auto;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  height: 2rpx;
+  display: inline-block;
+  margin: 20rpx 0rpx;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+
+
+.icon {
+  width: 100rpx;
+}
+
+
+
+
+/* 占位 */
+
+text {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 10rpx;
+}
+
+
+
+
+
+/*评论*/
+
+
+
+.forum {
+  background: white;
+  margin-top: 2rpx;
+  border-top-color: #eee;
+}
+
+.top {
+  display: flex;
+}
+
+.SaveNum {
+  font-size: 29rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 15rpx;
+  margin-bottom: 3rpx;
+}
+
+.userhead {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 80px;
+  overflow: hidden;
+  margin: 5rpx 5rpx 5rpx 15rpx;
+}
+
+.butt {
+  bottom: 1%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  color: #fff;
+
+}
+
+.butt1 {
+  bottom: 5rpx;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  color: #fff;
+}

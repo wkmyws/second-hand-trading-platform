@@ -1,5 +1,5 @@
 page {
-  background: #eee;
+  background: rgb(248, 247, 247);
 }
 
 .menu {
@@ -7,20 +7,25 @@ page {
 }
 
 .item {
-  background: white;
+  background: rgb(248, 247, 247);
   display: flex;
-  border-bottom: 1px #eee solid;
+  border-bottom: 1rpx #eee solid;
+  width: 86%;
+  margin: 2% 7% 0% 6%;
+  font-size: 35rpx;
+  padding: 10rpx;
+  height: 100rpx;
 }
 
 .left {
   display: flex;
   align-items: center;
-  padding-left: 16rpx;
-  font-size: 32rpx;
+  padding-left: 15rpx;
 }
 
 .input {
   height: 100%;
+  width: 60%;
   display: flex;
   font-size: 32rpx;
   color: rgb(136, 136, 136);
@@ -34,10 +39,9 @@ page {
 }
 
 .header {
-  width: 140rpx;
-  height: 140rpx;
+  width: 120rpx;
+  height: 120rpx;
   position: relative;
- margin:10rpx;
   left: 10rpx;
   z-index: 20;
   border-radius: 5rpx;
@@ -45,14 +49,22 @@ page {
 
 .butt {
   position: fixed;
-  bottom: 5px;
-  width: 96%;
-  margin-left: 2%;
+  bottom: 1%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  color: #fff;
+
 }
 
 .butt1 {
-  position: fixed;
-  bottom: 9%;
-  width: 96%;
-  margin-left: 2%;
+ position: fixed;
+  bottom: 5rpx;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 16%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  color: #fff;
+
 }

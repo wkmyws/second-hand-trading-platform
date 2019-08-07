@@ -1,13 +1,11 @@
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-
-  <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">
-    <swiper-item>
-      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode='aspectFit'></image>
-    </swiper-item>
-  </block>
-
-</swiper>
-<scroll-view scroll-y="true">
+<scroll-view scroll-y="true" class="scroll">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode='aspectFit'></image>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="detail">
     <view class="price">
       ￥{{goods_detail.goods_price}}
@@ -21,7 +19,7 @@
     </view>
     <view class="top">
       <view class="SaveNum">浏览量{{ViewNum}}</view>
-      <view class="SaveNum">点赞量{{ThumbNum}}</view>
+      <view class="SaveNum">收藏量{{ThumbNum}}</view>
     </view>
   </view>
   <view class="detail">
@@ -31,18 +29,15 @@
       <view class="infor_detail">
         你未来的男朋友</view>
     </view>
-
     <view class="infor">
       <view>发布时间：
-
       </view>
       <view class="infor_detail">{{goods_detail.goods_publish_time}}</view>
     </view>
   </view>
-
   <view class='detail'>
     <view class="separate">商品详情</view>
-    <text>{{goods_detail.goods_content}}</text>
+    <view class="separate_detail">{{goods_detail.goods_content}}</view>
   </view>
   <!--
   <view class="comment">
@@ -58,24 +53,21 @@
 -->
 </scroll-view>
 <view class="detail-nav">
-  <image wx:if='{{ThumbStatus}}' src='/images/点赞.png' class='save' catchtap='ChangeThumb'></image>
-  <image wx:else src='/images/点赞1.png' class='save' catchtap='ChangeThumb' ></image>
-  <view>点赞</view>
-  <image wx:if='{{SaveStatus}}' class='save' bindtap="set_fav" src='/images/save.png' hidden='{{hidden}}' />
-  <image wx:else src='/images/save1.png' class='save'></image>
+  <image wx:if='{{SaveStatus}}' class='save' bindtap="set_fav" src='http://image.natal.tech/image/shou.png' hidden='{{hidden}}' />
+  <image wx:else src='http://image.natal.tech/image/shou1.png' class='save'></image>
   <view hidden='{{hidden}}'>收藏</view>
   <button class="button-red" bindtap="buy" form-type='submit'>我想购买</button>
 </view>
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
-  <view>联系方式</view>
-  <view>手机号：(点击可拨打）
-    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'>{{seller_data.user_phone}}</text>
+  <view>
+  <image src='http://image.natal.tech/image/yonghu.jpg' class='user'></image>
+  联系方式</view>
+  <view class="information">手机号：<view class="information-next">(点击可拨打）</view></view>
+    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone}} </text>
+  <view class="information">微信号：<view class="information-next">（长按可复制）</view>  </view>
+    <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
+
+  <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
+    <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
   </view>
-  <view>微信号：（长按可复制）
-    <text catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
-  </view>
-  <view>QQ:（长按可复制）
-    <text catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
-  </view>
-</view>

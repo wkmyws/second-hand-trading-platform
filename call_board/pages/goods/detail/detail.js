@@ -5,7 +5,7 @@ Page({
     hidden: true,
     is_fav: true,
     showModalStatus: false,
-    animationData: {},
+    animationData: {}, 
     imgUrls: [],
     indicatorDots: true,
     autoplay: true,

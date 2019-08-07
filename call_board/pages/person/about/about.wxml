@@ -1,16 +1,16 @@
 <view class="page__hd">
-  <image class="weui-media-box__thumb" src="http://xcx.nau.edu.cn/images/kebiao.png" />
+  <image class="weui-media-box__thumb" src="http://image.natal.tech/image/icon.png" />
   <view class="page__title">校园微集市</view>
   <view class="page__desc">提供南京审计大学在校生买卖二叔商品，发布需求信息的功能。</view>
 </view>
 <view class="page__bd">
   <view class="weui-article">
-    <view class="weui-article__p" style="color:#43B0D1;">应用介绍</view>
+    <view class="weui-article__title">应用介绍</view>
     <view class="weui-article__p weui-article__pa">“校园微集市”小程序是南审Natal信息与技术协会为南审学生量身打造的校园二手买卖交换及需求发布平台，旨在完善与便捷校园信息见建设，促进校内优质资源的转换率，为南审学子提供便捷服务。
     </view>
     <view class="weui-article__p weui-article__pa">由于小程序尚处开发阶段，目前版本为公开测试版，若使用过程中难免出现各种问题，还望多多包涵，并通过吐个槽等渠道向我们反映。
     </view>
-    <view class="weui-article__p" style="color:#43B0D1;">技术支持：</view>
+    <view class="weui-article__title">技术支持：</view>
     <view class="weui-article__p">·Natal团队</view>
     <view class="weui-article__p">@xfy9326</view>
     <view class="weui-article__p">@soapdx</view>
@@ -18,17 +18,17 @@
     <!--<view class="weui-article__p">· QQ：2944414576 / Wechat：jironggen</view>-->
     <view class="weui-article__p weui-article__pa">目前小程序的功能正在逐渐增加和完善中，如果你在使用中有问题或建议，请点击下方联系客服或加入技术支持QQ群，建议通过吐个槽的方式，留下你的问题，方便存档与解决。如果你对小程序或网页制作研究，请联系Natal信息与技术协会社团，欢迎你的加入！</view>
     <view class="weui-article__p">·QQ群：893521976</view>
-    <view class="weui-article__p" style="color:#43B0D1;">广告投放：</view>
+    <view class="weui-article__title">广告投放：</view>
     <view class="weui-article__p weui-article__pa">“校园微集市”小程序可以投放南审社团广告，活动宣传图片，优良商家的宣传图片。Natal团队积极希望与校园内各大社团合作，互惠，促进校园内的社团发展，形成良好的校园文化氛围。</view>
     <view class="weui-article__p">宣传投放联系：2944414576（外联QQ)</view>
-    <view class="weui-article__p" style="color:#43B0D1;">版权声明：</view>
+    <view class="weui-article__title">版权声明：</view>
     <view class="weui-article__p">版本号：0.9.5</view>
     <view class="weui-article__p">“校园微集市”小程序最终解释权只归Natal团队所有</view>
 
     <view class="weui-center">
-      <button size="mini" open-type="contact">联系客服</button>
+      <button class="mini" open-type="contact">联系客服</button>
 
-      <button size="mini" open-type="share">分享朋友</button>
+      <button class="mini" open-type="share">分享朋友</button>
     </view>
   </view>
 </view>

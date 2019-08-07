@@ -1,4 +1,4 @@
-// pages/board/detail/detail.js
+
 Page({
 
   /**
@@ -12,7 +12,10 @@ Page({
       "http://xcx.nau.edu.cn/images/adv2.jpg?",
       "http://xcx.nau.edu.cn/images/school1.jpg?",
       "http://xcx.nau.edu.cn/images/plus.png?"
-    ]
+    ],
+ 
+
+
   },
 
   /*图片预览 */
@@ -26,6 +29,8 @@ Page({
     })
   },
 
+
+  
   /**
    * 生命周期函数--监听页面加载
    */

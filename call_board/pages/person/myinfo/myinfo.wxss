@@ -1,48 +1,70 @@
-page{
-  background: #eee;
+page {
+  background: rgb(248, 247, 247);
 }
 
-.top{
-  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
-  margin-bottom: 20rpx;
-  border-radius: 0% 0% 20% 20%;
-
-}
-
-.nickpic{
-  width: 250rpx;
-  height: 250rpx;
-  margin: 0 auto;
-  border-radius: 20rpx;
-}
-
-.nickname{
-  text-align: center;
-}
-
-.item{
-  height: 70rpx;
-  background-color: white;
+.top {
+  background-color: rgb(5, 5, 5);
+  position: fixed;
   display: flex;
-  margin-top: 1px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ margin: 1% 8% 0 8%;
+ border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  width: 84%;
+  height: 270rpx;
 }
 
-.left{
+.nickpic {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 130rpx;
+  margin:0;
+  overflow: hidden;
+  border: 8rpx solid rgb(248, 247, 247);
+}
+
+.nickname {
+  text-align: center;
+   margin: 0 0 -300rpx 0;
+   font-weight: 700;
+}
+
+.item {
+  height: 100rpx;
+  background-color: rgb(248, 247, 247);
+  display: flex;
+  margin-top: 2rpx;
+  margin-left:8%;
+}
+
+.left {
   display: flex;
   align-items: center;
   padding-left: 16rpx;
-  font-size: 32rpx;
+  font-size: 35rpx;
 }
 
-.right{
+.right {
   display: flex;
   align-items: center;
   color: rgb(136, 136, 136);
 }
 
-.butt{
-  position: fixed;
-  bottom: 5px;
-  width: 96%;
-  margin-left: 2%;
+.butt {
+ position: fixed;
+  bottom: 5rpx;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1%;
+  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+  color: #fff;
+  z-index: 999;
+}
+
+.myinfo {
+  position: absolute;
+  margin-top: 450rpx;
+  width: 100%;
 }
