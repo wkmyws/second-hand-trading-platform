@@ -3,17 +3,17 @@ page {
 }
 
 .top {
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(248, 247, 247);
   position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- margin: 1% 8% 0 8%;
+ margin: 0 8% 0 8%;
  border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   width: 84%;
-  height: 270rpx;
+  height: 260rpx;
 }
 
 .nickpic {
@@ -22,12 +22,12 @@ page {
   border-radius: 130rpx;
   margin:0;
   overflow: hidden;
-  border: 8rpx solid rgb(248, 247, 247);
+  border: 8rpx solid #fff;
 }
 
 .nickname {
   text-align: center;
-   margin: 0 0 -300rpx 0;
+   margin: 20rpx 0 -140rpx 0;
    font-weight: 700;
 }
 
@@ -35,7 +35,6 @@ page {
   height: 100rpx;
   background-color: rgb(248, 247, 247);
   display: flex;
-  margin-top: 2rpx;
   margin-left:8%;
 }
 
@@ -65,6 +64,6 @@ page {
 
 .myinfo {
   position: absolute;
-  margin-top: 450rpx;
+  margin-top: 380rpx;
   width: 100%;
 }
