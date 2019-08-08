@@ -6,65 +6,11 @@
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
     <!--公告-->
     <swiper-item>
-     <view class="board" bindtap='board'>
-    <!--头像昵称-->
-    <view class='top'>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
-      <text class='username'>你未来的男朋友</text>
-      <!--推荐-->
-      <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
-    </view>
-    <!--小图标-->
-    <!--收藏-->
-    <view class="title">约拼车的小伙伴，求带？</view>
-    <!--图片-->
-    <view class='body'>
-      <!--公告的简介-->
-      <view>
-        <view class='text1'>2月31号晚上8点
-        </view>
-      </view>
-      <view class='image'>
-        <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
-      </view>
-    </view>
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='ThumbNum'>{{SaveNum}}</text>
-      <!--时间显示栏-->
-      <text class='time'>2019-02-15 16:22:14</text>
-    </view>
-    </view>
+     <include src="myissue_board.wxml"/>
     </swiper-item>
     <!--商品-->
     <swiper-item>
-      <view class='board' bindtap="good">
-        <!--头像昵称-->
-        <view class='top'>
-          <image class='userhead' src='/images/test/user1.jpg'></image>
-          <text class='username'>你未来的男朋友</text>
-        </view>
-        <view class="title">商品名称</view>
-        <view class='body'>
-          <!--商品的简介-->
-          <view>
-            <view class='text1'>商品的详情
-            </view>
-          </view>
-          <view class='image'>
-            <image class='img' src='http://xcx.nau.edu.cn/images/school5.jpg' mode='aspectFill'></image>
-          </view>
-        </view>
-        <view class="SaveNum">浏览量
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏量
-      <text class='ThumbNum'>{{SaveNum}}</text>
-          <text class='time'>2019-02-15 16:22:14</text>
-        </view>
-      </view>
+      <include src="myissue_goods.wxml"/>
     </swiper-item>
   </swiper>
 </view>
