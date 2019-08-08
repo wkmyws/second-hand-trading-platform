@@ -25,9 +25,9 @@
   <view class="detail">
     <view class="infor">
       <view>商品来自:</view>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <image class='userhead' src='{{user_avatar_url}}'></image>
       <view class="infor_detail">
-        你未来的男朋友</view>
+        {{user_name}}</view>
     </view>
     <view class="infor">
       <view>发布时间：
