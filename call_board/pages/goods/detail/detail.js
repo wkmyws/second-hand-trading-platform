@@ -14,9 +14,12 @@ Page({
     goods_detail: null,
     seller_data: null,
     ThumbStatus: 'false', //点赞的状态
-    ThumbNum: 20, //点赞的数量
+    ThumbNum: 20, //点赞(收藏)的数量
     SaveStatus: 'false', //收藏的状态
-    ViewNum: 20,//点赞的数量
+    ViewNum: 20,//浏览的数量
+    user_id:null,
+    user_name:null,
+    user_avatar_url:null,
   },
 
   previewImage: function(e) {
@@ -194,7 +197,12 @@ Page({
           if (res.data.status == 0) {
             var res_data = JSON.parse(util.base64_decode(res.data.data))
             that.setData({
-              goods_detail: res_data
+              goods_detail: res_data,
+              ViewNum: res_data.goods_browser_amount,
+              ThumbNum: res_data.goods_collection_amount,
+              user_id: res_data.user_id,
+              user_name: res_data.user_name,
+              user_avatar_url: res_data.user_avatar_url,
             })
             var data = {
               goods_id: res_data.goods_id,

@@ -25,9 +25,9 @@
   <view class="detail">
     <view class="infor">
       <view>商品来自:</view>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
+      <image class='userhead' src='{{user_avatar_url}}'></image>
       <view class="infor_detail">
-        你未来的男朋友</view>
+        {{user_name}}</view>
     </view>
     <view class="infor">
       <view>发布时间：
@@ -61,7 +61,7 @@
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
   <view>
-  <image src='http://image.natal.tech/image/yonghu.jpg' class='user'></image>
+  <image src='{{user_avatar_url}}' class='user'></image>
   联系方式</view>
   <view class="information">手机号：<view class="information-next">(点击可拨打）</view></view>
     <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone}} </text>
