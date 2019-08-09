@@ -67,7 +67,6 @@
     <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone}} </text>
   <view class="information">微信号：<view class="information-next">（长按可复制）</view>  </view>
     <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
-
   <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
     <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
   </view>

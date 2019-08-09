@@ -22,11 +22,7 @@
     "pages/person/collect/collect",
     "pages/person/collect/collect-board/collect-board",
     "pages/person/collect/collect-good/collect-good",
-    "pages/board/detail/detail",
-    "pages/person/collect/collect_board",
-    "pages/person/collect/collect_goods",
-    "pages/person/myissue/myissue_board",
-    "pages/person/myissue/myissue_goods"
+    "pages/board/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
