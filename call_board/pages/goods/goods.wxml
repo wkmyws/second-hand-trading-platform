@@ -1,6 +1,6 @@
 <view class='head'>
 <view class="head-top">
-  <!--顶部搜索栏-->
+  <!--顶部搜索栏--> 
   <view class="search">
     <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
     </input>
