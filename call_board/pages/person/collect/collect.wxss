@@ -236,3 +236,7 @@ swiper-item{
   top: 20rpx;
   right: 20rpx;
 }
+.intro{
+  width: 66%;
+  margin-right: 10rpx;
+}

@@ -262,24 +262,11 @@
   line-height: 10rpx;
 }
 
-.left,.right {
+.left, .right {
   display: inline-block;
   vertical-align: top;
   width: 48%;
   margin-top: 100rpx;
-}
-
-.plus_show{
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
-.plus_hide{
-  display: none;
 }
 
 .right {

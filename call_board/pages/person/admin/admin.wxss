@@ -223,3 +223,7 @@ swiper {
   display: inline-block;
   overflow: hidden;
 }
+.intro{
+  width: 66%;
+  margin-right: 10rpx;
+}

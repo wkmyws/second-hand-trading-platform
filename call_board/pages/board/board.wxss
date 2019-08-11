@@ -1,19 +1,6 @@
-.board {
-  position: relative;
-  margin-top: 20rpx;
-  margin-left: 1%;
-  margin-right: 1%;
-  background-color: #fafafa;
-  padding: 10rpx;
-}
-
-.body {
-  position: relative;
-  display: flex;
-}
-
 page {
   background-color: #eee;
+
 }
 
 .nav{
@@ -118,10 +105,7 @@ page {
   right: 50rpx;
   z-index: 100;
 }
-.intro{
-  width: 66%;
-  margin-right: 10rpx;
-}
+
 .plus_show{
   position: fixed;
   height: 100rpx;
@@ -158,11 +142,12 @@ page {
 }
 
 .butt {
-  width: 100%; /* 670rpx */
+  width: 88%; /* 670rpx */
   height: 275rpx;
   box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
   border-radius: 9rpx;
   overflow: hidden;
+  margin-left:6%;
 }
 
 /*图标*/
@@ -173,6 +158,45 @@ page {
   width: 50rpx;
   height: 50rpx;
   text-align: auto;
+}
+
+.save1 {
+  position: absolute;
+  right: 50rpx;
+  height: 40rpx;
+  width: 40rpx;
+  bottom: 10rpx;
+}
+
+.SaveNum {
+  font-size: 29rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 25rpx;
+  margin-bottom:5rpx;
+  margin-top:5rpx;
+}
+.num{
+    font-size: 30rpx;
+  color:#e00;
+    font-weight:700;
+  position: relative;
+  margin:15rpx 30rpx 15rpx 30rpx;
+
+}
+.thumbs_up1 {
+  position: absolute;
+  right: 140rpx;
+  height: 40rpx;
+  width: 40rpx;
+  bottom: 10rpx;
+}
+
+.ThumbNum {
+  font-size: 29rpx;
+  color: #bbb;
+  position: relative;
+  margin-bottom: 3rpx;
 }
 
 /*用户*/
@@ -186,21 +210,85 @@ page {
   width: 50rpx;
   height: 50rpx;
   border-radius: 80px;
-  margin: 10rpx 15rpx;
+  box-shadow: 0px 0px 0.5px 1px #eee;
+  margin: 10rpx 15rpx 10rpx 15rpx;
   display: flex;
   overflow: hidden;
 }
 
 .username {
-  font-size: 28rpx;
+  font-size: 29rpx;
   font-weight: bold;
   display: flex;
   color: rgb(196, 193, 193);
   align-items: center;
+  margin-top: 8rpx;
 }
 
-.icon {
+.time {
+  font-size: 28rpx;
+  color: #bbb;
   position: absolute;
+  float: right;
+  right: 25rpx;
+}
+
+.title {
+  font-size:35rpx;
+  font-weight:700;
+  margin: 0rpx 25rpx 10rpx 25rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+
+}
+.miniimg {
+  width: 120rpx;
+  height: 80rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+/*热榜*/
+.num{
+    font-size: 34rpx;
+  color:#e00;
+    font-weight:700;
+  position: relative;
+  margin:24rpx 25rpx 24rpx 25rpx;
+
+}
+.list-top{
+display: flex;
+height: 80rpx;
+
+}
+.list-title{
+  font-size: 34rpx;
+  font-weight: bold;
+  align-items: center;
+  margin-top: 25rpx;
+  width:450rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.list-number{
+  position: absolute;
+  right: 100rpx;
+  top:20rpx;
+    font-size: 28rpx;
+  display: flex;
+  color: rgb(196, 193, 193);
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.icon{
+   position: absolute;
   float: right;
   width: 40rpx;
   height: 40rpx;
@@ -208,18 +296,26 @@ page {
   right: 20rpx;
 }
 
-.image {
-  width: 40%;
+
+/*搜索*/
+
+.search {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
+  border: 3rpx solid #fff;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin: 10rpx;
+  position: sticky;
+  top: 50rpx;
+   padding-top: 25rpx;
 }
 
-.img {
+.search input {
   width: 100%;
-  height: 180rpx;
-  overflow: hidden;
-  border-radius: 20rpx;
+  height: 80rpx;
+  background: #fff;
+  padding-left: 32rpx;
 }
 
 .input {
@@ -231,131 +327,7 @@ page {
   font-size: 35rpx;
   min-height: 1.4rem;
 }
-
 .intro{
-  width: 60%;
+  width: 66%;
   margin-right: 10rpx;
-}
-
-.SaveNum {
-  font-size: 25rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 25rpx;
-  margin-bottom: 5rpx;
-  margin-top: 5rpx;
-}
-
-.text1 {
-  position: relative;
-  font-size: 28rpx;
-  margin-left: 25rpx;
-  text-indent: 50rpx;
-  line-height: 50rpx;
-  margin-right: 25rpx;
-  overflow: hidden;
-  text-overflow: unset;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-  font-family: "微软雅黑";
-  text-align: justify;
-}
-
-.time {
-  font-size: 25rpx;
-  color: #bbb;
-  position: absolute;
-  float: right;
-  right: 25rpx;
-}
-
-.title {
-  font-size: 30rpx;
-  font-weight: 700;
-  margin: 0rpx 25rpx 10rpx 25rpx;
-  overflow: hidden;
-  text-overflow: unset;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-}
-
-.plus_show{
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
-.plus_hide{
-  display: none;
-}
-
-.miniimg {
-  width: 120rpx;
-  height: 80rpx;
-  display: inline-block;
-  overflow: hidden;
-}
-
-/*热榜*/
-
-.num {
-  font-size: 34rpx;
-  color: #e00;
-  font-weight: 700;
-  position: relative;
-  margin: 24rpx 25rpx 24rpx 25rpx;
-}
-
-.list-top {
-  display: flex;
-  height: 80rpx;
-}
-
-.list-title {
-  font-size: 34rpx;
-  font-weight: bold;
-  align-items: center;
-  margin-top: 25rpx;
-  width: 450rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.list-number {
-  position: absolute;
-  right: 100rpx;
-  top: 20rpx;
-  font-size: 28rpx;
-  display: flex;
-  color: rgb(196, 193, 193);
-  align-items: center;
-  margin-top: 10rpx;
-}
-
-/*搜索*/
-
-.search {
-  display: flex;
-  flex-direction: row;
-  border: 3rpx solid #fff;
-  border-radius: 10rpx;
-  background-color: #fff;
-  margin: 20rpx 10rpx;
-  position: sticky;
-  top: 50rpx;
-}
-
-.search input {
-  width: 100%;
-  height: 80rpx;
-  background: #fff;
-  padding-left: 32rpx;
 }

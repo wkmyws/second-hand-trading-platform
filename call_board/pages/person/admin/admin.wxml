@@ -21,7 +21,7 @@
     <!--图片-->
     <view class='body'>
       <!--公告的简介-->
-      <view>
+      <view class="intro">
         <view class='text1'>2月31号晚上8点
         </view>
       </view>
@@ -29,10 +29,10 @@
         <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
       </view>
     </view>
-    <view class="SaveNum">点赞数
+    <view class="SaveNum">点赞量
       <text class='ThumbNum'>{{ThumbNum}}</text>
       <!--点赞-->
-      收藏数
+      收藏量
       <text class='ThumbNum'>{{SaveNum}}</text>
       <!--时间显示栏-->
       <text class='time'>2019-02-15 16:22:14</text>
@@ -52,7 +52,7 @@
         <view class="title">{{item.goods_title}}</view>
         <view class='body'>
           <!--商品的简介-->
-          <view>
+          <view class="intro">
             <view class='text1'>{{item.goods_summary}}</view>
           </view>
           <view class='image'>
@@ -62,7 +62,7 @@
         <view class="SaveNum">浏览量
           <text class='ThumbNum'>0</text>
           <!--点赞-->
-          收藏数
+          收藏量
           <text class='ThumbNum'>0</text>
           <text class='time'>2019-02-15 16:22:14</text>
         </view>

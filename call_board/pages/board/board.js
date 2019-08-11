@@ -16,13 +16,11 @@ Page({
     scrollTop: 0,
     showView: true,
   },
-
-  navbarTap: function(e) {
-    this.setData({
-      currentTab: e.currentTarget.dataset.idx
-    })
-  },
-
+navbarTap:function(e){
+  this.setData({
+    currentTab: e.currentTarget.dataset.idx
+  })
+},
   //收藏和取消收藏，收藏数量
   ChangeSave: function() {
     var sta = this.data.SaveStatus
@@ -65,7 +63,6 @@ Page({
     })
     console.log("plus")
   },
-  
   go: function() {
     wx.navigateTo({
       url: '../board/detail/detail',
@@ -114,10 +111,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    
+
   },
-  
-  //上滑显示，下滑隐藏发布公告的按钮
   onPageScroll: function (event) {
     let scroll = event.scrollTop; //当前的距离顶部的高度
     let scrollTop = this.data.scrollTop;  //记录的距离顶部的高度
