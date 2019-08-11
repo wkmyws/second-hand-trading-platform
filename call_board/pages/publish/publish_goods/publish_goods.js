@@ -66,7 +66,14 @@ Page({
       })
       return;
     }
-    //if()
+    if (!this.data.goods_content){
+      wx.showToast({
+        title: '描述内容为空',
+        icon: 'none',
+        mask: true
+      })
+      return;
+    }
     //submit
     console.log('ssss')
     var that = this
