@@ -43,7 +43,7 @@
     <!--商品-->
     <swiper-item>
       <block wx:for="{{goods}}" wx:key="goods_id">
-      <view class='board' bindtap="good">
+      <view class='board' bindtap="good" data-id='{{item.goods_id}}'>
         <!--头像昵称-->
         <view class='top'>
           <image class='userhead' src=''></image>
@@ -64,7 +64,7 @@
           <!--点赞-->
           收藏数
           <text class='SaveNum'>{{item.goods_collection_amount}}</text>
-          <text class='time'>{{item.goods_publish_time}}</text>
+          <text class='time'>状态：{{item.goods_state_name}}</text>
         </view>
       </view>
       </block>

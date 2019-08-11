@@ -1,7 +1,8 @@
-
+const app = getApp()
+var util = require('../../../../utils/util.js');
 Page({
   data: {
-    hidden: true,
+    hidden: false,
     is_fav: true,
     showModalStatus: false,
     animationData: {},
@@ -13,9 +14,143 @@ Page({
     goods_detail: null,
     seller_data: null,
     ThumbStatus: 'false', //点赞的状态
-    ThumbNum: 20, //点赞的数量
-    SaveStatus: 'false', //收藏的状态
-    ViewNum: 20,//点赞的数量
+    ThumbNum: 20, //点赞(收藏)的数量
+    ViewNum: 20,//浏览的数量
+    user_id: null,
+    user_name: null,
+    user_avatar_url: null,
+  },
+
+  previewImage: function (e) {
+    var current = e.target.dataset.src;
+    wx.previewImage({
+      current: current,
+      urls: this.data.goods_detail.goods_image_list,
+    })
+  },
+
+  buy: function () {
+    this.showModal();
+  },
+
+  showModal: function () {
+    // 显示遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+      showModalStatus: true
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 200)
+  },
+  //隐藏对话框
+  hideModal: function () {
+    // 隐藏遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showModalStatus: false
+      })
+    }.bind(this), 200)
+  },
+  callPhone: function (event) {
+    wx.makePhoneCall({
+      phoneNumber: event.target.id
+    })
+  },
+  copyIt: function (event) {
+    wx.setClipboardData({
+      data: event.target.id
+    })
+    wx.showToast({
+      title: '已复制到粘贴版',
+      icon: 'none',
+      duration: 1000
+    });
+  },
+
+  set_fav: function () {
+    var data = {
+      goods_id: this.data.goods_detail.goods_id,
+      set_favourite: !this.data.is_fav
+    }
+    var timestamp = Date.parse(new Date());
+    timestamp = String(timestamp / 1000);
+    data = JSON.stringify(data)
+    data = util.base64_encode(data)
+    var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+    //request
+    wx.request({
+      url: app.globalData.URL + "goods/setGoodsFavourite.php",
+      data: {
+        "version": 1,
+        "time": timestamp,
+        "data": data,
+        "sign": sign,
+        "token": app.globalData.token
+      },
+      method: 'POST',
+      header: {
+        "content-type": "application/json"
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.status == 1) {
+          wx.showToast({
+            title: '收藏操作失败！',
+            duration: 2000,
+            mask: true
+          })
+        } else {
+          this.setData({
+            is_fav: !this.data.is_fav
+          })
+          wx.showToast({
+            title: (this.data.is_fav ? '' : '取消') + '收藏成功',
+            duration: 2000,
+            mask: false
+          })
+        }
+      }
+    })
+
+
+  },
+  ChangeThumb: function () {
+    var sta = this.data.ThumbStatus
+    var num = this.data.ThumbNum
+    if (sta) {
+      this.setData({
+        ThumbStatus: false,
+        ThumbNum: num + 1
+      })
+    } else {
+      this.setData({
+        ThumbStatus: true,
+        ThumbNum: num - 1
+      })
+    }
   },
 
   get_detail: function (options) {
@@ -47,7 +182,13 @@ Page({
           if (res.data.status == 0) {
             var res_data = JSON.parse(util.base64_decode(res.data.data))
             that.setData({
-              goods_detail: res_data
+              goods_detail: res_data,
+              ViewNum: res_data.goods_browser_amount,
+              ThumbNum: res_data.goods_collection_amount,
+              user_id: res_data.user_id,
+              user_name: res_data.user_name,
+              user_avatar_url: res_data.user_avatar_url,
+              is_fav: res_data.is_user_favourite,
             })
             var data = {
               goods_id: res_data.goods_id,
@@ -79,32 +220,6 @@ Page({
                   that.setData({
                     seller_data: seller_data,
                   })
-
-                  var data = {
-                    goods_id: that.data.goods_detail.goods_id,
-                    set_favourite: that.data.is_fav
-                  }
-                  that.fav(data).then((value) => {
-                    //操作正常,前后重设为false
-                    that.setData({
-                      is_fav: false
-                    })
-                    var data = {
-                      goods_id: that.data.goods_detail.goods_id,
-                      set_favourite: that.data.is_fav
-                    }
-                    that.fav(data).then(
-                      that.setData({
-                        hidden: false
-                      })
-                    )
-                  })
-                    .catch((value) => {
-                      //重复收藏，前后台都为true不变
-                      that.setData({
-                        hidden: false
-                      })
-                    })
                 } else {
                   wx.showModal({
                     title: res.data.err_msg,
@@ -134,6 +249,8 @@ Page({
     })
   },
   onLoad: function (options) {
+    console.log('options')
+    console.log(options)
     var that = this
     that.get_detail(options)
   },

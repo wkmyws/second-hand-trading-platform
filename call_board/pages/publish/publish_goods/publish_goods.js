@@ -45,16 +45,40 @@ Page({
     })
   },
   submit: function(e) {
+    //校验数据有效性
+    wx.showToast({
+      title: '校验数据中...',
+      icon:'loading'
+    })
+    if(!this.data.goods_title){//名称规则
+      wx.showToast({
+        title: '商品名称为空',
+        icon: 'none',
+        mask: true
+      })
+      return;
+    }
+    if(/^\d*(\.\d{0,2})*$/.test(this.data.goods_price+'')==false){//价格规则
+      wx.showToast({
+        title: '价格输入错误',
+        icon:'none',
+        mask:true
+      })
+      return;
+    }
+    //if()
+    //submit
+    console.log('ssss')
     var that = this
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
     wx.showLoading({
       title: '上传图片中',
     })
-    console.log(that.data.img_info)
-    console.log(that.data.goods_title)
-    console.log(that.data.goods_price)
-    console.log(that.data.goods_content)
+    //console.log(that.data.img_info)
+    //console.log(that.data.goods_title)
+    //console.log(that.data.goods_price)
+    //console.log(that.data.goods_content)
 
     var promise_list = []
     for (let i in that.data.img_info) {
@@ -87,8 +111,9 @@ Page({
         }
       }
       if (goods_picture_arr.length == 0) {
-        wx.showModal({
-          content: '至少上传一张图片',
+        wx.showToast({
+          title: '至少上传一张图片',
+          icon:'none'
         })
         wx.hideLoading()
       } else {

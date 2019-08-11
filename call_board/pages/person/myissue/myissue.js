@@ -1,4 +1,4 @@
-var util = require('../../../utils/util.js');
+const util = require('../../../utils/util.js');
 const app = getApp()
 Page({
 
@@ -51,9 +51,8 @@ Page({
           return;
         }
         res = JSON.parse(util.base64_decode(res.data.data))
-        this.data.goods.concat(res.goods_list)
         this.setData({
-          goods: this.data.goods,
+          goods: this.data.goods.concat(res.goods_list),
           end_goods_id: res.end_goods_id
         })
       }
@@ -82,9 +81,9 @@ Page({
       url: '../myissue/myissue-board/myissue-board'
     })
   },
-  good: function () {
+  good: function (e) {
     wx.navigateTo({
-      url: '../myissue/myissue-good/myissue-good'
+      url: '../myissue/myissue-good/myissue-good?id='+e.currentTarget.dataset.id
     })
   }
 

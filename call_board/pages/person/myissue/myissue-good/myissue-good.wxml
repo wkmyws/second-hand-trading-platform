@@ -15,7 +15,7 @@
         {{goods_detail.goods_title}}
       </view>
 
-      <view class="title_sort">新品</view>
+      <view class="title_sort">{{goods_detail.goods_type_name}}</view>
     </view>
     <view class="top">
       <view class="SaveNum">浏览量{{ViewNum}}</view>
@@ -25,9 +25,8 @@
   <view class="detail">
     <view class="infor">
       <view>商品来自:</view>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
-      <view class="infor_detail">
-        你未来的男朋友</view>
+      <image class='userhead' src='{{goods_detail.user_avatar_url}}'></image>
+      <view class="infor_detail">{{goods_detail.user_name}}</view>
     </view>
     <view class="infor">
       <view>发布时间：

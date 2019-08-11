@@ -90,6 +90,7 @@ Page({
               icon: 'success',
               duration: 500
             })
+            app.globalData.user_info=this.data.my_info
             setTimeout(function () {
               that.change_parent_data();
               wx.navigateBack();
