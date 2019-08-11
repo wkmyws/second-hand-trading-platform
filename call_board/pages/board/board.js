@@ -135,5 +135,5 @@ Page({
         scrollTop:scroll
       })
     }
-  },
+  }
 })

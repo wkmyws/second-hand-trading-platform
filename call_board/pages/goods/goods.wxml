@@ -32,7 +32,7 @@
 -->
     <view>
       <!--悬浮按钮-->
-      <image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="publish"></image>
+      <image src="http://image.natal.tech/image/plus.png" class="{{showView?'plus_show':'plus_hide'}}" bindtap="publish"></image>
   
 
     <view>
