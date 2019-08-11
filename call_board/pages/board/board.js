@@ -10,15 +10,16 @@ Page({
     SaveStatus: 'false', //收藏的状态
     SaveNum: 10, //收藏的数量
     ThumbStatus: 'false', //点赞的状态
-    ThumbNum: 20 ,//点赞的数量
-    navbar:['首页','热榜','搜索'],
-    currentTab:0,
+    ThumbNum: 20, //点赞的数量
+    navbar: ['首页', '热榜', '搜索'],
+    currentTab: 0,
   },
-navbarTap:function(e){
-  this.setData({
-    currentTab: e.currentTarget.dataset.idx
-  })
-},
+
+  navbarTap: function(e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  },
   //收藏和取消收藏，收藏数量
   ChangeSave: function() {
     var sta = this.data.SaveStatus
