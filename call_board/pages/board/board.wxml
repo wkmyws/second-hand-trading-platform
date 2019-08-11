@@ -6,7 +6,7 @@
 </view>
 
 <!--悬浮按钮-->
-<image src="/images/添加.png" class="{{showView?'plus_show':'plus_hide'}}" bindtap="plus"></image>
+<image src="http://xcx.nau.edu.cn/images/plus.png?" class="{{showView?'plus_show':'plus_hide'}}" bindtap="plus"></image>
 
 <view hidden='{{currentTab != 0}}' class='content'>
   <!--公告栏视图1: 有图片的模板-->
