@@ -1,7 +1,8 @@
+const app = getApp()
+var util = require('../../../../utils/util.js');
 Page({
   data: {
     hidden: true,
-    is_fav: true,
     showModalStatus: false,
     animationData: {},
     imgUrls: [],
@@ -25,37 +26,6 @@ Page({
     })
   },
 
-
-  fav: function (data) {
-    return new Promise((resolve, reject) => {
-      var timestamp = Date.parse(new Date());
-      timestamp = String(timestamp / 1000);
-      data = JSON.stringify(data)
-      data = util.base64_encode(data)
-      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-      wx.request({
-        url: app.globalData.URL + "goods/setGoodsFavourite.php",
-        data: {
-          "version": 1,
-          "time": timestamp,
-          "data": data,
-          "sign": sign,
-          "token": app.globalData.token
-        },
-        method: 'POST',
-        header: {
-          "content-type": "application/json"
-        },
-        success: res => {
-          if (res.data.status == 0) {
-            resolve(res.data.status)
-          } else {
-            reject(res.data.status)
-          }
-        }
-      })
-    })
-  },
   
   get_detail: function (options) {
     return new Promise((resolve, reject) => {
@@ -121,29 +91,8 @@ Page({
 
                   var data = {
                     goods_id: that.data.goods_detail.goods_id,
-                    set_favourite: that.data.is_fav
                   }
-                  that.fav(data).then((value) => {
-                    //操作正常,前后重设为false
-                    that.setData({
-                      is_fav: false
-                    })
-                    var data = {
-                      goods_id: that.data.goods_detail.goods_id,
-                      set_favourite: that.data.is_fav
-                    }
-                    that.fav(data).then(
-                      that.setData({
-                        hidden: false
-                      })
-                    )
-                  })
-                    .catch((value) => {
-                      //重复收藏，前后台都为true不变
-                      that.setData({
-                        hidden: false
-                      })
-                    })
+                    
                 } else {
                   wx.showModal({
                     title: res.data.err_msg,
@@ -172,10 +121,64 @@ Page({
       })
     })
   },
-  onLoad: function (options) {
-    var that = this
-    that.get_detail(options)
-  },
+  passItemUpLoad: function (type, info_id, check_pass, check_conclusion) {
+    return new Promise((resolve, reject) => {
+      var timestamp = Date.parse(new Date());
+      timestamp = String(timestamp / 1000);
+      var data = JSON.stringify({
+        type: type,
+        info_id: info_id,
+        check_pass: check_pass,
+        check_conclusion: check_conclusion ? check_conclusion : null,
+      })
+      data = util.base64_encode(data)
+      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+      //request
+      wx.request({
+        url: app.globalData.URL + 'manage/setCheckResult.php',
+        data: {
+          "version": 1,
+          "time": timestamp,
+          "data": data,
+          "sign": sign,
+          "token": app.globalData.token,
+        },
+        method: 'POST',
+        header: {
+          "content-type": "application/json"
+        },
+        success: res => {
+          console.log(res)
+          if (res.data.status == 1) return reject();
+          else return resolve();
+        }
+      })
+    })
 
+  },
+  onLoad: function (options) {
+    this.get_detail(options)
+  },
+  passItem:function(e){
+    const type=0
+    const info_id=this.data.goods_detail.goods_id
+    const check_pass = e.target.dataset.pass == "true"
+    wx.showToast({
+      title: '提交中',
+      icon:'loading'
+    })
+    this.passItemUpLoad(type,info_id,check_pass).then(()=>{
+      wx.showToast({
+        title: '提交成功',
+        icon:'success',
+      })
+    }).catch(()=>{
+      wx.showToast({
+        title: '提交失败',
+        icon:'none',
+      })
+    })
+    
+  }
 
 })

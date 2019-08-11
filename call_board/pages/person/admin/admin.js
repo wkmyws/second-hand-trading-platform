@@ -47,17 +47,17 @@ Page({
           "content-type": "application/json"
         },
         success: res => {
-          console.log(res)
           if (res.data.status == 1) return reject();
           res = JSON.parse(util.base64_decode(res.data.data))
           this.setData({
-            goods: res
+            goods: res.goods_list
           })
           return resolve();
         }
       })//end request
     }).then(()=>{
       console.log('emm')
+      console.log(this.data.goods)
     }).catch(()=>{
       wx.showToast({
         title: '所在用户组权限不够',
@@ -68,43 +68,6 @@ Page({
     })
 
   },
-
-  passItem:function(type,info_id,check_pass,check_conclusion){
-    return new Promise((resolve,reject)=>{
-      var timestamp = Date.parse(new Date());
-      timestamp = String(timestamp / 1000);
-      var data = JSON.stringify({
-        type: type,
-        info_id: info_id,
-        check_pass: check_pass,
-        check_conclusion: check_conclusion ? check_conclusion : null,
-      })
-      data = util.base64_encode(data)
-      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-      //request
-      wx.request({
-        url: app.globalData.URL + 'manage/setCheckResult.php',
-        data: {
-          "version": 1,
-          "time": timestamp,
-          "data": data,
-          "sign": sign,
-          "token": app.globalData.token,
-        },
-        method: 'POST',
-        header: {
-          "content-type": "application/json"
-        },
-        success: res => {
-          console.log(res)
-          if (res.data.status == 1) return reject();
-          else return resolve();
-        }
-      })
-    })
-
-  },
-
 
   swiperTab: function (e) {
     var that = this;
@@ -129,9 +92,10 @@ Page({
       url: '../admin/admin-board/admin-board'
     })
   },
-  good: function () {
+  good: function (e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../admin/admin-good/admin-good'
+      url: '../admin/admin-good/admin-good?id=' + e.currentTarget.dataset.id
     })
   }
 
