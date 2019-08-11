@@ -50,4 +50,5 @@
     </view>
   </view>
 -->
+<button>状态:{{goods_state_name}}</button>
 </scroll-view>

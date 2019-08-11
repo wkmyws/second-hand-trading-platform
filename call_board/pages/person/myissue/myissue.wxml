@@ -43,11 +43,11 @@
     <!--商品-->
     <swiper-item>
       <block wx:for="{{goods}}" wx:key="goods_id">
-      <view class='board' bindtap="good" data-id='{{item.goods_id}}'>
+      <view class='board' bindtap="good" data-id='{{item.goods_id}}' data-statename='{{item.goods_state_name}}'>
         <!--头像昵称-->
         <view class='top'>
-          <image class='userhead' src=''></image>
-          <text class='username'>{{}}</text>
+          <image class='userhead' src='{{user.user_avatar_url}}'></image>
+          <text class='username'>{{user.user_name}}</text>
         </view>
         <view class="title">{{item.goods_title}}</view>
         <view class='body'>

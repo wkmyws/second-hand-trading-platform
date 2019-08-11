@@ -50,19 +50,18 @@ Page({
       title: '校验数据中...',
       icon:'loading'
     })
-    if(!this.data.goods_title){//名称规则
+    if (!this.data.goods_title || /\s/.test(this.data.goods_title)){//名称规则
       wx.showToast({
-        title: '商品名称为空',
+        title: '商品名称为空或含有空白符',
         icon: 'none',
-        mask: true
+        duration:4000
       })
       return;
     }
-    if(/^\d*(\.\d{0,2})*$/.test(this.data.goods_price+'')==false){//价格规则
+    if(/^\d+(\.\d{0,2})?$/.test(this.data.goods_price+'')==false){//价格规则
       wx.showToast({
         title: '价格输入错误',
         icon:'none',
-        mask:true
       })
       return;
     }
@@ -70,12 +69,11 @@ Page({
       wx.showToast({
         title: '描述内容为空',
         icon: 'none',
-        mask: true
       })
       return;
     }
     //submit
-    console.log('ssss')
+    console.log('submit')
     var that = this
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);

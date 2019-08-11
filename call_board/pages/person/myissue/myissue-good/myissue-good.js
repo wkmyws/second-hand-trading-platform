@@ -19,6 +19,7 @@ Page({
     user_id: null,
     user_name: null,
     user_avatar_url: null,
+    goods_state_name:null,//审核状态
   },
 
   previewImage: function (e) {
@@ -251,8 +252,11 @@ Page({
   onLoad: function (options) {
     console.log('options')
     console.log(options)
-    var that = this
-    that.get_detail(options)
+    this.get_detail(options)
+    this.setData({
+      goods_state_name: options.goods_state_name
+    })
+    
   },
 
 

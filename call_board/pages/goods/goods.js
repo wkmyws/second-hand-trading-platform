@@ -199,6 +199,14 @@ Page({
     })
     this.get_goods_list(data,'continue_add').then(()=>{
       wx.hideToast();
+      //判断到底
+      if(this.data.last_id==null){
+        wx.showToast({
+          title: '我是有底线的！',
+          icon: 'none',
+          duration: 2000
+        })
+      }
     }).catch(()=>{
       wx.showToast({
         title: '加载失败！',

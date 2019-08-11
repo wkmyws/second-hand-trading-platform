@@ -9,7 +9,8 @@ Page({
     currentTab: 0,
     boards: ['test'],//存放公告的数组
     goods: [],//存放商品的数组 
-    end_goods_id:null,//已加载的最后一组物品数据，为null则没有了
+    end_goods_id:-1,//已加载的最后一组物品数据，为null则没有了
+    user:[],
   },
 
   onReady: function (options) {
@@ -28,6 +29,12 @@ Page({
     })
     data = util.base64_encode(data)
     var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+    this.setData({
+      user:{
+        user_name: app.globalData.user_info.user_name,
+        user_avatar_url: app.globalData.user_info.user_avatar_url	
+      }
+    })
     wx.request({
       url: app.globalData.URL + 'user/getUserSubmit.php',
       data: {
@@ -83,9 +90,20 @@ Page({
   },
   good: function (e) {
     wx.navigateTo({
-      url: '../myissue/myissue-good/myissue-good?id='+e.currentTarget.dataset.id
+      url: '../myissue/myissue-good/myissue-good?id=' + e.currentTarget.dataset.id + '&goods_state_name=' + e.currentTarget.dataset.statename
     })
-  }
-
-
+  },
+   onReachBottom: function () {
+    // 页面上拉触底事件的处理函数  
+    console.log('reachBottom') 
+    if (!this.data.end_goods_id) {
+      wx.showToast({
+        title: '我是有底线的！',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
+    this.getGoodsItem(this.data.end_goods_id)
+   }
 })
