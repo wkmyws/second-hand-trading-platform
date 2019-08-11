@@ -1,5 +1,6 @@
 var util = require('../../utils/util.js');
 const app = getApp()
+const ct_num=4;//每页显示的最大条数
 Page({
   data: {
     currentTab: 0,
@@ -8,13 +9,17 @@ Page({
     swiperIndex: 0,
     isPopping: false, //是否已经弹出     
     navData: [], //顶部栏的内容
+    currentTab: 0,
+    scrollTop: 0,
+    showView: true,
     imgUrls: [
       "http://xcx.nau.edu.cn/images/school5.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school4.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school7.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school6.jpg?" + Math.random() / 9999
     ], //广告牌的图片
-    note: [] //瀑布流的样式数据
+    note: [], //瀑布流的样式数据
+    last_id:-1,//拉取的最后一个商品id
   },
   onPullDownRefresh: function() {
     var that = this
@@ -22,7 +27,7 @@ Page({
 
     var data = {
       "summary_sub": 20,
-      "count_num": 15,
+      "count_num": ct_num,
       "from_id": -1,
       "goods_type": that.data.currentTab + 1,
     }
@@ -37,7 +42,7 @@ Page({
     })
     console.log("to_publish")
   },
-  get_goods_list: function(data) {
+  get_goods_list: function(data,model) {//model?继续添加：重新添加
     return new Promise((resolve, reject) => {
       var that = this;
       var timestamp = Date.parse(new Date());
@@ -58,12 +63,14 @@ Page({
           "content-type": "application/json"
         },
         success: res => {
-          //console.log(res.data)
+          if(res.data.status==1)return reject();
           var res_data = JSON.parse(util.base64_decode(res.data.data))
           that.setData({
-            note: res_data.goods_list
+            note: model?this.data.note.concat(res_data.goods_list):res_data.goods_list,
+            last_id: res_data.end_goods_id
           })
-          console.log(that.data.note)
+          console.log(this.data.last_id)
+          return resolve();
         }
       })
     })
@@ -115,7 +122,7 @@ Page({
 
         var data = {
           "summary_sub": 20,
-          "count_num": 15,
+          "count_num": ct_num,//-------------------------
           "from_id": -1,
           "goods_type": 1,
         }
@@ -144,7 +151,7 @@ Page({
     }
     var data = {
       "summary_sub": 20,
-      "count_num": 15,
+      "count_num": ct_num,
       "from_id": -1,
       "goods_type": cur + 1,
     }
@@ -173,7 +180,61 @@ Page({
 
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数   
+    if(!this.data.last_id){
+      wx.showToast({
+        title: '我是有底线的！',
+        icon:'none',
+        duration:2000
+      })
+      return;
+    }
+     
+    var data = {
+      "summary_sub": 20,
+      "count_num": ct_num,//-------------------------
+      "from_id": this.data.last_id,
+      "goods_type": this.data.currentTab + 1,
+    }
+    wx.showToast({
+      title: '正在加载...',
+      icon: 'loading',
+      duration: 2000
+    })
+    this.get_goods_list(data,'continue_add').then(()=>{
+      wx.hideToast();
+      //判断到底
+      if(this.data.last_id==null){
+        wx.showToast({
+          title: '我是有底线的！',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    }).catch(()=>{
+      wx.showToast({
+        title: '加载失败！',
+        icon:'none',
+        duration:2000
+      })
+    })
   },
-
+  onPageScroll: function (event) {
+    let scroll = event.scrollTop; //当前的距离顶部的高度
+    let scrollTop = this.data.scrollTop;  //记录的距离顶部的高度
+    //下滑隐藏
+    if (scroll - scrollTop > 70) {
+      this.setData({
+        showView: false,
+        scrollTop: scroll
+      })
+    }
+    //上滑显示
+    else if (scroll - scrollTop < -10) {
+      this.setData({
+        showView: true,
+        scrollTop: scroll
+      })
+    }
+  }
 
 })

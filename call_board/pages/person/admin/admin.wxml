@@ -6,11 +6,12 @@
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
     <!--公告-->
     <swiper-item>
+    <block wx:for="{{boards}}" wx:key="">
      <view class="board" bindtap='board'>
     <!--头像昵称-->
     <view class='top'>
       <image class='userhead' src='/images/test/user1.jpg'></image>
-      <text class='username'>你未来的男朋友</text>
+      <text class='username'>你未来的男朋友aaa </text>
       <!--推荐-->
  
     </view>
@@ -37,34 +38,36 @@
       <text class='time'>2019-02-15 16:22:14</text>
     </view>
     </view>
+    </block>
     </swiper-item>
     <!--商品-->
     <swiper-item>
-      <view class='board' bindtap="good">
-        <!--头像昵称-->
+    <block wx:for="{{goods}}" wx:key="goods_id">
+      <view class='board' bindtap="good" data-id='{{item.goods_id}}'>
+        <!--头像昵称--> 
         <view class='top'>
-          <image class='userhead' src='/images/test/user1.jpg'></image>
-          <text class='username'>你未来的男朋友</text>
+          <image class='userhead' src='{{item.user_avatar_url}}'></image>
+          <text class='username'>{{item.user_name}}</text>
         </view>
-        <view class="title">商品名称</view>
+        <view class="title">{{item.goods_title}}</view>
         <view class='body'>
           <!--商品的简介-->
           <view>
-            <view class='text1'>商品的详情
-            </view>
+            <view class='text1'>{{item.goods_summary}}</view>
           </view>
           <view class='image'>
-            <image class='img' src='http://xcx.nau.edu.cn/images/school5.jpg' mode='aspectFill'></image>
+            <image class='img' src='{{item.goods_head_image}}' mode='aspectFill'></image>
           </view>
         </view>
         <view class="SaveNum">浏览量
-          <text class='ThumbNum'>{{ThumbNum}}</text>
+          <text class='ThumbNum'>0</text>
           <!--点赞-->
           收藏数
-          <text class='ThumbNum'>{{SaveNum}}</text>
+          <text class='ThumbNum'>0</text>
           <text class='time'>2019-02-15 16:22:14</text>
         </view>
       </view>
+      </block>
     </swiper-item>
   </swiper>
 </view>

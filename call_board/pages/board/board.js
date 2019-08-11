@@ -13,6 +13,8 @@ Page({
     ThumbNum: 20 ,//点赞的数量
     navbar:['首页','热榜','搜索'],
     currentTab:0,
+    scrollTop: 0,
+    showView: true,
   },
 navbarTap:function(e){
   this.setData({
@@ -110,5 +112,23 @@ navbarTap:function(e){
    */
   onPullDownRefresh: function() {
 
+  },
+  onPageScroll: function (event) {
+    let scroll = event.scrollTop; //当前的距离顶部的高度
+    let scrollTop = this.data.scrollTop;  //记录的距离顶部的高度
+    //下滑隐藏
+    if (scroll - scrollTop > 70) {
+      this.setData({
+        showView: false,
+        scrollTop: scroll
+      })
+    }
+    //上滑显示
+    else if (scroll - scrollTop < -10) {
+      this.setData({
+        showView: true,
+        scrollTop: scroll
+      })
+    }
   }
 })

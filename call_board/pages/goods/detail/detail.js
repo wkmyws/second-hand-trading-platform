@@ -2,7 +2,7 @@ const app = getApp()
 var util = require('../../../utils/util.js');
 Page({
   data: {
-    hidden: true,
+    hidden: false,
     is_fav: true,
     showModalStatus: false,
     animationData: {}, 
@@ -15,7 +15,6 @@ Page({
     seller_data: null,
     ThumbStatus: 'false', //点赞的状态
     ThumbNum: 20, //点赞(收藏)的数量
-    SaveStatus: 'false', //收藏的状态
     ViewNum: 20,//浏览的数量
     user_id:null,
     user_name:null,
@@ -90,67 +89,61 @@ Page({
       duration: 1000
     });
   },
-  fav: function(data) {
-    return new Promise((resolve, reject) => {
-      var timestamp = Date.parse(new Date());
-      timestamp = String(timestamp / 1000);
-      data = JSON.stringify(data)
-      data = util.base64_encode(data)
-      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-      wx.request({
-        url: app.globalData.URL + "goods/setGoodsFavourite.php",
-        data: {
-          "version": 1,
-          "time": timestamp,
-          "data": data,
-          "sign": sign,
-          "token": app.globalData.token
-        },
-        method: 'POST',
-        header: {
-          "content-type": "application/json"
-        },
-        success: res => {
-          if (res.data.status == 0) {
-            resolve(res.data.status)
-          } else {
-            reject(res.data.status)
-          }
-        }
-      })
-    })
-  },
+
   set_fav: function() {
-    var sta = this.data.SaveStatus
-    if (sta) {
-      this.setData({
-        SaveStatus: false,
-      })
-    } else {
-      this.setData({
-        SaveStatus: true,
-      })
-    }
-    var that = this
-    that.setData({
-      is_fav: !that.data.is_fav
+    wx.showToast({
+      title: (this.data.is_fav?'取消':'')+'收藏中...',
+      icon:'loading',
+      mask:false
     })
     var data = {
-      goods_id: that.data.goods_detail.goods_id,
-      set_favourite: that.data.is_fav
+      goods_id: this.data.goods_detail.goods_id,
+      set_favourite: !this.data.is_fav
     }
-    that.fav(data).then((value) => {
-        if (that.data.is_fav == 1) {
+    var timestamp = Date.parse(new Date());
+    timestamp = String(timestamp / 1000);
+    data = JSON.stringify(data)
+    data = util.base64_encode(data)
+    var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+    //request
+    wx.request({
+      url: app.globalData.URL + "goods/setGoodsFavourite.php",
+      data: {
+        "version": 1,
+        "time": timestamp,
+        "data": data,
+        "sign": sign,
+        "token": app.globalData.token
+      },
+      method: 'POST',
+      header: {
+        "content-type": "application/json"
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.status == 1) {
           wx.showToast({
-            title: '收藏成功',
+            title: '收藏操作失败！',
+            duration: 2000,
+            mask: true
+          })
+        } else {
+          this.setData({
+            is_fav:!this.data.is_fav
+          })
+          wx.showToast({
+            title: (this.data.is_fav?'':'取消')+'收藏成功',
+            duration: 2000,
+            mask: false
+          })
+          this.setData({
+            ThumbNum: this.data.ThumbNum + (this.data.is_fav?1:-1)
           })
         }
-      })
-      .catch((value) => {
-        wx.showToast({
-          title: '请勿重复收藏',
-        })
-      })
+      }
+    })
+    
+
   },
  ChangeThumb: function () {
     var sta = this.data.ThumbStatus
@@ -203,6 +196,7 @@ Page({
               user_id: res_data.user_id,
               user_name: res_data.user_name,
               user_avatar_url: res_data.user_avatar_url,
+              is_fav: res_data.is_user_favourite,
             })
             var data = {
               goods_id: res_data.goods_id,
@@ -234,32 +228,6 @@ Page({
                   that.setData({
                     seller_data: seller_data,
                   })
-
-                  var data = {
-                    goods_id: that.data.goods_detail.goods_id,
-                    set_favourite: that.data.is_fav
-                  }
-                  that.fav(data).then((value) => {
-                      //操作正常,前后重设为false
-                      that.setData({
-                        is_fav: false
-                      })
-                      var data = {
-                        goods_id: that.data.goods_detail.goods_id,
-                        set_favourite: that.data.is_fav
-                      }
-                      that.fav(data).then(
-                        that.setData({
-                          hidden: false
-                        })
-                      )
-                    })
-                    .catch((value) => {
-                      //重复收藏，前后台都为true不变
-                      that.setData({
-                        hidden: false
-                      })
-                    })
                 } else {
                   wx.showModal({
                     title: res.data.err_msg,

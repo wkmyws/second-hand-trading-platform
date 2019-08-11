@@ -5,21 +5,11 @@ Page({
   data: {
     currentTab: 0,
     boards:['test'],//存放公告的数组
-    goods:[],//存放商品的数组
+    goods:[],//存放商品的数组 
   },
-/*
-  goods[i]={
-    collection_id:collection_id,
-    goods_title:goods_title,
-    goods_summary:goods_summary,
-    goods_price:goods_price,
-    goods_collection_amount:goods_collection_amount,
-    goods_browser_amount:goods_browser_amount,
-    goods_head_image:goods_head_image,
-  }
- */
+
   onLoad: function (options) {
-    //拉取 个人收藏-商品
+    //拉取 个人收藏-商品 
     new Promise((resolve,reject)=>{
       var timestamp = Date.parse(new Date());
       timestamp = String(timestamp / 1000);
@@ -49,37 +39,13 @@ Page({
         }
       })
     }).then(()=>{
-      /*测试数据，记得删除下面的setData()
-      this.setData({
-        goods:[
-          {
-            collection_id: 3,
-            goods_title: "apt",
-            goods_summary: "aa",
-            goods_price: 988,
-            goods_collection_amount: 10,
-            goods_browser_amount: 1000,
-            goods_head_image: '',
-          },
-          {
-            collection_id: 2,
-            goods_title: "user",
-            goods_summary: "sudo su root",
-            goods_price: 23,
-            goods_collection_amount: 3,
-            goods_browser_amount: 34,
-            goods_head_image: '',
-          }
-        ]
-      })*/
-      //---------
       //获取卖家信息
       this.data.goods.forEach((item, index) => {
         new Promise((resolve, reject) => {
           //init
           var timestamp = Date.parse(new Date());
           timestamp = String(timestamp / 1000);
-          var data = JSON.stringify({ goods_id: item.collection_id, just_get_info: true })
+          var data = JSON.stringify({ goods_id: item.goods_id, just_get_info: true })
           data = util.base64_encode(data)
           var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
           //request
@@ -98,7 +64,7 @@ Page({
             },
             success: res => {
               if (res.data.status == 1) return reject()
-              resolve(JSON.parse(util.base64_decode(res.data.data)))
+              else return resolve(JSON.parse(util.base64_decode(res.data.data)))
             }
           })
         }).then((res) => {
@@ -110,7 +76,10 @@ Page({
             goods: this.data.goods
           })
           console.log(this.data.goods)
-        })//end promise
+        }).catch(()=>{
+          console.log('获取卖家昵称、头像错误')
+        })
+        //end promise
       })
 
 
@@ -156,9 +125,10 @@ Page({
       url: '../collect/collect-board/collect-board'
     })
   },
-  good: function () {
+  good: function (e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../collect/collect-good/collect-good'
+      url: '../collect/collect-good/collect-good?id=' + e.currentTarget.dataset.id
     })
   }
 

@@ -1,12 +1,11 @@
 <!--导航栏-->
-
 <view class='nav'>
   <view class="navbar">
     <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
   </view>
 </view>
 <!--悬浮按钮-->
-<image src="http://xcx.nau.edu.cn/images/plus.png?" class="img-plus-style" animation="{{animPlus}}" bindtap="plus" ></image>
+<image src="http://image.natal.tech/image/plus.png?" class="{{showView?'plus_show':'plus_hide'}}"  bindtap="plus" ></image>
 <view hidden='{{currentTab !==0}}' class='content'>
   <!--公告栏视图1: 有图片的模板-->
   <view class="board" bindtap='go'>
@@ -18,22 +17,21 @@
 
       <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
 
-    </view>
+    </view >
     <!--小图标-->
     <!--收藏-->
     <view class="title">约拼车的小伙伴，求带？</view>
     <!--图片-->
     <view class='body'>
       <!--公告的简介-->
-      <view>
-        <view class='text1'>2月31号晚上8点
+      <view class="intro">
+        <view class='text1'>2月31号晚上8点技术
         </view>
       </view>
       <view class='image'>
         <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
       </view>
     </view>
-
     <view class="SaveNum">点赞数
       <text class='ThumbNum'>{{ThumbNum}}</text>
       <!--点赞-->

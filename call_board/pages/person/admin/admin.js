@@ -1,3 +1,5 @@
+var util = require('../../../utils/util.js');
+const app = getApp()
 Page({
 
   /**
@@ -5,37 +7,52 @@ Page({
    */
   data: {
     currentTab: 0,
-    SaveStatus: 'false', //收藏的状态
-    SaveNum: 10, //收藏的数量
-    ThumbStatus: 'false', //点赞的状态
-    ThumbNum: 20,//点赞的数量
+    goods:[],
+    boards:['test'],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    //获取待审核商品
+    new Promise((resolve,reject)=>{
+      var timestamp = Date.parse(new Date());
+      timestamp = String(timestamp / 1000);
+      var data = JSON.stringify({ amount: 10, summary_sub: 10, type: 0 })
+      data = util.base64_encode(data)
+      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+      //request
+      wx.request({
+        url: app.globalData.URL + 'manage/getWaitCheckList.php',
+        data: {
+          "version": 1,
+          "time": timestamp,
+          "data": data,
+          "sign": sign,
+          "token": app.globalData.token,
+        },
+        method: 'POST',
+        header: {
+          "content-type": "application/json"
+        },
+        success: res => {
+          if (res.data.status == 1) return reject();
+          res = JSON.parse(util.base64_decode(res.data.data))
+          this.setData({
+            goods: res.goods_list
+          })
+          return resolve();
+        }
+      })//end request
+    }).then(()=>{
+      console.log('emm')
+      console.log(this.data.goods)
+    }).catch(()=>{
+      wx.showToast({
+        title: '所在用户组权限不够',
+        icon: 'none',
+        duration: 4000
+      })
+      wx.navigateBack()
+    })
 
   },
 
@@ -62,9 +79,10 @@ Page({
       url: '../admin/admin-board/admin-board'
     })
   },
-  good: function () {
+  good: function (e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../admin/admin-good/admin-good'
+      url: '../admin/admin-good/admin-good?id=' + e.currentTarget.dataset.id
     })
   }
 
