@@ -44,13 +44,6 @@
   padding: 15rpx;
 }
 
-.menu .item .sub-title {
-  font-size: 35rpx;
-  line-height: 1.75em;
-  color: #333;
-  margin-left: 16rpx;
-}
-
 .menu .item .arrow {
   float: right;
   height: 30rpx;
@@ -60,4 +53,9 @@
 
 page {
   background: #eee;
+}
+
+.sub-title{
+  font-size: 28rpx;
+  margin-left: 16rpx;
 }

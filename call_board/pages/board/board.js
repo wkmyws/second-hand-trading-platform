@@ -122,14 +122,14 @@ Page({
     let scroll = event.scrollTop; //当前的距离顶部的高度
     let scrollTop = this.data.scrollTop;  //记录的距离顶部的高度
     //下滑隐藏
-    if(scroll-scrollTop>20){
+    if(scroll-scrollTop>70){
       this.setData({
         showView: false,
         scrollTop: scroll
       })
     }
     //上滑显示
-    else if(scroll-scrollTop<-20){
+    else if(scroll-scrollTop<-70){
       this.setData({
         showView: true,
         scrollTop:scroll
