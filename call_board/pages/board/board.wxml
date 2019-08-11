@@ -1,12 +1,12 @@
 <!--导航栏-->
 <view class='nav'>
   <view class="navbar">
-    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" animation="{{moveData}}" bindtap="navbarTap">{{item}}</text>
   </view>
 </view>
 
 <!--悬浮按钮-->
-<image src="/images/添加.png" class="plus" animation="{{animPlus}}" bindtap="plus" ></image>
+<image src="/images/添加.png" class="{{showView?'plus_show':'plus_hide'}}" bindtap="plus"></image>
 
 <view hidden='{{currentTab !==0}}' class='content'>
   <!--公告栏视图1: 有图片的模板-->
@@ -29,7 +29,7 @@
       <view class="intro">
         <text class="text1">2月31号晚上8点</text>
       </view>
-      
+
       <!--图片-->
       <view class='image'>
         <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
@@ -40,7 +40,7 @@
     <view class="SaveNum">点赞数：{{ThumbNum}} 收藏数：{{SaveNum}}
       <text class='time'>2019-02-15 16:22:14</text>
     </view>
-    
+
     <!--
     <image wx:if='{{SaveStatus}}' src='/images/save.png' class='save1' catchtap='ChangeSave'></image>
     <image wx:else src='/images/save1.png' class='save1' catchtap='ChangeSave'></image>
@@ -105,7 +105,7 @@
       <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
     </view>
   </view>
-   <view class="board" bindtap='go'>
+  <view class="board" bindtap='go'>
     <!--头像昵称-->
     <view class='list-top'>
       <text class='num'>2</text>

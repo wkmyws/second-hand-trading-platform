@@ -58,15 +58,6 @@ page {
   display: flex;
 }
 
-.plus{
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
 /*图片*/
 
 .bottom {
@@ -198,6 +189,19 @@ page {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   word-break: break-all;
+}
+
+.plus_show{
+  position: fixed;
+  height: 100rpx;
+  width: 100rpx;
+  bottom: 50rpx;
+  right: 50rpx;
+  z-index: 100;
+}
+
+.plus_hide{
+  display: none;
 }
 
 .miniimg {
