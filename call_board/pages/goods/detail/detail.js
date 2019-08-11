@@ -131,6 +131,9 @@ Page({
             duration: 2000,
             mask: false
           })
+          this.setData({
+            ThumbNum: this.data.ThumbNum + (this.data.is_fav?1:-1)
+          })
         }
       }
     })

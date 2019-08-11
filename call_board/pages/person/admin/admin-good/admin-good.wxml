@@ -15,9 +15,9 @@
         {{goods_detail.goods_title}}
       </view>
 
-      <view class="title_sort">新品</view>
+      <view class="title_sort">{{goods_detail.goods_type_name}}</view>
     </view>
-    <view class="top">
+    <view class="top" wx:if="{{0}}">
       <view class="SaveNum">浏览量{{ViewNum}}</view>
       <view class="SaveNum">收藏量{{ThumbNum}}</view>
     </view>
@@ -25,14 +25,12 @@
   <view class="detail">
     <view class="infor">
       <view>商品来自:</view>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
-      <view class="infor_detail">
-        你未来的男朋友</view>
+      <image class='userhead' src='{{goods_detail.user_avatar_url}}'></image>
+      <view class="infor_detail">{{goods_detail.user_name}}</view>
     </view>
     <view class="infor">
-      <view>发布时间：
-      </view>
-      <view class="infor_detail">{{goods_detail.goods_publish_time}}</view>
+      <view>上传时间：</view>
+      <view class="infor_detail">{{goods_detail.goods_submit_time}}</view>
     </view>
   </view>
   <view class='detail'>
@@ -54,6 +52,6 @@
 </scroll-view>
 
 <view>
-  <button class='butt'>通过</button>
-  <button class='butt1'>否决</button>
+  <button class='butt' bindtap="passItem" data-pass='true'>通过</button>
+  <button class='butt1' bindtap="passItem" data-pass="false">否决</button>
 </view>
