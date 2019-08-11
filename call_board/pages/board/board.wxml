@@ -8,7 +8,7 @@
 <!--悬浮按钮-->
 <image src="/images/添加.png" class="{{showView?'plus_show':'plus_hide'}}" bindtap="plus"></image>
 
-<view hidden='{{currentTab !==0}}' class='content'>
+<view hidden='{{currentTab != 0}}' class='content'>
   <!--公告栏视图1: 有图片的模板-->
   <view class="board" bindtap='go'>
     <!--头像昵称-->
@@ -95,7 +95,7 @@
 </view>
 
 <!--热榜-->
-<view hidden='{{currentTab !==1}}'>
+<view hidden='{{currentTab != 1}}'>
   <view class="board" bindtap='go'>
     <!--头像昵称-->
     <view class='list-top'>
@@ -117,7 +117,7 @@
 </view>
 
 <!--搜索-->
-<view hidden='{{currentTab !==2}}'>
+<view hidden='{{currentTab != 2}}'>
   <view class="search">
     <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="搜一搜" selection-start="-1" selection-end="-1" cursor="-1">
     </input>
