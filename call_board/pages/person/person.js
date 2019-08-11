@@ -3,9 +3,10 @@ var util = require('../../utils/util.js');
 Page({
   data: {
     myinfo: null,
-    balance: null
+    balance: null,
   },
-  onLoad: function() {
+  onShow: function() {
+    console.log('show')
     app.getInfoCallback = res => {
       this.setData({
         myinfo:res
@@ -20,17 +21,20 @@ Page({
         }
       }
     })
-    if (this.data.myinfo.user_permission==50){
-      this.setData({
-        auth:'已认证'
-      })
-    }else{
-      this.setData({
-        auth: '游客'
-      })
+    switch(this.data.myinfo.user_permission){
+      case 0:
+        this.setData({ auth: '游客' }); break;
+      case 50:
+        this.setData({auth:'已认证'});break;
+      case 100:
+        this.setData({ auth: '审核员' }); break;
+      case 150:
+        this.setData({ auth: '管理员' }); break;
+      default:
+        this.setData({ auth: '未知身份' }); break;
     }
-  },
-  onShow: function() {
+    },
+  onLoad: function() {
 
   },
   tomyinfo: function() { //跳转至 个人信息

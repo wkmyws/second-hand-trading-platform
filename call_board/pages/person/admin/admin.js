@@ -1,16 +1,3 @@
-/*
-  passItem()函数用来提交审核结果，参数与 
-   https://dev.tencent.com/u/XFY9326/p/HighSchoolMarket/wiki/47
-  一致
-  eg:
-
-  this.passItem(0,1,true).then(()=>{
-    console.log('提交成功')
-  }).catch(()=>{
-    console.log('提交失败')
-  })
-
- */
 var util = require('../../../utils/util.js');
 const app = getApp()
 Page({
@@ -64,7 +51,7 @@ Page({
         icon: 'none',
         duration: 4000
       })
-
+      wx.navigateBack()
     })
 
   },

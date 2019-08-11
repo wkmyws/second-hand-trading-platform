@@ -7,6 +7,11 @@ swiper {
   height: 100%;
   width: 100%;
 }
+swiper-item{
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
 
 /*tab的设置*/
 

@@ -91,6 +91,11 @@ Page({
   },
 
   set_fav: function() {
+    wx.showToast({
+      title: (this.data.is_fav?'取消':'')+'收藏中...',
+      icon:'loading',
+      mask:false
+    })
     var data = {
       goods_id: this.data.goods_detail.goods_id,
       set_favourite: !this.data.is_fav
