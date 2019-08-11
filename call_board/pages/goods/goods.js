@@ -1,6 +1,6 @@
 var util = require('../../utils/util.js');
 const app = getApp()
-const ct_num=4;//每页显示的最大条数
+const ct_num = 4; //每页显示的最大条数
 Page({
   data: {
     currentTab: 0,
@@ -19,7 +19,7 @@ Page({
       "http://xcx.nau.edu.cn/images/school6.jpg?" + Math.random() / 9999
     ], //广告牌的图片
     note: [], //瀑布流的样式数据
-    last_id:-1,//拉取的最后一个商品id
+    last_id: -1, //拉取的最后一个商品id
   },
   onPullDownRefresh: function() {
     var that = this
@@ -42,7 +42,7 @@ Page({
     })
     console.log("to_publish")
   },
-  get_goods_list: function(data,model) {//model?继续添加：重新添加
+  get_goods_list: function(data, model) { //model?继续添加：重新添加
     return new Promise((resolve, reject) => {
       var that = this;
       var timestamp = Date.parse(new Date());
@@ -63,10 +63,10 @@ Page({
           "content-type": "application/json"
         },
         success: res => {
-          if(res.data.status==1)return reject();
+          if (res.data.status == 1) return reject();
           var res_data = JSON.parse(util.base64_decode(res.data.data))
           that.setData({
-            note: model?this.data.note.concat(res_data.goods_list):res_data.goods_list,
+            note: model ? this.data.note.concat(res_data.goods_list) : res_data.goods_list,
             last_id: res_data.end_goods_id
           })
           console.log(this.data.last_id)
@@ -122,7 +122,7 @@ Page({
 
         var data = {
           "summary_sub": 20,
-          "count_num": ct_num,//-------------------------
+          "count_num": ct_num, //-------------------------
           "from_id": -1,
           "goods_type": 1,
         }
@@ -177,21 +177,47 @@ Page({
     // 生命周期函数--监听页面隐藏   
   },
 
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  //上滑显示，下滑隐藏发布公告的按钮
+  onPageScroll: function(event) {
+    let scroll = event.scrollTop; //当前的距离顶部的高度
+    let scrollTop = this.data.scrollTop; //记录的距离顶部的高度
+    //下滑隐藏
+    if (scroll - scrollTop > 70) {
+      this.setData({
+        showView: false,
+        scrollTop: scroll
+      })
+    }
+    //上滑显示
+    else if (scroll - scrollTop < -70) {
+      this.setData({
+        showView: true,
+        scrollTop: scroll
+      })
+    }
+  },
 
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数   
-    if(!this.data.last_id){
+    if (!this.data.last_id) {
       wx.showToast({
         title: '我是有底线的！',
-        icon:'none',
-        duration:2000
+        icon: 'none',
+        duration: 2000
       })
       return;
     }
-     
+
     var data = {
       "summary_sub": 20,
-      "count_num": ct_num,//-------------------------
+      "count_num": ct_num, //-------------------------
       "from_id": this.data.last_id,
       "goods_type": this.data.currentTab + 1,
     }
@@ -200,7 +226,7 @@ Page({
       icon: 'loading',
       duration: 2000
     })
-    this.get_goods_list(data,'continue_add').then(()=>{
+    this.get_goods_list(data, 'continue_add').then(() => {
       wx.hideToast();
       //判断到底
       if(this.data.last_id==null){
@@ -213,8 +239,8 @@ Page({
     }).catch(()=>{
       wx.showToast({
         title: '加载失败！',
-        icon:'none',
-        duration:2000
+        icon: 'none',
+        duration: 2000
       })
     })
   },

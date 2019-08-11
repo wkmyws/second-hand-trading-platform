@@ -1,9 +1,10 @@
 <!--导航栏-->
 <view class='nav'>
   <view class="navbar">
-    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" animation="{{moveData}}" bindtap="navbarTap">{{item}}</text>
   </view>
 </view>
+
 <!--悬浮按钮-->
 <image src="http://image.natal.tech/image/plus.png?" class="{{showView?'plus_show':'plus_hide'}}"  bindtap="plus" ></image>
 <view hidden='{{currentTab !==0}}' class='content'>
@@ -13,21 +14,24 @@
     <view class='top'>
       <image class='userhead' src='/images/test/user1.jpg'></image>
       <text class='username'>你未来的男朋友</text>
-      <!--推荐-->
 
+      <!--推荐-->
       <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
 
     </view >
     <!--小图标-->
     <!--收藏-->
     <view class="title">约拼车的小伙伴，求带？</view>
-    <!--图片-->
+
+    <!--内容-->
     <view class='body'>
       <!--公告的简介-->
       <view class="intro">
         <view class='text1'>2月31号晚上8点技术
         </view>
       </view>
+
+      <!--图片-->
       <view class='image'>
         <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
       </view>
@@ -40,6 +44,7 @@
       <!--时间显示栏-->
       <text class='time'>2019-02-15 16:22:14</text>
     </view>
+
     <!--
     <image wx:if='{{SaveStatus}}' src='/images/save.png' class='save1' catchtap='ChangeSave'></image>
     <image wx:else src='/images/save1.png' class='save1' catchtap='ChangeSave'></image>
@@ -48,6 +53,7 @@
     <image wx:else src='/images/点赞1.png' class='thumbs_up1' catchtap='ChangeThumb'></image>
     <text class='ThumbNum'>{{ThumbNum}}</text> 
     -->
+
   </view>
   <!--公告栏视图2：没有图片的模板-->
   <view class="board">
@@ -61,7 +67,7 @@
       <image class='butt' src="http://xcx.nau.edu.cn/images/adv1.jpg?" mode='scaleToFill'></image>
     </view>
     <!--正文-->
-    <view class="text2">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
+    <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
     <view class="SaveNum">点赞数
       <text class='ThumbNum'>{{ThumbNum}}</text>
       <!--点赞-->
@@ -91,7 +97,9 @@
     </view>
   </view>
 </view>
-<view hidden='{{currentTab !==1}}'>
+
+<!--热榜-->
+<view hidden='{{currentTab != 1}}'>
   <view class="board" bindtap='go'>
     <!--头像昵称-->
     <view class='list-top'>
@@ -101,7 +109,7 @@
       <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
     </view>
   </view>
-   <view class="board" bindtap='go'>
+  <view class="board" bindtap='go'>
     <!--头像昵称-->
     <view class='list-top'>
       <text class='num'>2</text>
@@ -111,7 +119,9 @@
     </view>
   </view>
 </view>
-<view hidden='{{currentTab !==2}}'>
+
+<!--搜索-->
+<view hidden='{{currentTab != 2}}'>
   <view class="search">
     <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="搜一搜" selection-start="-1" selection-end="-1" cursor="-1">
     </input>
