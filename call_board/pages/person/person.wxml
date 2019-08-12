@@ -1,8 +1,9 @@
 
   <view >
     <view class="user" style='display:flex'>
-      <open-data type="userAvatarUrl" class="avatar"></open-data>
+      <image src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->
       <view class="name">{{myinfo.user_name}}</view>
+      
       <!--<open-data type="userNickName" class="name"></open-data>-->
       <view class='attest'>{{auth}}</view>
     </view>
