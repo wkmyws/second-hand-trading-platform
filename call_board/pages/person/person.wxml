@@ -48,7 +48,7 @@
       <text class='sub-title'>学生认证</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
-    <view class='item' bindtap='toadmin'>
+    <view wx:if='{{myinfo.user_permission>=100}}' class='item' bindtap='toadmin'>
       <text class='sub-title'>管理员审核</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
