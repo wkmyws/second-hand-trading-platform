@@ -7,7 +7,8 @@ swiper {
   height: 100%;
   width: 100%;
 }
-swiper-item{
+
+swiper-item {
   position: relative;
   height: 100%;
   overflow: scroll;
@@ -48,11 +49,9 @@ swiper-item{
   padding-bottom: 10rpx;
 }
 
-
 .body {
   position: relative;
   display: flex;
- 
 }
 
 .text1 {
@@ -84,19 +83,19 @@ swiper-item{
   word-break: break-all;
 }
 
-.img-plus-style {
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
 /*图片*/
 
 .bottom {
   height: 80rpx;
+}
+
+.icon {
+  position: absolute;
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  top: 20rpx;
+  right: 20rpx;
 }
 
 .image {
@@ -119,61 +118,9 @@ swiper-item{
   overflow: hidden;
 }
 
-.butt {
-  width: 100%; /* 670rpx */
-  height: 275rpx;
-  box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
-  border-radius: 9rpx;
-  overflow: hidden;
-}
-
-/*图标*/
-
-.pic {
-  position: absolute;
-  bottom: 10rpx;
-  width: 50rpx;
-  height: 50rpx;
-  text-align: auto;
-}
-
-.save1 {
-  position: absolute;
-  right: 50rpx;
-  height: 40rpx;
-  width: 40rpx;
-  bottom: 10rpx;
-}
-
-.SaveNum {
-  font-size: 29rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 25rpx;
-  margin-bottom:5rpx;
-  margin-top:5rpx;
-}
-.num{
-    font-size: 30rpx;
-  color:#e00;
-    font-weight:700;
-  position: relative;
-  margin:15rpx 30rpx 15rpx 30rpx;
-
-}
-.thumbs_up1 {
-  position: absolute;
-  right: 140rpx;
-  height: 40rpx;
-  width: 40rpx;
-  bottom: 10rpx;
-}
-
-.ThumbNum {
-  font-size: 29rpx;
-  color: #bbb;
-  position: relative;
-  margin-bottom: 3rpx;
+.intro {
+  width: 66%;
+  margin-right: 10rpx;
 }
 
 /*用户*/
@@ -181,6 +128,68 @@ swiper-item{
 .top {
   display: flex;
   height: 70rpx;
+}
+
+.text1 {
+  position: relative;
+  font-size: 28rpx;
+  margin-left: 25rpx;
+  text-indent: 50rpx;
+  line-height: 50rpx;
+  margin-right: 25rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-align: justify;
+}
+
+.time {
+  font-size: 25rpx;
+  color: #bbb;
+  position: absolute;
+  float: right;
+  right: 25rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 700;
+  margin: 0rpx 25rpx 10rpx 25rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.top {
+  display: flex;
+  height: 70rpx;
+}
+
+.intro {
+  width: 66%;
+  margin-right: 10rpx;
+}
+
+.search input {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  padding-left: 32rpx;
+}
+
+.SaveNum {
+  font-size: 25rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 25rpx;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
 }
 
 .userhead {
@@ -200,39 +209,4 @@ swiper-item{
   color: rgb(196, 193, 193);
   align-items: center;
   margin-top: 8rpx;
-}
-
-.time {
-  font-size: 28rpx;
-  color: #bbb;
-  position: absolute;
-  float: right;
-  right: 25rpx;
-}
-
-.title {
-  font-size:35rpx;
-  font-weight:700;
-  margin: 0rpx 25rpx 10rpx 25rpx;
-  overflow: hidden;
-  text-overflow: unset;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  word-break: break-all;
-
-}
-.miniimg {
-  width: 120rpx;
-  height: 80rpx;
-  display: inline-block;
-  overflow: hidden;
-}
-.icon{
-   position: absolute;
-  float: right;
-  width: 40rpx;
-  height: 40rpx;
-  top: 20rpx;
-  right: 20rpx;
 }

@@ -148,7 +148,18 @@
   right: 50rpx;
   opacity: 0;
 }
+.plus_show{
+  position: fixed;
+  height: 100rpx;
+  width: 100rpx;
+  bottom: 50rpx;
+  right: 50rpx;
+  z-index: 100;
+}
 
+.plus_hide{
+  display: none;
+}
 .content {
   margin: 0 20rpx;
   text-align: justify;

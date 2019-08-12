@@ -1,10 +1,10 @@
 <view>
   <view class='box'>
     <view class="title">拼车的小伙伴，就带？经过飞飞副教授积分法郭飞歌金盾股份</view>
-    <view class="SaveNum">点赞数
+    <view class="SaveNum">点赞量
       <text class='ThumbNum'>{{ThumbNum}}</text>
       <!--点赞-->
-      收藏数
+      收藏量
       <text class='ThumbNum'>{{SaveNum}}</text>
 
     </view>

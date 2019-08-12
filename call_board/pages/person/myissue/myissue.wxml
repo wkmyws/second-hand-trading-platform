@@ -3,70 +3,72 @@
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公告</view>
     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">商品</view>
   </view>
+
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
     <!--公告-->
     <swiper-item>
-    <block wx:for="{{boards}}" wx:key="">
-     <view class="board" bindtap='board'>
-    <!--头像昵称-->
-    <view class='top'>
-      <image class='userhead' src='/images/test/user1.jpg'></image>
-      <text class='username'></text>
-      <!--推荐-->
-      <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
-    </view>
-    <!--小图标-->
-    <!--收藏-->
-    <view class="title">这是标题</view>
-    <!--图片-->
-    <view class='body'>
-      <!--公告的简介-->
-      <view>
-        <view class='text1'>这是正文
+      <block wx:for="{{boards}}" wx:key="">
+        <view class="board" bindtap='go'>
+          <!--头像昵称-->
+          <view class='top'>
+            <image class='userhead' src='/images/test/user1.jpg'></image>
+            <text class='username'>你未来的男朋友</text>
+            <!--推荐-->
+
+            <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
+
+          </view>
+          <!--小图标-->
+          <!--收藏-->
+          <view class="title">约拼车的小伙伴，求带？</view>
+          <!--图片-->
+          <view class='body'>
+            <!--公告的简介-->
+            <view class="intro">
+              <view class='text1'>2月31号晚上8点技术
+              </view>
+            </view>
+            <view class='image'>
+              <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
+            </view>
+          </view>
+
+          <view class="SaveNum">
+            点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
+            <!--时间显示栏-->
+            <text class='time'>2019-02-15 16:22:14</text>
+          </view>
         </view>
-      </view>
-      <view class='image'>
-        <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
-      </view>
-    </view>
-    <view class="SaveNum">点赞数
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏数
-      <text class='ThumbNum'>{{SaveNum}}</text>
-      <!--时间显示栏-->
-      <text class='time'>2019-02-15 16:22:14</text>
-    </view>
-    </view>
-    </block>
+      </block>
     </swiper-item>
+
     <!--商品-->
     <swiper-item>
       <block wx:for="{{goods}}" wx:key="goods_id">
-      <view class='board' bindtap="good" data-id='{{item.goods_id}}' data-statename='{{item.goods_state_name}}'>
-        <!--头像昵称-->
-        <view class='top'>
-          <image class='userhead' src='{{user.user_avatar_url}}'></image>
-          <text class='username'>{{user.user_name}}</text>
-        </view>
-        <view class="title">{{item.goods_title}}</view>
-        <view class='body'>
-          <!--商品的简介-->
-          <view>
-            <view class='text1'>{{item.goods_summary}}</view>
+        <view class='board' bindtap="good" data-id='{{item.goods_id}}' data-statename='{{item.goods_state_name}}'>
+          <!--头像昵称-->
+          <view class='top'>
+            <image class='userhead' src='{{user.user_avatar_url}}'></image>
+            <text class='username'>{{user.user_name}}</text>
           </view>
-          <view class='image'>
-            <image class='img' src='{{item.goods_head_image}}' mode='aspectFill'></image>
+          <view class="title">{{item.goods_title}}</view>
+          <view class='body'>
+            <!--商品的简介-->
+            <view class="intro">
+              <view class='text1'>{{item.goods_summary}}</view>
+            </view>
+            <view class='image'>
+              <image class='img' src='{{item.goods_head_image}}' mode='aspectFill'></image>
+            </view>
+          </view>
+          <view class="SaveNum">浏览量
+            <text class='ThumbNum'>{{item.goods_browser_amount}}</text>
+            <!--点赞-->
+            收藏数
+            <text class='ThumbNum'>{{item.goods_collection_amount}}</text>
+            <text class='time'>状态：{{item.goods_state_name}}</text>
           </view>
         </view>
-        <view class="SaveNum">浏览量
-          <text class='ThumbNum'>{{item.goods_browser_amount}}</text>
-          <!--点赞-->
-          收藏数
-          <text class='SaveNum'>{{item.goods_collection_amount}}</text>
-          <text class='time'>状态：{{item.goods_state_name}}</text>
-        </view>
-      </view>
       </block>
     </swiper-item>
   </swiper>

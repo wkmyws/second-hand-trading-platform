@@ -9,6 +9,9 @@ Page({
     swiperIndex: 0,
     isPopping: false, //是否已经弹出     
     navData: [], //顶部栏的内容
+    currentTab: 0,
+    scrollTop: 0,
+    showView: true,
     imgUrls: [
       "http://xcx.nau.edu.cn/images/school5.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school4.jpg?" + Math.random() / 9999,
@@ -216,5 +219,24 @@ Page({
     })
   },
 
+  //发布按钮，下滑隐藏，上滑显示
+  onPageScroll: function (event) {
+    let scroll = event.scrollTop; //当前的距离顶部的高度
+    let scrollTop = this.data.scrollTop;  //记录的距离顶部的高度
+    //下滑隐藏
+    if (scroll - scrollTop > 40) {
+      this.setData({
+        showView: false,
+        scrollTop: scroll
+      })
+    }
+    //上滑显示
+    else if (scroll - scrollTop < -10) {
+      this.setData({
+        showView: true,
+        scrollTop: scroll
+      })
+    }
+  }
 
 })
