@@ -14,10 +14,6 @@
       <text class='left'>UID：</text>
       <text class='right'wx:if="{{myinfo.user_id!=null}}">{{myinfo.user_id}}</text>
     </view>
-     <view class='item'><!-- 把这个view删除，把上面的头像url改成下面这个地址-->
-      <text class='left'>头像：</text>
-      <text class='right'>{{myinfo.user_avatar_url}}</text>
-    </view>
     <view class='item'>
       <text class='left'>昵称：</text>
       <text class='right'wx:if="{{myinfo.user_name!=null}}">{{myinfo.user_name}}</text>
