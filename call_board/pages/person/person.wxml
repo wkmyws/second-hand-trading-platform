@@ -1,7 +1,7 @@
 
   <view >
     <view class="user" style='display:flex'>
-      <image src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->
+      <image  class="avatar"src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->
       <view class="name">{{myinfo.user_name}}</view>
       
       <!--<open-data type="userNickName" class="name"></open-data>-->
