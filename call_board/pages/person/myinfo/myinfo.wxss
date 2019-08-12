@@ -4,7 +4,6 @@ page {
 
 .top {
   background-color: rgb(248, 247, 247);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +38,7 @@ page {
 }
 
 .left {
-  display: flex;
+  display:flex;
   align-items: center;
   padding-left: 16rpx;
   font-size: 35rpx;
@@ -49,6 +48,7 @@ page {
   display: flex;
   align-items: center;
   color: rgb(136, 136, 136);
+  padding-right: 16rpx;
 }
 
 .butt {
@@ -63,7 +63,7 @@ page {
 }
 
 .myinfo {
- 
-  margin-top: 180rpx;
+  margin-top: 130rpx;
   width: 100%;
+  margin-bottom:30rpx;
 }
