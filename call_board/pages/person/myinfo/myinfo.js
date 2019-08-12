@@ -2,12 +2,12 @@ const app = getApp();
 var util = require("../../../utils/util.js");
 Page({
   data: {
-    my_info:null
+    myinfo:null
   },
 
   onShow: function (options) {
     this.setData({
-      my_info: app.globalData.user_info
+      myinfo: app.globalData.user_info
     })
   },
 
