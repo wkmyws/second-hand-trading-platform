@@ -7,11 +7,6 @@ Page({
   },
   onShow: function() {
     console.log('show')
-    app.getInfoCallback = res => {
-      this.setData({
-        myinfo:res
-      })
-    }
     this.setData({
       myinfo: app.globalData.user_info,
       extraData: {
@@ -21,6 +16,7 @@ Page({
         }
       }
     })
+    console.log(this.data.myinfo)
     switch(this.data.myinfo.user_permission){
       case 0:
         this.setData({ auth: '游客' }); break;

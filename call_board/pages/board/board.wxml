@@ -4,8 +4,10 @@
     <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
   </view>
 </view>
+
 <!--悬浮按钮-->
-<image src="http://image.natal.tech/image/plus.png?" class="{{showView?'plus_show':'plus_hide'}}"  bindtap="plus" ></image>
+<image src="http://image.natal.tech/image/plus.png?" class="{{showView?'plus_show':'plus_hide'}}" bindtap="plus"></image>
+
 <view hidden='{{currentTab !==0}}' class='content'>
   <!--公告栏视图1: 有图片的模板-->
   <view class="board" bindtap='go'>
@@ -17,7 +19,7 @@
 
       <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
 
-    </view >
+    </view>
     <!--小图标-->
     <!--收藏-->
     <view class="title">约拼车的小伙伴，求带？</view>
@@ -32,11 +34,9 @@
         <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
       </view>
     </view>
-    <view class="SaveNum">点赞量
-      <text class='ThumbNum'>{{ThumbNum}}</text>
-      <!--点赞-->
-      收藏量
-      <text class='ThumbNum'>{{SaveNum}}</text>
+
+    <view class="SaveNum">
+      点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
       <!--时间显示栏-->
       <text class='time'>2019-02-15 16:22:14</text>
     </view>
@@ -49,6 +49,7 @@
     <text class='ThumbNum'>{{ThumbNum}}</text> 
     -->
   </view>
+
   <!--公告栏视图2：没有图片的模板-->
   <view class="board">
     <!--头像昵称-->
@@ -101,7 +102,7 @@
       <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
     </view>
   </view>
-   <view class="board" bindtap='go'>
+  <view class="board" bindtap='go'>
     <!--头像昵称-->
     <view class='list-top'>
       <text class='num'>2</text>

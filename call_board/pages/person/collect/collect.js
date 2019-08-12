@@ -3,6 +3,8 @@ const app = getApp()
 Page({
 
   data: {
+    SaveNum: 10, //收藏的数量
+    ThumbNum: 20,//点赞的数量
     currentTab: 0,
     boards:['test'],//存放公告的数组
     goods:[],//存放商品的数组 
