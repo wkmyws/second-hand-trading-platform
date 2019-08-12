@@ -1,11 +1,7 @@
 <view class='content'>
   <view class='top'>
     <view class='nickpic'>
-       <image src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->
-    </view>
-    <view class='nickname'>
-      <view class="name">{{my_info.user_name}}</view>
-      <!--<open-data type="userNickName" ></open-data>-->
+       <image class='nickpic' src="{{my_info.user_avatar_url}}"></image><!--这是头像-->
     </view>
   </view>
   <view class="myinfo">
@@ -13,10 +9,6 @@
       <view class='item'>
       <text class='left'>UID：</text>
       <text class='right'wx:if="{{my_info.user_id!=null}}">{{my_info.user_id}}</text>
-    </view>
-     <view class='item'><!-- 把这个view删除，把上面的头像url改成下面这个地址-->
-      <text class='left'>头像：</text>
-      <text class='right'>{{my_info.user_avatar_url}}</text>
     </view>
     <view class='item'>
       <text class='left'>昵称：</text>

@@ -10,51 +10,72 @@ App({
       title: '登录中',
       mask: true
     })
-    wx.login({
-      success: res => {
-        var login_data = {
-          "wechat_login_token": res.code
-        }
-        login_data = JSON.stringify(login_data)
-        login_data = util.base64_encode(login_data)
-        var sign = util.sha1(login_data + timestamp)
-        wx.request({
-          url: that.globalData.URL + "user/login.php",
-          data: {
-            "version": 1,
-            "time": timestamp,
-            "data": login_data,
-            "sign": sign,
-            "token": null
-          },
-          method: 'POST',
-          header: {
-            "content-type": "application/json"
-          },
-          success: res => {
-            try {
-              //console.log(res.data)
-              var res_data = util.base64_decode(res.data.data)
-              res_data = JSON.parse(res_data)
-              that.globalData.token = res_data.token
-              that.globalData.user_info = res_data.user_info
-              wx.hideLoading()
-              if (this.getInfoCallback) {
-                //data 为需要传入的数据
-                this.getInfoCallback(that.globalData.user_info)
-              }
-            } catch (err) {
-              wx.hideLoading()
-              wx.showModal({
-                title: '登陆失败',
-                showCancel:false
-              })
-              //console.log(res.data)
-            }
+    new Promise((resolve,reject)=>{
+      wx.login({
+        success: res => {
+          var login_data = {
+            "wechat_login_token": res.code
           }
+          login_data = JSON.stringify(login_data)
+          login_data = util.base64_encode(login_data)
+          var sign = util.sha1(login_data + timestamp)
+          wx.request({
+            url: that.globalData.URL + "user/login.php",
+            data: {
+              "version": 1,
+              "time": timestamp,
+              "data": login_data,
+              "sign": sign,
+              "token": null
+            },
+            method: 'POST',
+            header: {
+              "content-type": "application/json"
+            },
+            success: res => {
+              try {
+                var res_data = util.base64_decode(res.data.data)
+                res_data = JSON.parse(res_data)
+                console.log(res_data)
+                that.globalData.token = res_data.token
+                that.globalData.user_info = res_data.user_info
+                wx.hideLoading()
+                if (this.getInfoCallback) {
+                  //data 为需要传入的数据
+                  this.getInfoCallback(that.globalData.user_info)
+                }
+                return resolve();
+              } catch (err) {
+                wx.hideLoading()
+                wx.showModal({
+                  title: '登陆失败',
+                  showCancel: false
+                })
+                return reject();
+                //console.log(res.data)
+              }
+            }
+          })
+        }
+      })
+    }).then(()=>{
+      wx.showLoading({
+        title: '获取信息中',
+        mask: true
+      })
+      this.upDataUserInfo().then(()=>{
+        wx.showToast({
+          title: '登录成功',
+          duration:1000
         })
-      }
+      }).catch(()=>{
+        wx.showToast({
+          title: '个人信息获取失败！',
+          mask: true
+        })
+      })
     })
+
 
   },
   globalData: {
@@ -62,5 +83,29 @@ App({
     user_info_wx: null,
     token: "token",
     URL: "https://xcx.natal.tech/HighSchoolMarket/api/interface/",
+  },
+  upDataUserInfo: function () {
+    return new Promise((resolve, reject) => {
+      console.log('start log in---')
+      var data = "";
+      var timestamp = String(Date.parse(new Date()) / 1000)
+      var sign = util.sha1(data + timestamp + this.globalData.user_info.user_id)
+      wx.request({
+        url: this.globalData.URL + 'user/getUserInfo.php',
+        data: { "version": 1, "time": timestamp, "data": data, "sign": sign, "token": this.globalData.token },
+        method: 'POST',
+        header: { "content-type": "application/json" },
+        success: res => {
+          console.log(res)
+          if (res.data.status == 1) return reject();
+          else {
+            res = JSON.parse(util.base64_decode(res.data.data))
+            this.globalData.user_info = res;
+            console.log(this.globalData)
+            return resolve()
+          }
+        }
+      })
+    })
   }
 })
