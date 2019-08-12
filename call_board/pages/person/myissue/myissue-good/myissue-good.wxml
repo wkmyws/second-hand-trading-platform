@@ -52,3 +52,4 @@
 -->
 <button>状态:{{goods_state_name}}</button>
 </scroll-view>
+<button class='butt' bindtap='ToDelete'>删除发布</button>

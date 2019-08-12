@@ -52,7 +52,7 @@ Page({
     })
     if (!this.data.goods_title || /\s/.test(this.data.goods_title)){//名称规则
       wx.showToast({
-        title: '商品名称为空或含有空白符',
+        title: '商品名称不能为空或含有空白符',
         icon: 'none',
         duration:4000
       })

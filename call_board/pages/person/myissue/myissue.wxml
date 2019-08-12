@@ -62,7 +62,7 @@
         <view class="SaveNum">浏览量
           <text class='ThumbNum'>{{item.goods_browser_amount}}</text>
           <!--点赞-->
-          收藏数
+          收藏量
           <text class='ThumbNum'>{{item.goods_collection_amount}}</text>
           <text class='time'>状态：{{item.goods_state_name}}</text>
         </view>

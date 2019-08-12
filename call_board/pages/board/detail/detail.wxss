@@ -177,6 +177,7 @@ padding-bottom:3rpx;
 
 .send {
   font-size:30rpx;
+  color: #fff;
   height: 70rpx;
   width: 20%;
   position: fixed;
