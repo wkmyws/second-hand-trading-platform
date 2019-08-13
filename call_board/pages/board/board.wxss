@@ -15,18 +15,6 @@ page {
   display: flex;
 }
 
-.plus_show {
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
-.plus_hide {
-  display: none;
-}
 
 /*图片*/
 
@@ -98,32 +86,28 @@ page {
   text-align: center;
 }
 
-.navbar .item {
-  width: 130rpx;
-  font-size: 37rpx;
-  color: #fff;
+.icon {
+  position: absolute;
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  top: 20rpx;
+  right: 20rpx;
 }
 
-.navbar .item.active {
-  color: #e00;
-  font-size: 40rpx;
-}
-
-.navbar .item.active:after {
-  content: '';
+.input {
   display: block;
-  position: relative;
-  top: 4rpx;
-  height: 4rpx;
-  background-color: #e00;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: UICTFontTextStyleBody;
+  font-size: 35rpx;
+  min-height: 1.4rem;
 }
 
-.num {
-  font-size: 34rpx;
-  color: #e00;
-  font-weight: 700;
-  position: relative;
-  margin: 24rpx 25rpx 24rpx 25rpx;
+.intro {
+  width: 66%;
+  margin-right: 10rpx;
 }
 
 .list-top {
@@ -153,13 +137,61 @@ page {
   margin-top: 10rpx;
 }
 
-.icon {
-  position: absolute;
-  float: right;
-  width: 40rpx;
-  height: 40rpx;
-  top: 20rpx;
-  right: 20rpx;
+.navbar .item {
+  width: 130rpx;
+  font-size: 37rpx;
+  color: #fff;
+}
+
+.navbar .item.active {
+  color: #e00;
+  font-size: 40rpx;
+}
+
+.navbar .item.active:after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 4rpx;
+  height: 4rpx;
+  background-color: #e00;
+}
+
+.num {
+  font-size: 34rpx;
+  color: #e00;
+  font-weight: 700;
+  position: relative;
+  margin: 24rpx 25rpx 24rpx 25rpx;
+}
+
+.plus_show {
+  position: fixed;
+  height: 100rpx;
+  width: 100rpx;
+  bottom: 50rpx;
+  right: 50rpx;
+  z-index: 100;
+}
+
+.plus_hide {
+  display: none;
+}
+
+.search input {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  padding-left: 32rpx;
+}
+
+.SaveNum {
+  font-size: 25rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 25rpx;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
 }
 
 .search {
@@ -229,37 +261,6 @@ page {
 .top {
   display: flex;
   height: 70rpx;
-}
-
-.input {
-  display: block;
-  text-overflow: clip;
-  overflow: hidden;
-  white-space: nowrap;
-  font-family: UICTFontTextStyleBody;
-  font-size: 35rpx;
-  min-height: 1.4rem;
-}
-
-.intro {
-  width: 66%;
-  margin-right: 10rpx;
-}
-
-.search input {
-  width: 100%;
-  height: 80rpx;
-  background: #fff;
-  padding-left: 32rpx;
-}
-
-.SaveNum {
-  font-size: 25rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 25rpx;
-  margin-bottom: 5rpx;
-  margin-top: 5rpx;
 }
 
 .userhead {
