@@ -44,7 +44,6 @@ swiper-item{
   margin-top: 20rpx;
   background-color: #fff;
   border-bottom: 1rpx #eee;
-  box-shadow: 0rpx 8rpx 9rpx #ccc;
   padding-bottom: 10rpx;
 }
 

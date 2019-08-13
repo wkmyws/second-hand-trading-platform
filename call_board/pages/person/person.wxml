@@ -30,13 +30,11 @@
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
-   
       <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}" version="0.9.3">
         <text class='sub-title'>我要吐槽</text>
         <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </navigator>
    
-
     <view class="item" bindtap="tohelp">
       <text class="sub-title">使用帮助</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
