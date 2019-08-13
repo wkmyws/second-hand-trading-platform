@@ -11,7 +11,7 @@ page {
   height: 150rpx;
   border-radius:20rpx;
   display: block;
-  margin: auto 60rpx;
+  margin: auto 25rpx auto 55rpx;
   overflow: hidden;
   border: 5rpx solid #ffffff;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
@@ -19,14 +19,14 @@ page {
 
 .attest {
   position: absolute;
-  margin-left: 84%;
+  margin-left: 81%;
   line-height: 200rpx;
   color: rgba(90, 86, 86, 0.63);
   font-size: 32rpx;
 }
 
 .user .name {
-  font-size: 34rpx;
+  font-size: 36rpx;
   color: rgb(0, 0, 0);
   line-height: 200rpx;
   font-weight: bold;
@@ -43,7 +43,7 @@ page {
 .menu .item {
   border-bottom: 1px #eee solid;
   background: #fff;
-  padding: 15rpx;
+  padding: 20rpx;
 }
 
 .menu .item .arrow {
@@ -56,6 +56,6 @@ page {
 
 
 .sub-title{
-  font-size: 32rpx;
+  font-size: 33rpx;
   margin-left: 16rpx;
 }
