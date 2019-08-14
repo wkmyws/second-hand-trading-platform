@@ -11,7 +11,7 @@ Page({
     boards:['test'],
   },
 
-  onLoad: function (options) {
+  onShow: function (options) {
     //获取待审核商品
     new Promise((resolve,reject)=>{
       var timestamp = Date.parse(new Date());

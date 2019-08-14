@@ -208,6 +208,7 @@ Page({
       console.log('pass test,start upload base info')
       //upload
       var data = util.base64_encode(JSON.stringify(this.data.my_info))
+      console.log(this.data.my_info)
       var timestamp = String(Date.parse(new Date()) / 1000)
       var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
       wx.request({

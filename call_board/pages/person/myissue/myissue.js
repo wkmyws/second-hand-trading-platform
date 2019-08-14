@@ -15,7 +15,11 @@ Page({
     user:[],
   },
 
-  onReady: function (options) {
+  onShow: function (options) {
+    console.log('我的发布')
+    this.setData({
+      goods:[]
+    })
     this.getGoodsItem(-1);
   },
 

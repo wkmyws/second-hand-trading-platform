@@ -178,7 +178,7 @@ Page({
         icon:'none',
       })
     })
-    
+    setTimeout(wx.navigateBack,500)
   }
 
 })

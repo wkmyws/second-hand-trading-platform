@@ -20,6 +20,7 @@ Page({
     user_name: null,
     user_avatar_url: null,
     goods_state_name:null,//审核状态
+    goods_id:null,
   },
 
   previewImage: function (e) {
@@ -30,114 +31,6 @@ Page({
     })
   },
 
-  buy: function () {
-    this.showModal();
-  },
-
-  showModal: function () {
-    // 显示遮罩层
-    var animation = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear",
-      delay: 0
-    })
-    this.animation = animation
-    animation.translateY(300).step()
-    this.setData({
-      animationData: animation.export(),
-      showModalStatus: true
-    })
-    setTimeout(function () {
-      animation.translateY(0).step()
-      this.setData({
-        animationData: animation.export()
-      })
-    }.bind(this), 200)
-  },
-  //隐藏对话框
-  hideModal: function () {
-    // 隐藏遮罩层
-    var animation = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear",
-      delay: 0
-    })
-    this.animation = animation
-    animation.translateY(300).step()
-    this.setData({
-      animationData: animation.export(),
-    })
-    setTimeout(function () {
-      animation.translateY(0).step()
-      this.setData({
-        animationData: animation.export(),
-        showModalStatus: false
-      })
-    }.bind(this), 200)
-  },
-  callPhone: function (event) {
-    wx.makePhoneCall({
-      phoneNumber: event.target.id
-    })
-  },
-  copyIt: function (event) {
-    wx.setClipboardData({
-      data: event.target.id
-    })
-    wx.showToast({
-      title: '已复制到粘贴版',
-      icon: 'none',
-      duration: 1000
-    });
-  },
-
-  set_fav: function () {
-    var data = {
-      goods_id: this.data.goods_detail.goods_id,
-      set_favourite: !this.data.is_fav
-    }
-    var timestamp = Date.parse(new Date());
-    timestamp = String(timestamp / 1000);
-    data = JSON.stringify(data)
-    data = util.base64_encode(data)
-    var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-    //request
-    wx.request({
-      url: app.globalData.URL + "goods/setGoodsFavourite.php",
-      data: {
-        "version": 1,
-        "time": timestamp,
-        "data": data,
-        "sign": sign,
-        "token": app.globalData.token
-      },
-      method: 'POST',
-      header: {
-        "content-type": "application/json"
-      },
-      success: res => {
-        console.log(res)
-        if (res.data.status == 1) {
-          wx.showToast({
-            title: '收藏操作失败！',
-            duration: 2000,
-            mask: true
-          })
-        } else {
-          this.setData({
-            is_fav: !this.data.is_fav
-          })
-          wx.showToast({
-            title: (this.data.is_fav ? '' : '取消') + '收藏成功',
-            duration: 2000,
-            mask: false
-          })
-        }
-      }
-    })
-
-
-  },
   ChangeThumb: function () {
     var sta = this.data.ThumbStatus
     var num = this.data.ThumbNum
@@ -254,9 +147,37 @@ Page({
     console.log(options)
     this.get_detail(options)
     this.setData({
-      goods_state_name: options.goods_state_name
+      goods_state_name: options.goods_state_name,
+      goods_id:options.id
     })
     
+  },
+  ToDelete:function(){
+    wx.showModal({
+      title: '删除',
+      content: '确认删除此发布吗？',
+      success:sm=>{
+        if(sm.confirm){
+          let data = { type: 0, info_id: this.data.goods_id - 0 }
+          app.qkpost('user/deleteUserSubmit.php', data, true).then(() => {
+            console.log('删除成功')
+            wx.showToast({
+              title: '删除成功',
+              icon:'success',
+              duration:500
+            })
+            setTimeout(wx.navigateBack,500)
+          }).catch(() => {
+            console.log('删除失败')
+            wx.showToast({
+              title: '删除失败',
+              icon:'none'
+            })
+          })
+        }
+      }
+    })
+
   },
 
 

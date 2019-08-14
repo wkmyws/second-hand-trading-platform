@@ -151,7 +151,8 @@ Page({
           },
           success: res => {
             wx.hideLoading()
-            console.log(res.data)
+            console.log('res.data')
+            console.log(res)
             if (res.data.status == 0) {
               var res_data = JSON.parse(util.base64_decode(res.data.data))
               console.log(res_data)
@@ -193,10 +194,11 @@ Page({
                 }
               }
             }else{
-              //console.log(res.data)
+              console.log('发布失败')
+              console.log(res.data)
               wx.showModal({
                 title: '发布失败',
-                content: res.data.err_msg,
+                content: res.data.err_msg+'',
                 showCancel: false
               })
             }
