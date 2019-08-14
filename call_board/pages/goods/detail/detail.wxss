@@ -63,7 +63,7 @@ swiper-item image {
 }
 .separate_detail{
    color: rgb(121, 118, 118);
-  font-size: 34rpx;
+  font-size: 35rpx;
   margin:15rpx;
   text-align: justify;
 }
@@ -71,7 +71,7 @@ swiper-item image {
 .infor {
   display: flex;
   flex-direction: row;
-  font-size: 33rpx;
+  font-size: 35rpx;
   color: rgb(197, 195, 195);
   text-align: justify;
   padding: 5rpx;
@@ -80,7 +80,7 @@ swiper-item image {
 
 .infor_detail {
   color: rgb(121, 118, 118);
-  font-size: 33rpx;
+  font-size: 35rpx;
 }
 
 .line_flag {

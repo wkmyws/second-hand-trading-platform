@@ -1,4 +1,5 @@
-<view class="head-top" >
+<view class='head'>
+<view class="head-top">
   <!--顶部搜索栏--> 
   <view class="search">
     <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" selection-start="-1" selection-end="-1" cursor="-1">
@@ -6,6 +7,7 @@
     <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>
   </view>
   </view>
+    </view>
     <!--顶部的导航栏-->
 
     <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
