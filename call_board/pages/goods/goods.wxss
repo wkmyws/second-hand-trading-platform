@@ -3,7 +3,7 @@ page {
 }
 
 .head{
-  position: sticky;
+  position: fixed;
   z-index: 999;
   }
 
@@ -11,17 +11,17 @@ page {
  display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 3rpx solid #fff;
+  border: 3rpx solid rgb(248, 247, 247);
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
+ background-color: rgb(248, 247, 247);
   box-shadow: 6rpx 8rpx 9rpx #ccc;
   width: 100%;
   position: fixed;
   padding-top: 15rpx;
   padding-bottom: 12rpx;
   align-items: flex-end;
-
+  z-index: 999;
 }
 
 .search {
@@ -62,18 +62,18 @@ page {
 }
 
 .nav {
-  position: relative;
-  height: 88rpx;
+  position:relative;
+  height: 100rpx;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  line-height: 80rpx;
+  line-height: 130rpx;
   background: #fff;
   font-size: 16px;
   white-space: nowrap;
-  top: 110rpx;
+  top: 80rpx;
   left: 0;
- 
+ z-index: 99;
 }
 
 .nav-item {
@@ -100,7 +100,6 @@ page {
   text-align: center;
   margin-bottom: 20rpx;
   display: block;
-  margin: 0;
 }
 
 .swiper-item {
@@ -120,7 +119,6 @@ page {
   overflow: visible;
   background-color: #fff;
   transform: scale(0.89);
-  
   display: block;
   border-radius: 20rpx;
   opacity: 0.6;
@@ -172,10 +170,10 @@ page {
 .item {
   width: 100%;
   background-color: #fff;
-  margin: 1%;
+  margin:0;
   margin-bottom: 20rpx;
   display: inline-block;
-  border: 3rpx solid #fff;
+  border: 3rpx solid #eee;
   border-radius: 10rpx;
   position: relative;
 
@@ -268,7 +266,7 @@ page {
 .left, .right {
   display: inline-block;
   vertical-align: top;
-  width: 48%;
+  width: 49%;
   margin-top: 100rpx;
 }
 

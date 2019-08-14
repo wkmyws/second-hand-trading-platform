@@ -87,7 +87,7 @@ Page({
     })
     wx.setNavigationBarColor({
       frontColor: '#000000',
-      backgroundColor: '#eee'
+      backgroundColor:"#F8F7F7"
     })
 
     var that = this;
@@ -129,8 +129,6 @@ Page({
         that.get_goods_list(data)
       }
     })
-
-
   },
 
   switchNav(event) {
