@@ -59,9 +59,10 @@ swiper-item image {
   font-weight: 700;
   margin:15rpx;
 }
+
 .separate_detail{
    color: rgb(121, 118, 118);
-  font-size: 35rpx;
+  font-size: 34rpx;
   margin:15rpx;
   text-align: justify;
 }
@@ -69,7 +70,7 @@ swiper-item image {
 .infor {
   display: flex;
   flex-direction: row;
-  font-size: 35rpx;
+  font-size: 33rpx;
   color: rgb(197, 195, 195);
   text-align: justify;
   padding: 5rpx;
@@ -78,7 +79,7 @@ swiper-item image {
 
 .infor_detail {
   color: rgb(121, 118, 118);
-  font-size: 35rpx;
+  font-size: 33rpx;
 }
 
 .line_flag {
@@ -159,8 +160,6 @@ text {
   z-index: 1000;
   color: #fff;
 }
-
-
 
 /*评论*/
 
