@@ -2,7 +2,7 @@
 <view class="head-top">
   <!--顶部搜索栏--> 
   <view class="search">
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’"  cursor="-1">
+    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’"  cursor="-1" maxlength="20">
     </input>
     <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>
   </view>

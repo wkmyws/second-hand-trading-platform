@@ -108,19 +108,20 @@ App({
       })
     })
   },
-  qkpost: function (url, data) {//封装wx.request
+  qkpost: function (url, data,withNoToken) {//封装wx.request
     //url:相对路径
     //data:{}
-    //withToken true:false
+    //withNoToken : 默认 undefined 为需要token
     return new Promise((resolve, reject) => {
       console.log('qkpost')
       console.log(data)
-      data = JSON.stringify(data)
-      data = util.base64_encode(data)
-      
+      if(data){
+        data = JSON.stringify(data)
+        data = util.base64_encode(data)
+      }
       console.log(data)
       var timestamp = String(Date.parse(new Date()) / 1000)
-      var sign = util.sha1(data + timestamp + this.globalData.user_info.user_id)
+      var sign = withNoToken ? util.sha1(data + timestamp) : util.sha1(data + timestamp + this.globalData.user_info.user_id)
       wx.request({
         url: this.globalData.URL + url,
         data: {
@@ -128,7 +129,7 @@ App({
           "time": timestamp,
           "data": data,
           "sign": sign,
-          "token": this.globalData.token
+          "token": withNoToken ? null : this.globalData.token
         },
         method: 'POST',
         header: { "content-type": "application/json" },
