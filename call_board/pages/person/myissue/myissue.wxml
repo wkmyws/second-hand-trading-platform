@@ -1,29 +1,35 @@
 <view class='page-myissue'>
+<!--
   <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公告</view>
     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">商品</view>
   </view>
-
+   -->
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
     <!--公告-->
+    <!-->
     <swiper-item>
       <block wx:for="{{boards}}" wx:key="">
         <view class="board" bindtap='go'>
           <!--头像昵称-->
+          <!-->
           <view class='top'>
             <image class='userhead' src='/images/test/user1.jpg'></image>
             <text class='username'>你未来的男朋友</text>
             <!--推荐-->
-
+<!-->
             <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
 
           </view>
           <!--小图标-->
           <!--收藏-->
+          <!-->
           <view class="title">约拼车的小伙伴，求带？</view>
           <!--图片-->
+          <!-->
           <view class='body'>
             <!--公告的简介-->
+            <!-->
             <view class="intro">
               <view class='text1'>2月31号晚上8点技术
               </view>
@@ -36,6 +42,7 @@
           <view class="SaveNum">
             点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
             <!--时间显示栏-->
+            <!-->
             <text class='time'>2019-02-15 16:22:14</text>
           </view>
         </view>

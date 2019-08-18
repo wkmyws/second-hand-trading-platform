@@ -6,7 +6,6 @@
       <!--点赞-->
       收藏量
       <text class='ThumbNum'>{{SaveNum}}</text>
-
     </view>
     <image class='icon' src="http://xcx.nau.edu.cn/images/fire.jpg?" mode='aspectFill'></image>
   </view>
@@ -30,11 +29,9 @@
           <image class='img' src='{{item}}' data-index='{{index}}' bindtap='Preview' mode="aspectFill"></image>
         </view>
       </view>
-
       <view class='bottom'>
         <!--时间显示栏-->
         <view class='time'>2019-02-15 16:15:48</view>
-
         <!--图标-->
         <image wx:if='{{SaveStatus}}' src='http://image.natal.tech/image/shou.png' class='save1' catchtap='ChangeSave'></image>
         <image wx:else src='http://image.natal.tech/image/shou1.png' class='save1' catchtap='ChangeSave'></image>
@@ -43,7 +40,6 @@
       </view>
     </view>
   </view>
-
   <view class="comment">
     <view class='forum'>
       <view class='talk'>评论</view>
