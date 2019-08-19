@@ -1,11 +1,17 @@
-<view class="user">
+<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view>
+<image class="back" src="/images/back.png" bindtap="backTo"></image>
+</view>
+<view class="user" style="margin-top:80rpx">
   <view class="user-item">
     <text class="name">学校:</text>
     <label class='icon'></label>
     <picker class='number' bindchange='ChangeCollege' range='{{college}}'>{{selected_school}}</picker>
   </view>
 </view>
-
 <view class="user">
   <view class="user-item">
     <text class="name">学号:</text>
@@ -13,7 +19,6 @@
     <input class="number" bindinput="id_input"></input>
   </view>
 </view>
-
 <view class="user">
   <view class="user-item">
     <text class="name">邮箱后缀:</text>
@@ -21,17 +26,13 @@
     <picker class='number' bindchange='mail_change' range='{{mail_example}}'>@{{mail_addr}}</picker>
   </view>
 </view>
-
 <view class="proto" bindtap='showPopup'>最终用户许可协议</view>
-
 <button class='butt' bindtap='mail_send'>同意协议并认证</button>
-
 <view class="shade" hidden='{{popup}}' bindtap="hidePopup"></view>
 <view class="box popup" hidden="{{popup}}">
   <view class="title">
     <text>最终用户许可协议</text>
   </view>
-
   <view class="content"style=" font-weight: 700;">免责声明</view>
   <view class="content content-item">本微信小程序由“Natal团队"提供，不提供任何形式的担保。拒绝承认任何明示、暗示或法定的担保，包括但不限于对适销性、特定用途的适用性、所有权、非侵权性的暗示担保，拒绝承认小程序将不间断或无错误地运行或由于贸易惯例或使用过程而产生的责任。与您使用本小程序相关的全部风险由您承担。
   </view>
@@ -41,7 +42,6 @@
   <view class="content" style=" font-weight: 700;">软件的所有权和版权</view>
   <view class="content content-item">除非本协议明确规定，否则本软件（包括所有知识产权）始终是“Natal团队”或其许可人的专有财产，您不享有其中的任何权利、所有权或利益。 您同意不对本软件进行任何未经授权的复制。 软件及其所有副本（全部或部分，以任何形式）的全部所有权，以及其中的所有权利和知识产权均应归属于“Natal团队”。
   </view>
-
 </view>
 <view class="remind">
   <view>

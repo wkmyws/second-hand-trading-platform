@@ -6,6 +6,7 @@ page {
 
 .scroll{
   padding-bottom: 10rpx;
+  margin-top:80rpx;
 }
 /* 直接设置swiper属性 */
 
@@ -251,4 +252,11 @@ text {
   background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
   color: #fff;
   z-index: 999;
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

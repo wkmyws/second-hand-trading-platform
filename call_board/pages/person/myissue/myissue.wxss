@@ -41,9 +41,10 @@ swiper-item{
 .board {
   position: relative;
   width: 100%;
-  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   background-color: #fff;
   border-bottom: 1rpx #eee;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
   padding-bottom: 10rpx;
 }
 
@@ -130,14 +131,6 @@ swiper-item{
   bottom: 10rpx;
 }
 
-.SaveNum {
-  font-size: 29rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 25rpx;
-  margin-bottom:5rpx;
-  margin-top:5rpx;
-}
 .num{
     font-size: 30rpx;
   color:#e00;
@@ -155,7 +148,7 @@ swiper-item{
 }
 
 .ThumbNum {
-  font-size: 29rpx;
+  font-size: 25rpx;
   color: #bbb;
   position: relative;
   margin-bottom: 3rpx;
@@ -274,4 +267,11 @@ swiper-item{
   margin-left: 25rpx;
   margin-bottom: 5rpx;
   margin-top: 5rpx;
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

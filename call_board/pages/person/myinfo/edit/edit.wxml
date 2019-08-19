@@ -1,3 +1,10 @@
+<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view>
+<image class="back" src="/images/back.png" bindtap="backTo"></image>
+</view>
 <view class='menu'>
 <view class='item'>
     <text class='left'>头像：</text>

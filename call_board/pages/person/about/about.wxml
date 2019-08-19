@@ -1,3 +1,10 @@
+<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view>
+<image class="back" src="/images/back.png" bindtap="backTo"></image>
+</view>
 <view class="page__hd">
   <image class="weui-media-box__thumb" src="http://image.natal.tech/image/icon.png" />
   <view class="page__title">校园微集市</view>

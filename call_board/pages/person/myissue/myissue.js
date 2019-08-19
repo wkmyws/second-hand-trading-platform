@@ -111,5 +111,10 @@ Page({
       return;
     }
     this.getGoodsItem(this.data.end_goods_id)
-   }
+   },
+  backTo: function () {
+    wx.navigateBack({
+      delta: 1
+    })
+  }
 })

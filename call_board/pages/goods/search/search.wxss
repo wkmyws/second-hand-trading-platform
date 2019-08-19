@@ -1,16 +1,17 @@
-page{
-  background: #F8F7F7;
-}
 .head{
   position: sticky;
   z-index: 999;
-  background: #fff;
+  
   }
 
 .head-top {
+ display: flex;
   width: 100%;
   position: fixed;
-    box-shadow: 6rpx 8rpx 9rpx #ccc;
+  padding-top: 15rpx;
+  padding-bottom: 12rpx;
+   margin-top: 50rpx;
+
 }
 
 .search {
@@ -19,17 +20,22 @@ page{
   background: #fff;
   flex-direction: row;
   border: 3rpx solid #fff;
-  position: relative;
-  z-index: 999;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+  border-radius: 10rpx;
+  position: absolute;
+
+ 
 }
 
 .search input {
-  margin-top: 15rpx;
-  width: 55%;
-  height: 60rpx;
-  background: rgb(248, 247, 247);
+  width: 100%;
+  height: 78rpx;
+  background: #eee;
   padding-left: 32rpx;
-    border-radius: 50rpx;
+  margin-top:80rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  margin-left: 5%;
 }
 
 .input {
@@ -47,19 +53,22 @@ page{
   height: 78rpx;
   display: inline-block;
   overflow: hidden;
+  margin-top:80rpx;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
 }
 
 .nav {
   position: relative;
-  height: 70rpx;
+  height: 88rpx;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  line-height: 65rpx;
+  line-height: 80rpx;
   background: #fff;
   font-size: 16px;
   white-space: nowrap;
-  top: 0rpx;
+  top: 110rpx;
   left: 0;
  
 }
@@ -258,7 +267,7 @@ page{
   display: inline-block;
   vertical-align: top;
   width: 48%;
-  margin-top: 160rpx;
+  margin-top: 100rpx;
 }
 
 .plus_show{
@@ -276,4 +285,11 @@ page{
 
 .right {
   float: right;
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

@@ -5,7 +5,7 @@ page{
 .page__hd {
   padding: 30rpx 35rpx;
   text-align: center;
-
+margin-top: 80rpx;
 }
 
 .page__title {
@@ -50,4 +50,11 @@ page{
 .mini{
   font-size: 28rpx;
   border:1rpx solid rgb(184, 184, 184);
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

@@ -179,6 +179,11 @@ Page({
       })
     })
     setTimeout(wx.navigateBack,500)
+  },
+  backTo: function () {
+    wx.navigateBack({
+      delta: 1
+    })
   }
 
 })

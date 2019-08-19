@@ -182,5 +182,10 @@ Page({
         icon: 'none',
       })
     }
+  },
+  backTo: function () {
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

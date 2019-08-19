@@ -1,6 +1,6 @@
 {
   "pages": [
-      "pages/goods/goods",
+    "pages/goods/goods",
     "pages/board/board",
     "pages/logs/logs",
     "pages/person/person",
@@ -22,19 +22,21 @@
     "pages/person/collect/collect",
     "pages/person/collect/collect-board/collect-board",
     "pages/person/collect/collect-good/collect-good",
-    "pages/board/detail/detail"
+    "pages/board/detail/detail",
+    "pages/goods/search/search",
+   "pages/goods/search/search-goods/search-goods"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F7F7",
     "navigationBarTitleText": "Natal",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#aaaaaa",
     "selectedColor": "#000000",
     "list": [
-
       {
         "pagePath": "pages/goods/goods",
         "text": "商品",

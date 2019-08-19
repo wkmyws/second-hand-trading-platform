@@ -4,6 +4,7 @@ page {
 .user {
   width: 100%;
   flex-direction: flex;
+  margin-top: 80rpx;
 }
 
 .user .avatar {
@@ -11,7 +12,7 @@ page {
   height: 150rpx;
   border-radius:20rpx;
   display: block;
-  margin: auto 60rpx;
+  margin: auto 30rpx auto 60rpx;
   overflow: hidden;
   border: 5rpx solid #ffffff;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
@@ -19,14 +20,14 @@ page {
 
 .attest {
   position: absolute;
-  margin-left: 84%;
+  margin-left: 83%;
   line-height: 200rpx;
   color: rgba(90, 86, 86, 0.63);
   font-size: 32rpx;
 }
 
 .user .name {
-  font-size: 34rpx;
+  font-size: 36rpx;
   color: rgb(0, 0, 0);
   line-height: 200rpx;
   font-weight: bold;
@@ -37,18 +38,19 @@ page {
   border: 3rpx solid #fff;
   border-radius: 10rpx;
   background-color: #fff;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
 
 }
 
 .menu .item {
   border-bottom: 1px #eee solid;
   background: #fff;
-  padding: 15rpx;
+  padding: 20rpx 15rpx;
 }
 
 .menu .item .arrow {
   float: right;
-  height: 30rpx;
+  height: 32rpx;
   width: 18rpx;
   margin: 16rpx 16rpx;
 }
@@ -56,6 +58,6 @@ page {
 
 
 .sub-title{
-  font-size: 32rpx;
+  font-size: 33rpx;
   margin-left: 16rpx;
 }

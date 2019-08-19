@@ -42,9 +42,10 @@ swiper-item {
 .board {
   position: relative;
   width: 100%;
-  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   background-color: #fff;
   border-bottom: 1rpx #eee;
+    box-shadow: 6rpx 8rpx 9rpx #ccc;
   padding-bottom: 10rpx;
 }
 
@@ -208,4 +209,11 @@ swiper-item {
   color: rgb(196, 193, 193);
   align-items: center;
   margin-top: 8rpx;
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

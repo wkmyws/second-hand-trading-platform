@@ -1,4 +1,11 @@
-<view class='page-myissue'>
+<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view>
+<image class="back" src="/images/back.png" bindtap="backTo"></image>
+</view>
+<view class='page-myissue' style="margin-top:80rpx">
   <!--顶部TAB-->
   
   <view class="swiper-tab">

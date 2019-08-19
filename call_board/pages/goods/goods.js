@@ -199,7 +199,11 @@ Page({
       url: '../goods/advertise/advertise',
     })
   },
-
+  startSearch:function(){
+    wx.navigateTo({
+      url: '../goods/search/search',
+    })
+  },
   onReady: function() { // 生命周期函数--监听页面初次渲染完成  
   },
   onShow: function() { // 生命周期函数--监听页面显示  

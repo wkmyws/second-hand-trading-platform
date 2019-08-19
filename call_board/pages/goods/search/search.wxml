@@ -1,0 +1,47 @@
+<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
+</view>
+
+  <view>
+  <image class="back" src="/images/back.png" bindtap="backTo"></image>
+  </view>
+  <view class="search">
+    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20">
+    </input>
+    <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>
+  <!--下面的瀑布流-->
+  <view class="content">
+    <view class="left">
+      <block wx:for="{{note}}" wx:key="">
+        <template is="item" data="{{...item}}" wx:if="{{index%2==0}}" bindtap='switchDetail'></template>
+      </block>
+    </view>
+    <view class="right">
+      <block wx:for="{{note}}" wx:key="">
+        <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+      </block>
+    </view>
+  </view>
+  <template name="item">
+    <view class="item">
+      <navigator url='../goods/detail/detail?id={{goods_id}}'>
+        <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>
+        <view class="item-title-box">
+          <view class="item-tit">{{goods_title}}</view>
+        </view>
+        <view class="item-title-box">
+          <view class="item-title">{{goods_summary}}</view>
+        </view>
+        <view class="name">
+          <image class="item-ava" src="{{user_avatar_url}}"></image>
+          <text class="name-title">{{user_name}}</text>
+          <view>
+            <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
+            <text>{{goods_collection_amount}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </template>
+</view>

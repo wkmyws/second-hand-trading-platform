@@ -1,5 +1,6 @@
 page {
   background: rgb(248, 247, 247);
+
 }
 
 swiper {
@@ -44,6 +45,7 @@ swiper-item{
   background-color: #fff;
   border-bottom: 1rpx #eee;
   padding-bottom: 10rpx;
+    box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
 
@@ -229,4 +231,11 @@ swiper-item{
 .intro{
   width: 66%;
   margin-right: 10rpx;
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

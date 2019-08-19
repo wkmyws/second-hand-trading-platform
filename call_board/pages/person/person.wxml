@@ -1,4 +1,6 @@
-
+<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx"></view>
   <view >
     <view class="user" style='display:flex'>
       <image  class="avatar"src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->

@@ -28,6 +28,7 @@ page {
   text-align: center;
    margin: 20rpx 0 -140rpx 0;
    font-weight: 700;
+   font-size: 38rpx;
 }
 
 .item {
@@ -66,4 +67,11 @@ page {
   margin-top: 130rpx;
   width: 100%;
   margin-bottom:30rpx;
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

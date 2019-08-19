@@ -3,9 +3,9 @@ page {
   flex-direction: column;
   background-color: rgb(248, 247, 247);
 }
-
 .scroll{
   padding-bottom: 100rpx;
+  padding-top: 80rpx;
 }
 /* 直接设置swiper属性 */
 
@@ -44,9 +44,7 @@ swiper-item image {
   border: 2rpx rgb(145, 143, 143) solid;
   color: rgb(145, 143, 143);
 }
-.infor-in{
-  width:330rpx;
-}
+
 .detail .price {
   color: red;
   font-size: 44rpx;
@@ -63,15 +61,14 @@ swiper-item image {
 }
 .separate_detail{
    color: rgb(121, 118, 118);
-  font-size: 35rpx;
+  font-size: 34rpx;
   margin:15rpx;
   text-align: justify;
 }
-
 .infor {
   display: flex;
   flex-direction: row;
-  font-size: 35rpx;
+  font-size: 33rpx;
   color: rgb(197, 195, 195);
   text-align: justify;
   padding: 5rpx;
@@ -80,7 +77,7 @@ swiper-item image {
 
 .infor_detail {
   color: rgb(121, 118, 118);
-  font-size: 35rpx;
+  font-size: 33rpx;
 }
 
 .line_flag {
@@ -261,4 +258,11 @@ color:rgb(121, 118, 118);
   margin:0rpx 30rpx;
   font-size:36rpx;
   
+}
+.back{
+  position:fixed;
+  z-index: 999;
+   width:40rpx;
+  height: 40rpx;
+  margin:20rpx;
 }

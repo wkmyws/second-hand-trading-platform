@@ -79,6 +79,7 @@ App({
 
   },
   globalData: {
+    statusBarHeight:wx.getSystemInfoSync()['statusBarHeight'],
     user_info: null,
     user_info_wx: null,
     token: "token",
