@@ -19,12 +19,13 @@ Page({
       "http://xcx.nau.edu.cn/images/school6.jpg?" + Math.random() / 9999
     ], //广告牌的图片
     note: [], //瀑布流的样式数据
+    searchContent:'',//搜索内容
     last_id:-1,//拉取的最后一个商品id
     search_from: 1,//	从第几个搜索结果继续搜索（>=0，从头开始为1）
   },
   startSearch:function(e){//搜索
     console.log('start search')
-    const searchContent=e.detail.value
+    const searchContent=this.data.searchContent
     if(searchContent=='' || searchContent.replace(/\s+/g,'').length==0){
       wx.showToast({
         title: '未输入任何内容!',
@@ -49,8 +50,10 @@ Page({
       console.log('搜索失败')
     })
   },
-  bindInputSearch:function(){
-    //null
+  bindInputSearch:function(e){
+    this.setData({
+      searchContent: e.detail.value
+    })
   },
   onPullDownRefresh: function() {
     var that = this
