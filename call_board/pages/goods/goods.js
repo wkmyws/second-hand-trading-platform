@@ -1,6 +1,6 @@
 var util = require('../../utils/util.js');
 const app = getApp()
-const ct_num=4;//每页显示的最大条数
+const ct_num=5;//每页显示的最大条数
 Page({
   data: {
     currentTab: 0,
@@ -24,30 +24,10 @@ Page({
     search_from: 1,//	从第几个搜索结果继续搜索（>=0，从头开始为1）
   },
   startSearch:function(e){//搜索
-    console.log('start search')
+  console.log('start search')
     const searchContent=this.data.searchContent
-    if(searchContent=='' || searchContent.replace(/\s+/g,'').length==0){
-      wx.showToast({
-        title: '未输入任何内容!',
-        icon:'none',
-        duration:2000,
-      })
-      return;
-    }
-    //post
-    const ptdata={
-      search_str:searchContent,
-      search_amount:10,
-      search_from:this.data.search_from,
-      summary_sub:15,
-    }
-    app.qkpost('goods/searchGoods.php',ptdata,"noToken").then((data)=>{
-      console.log(data)
-      wx.showToast({
-        title: '搜索到 '+data.search_amount+' 个结果',
-      })
-    }).catch(()=>{
-      console.log('搜索失败')
+    wx.navigateTo({
+      url: '../goods/search/search?s='+searchContent,
     })
   },
   bindInputSearch:function(e){
@@ -202,11 +182,6 @@ Page({
       url: '../goods/advertise/advertise',
     })
   },
-  startSearch:function(){
-    wx.navigateTo({
-      url: '../goods/search/search',
-    })
-  },
   onReady: function() { // 生命周期函数--监听页面初次渲染完成  
   },
   onShow: function() { // 生命周期函数--监听页面显示  
@@ -236,7 +211,6 @@ Page({
     wx.showToast({
       title: '正在加载...',
       icon: 'loading',
-      duration: 2000
     })
     this.get_goods_list(data,'continue_add').then(()=>{
       wx.hideToast();

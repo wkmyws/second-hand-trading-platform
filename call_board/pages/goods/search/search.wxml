@@ -7,7 +7,7 @@
   <image class="back" src="/images/back.png" bindtap="backTo"></image>
   </view>
   <view class="search">
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20">
+    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}'>
     </input>
     <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>
   <!--下面的瀑布流-->
@@ -25,7 +25,7 @@
   </view>
   <template name="item">
     <view class="item">
-      <navigator url='../goods/detail/detail?id={{goods_id}}'>
+      <navigator url='../../goods/detail/detail?id={{goods_id}}'>
         <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>
         <view class="item-title-box">
           <view class="item-tit">{{goods_title}}</view>
