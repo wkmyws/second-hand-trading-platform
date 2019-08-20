@@ -62,12 +62,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onLoad: function(e) {
+    /*
+    *Don't touch this
     console.log('onLoad')
     this.setData({
       searchContent:e.s
     })
     console.log(e.s)
     this.startSearch();
+    */
   },
 
   /**

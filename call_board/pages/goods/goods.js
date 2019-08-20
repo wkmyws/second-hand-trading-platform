@@ -23,6 +23,11 @@ Page({
     last_id:-1,//拉取的最后一个商品id
     search_from: 1,//	从第几个搜索结果继续搜索（>=0，从头开始为1）
   },
+  jumpTo:function(){
+    wx.navigateTo({
+      url: '../goods/search/search?s=1',
+    })
+  },
   startSearch:function(e){//搜索
   console.log('start search')
     const searchContent=this.data.searchContent
