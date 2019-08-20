@@ -198,7 +198,7 @@ Page({
               console.log(res.data)
               wx.showModal({
                 title: '发布失败',
-                content: res.data.err_msg+'',
+                content: '存在非法字符',
                 showCancel: false
               })
             }
