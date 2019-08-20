@@ -8,7 +8,7 @@
   <image class="back" src="/images/back.png" bindtap="backTo"></image>
   </view>
   <view class="search">
-   <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}'> 
+   <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}' focus='{{inputSearchFocus}}'> 
     </input>
     
     <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>

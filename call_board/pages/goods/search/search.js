@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据**/
   data: {
   // 组件所需的参数
+  inputSearchFocus:false,
   search_from: 1,//	从第几个搜索结果继续搜索（>=0，从头开始为1）
   searchContent:'',//搜索内容
   note:[],//商品数组
@@ -62,6 +63,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onLoad: function(e) {
+    this.setData({
+      inputSearchFocus:true,
+    })
     /*
     *Don't touch this
     console.log('onLoad')
