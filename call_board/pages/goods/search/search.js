@@ -15,10 +15,6 @@ Page({
     console.log('start search')
     console.log(this.data.searchContent)
     const searchContent = this.data.searchContent
-    this.setData({
-      note:[],
-      search_from:1
-    })
     if (searchContent == '' || searchContent.replace(/\s+/g, '').length == 0) {
       wx.showToast({
         title: '未输入任何内容!',
@@ -27,6 +23,10 @@ Page({
       })
       return;
     }
+    this.setData({
+      note: [],
+      search_from: 1
+    })
     //post
     const ptdata = {
       search_str: searchContent,
