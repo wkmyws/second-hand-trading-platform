@@ -66,7 +66,7 @@ App({
       this.upDataUserInfo().then(()=>{
         wx.showToast({
           title: '登录成功',
-          duration:1000
+          duration:500
         })
       }).catch(()=>{
         wx.showToast({

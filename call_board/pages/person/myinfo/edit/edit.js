@@ -5,6 +5,7 @@ Page({
     my_info:app.globalData.user_info,
     sex: ['未知','男', '女'],
     tempFilePaths: "/images/add.png",
+    errorInputMsg:'未知错误'
   },
   change_name(e){
     var my_info = this.data.my_info
@@ -102,8 +103,9 @@ Page({
     }).catch(()=>{
       //upLoadBaseInfo设置错误
       wx.showToast({
-        title: '设置失败',
-        icon:'none'
+        title: this.data.errorInputMsg,
+        icon:'none',
+        duration:3000
       })
     })
   },
@@ -228,6 +230,7 @@ Page({
     let err=""
     console.log('start check info')
     //昵称
+    if (/[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF][\u200D|\uFE0F]|[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF]|[0-9|*|#]\uFE0F\u20E3|[0-9|#]\u20E3|[\u203C-\u3299]\uFE0F\u200D|[\u203C-\u3299]\uFE0F|[\u2122-\u2B55]|\u303D|[\A9|\AE]\u3030|\uA9|\uAE|\u3030/ig.test(info.user_name))err="昵称不能含有 emoji 😥"
     if (/\s/.test(info.user_name))err="昵称含有空白符"
     else if(!info.user_name)err="昵称为空"
     else if (info.user_name.length>10)err="昵称长度大于10"
@@ -240,10 +243,8 @@ Page({
 
     if(err=="")return true;
     else{
-      wx.showToast({
-        title: err,
-        icon:'none',
-        duration:2000
+      this.setData({
+        errorInputMsg:err
       })
       return false;
     }
