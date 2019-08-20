@@ -8,8 +8,8 @@ page {
   flex-direction: column;
   justify-content: center;
   align-items: center;
- margin: 0 8% 0 8%;
- border-top-left-radius: 50rpx;
+  margin: 0 8% 0 8%;
+  border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   width: 84%;
   height: 260rpx;
@@ -19,27 +19,27 @@ page {
   width: 220rpx;
   height: 220rpx;
   border-radius: 130rpx;
-  margin:0;
+  margin: 0;
   overflow: hidden;
   border: 8rpx solid #fff;
 }
 
 .nickname {
   text-align: center;
-   margin: 20rpx 0 -140rpx 0;
-   font-weight: 700;
-   font-size: 38rpx;
+  margin: 20rpx 0 -140rpx 0;
+  font-weight: 700;
+  font-size: 38rpx;
 }
 
 .item {
   height: 100rpx;
   background-color: rgb(248, 247, 247);
- display: flex;
-  margin-left:8%;
+  display: flex;
+  margin-left: 8%;
 }
 
 .left {
-  display:flex;
+  display: flex;
   align-items: center;
   padding-left: 16rpx;
   font-size: 35rpx;
@@ -53,7 +53,7 @@ page {
 }
 
 .butt {
- position: relative;
+  position: relative;
   bottom: 5rpx;
   width: 80%;
   margin-left: 10%;
@@ -66,12 +66,13 @@ page {
 .myinfo {
   margin-top: 130rpx;
   width: 100%;
-  margin-bottom:30rpx;
+  margin-bottom: 30rpx;
 }
-.back{
-  position:fixed;
+
+.back {
+  position: fixed;
   z-index: 999;
-   width:40rpx;
+  width: 40rpx;
   height: 40rpx;
-  margin:20rpx;
+  margin: 20rpx;
 }

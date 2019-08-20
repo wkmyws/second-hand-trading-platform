@@ -5,10 +5,11 @@
 <view class='head-top'>
   <!--顶部搜索栏--> 
   <view class="search">
-
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’"  cursor="-1" maxlength="20">
+  <!--
+    <input class="input" bindconfirm="startSearch"  bindinput="bindInputSearch"placeholder="大家都在搜‘access’"  cursor="-1" maxlength="20" bindtap="inputSearchTo">
    
-    </input>
+    </input> -->
+    <input class="input" placeholder="大家都在搜索‘access’" bindtap="inputSearchTo"></input>
   </view>
  
     <!--顶部的导航栏-->

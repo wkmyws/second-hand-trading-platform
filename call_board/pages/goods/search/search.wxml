@@ -2,14 +2,19 @@
 </view>
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
 </view>
-
-  <view>
+  <view class='head'>
+<view class='head-top'>
+<view>
   <image class="back" src="/images/back.png" bindtap="backTo"></image>
   </view>
   <view class="search">
-    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}'>
+   <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}'> 
     </input>
+    
     <image class="image" bindtap="startSearch" mode='scaleToFill' src="http://image.natal.tech/image/icoss.png?"></image>
+    </view>
+    </view>
+    </view>
   <!--下面的瀑布流-->
   <view class="content">
     <view class="left">
@@ -44,4 +49,3 @@
       </navigator>
     </view>
   </template>
-</view>
