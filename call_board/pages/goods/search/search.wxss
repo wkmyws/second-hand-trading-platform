@@ -1,3 +1,6 @@
+page{
+    background: #F8F7F7;
+}
 .head{
   position: sticky;
   z-index: 999;
@@ -8,10 +11,7 @@
  display: flex;
   width: 100%;
   position: fixed;
-  padding-top: 15rpx;
   padding-bottom: 12rpx;
-   margin-top: 50rpx;
-
 }
 
 .search {
@@ -32,10 +32,11 @@
   height: 78rpx;
   background: #eee;
   padding-left: 32rpx;
-  margin-top:80rpx;
+  margin-top:75rpx;
   border-top-left-radius: 50rpx;
   border-bottom-left-radius: 50rpx;
   margin-left: 5%;
+  
 }
 
 .input {
@@ -53,7 +54,8 @@
   height: 78rpx;
   display: inline-block;
   overflow: hidden;
-  margin-top:80rpx;
+  margin-top:75rpx;
+  margin-right: 5%;
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
 }
@@ -267,7 +269,7 @@
   display: inline-block;
   vertical-align: top;
   width: 48%;
-  margin-top: 100rpx;
+  margin-top: 165rpx;
 }
 
 .plus_show{
