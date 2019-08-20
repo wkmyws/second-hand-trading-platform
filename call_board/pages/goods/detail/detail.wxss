@@ -41,7 +41,6 @@ swiper-item image {
   font-size: 28rpx;
   position: relative;
   padding: 5rpx;
-  border: 2rpx rgb(145, 143, 143) solid;
   color: rgb(145, 143, 143);
 }
 

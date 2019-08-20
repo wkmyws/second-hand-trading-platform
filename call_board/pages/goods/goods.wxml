@@ -11,7 +11,7 @@
     </input> -->
     <input class="input" placeholder="大家都在搜索‘access’" bindtap="inputSearchTo"></input>
   </view>
- 
+
     <!--顶部的导航栏-->
 
     <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
@@ -38,13 +38,10 @@
     <view>
       <!--悬浮按钮-->
       <image src="http://image.natal.tech/image/plus.png?" class="{{showView?'plus_show':'plus_hide'}}"  bindtap="publish"></image>
-  
-
     <view>
       <!--下面的瀑布流-->
       <view class="content">
         <view class="left">
-
           <block wx:for="{{note}}" wx:key="">
             <template is="item" data="{{...item}}" wx:if="{{index%2==0}}" bindtap='switchDetail'></template>
           </block>
