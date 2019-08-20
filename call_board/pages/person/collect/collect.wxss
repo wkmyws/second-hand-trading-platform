@@ -210,10 +210,4 @@ swiper-item {
   align-items: center;
   margin-top: 8rpx;
 }
-.back{
-  position:fixed;
-  z-index: 999;
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx;
-}
+

@@ -1,6 +1,4 @@
 page {
-  display: flex;
-  flex-direction: column;
   background-color: rgb(248, 247, 247);
 }
 
@@ -42,7 +40,6 @@ swiper-item image {
   font-size: 28rpx;
   position: relative;
   padding: 5rpx;
-  border: 2rpx rgb(145, 143, 143) solid;
   color: rgb(145, 143, 143);
 }
 
@@ -259,11 +256,4 @@ color:rgb(121, 118, 118);
   margin:0rpx 30rpx;
   font-size:36rpx;
   
-}
-.back{
-  position:fixed;
-  z-index: 999;
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx;
 }

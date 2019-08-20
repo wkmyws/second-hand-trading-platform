@@ -69,10 +69,3 @@ page {
   margin-bottom: 30rpx;
 }
 
-.back {
-  position: fixed;
-  z-index: 999;
-  width: 40rpx;
-  height: 40rpx;
-  margin: 20rpx;
-}

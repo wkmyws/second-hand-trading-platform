@@ -2,7 +2,7 @@
 </view>
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
 </view>
-<view>
+<view class="head-back">
 <image class="back" src="/images/back.png" bindtap="backTo"></image>
 </view>
 <view class='page-myissue' style="margin-top:80rpx">

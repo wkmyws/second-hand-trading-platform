@@ -69,10 +69,4 @@ button[type="default"][plain] {
   border-color: #fbc2eb;
   opacity: 0.6;
 }
-.back{
-  position:fixed;
-  z-index: 999;
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx;
-}
+

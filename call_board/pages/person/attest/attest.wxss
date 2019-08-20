@@ -148,10 +148,3 @@ text-align: center;
    font-family: Times;
    margin: 2% 8% 14% 8%;
 }
-.back{
-  position:fixed;
-  z-index: 999;
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx;
-}

@@ -79,7 +79,7 @@ swiper-item{
   overflow: hidden;
   text-overflow: unset;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   word-break: break-all;
 }
@@ -231,11 +231,4 @@ swiper-item{
 .intro{
   width: 66%;
   margin-right: 10rpx;
-}
-.back{
-  position:fixed;
-  z-index: 999;
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx;
 }

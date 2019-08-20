@@ -33,8 +33,8 @@ page{
   background: #eee;
   padding-left: 32rpx;
   margin-top:75rpx;
-  border-top-left-radius: 50rpx;
-  border-bottom-left-radius: 50rpx;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
   margin-left: 5%;
   
 }
@@ -56,8 +56,8 @@ page{
   overflow: hidden;
   margin-top:75rpx;
   margin-right: 5%;
-  border-top-right-radius: 50rpx;
-  border-bottom-right-radius: 50rpx;
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
 }
 
 .nav {
