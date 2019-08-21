@@ -16,7 +16,7 @@ Page({
     new Promise((resolve,reject)=>{
       var timestamp = Date.parse(new Date());
       timestamp = String(timestamp / 1000);
-      var data = JSON.stringify({ amount: 10, summary_sub: 10, type: 0 })
+      var data = JSON.stringify({ amount: 10, summary_sub: 100, type: 0 })
       data = util.base64_encode(data)
       var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
       //request
