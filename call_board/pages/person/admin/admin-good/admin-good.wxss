@@ -59,11 +59,11 @@ swiper-item image {
 }
 .separate_detail{
    color: rgb(121, 118, 118);
-  font-size: 35rpx;
+  font-size: 34rpx;
   margin:15rpx;
   text-align: justify;
+    word-break: break-all;
 }
-
 .infor {
   display: flex;
   flex-direction: row;

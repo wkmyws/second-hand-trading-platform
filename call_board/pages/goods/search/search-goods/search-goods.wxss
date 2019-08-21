@@ -63,6 +63,7 @@ swiper-item image {
   font-size: 34rpx;
   margin:15rpx;
   text-align: justify;
+    word-break: break-all;
 }
 .infor {
   display: flex;

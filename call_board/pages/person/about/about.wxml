@@ -6,7 +6,7 @@
 <image class="back" src="/images/back.png" bindtap="backTo"></image>
 </view>
 <view class="page__hd">
-  <image class="weui-media-box__thumb" src="http://image.natal.tech/image/icon.png" />
+  <image class="weui-media-box__thumb" src="/images/icon.png" />
   <view class="page__title">校园微集市</view>
   <view class="page__desc">提供南京审计大学在校生买卖二叔商品，发布需求信息的功能。</view>
 </view>

@@ -41,7 +41,7 @@ swiper-item{
 .board {
   position: relative;
   width: 100%;
-  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   background-color: #fff;
   border-bottom: 1rpx #eee;
   padding-bottom: 10rpx;

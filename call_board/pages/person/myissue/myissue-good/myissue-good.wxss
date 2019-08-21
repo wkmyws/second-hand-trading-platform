@@ -53,7 +53,7 @@ swiper-item image {
 .separate {
   font-size: 33rpx;
   color: black;
-  text-align: justify;
+ 
   font-weight: 700;
   margin:15rpx;
 }
@@ -62,7 +62,8 @@ swiper-item image {
    color: rgb(121, 118, 118);
   font-size: 34rpx;
   margin:15rpx;
-  text-align: justify;
+   text-align: justify;
+  word-break: break-all;
 }
 
 .infor {

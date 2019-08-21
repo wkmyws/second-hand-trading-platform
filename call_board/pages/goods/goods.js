@@ -132,7 +132,7 @@ Page({
         console.log('aa')
         console.log(res_data)
         that.setData({
-          navData: [{type_id:-1,type_name:'所有'}].concat(res_data)
+          navData: [{type_id:-1,type_name:'全部'}].concat(res_data)
         })
         //该cookie用于发布商品时传入选项类别
         wx.setStorage({
