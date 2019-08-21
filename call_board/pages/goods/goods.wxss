@@ -213,6 +213,7 @@ page{
   color: #1e1e1e;
   margin: 13rpx;
   line-height: 27rpx;
+  word-break: break-all;
 }
 
 .arrow {
