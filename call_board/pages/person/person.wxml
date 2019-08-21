@@ -49,7 +49,7 @@
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
     <view wx:if='{{myinfo.user_permission>=100}}' class='item' bindtap='toadmin'>
-      <text class='sub-title'>管理员审核</text>
+      <text class='sub-title'>管理员审核{{needAdmin}}</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
   </view>

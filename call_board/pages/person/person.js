@@ -4,6 +4,7 @@ Page({
   data: {
     myinfo: null,
     balance: null,
+    needAdmin:'',//是否有新的待审核商品
   },
   onShow: function() {
     console.log('show')
@@ -28,6 +29,15 @@ Page({
         this.setData({ auth: '管理员' }); break;
       default:
         this.setData({ auth: '未知身份' }); break;
+    }
+    if(this.data.myinfo.user_permission>=100){
+      app.qkpost('manage/getWaitCheckList.php', { summary_sub: 1, amount: 1, type:0}).then((data)=>{
+        if (data.goods_list.length>0){//有新的待审核商品
+          this.setData({
+            needAdmin:'（待审核）'
+          })
+        }
+      })
     }
     },
   onLoad: function() {

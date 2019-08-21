@@ -17,13 +17,21 @@ Page({
     //48为修正值，底部距离过大=》数值增加
   },
   onLoad:function(){
+    this.setData({
+      user: {
+        user_name: app.globalData.user_info.user_name,
+        user_avatar_url: app.globalData.user_info.user_avatar_url
+      }
+    })
   },
   onShow: function (options) {
     console.log('我的发布')
     this.setData({
       goods:[]
     })
+    wx.showLoading()
     this.getGoodsItem(-1);
+    wx.hideLoading()
   },
 
   getGoodsItem:function(last_id){
@@ -40,12 +48,6 @@ Page({
     })
     data = util.base64_encode(data)
     var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-    this.setData({
-      user:{
-        user_name: app.globalData.user_info.user_name,
-        user_avatar_url: app.globalData.user_info.user_avatar_url	
-      }
-    })
     wx.request({
       url: app.globalData.URL + 'user/getUserSubmit.php',
       data: {
@@ -69,8 +71,6 @@ Page({
           return;
         }
         res = JSON.parse(util.base64_decode(res.data.data))
-        console.log('return data:')
-        console.log(res)
         if(res.goods_list.length==0){
           this.setData({
             end_goods_id:null

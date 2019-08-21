@@ -11,6 +11,7 @@ Page({
   },
 
   onShow: function (options) {
+    wx.showLoading()
     //拉取 个人收藏-商品 
     new Promise((resolve,reject)=>{
       var timestamp = Date.parse(new Date());
@@ -77,7 +78,7 @@ Page({
           this.setData({
             goods: this.data.goods
           })
-          console.log(this.data.goods)
+          wx.hideLoading()
         }).catch(()=>{
           console.log('获取卖家昵称、头像错误')
         })

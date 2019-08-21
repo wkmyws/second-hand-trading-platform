@@ -43,15 +43,21 @@ Page({
         }
       })//end request
     }).then(()=>{
-      console.log('emm')
-      console.log(this.data.goods)
+      if(this.data.goods.length==0){
+        wx.showToast({
+          title: '暂时没有待审核物品哦',
+          icon:'none',
+          duration:1500
+        })
+        setTimeout(wx.navigateBack,1000)
+      }
     }).catch(()=>{
       wx.showToast({
         title: '所在用户组权限不够',
         icon: 'none',
-        duration: 4000
+        duration: 1500
       })
-      wx.navigateBack()
+      setTimeout(wx.navigateBack,1000)
     })
 
   },
