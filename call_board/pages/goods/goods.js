@@ -21,6 +21,62 @@ Page({
     searchContent:'',//搜索内容
     last_id:-1,//拉取的最后一个商品id
     search_from: 1,//	从第几个搜索结果继续搜索（>=0，从头开始为1）
+    images:[],//预加载图片
+    colHgt:0,//两栏的高度差
+    loadingCount: 0,
+    col1:[],
+    col2:[],
+  },
+  onImageLoad: function (e) {
+    let imageId = e.currentTarget.id;
+    let imgHeight = e.detail.height-0;        //图片原始高度
+    let images = this.data.images;
+    let imageObj = null;
+    for (let i = 0; i < images.length; i++) {
+      if (images[i].goods_id == imageId) {
+        imageObj = images[i];
+        break;
+      }
+    }
+    
+    this.data.loadingCount-=1;
+
+    //判断当前图片添加到左列还是右列
+    if (this.data.colHgt>=0) {
+      this.data.colHgt -= imgHeight;
+      this.data.col1.push(imageObj);
+      this.setData({
+        col1:this.data.col1
+      })
+    } else {
+      this.data.colHgt += imgHeight;
+      this.data.col2.push(imageObj);
+      this.setData({
+        col2:this.data.col2
+      })
+    }
+
+    //当前这组图片已加载完毕，则清空图片临时加载区域的内容
+    if (!this.data.loadingCount) {
+      this.setData({
+        images:[]
+      })
+    }
+
+  },
+  loadImages: function (data,model) {
+    let images = data;
+    if(!model){
+      this.setData({
+        colHgt:0,
+        col1:[],
+        col2:[],
+      })
+    }
+    this.setData({
+      loadingCount: images.length,
+      images: images
+    });
   },
   jumpTo:function(){
     wx.navigateTo({
@@ -28,7 +84,6 @@ Page({
     })
   },
   startSearch:function(e){//搜索
-  console.log('start search')
     const searchContent=this.data.searchContent
     wx.navigateTo({
       url: '../goods/search/search?s='+searchContent,
@@ -58,7 +113,6 @@ Page({
     wx.navigateTo({
       url: '../publish/publish_goods/publish_goods',
     })
-    console.log("to_publish")
   },
   get_goods_list: function(data,model) {//model?继续添加：重新添加
     return new Promise((resolve, reject) => {
@@ -84,10 +138,10 @@ Page({
           if(res.data.status==1)return reject();
           var res_data = JSON.parse(util.base64_decode(res.data.data))
           that.setData({
-            note: model?this.data.note.concat(res_data.goods_list):res_data.goods_list,
+            //note: model?this.data.note.concat(res_data.goods_list):res_data.goods_list,
             last_id: res_data.end_goods_id
           })
-          console.log(this.data.last_id)
+          this.loadImages(res_data.goods_list,model)
           return resolve();
         }
       })
@@ -111,9 +165,7 @@ Page({
     var that = this;
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
-
     var sign = util.sha1("" + timestamp)
-
     wx.request({
       url: app.globalData.URL + "goods/getGoodsTypeList.php",
       data: {
@@ -129,8 +181,6 @@ Page({
       success: res => {
         var res_data = util.base64_decode(res.data.data)
         res_data = JSON.parse(res_data)
-        console.log('aa')
-        console.log(res_data)
         that.setData({
           navData: [{type_id:-1,type_name:'全部'}].concat(res_data)
         })
@@ -140,17 +190,16 @@ Page({
           data: res_data,
         })
 
-        var data = {
-          "summary_sub": 20,
-          "count_num": ct_num,//-------------------------
+        var dt = {
+          "summary_sub": 100,
+          "count_num": ct_num,
           "from_id": -1,
-          "goods_type": this.data.navData[0].type_id,
+          "goods_type": this.data.navData[this.data.currentTab].type_id,
         }
-        that.get_goods_list(data)
+        that.get_goods_list(dt)   
+        
       }
     })
-
-
   },
 
   switchNav(event) {
@@ -176,7 +225,6 @@ Page({
       "goods_type": this.data.navData[cur].type_id,
     }
     that.get_goods_list(data)
-    console.log(cur)
   }, //顶部栏
   swiperChange: function(e) {
     this.setData({

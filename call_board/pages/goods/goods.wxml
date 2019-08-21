@@ -1,3 +1,6 @@
+<view style="display:none">
+  <image wx:for="{{images}}" wx:key="id" id="{{item.goods_id}}" src="{{item.goods_head_image}}"  bindload="onImageLoad"></image>
+</view>
 <view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
 </view>
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx"></view>
@@ -41,14 +44,14 @@
       <!--下面的瀑布流-->
       <view class="content">
         <view class="left">
-          <block wx:for="{{note}}" wx:key="">
-            <template is="item" data="{{...item}}" wx:if="{{index%2==0}}" bindtap='switchDetail'></template>
+          <block wx:for="{{col1}}" wx:key="">
+            <template is="item" data="{{...item}}" bindtap='switchDetail'></template>
           </block>
         </view>
 
         <view class="right">
-          <block wx:for="{{note}}" wx:key="">
-            <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+          <block wx:for="{{col2}}" wx:key="">
+            <template is="item" data="{{...item}}" bindtap='switchDetail'></template>
           </block>
         </view>
       </view>

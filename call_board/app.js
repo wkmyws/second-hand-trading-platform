@@ -36,7 +36,6 @@ App({
               try {
                 var res_data = util.base64_decode(res.data.data)
                 res_data = JSON.parse(res_data)
-                console.log(res_data)
                 that.globalData.token = res_data.token
                 that.globalData.user_info = res_data.user_info
                 wx.hideLoading()
@@ -87,7 +86,6 @@ App({
   },
   upDataUserInfo: function () {
     return new Promise((resolve, reject) => {
-      console.log('start log in---')
       var data = "";
       var timestamp = String(Date.parse(new Date()) / 1000)
       var sign = util.sha1(data + timestamp + this.globalData.user_info.user_id)
@@ -97,12 +95,10 @@ App({
         method: 'POST',
         header: { "content-type": "application/json" },
         success: res => {
-          console.log(res)
           if (res.data.status == 1) return reject();
           else {
             res = JSON.parse(util.base64_decode(res.data.data))
             this.globalData.user_info = res;
-            console.log(this.globalData)
             return resolve()
           }
         }
@@ -114,13 +110,10 @@ App({
     //data:{}
     //withNoToken : 默认 undefined 为需要token
     return new Promise((resolve, reject) => {
-      console.log('qkpost')
-      console.log(data)
       if(data){
         data = JSON.stringify(data)
         data = util.base64_encode(data)
       }
-      console.log(data)
       var timestamp = String(Date.parse(new Date()) / 1000)
       var sign = withNoToken ? util.sha1(data + timestamp) : util.sha1(data + timestamp + this.globalData.user_info.user_id)
       wx.request({
@@ -135,8 +128,6 @@ App({
         method: 'POST',
         header: { "content-type": "application/json" },
         success: res => {
-          console.log('qkpost res')
-          console.log(res)
           if (res.data.status == 1) return reject(res);
           else try{//data是否能转为{}
             res = JSON.parse(util.base64_decode(res.data.data))

@@ -36,6 +36,10 @@ Page({
           this.setData({
             needAdmin:'（待审核）'
           })
+        }else{
+          this.setData({
+            needAdmin: ''
+          })
         }
       })
     }
