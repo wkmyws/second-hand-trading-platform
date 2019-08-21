@@ -3,8 +3,8 @@ page {
 }
 
 .scroll{
-  padding-bottom: 10rpx;
-  margin-top:80rpx;
+  padding-bottom: 100rpx;
+  padding-top: 80rpx;
 }
 /* 直接设置swiper属性 */
 
@@ -53,19 +53,17 @@ swiper-item image {
 .separate {
   font-size: 33rpx;
   color: black;
- 
+  text-align: justify;
   font-weight: 700;
   margin:15rpx;
 }
-
 .separate_detail{
    color: rgb(121, 118, 118);
   font-size: 34rpx;
   margin:15rpx;
-   text-align: justify;
-  word-break: break-all;
+  text-align: justify;
+   word-break: break-all;
 }
-
 .infor {
   display: flex;
   flex-direction: row;
@@ -160,6 +158,8 @@ text {
   color: #fff;
 }
 
+
+
 /*评论*/
 
 .comment {
@@ -223,24 +223,7 @@ text {
   overflow: hidden;
   margin: 5rpx 5rpx 5rpx 15rpx;
 }
-/*底部弹窗*/
-.user{
-    width: 100rpx;
-  height: 100rpx;
-  margin:20rpx 20rpx 0rpx 30rpx;
-}
-.choose {
-  width: 100%;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2000;
-  background: #fff;
-  padding-top: 20rpx;
-  border-top-right-radius: 20rpx;
-  border-top-left-radius: 20rpx;
-}
+
 .butt {
  position: relative;
   bottom: 5rpx;

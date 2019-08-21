@@ -4,7 +4,7 @@ page {
 
 .scroll{
   padding-bottom: 100rpx;
-  margin-top:80rpx;
+  padding-top: 80rpx;
 }
 /* 直接设置swiper属性 */
 
@@ -62,7 +62,7 @@ swiper-item image {
   font-size: 34rpx;
   margin:15rpx;
   text-align: justify;
-    word-break: break-all;
+   word-break: break-all;
 }
 .infor {
   display: flex;
@@ -258,3 +258,4 @@ color:rgb(121, 118, 118);
   font-size:36rpx;
   
 }
+
