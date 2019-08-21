@@ -1,9 +1,8 @@
 var util = require('../../utils/util.js');
 const app = getApp()
-const ct_num=5;//每页显示的最大条数
+const ct_num=9;//每页显示的最大条数
 Page({
   data: {
-    currentTab: 0,
     navScrollLeft: 0, //顶部栏的左边置左
     swiperH: '', //广告牌
     swiperIndex: 0,
@@ -48,7 +47,7 @@ Page({
       "summary_sub": 20,
       "count_num": ct_num,
       "from_id": -1,
-      "goods_type": that.data.currentTab + 1,
+      "goods_type": this.data.navData[this.data.currentTab].type_id,
     }
     that.get_goods_list(data)
     wx.hideNavigationBarLoading();
@@ -130,10 +129,12 @@ Page({
       success: res => {
         var res_data = util.base64_decode(res.data.data)
         res_data = JSON.parse(res_data)
-        //console.log(res_data)
+        console.log('aa')
+        console.log(res_data)
         that.setData({
-          navData: res_data
+          navData: [{type_id:-1,type_name:'所有'}].concat(res_data)
         })
+        //该cookie用于发布商品时传入选项类别
         wx.setStorage({
           key: 'goods_classes',
           data: res_data,
@@ -143,7 +144,7 @@ Page({
           "summary_sub": 20,
           "count_num": ct_num,//-------------------------
           "from_id": -1,
-          "goods_type": 1,
+          "goods_type": this.data.navData[0].type_id,
         }
         that.get_goods_list(data)
       }
@@ -172,7 +173,7 @@ Page({
       "summary_sub": 20,
       "count_num": ct_num,
       "from_id": -1,
-      "goods_type": cur + 1,
+      "goods_type": this.data.navData[cur].type_id,
     }
     that.get_goods_list(data)
     console.log(cur)
@@ -211,7 +212,7 @@ Page({
       "summary_sub": 20,
       "count_num": ct_num,//-------------------------
       "from_id": this.data.last_id,
-      "goods_type": this.data.currentTab + 1,
+      "goods_type": this.data.navData[this.data.currentTab].type_id
     }
     wx.showToast({
       title: '正在加载...',

@@ -162,7 +162,9 @@ Page({
           app.qkpost('goods/setGoodsSold.php', { goods_id: goods_id}).then(()=>{
             wx.showToast({
               title: '已标为 "已出售" 状态',
+              duration:1000,
             })
+            setTimeout(wx.navigateBack, 1000)
           }).catch(()=>{
             wx.showToast({
               title: '设置出错',
@@ -180,7 +182,7 @@ Page({
       success:sm=>{
         if(sm.confirm){
           let data = { type: 0, info_id: this.data.goods_id - 0 }
-          app.qkpost('user/deleteUserSubmit.php', data, true).then(() => {
+          app.qkpost('user/deleteUserSubmit.php', data).then(() => {
             console.log('删除成功')
             wx.showToast({
               title: '删除成功',

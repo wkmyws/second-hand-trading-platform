@@ -15,7 +15,7 @@ Page({
     new Promise((resolve,reject)=>{
       var timestamp = Date.parse(new Date());
       timestamp = String(timestamp / 1000);
-      var data = JSON.stringify({ type: 0, summary_sub:10 })
+      var data = JSON.stringify({ type: 0, summary_sub:100 })
       data = util.base64_encode(data)
       var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
       wx.request({

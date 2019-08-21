@@ -28,7 +28,7 @@ Page({
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
     var data = JSON.stringify({
-      summary_sub: 10,
+      summary_sub: 100,
       count: 10,
       from_id: last_id,
       type: 0
