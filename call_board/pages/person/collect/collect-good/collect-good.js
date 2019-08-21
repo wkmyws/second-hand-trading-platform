@@ -128,7 +128,7 @@ Page({
           })
           wx.showToast({
             title: (this.data.is_fav ? '' : '取消') + '收藏成功',
-            duration: 2000,
+            duration: 400,
             mask: false
           })
         }

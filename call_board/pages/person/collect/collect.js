@@ -10,7 +10,7 @@ Page({
     goods:[],//存放商品的数组 
   },
 
-  onLoad: function (options) {
+  onShow: function (options) {
     //拉取 个人收藏-商品 
     new Promise((resolve,reject)=>{
       var timestamp = Date.parse(new Date());
@@ -96,9 +96,6 @@ Page({
 
   },
 
-  onShow: function () {
-
-  },
 
   onHide: function () {
 

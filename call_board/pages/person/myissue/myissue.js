@@ -24,13 +24,15 @@ Page({
   },
 
   getGoodsItem:function(last_id){
+    console.log('from_id:')
+    console.log(last_id)
     //获取用户提交物品
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
     var data = JSON.stringify({
       summary_sub: 100,
-      count: 10,
-      from_id: last_id,
+      count: 6,
+      from_id: last_id,//响应字段 end_goods_id 的值，初始为-1
       type: 0
     })
     data = util.base64_encode(data)
@@ -64,6 +66,14 @@ Page({
           return;
         }
         res = JSON.parse(util.base64_decode(res.data.data))
+        console.log('return data:')
+        console.log(res)
+        if(res.goods_list.length==0){
+          setData({
+            end_goods_id:null
+          })
+          return;
+        }
         this.setData({
           goods: this.data.goods.concat(res.goods_list),
           end_goods_id: res.end_goods_id
@@ -101,16 +111,22 @@ Page({
   },
    onReachBottom: function () {
     // 页面上拉触底事件的处理函数  
-    console.log('reachBottom') 
-    if (!this.data.end_goods_id) {
+    console.log('reachBottom')
+    wx.showToast({
+      title: 'ReachBottom',
+      icon:'none',
+      mask:true
+    })
+    if (this.data.end_goods_id==null) {
       wx.showToast({
         title: '我是有底线的！',
         icon: 'none',
         duration: 2000
       })
       return;
+    }else{
+      this.getGoodsItem(this.data.end_goods_id)
     }
-    this.getGoodsItem(this.data.end_goods_id)
    },
   backTo: function () {
     wx.navigateBack({
