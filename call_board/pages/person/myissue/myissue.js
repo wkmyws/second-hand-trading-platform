@@ -13,6 +13,7 @@ Page({
     goods: [],//存放商品的数组 
     end_goods_id:-1,//已加载的最后一组物品数据，为null则没有了
     user:[],
+    scrollViewHgt: wx.getSystemInfoSync().windowHeight+"px"
   },
 
   onShow: function (options) {
@@ -69,7 +70,7 @@ Page({
         console.log('return data:')
         console.log(res)
         if(res.goods_list.length==0){
-          setData({
+          this.setData({
             end_goods_id:null
           })
           return;
@@ -109,14 +110,9 @@ Page({
       url: '../myissue/myissue-good/myissue-good?id=' + e.currentTarget.dataset.id + '&goods_state_name=' + e.currentTarget.dataset.statename
     })
   },
-   onReachBottom: function () {
+   toLower: function () {
     // 页面上拉触底事件的处理函数  
     console.log('reachBottom')
-    wx.showToast({
-      title: 'ReachBottom',
-      icon:'none',
-      mask:true
-    })
     if (this.data.end_goods_id==null) {
       wx.showToast({
         title: '我是有底线的！',
@@ -125,9 +121,15 @@ Page({
       })
       return;
     }else{
+      wx.showToast({
+        icon: 'loading',
+      })
       this.getGoodsItem(this.data.end_goods_id)
+      wx.hideToast()
     }
    },
+   toUpper:function(){},
+   scroll:function(){},
   backTo: function () {
     wx.navigateBack({
       delta: 1

@@ -59,6 +59,7 @@
 
     <!--商品-->
     <swiper-item>
+    <scroll-view style="height:{{scrollViewHgt}}" scroll-y bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="{{100}}">
       <block wx:for="{{goods}}" wx:key="goods_id">
         <view class='board' bindtap="good" data-id='{{item.goods_id}}' data-statename='{{item.goods_state_name}}'>
           <!--头像昵称-->
@@ -85,6 +86,7 @@
           </view>
         </view>
       </block>
+      </scroll-view>
     </swiper-item>
   </swiper>
 </view>

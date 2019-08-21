@@ -8,6 +8,7 @@ swiper {
   width: 100%;
 }
 
+
 swiper-item {
   position: relative;
   height: 100%;
