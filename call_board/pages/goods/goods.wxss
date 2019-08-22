@@ -43,8 +43,8 @@ page{
 }
 
 .image {
+  
   width: 120rpx;
-  height: 78rpx;
   display: inline-block;
   overflow: hidden;
 }
@@ -207,7 +207,7 @@ page{
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   overflow: hidden;
   font-family: 'PingFang SC-Medium';
   color: #1e1e1e;

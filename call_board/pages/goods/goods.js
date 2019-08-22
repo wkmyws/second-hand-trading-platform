@@ -26,10 +26,20 @@ Page({
     loadingCount: 0,
     col1:[],
     col2:[],
+    imgWidth:120,
+    cardMargin: 210 / 750 * wx.getSystemInfoSync().windowWidth, 
+    //每个卡片的边距 210怎么得出来的？玄学！
   },
   onImageLoad: function (e) {
+    let oImgW = e.detail.width;         //图片原始宽度
+    let oImgH = e.detail.height;        //图片原始高度
+    //let imgWidth = this.data.imgWidth;  //图片设置的宽度
+    let imgWidth = (wx.getSystemInfoSync().windowWidth-7*10 / 750 * wx.getSystemInfoSync().windowWidth)/2;
+    //7*10怎么得出来的？别问，问就是玄学！
+    let imgHeight = oImgH * imgWidth/oImgW;
+    imgHeight += this.data.cardMargin;//卡片加上边距
+    console.log('card margin:::'+this.data.cardMargin)
     let imageId = e.currentTarget.id;
-    let imgHeight = e.detail.height-0;        //图片原始高度
     let images = this.data.images;
     let imageObj = null;
     for (let i = 0; i < images.length; i++) {
@@ -40,17 +50,24 @@ Page({
     }
     
     this.data.loadingCount-=1;
-
     //判断当前图片添加到左列还是右列
     if (this.data.colHgt>=0) {
       this.data.colHgt -= imgHeight;
       this.data.col1.push(imageObj);
+      console.log('col1')
+      console.log(imageObj.goods_title)
+      console.log(imgHeight)
+      console.log(this.data.colHgt)
       this.setData({
         col1:this.data.col1
       })
     } else {
       this.data.colHgt += imgHeight;
       this.data.col2.push(imageObj);
+      console.log('col2')
+      console.log(imageObj.goods_title)
+      console.log(imgHeight)
+      console.log(this.data.colHgt)
       this.setData({
         col2:this.data.col2
       })
