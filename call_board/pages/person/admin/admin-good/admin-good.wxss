@@ -3,7 +3,7 @@ page {
 }
 
 .scroll{
-  padding-bottom: 100rpx;
+  padding-bottom: 30rpx;
   padding-top: 80rpx;
 }
 /* 直接设置swiper属性 */
@@ -33,8 +33,9 @@ swiper-item image {
 }
 
 .title_sort {
+  width: 100rpx;
   top: 20rpx;
-  text-align: justify;
+  text-align: center;
   justify-content: center;
   height: 32rpx;
   font-size: 28rpx;
@@ -42,6 +43,7 @@ swiper-item image {
   padding: 5rpx;
   color: rgb(145, 143, 143);
 }
+
 
 .detail .price {
   color: red;

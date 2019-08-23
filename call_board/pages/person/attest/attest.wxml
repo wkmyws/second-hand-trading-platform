@@ -50,5 +50,5 @@
   <view>例如，南审学生邮箱：</view>
   <view>
     <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(长按可复制）</view>
-  <view>账号为：学号，初始密码为：Nau+身份证后六位</view>
+  <view>账号为：学号+邮箱后缀，初始密码为：Nau+身份证后六位</view>
 </view>
