@@ -74,8 +74,6 @@ App({
         })
       })
     })
-
-
   },
   globalData: {
     statusBarHeight:wx.getSystemInfoSync()['statusBarHeight'],

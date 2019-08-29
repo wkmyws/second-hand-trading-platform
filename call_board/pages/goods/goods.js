@@ -31,6 +31,7 @@ Page({
     //每个卡片的边距 210怎么得出来的？玄学！
   },
   onImageLoad: function (e) {
+    let maxLength = 500/ 750 * wx.getSystemInfoSync().windowWidth;
     let oImgW = e.detail.width;         //图片原始宽度
     let oImgH = e.detail.height;        //图片原始高度
     //let imgWidth = this.data.imgWidth;  //图片设置的宽度
