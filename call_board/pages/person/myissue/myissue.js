@@ -32,6 +32,14 @@ Page({
     wx.showLoading()
     this.getGoodsItem(-1);
     wx.hideLoading()
+    if(this.data.goods.length==0){
+      wx.showToast({
+        title: '暂无发布😥',
+        icon: 'none',
+        duration: 2000,
+      })
+      setTimeout(this.backTo,2000)
+    }
   },
 
   getGoodsItem:function(last_id){
