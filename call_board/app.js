@@ -34,7 +34,11 @@ App({
             },
             success: res => {
               try {
+                console.log('succe:')
+                console.log(res)
                 var res_data = util.base64_decode(res.data.data)
+                console.log('res_data')
+                console.log(res_data)
                 res_data = JSON.parse(res_data)
                 that.globalData.token = res_data.token
                 that.globalData.user_info = res_data.user_info
@@ -45,11 +49,18 @@ App({
                 }
                 return resolve();
               } catch (err) {
+                console.log('err')
+                console.log(err)
+                for(let e in err)console.log(e+":"+err[e])
+
                 wx.hideLoading()
-                wx.showModal({
+                /*wx.showModal({
                   title: '登陆失败',
                   showCancel: false
-                })
+                })*/
+                //第二次请求
+                a
+                //--------
                 return reject();
                 //console.log(res.data)
               }
