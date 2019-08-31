@@ -13,10 +13,11 @@
   <textarea bindinput='get_content' class='multiple' auto-height="auto"maxlength='200' placeholder='描述宝贝的功能，特点及转手原因等'></textarea>
 
   <!--图片展示区域-->
+  <view class="tip">👉{{tip}}</view>
   <view class="image_content">
     <!--上传的图片-->
-    <view class="image" wx:for="{{img_url}}">
-      <image class="moment_img" src="{{item}}" data-index="{{index}}" bindtap='Preview' bindlongpress='Delete' mode="aspectFill"></image>
+    <view class="image" wx:for="{{imgArr}}">
+      <image class="moment_img" src="{{item.url}}" data-index="{{index}}" bindtap='Preview' bindlongpress='Delete' mode="aspectFill"></image>
     </view>
     <!--添加图片-->
     <view class='image' style='display:{{hideAdd?"none":"block"}}'>

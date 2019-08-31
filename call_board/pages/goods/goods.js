@@ -1,4 +1,6 @@
 var util = require('../../utils/util.js');
+var COS = require('../../cos-wx-sdk-v5.js')
+var UPD=require('../../uploadImg.js')
 const app = getApp()
 const ct_num = 9; //每页显示的最大条数
 Page({
@@ -221,6 +223,8 @@ Page({
 
       }
     })
+
+
   },
 
   switchNav(event) {

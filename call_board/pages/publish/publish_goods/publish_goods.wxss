@@ -10,7 +10,11 @@ page {
   margin:80rpx 5rpx 5rpx 5rpx;
   width: 97%;
 }
-
+.tip {
+  font-size: 30rpx;
+  margin: 20rpx;
+  color: rgb(83, 34, 5);
+}
 .single-top {
   background: white;
   height: 80rpx;

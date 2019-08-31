@@ -28,6 +28,7 @@
 </view>
 <view class="proto" bindtap='showPopup'>最终用户许可协议</view>
 <button class='butt' bindtap='mail_send'>同意协议并认证</button>
+<button wx:if='{{doneSend}}' class='butt' bindtap="exec">刷新状态</button>
 <view class="shade" hidden='{{popup}}' bindtap="hidePopup"></view>
 <view class="box popup" hidden="{{popup}}">
   <view class="title">
@@ -51,4 +52,5 @@
   <view>
     <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(长按可复制）</view>
   <view>账号为：学号+邮箱后缀，初始密码为：Nau+身份证后六位</view>
+  <view wx:if='{{doneSend}}'>验证完邮箱 点击按钮‘刷新状态’验证登录状态</view>
 </view>

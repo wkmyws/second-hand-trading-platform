@@ -1,5 +1,6 @@
 const app = getApp();
 var util = require("../../../../utils/util.js");
+var uploadImg=require('../../../../uploadImg.js')
 Page({
   data: {
     my_info:app.globalData.user_info,
@@ -69,39 +70,29 @@ Page({
         //return;
       }else{//上传了头像
         //注册头像
-        this.registerImage(this.data.tempFilePaths[0]).then((img_info)=>{
-          console.log('register success')
-          console.log(img_info)
-          //图片上传(已经存在则忽略)
-          this.upLoadImg(img_info.picture_id, this.data.tempFilePaths[0],img_info.picture_exist).
-          then(()=>{
-              console.log('success upload img')
-              //设置头像
-              this.setHeadImg(img_info.picture_id).then(()=>{
-                console.log('success set Head')
-                //updata user_info
-                this.upDataUserInfo().then(()=>{
-                  console.log('success updata user info')
-                  wx.showToast({
-                    title: "成功修改",
-                    icon: 'success',
-                    duration: 500,
-                  })
-                  setTimeout(wx.navigateBack,500)
-                }).catch(()=>{
-                  wx.showToast({
-                    title: "头像设置失败",
-                    icon: 'none',
-                    duration: 500,
-                  })
-                  setTimeout(wx.navigateBack, 500)
-                })
+        uploadImg.registerCOSImage(this.data.tempFilePaths[0]).then(res=>{
+          console.log('头像')
+          console.log(res)
+          app.qkpost('user/setUserAvatar.php', { picture_id:res-0}).then(res=>{
+            if(res.status==0){
+              wx.showToast({
+                title: '修改成功',
+                duration:500
               })
+              setTimeout(()=>{
+                wx.navigateBack({
+                  delta: 2
+                })
+              },500)
+            }else{
+              wx.showToast({
+                title: '修改失败',
+              })
+            }
           })
-          
         })
       }
-    }).catch(()=>{
+    }).catch((err)=>{
       //upLoadBaseInfo设置错误
       wx.showToast({
         title: this.data.errorInputMsg,
@@ -131,78 +122,6 @@ Page({
       })
     })
   },
-  setHeadImg:function(img_id){//设置头像
-    return new Promise((resolve,reject)=>{
-      var data = util.base64_encode(JSON.stringify({ picture_id:img_id}))
-      var timestamp = String(Date.parse(new Date()) / 1000)
-      var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-      wx.request({
-        url: app.globalData.URL+'user/setUserAvatar.php',
-        data: { "version": 1, "time": timestamp, "data": data, "sign": sign, "token": app.globalData.token },
-        method: 'POST',
-        header: { "content-type": "application/json" },
-        success:res=>{
-          if(res.data.status==0)return resolve();
-          else return reject();
-        }
-      })
-    })
-  },
-  upLoadImg:function(img_id,img_url,img_exist){//上传头像
-    return new Promise((resolve,reject)=>{
-      if (img_exist) return resolve(img_id);
-      var timestamp = Date.parse(new Date());
-      timestamp = String(timestamp / 1000);
-      wx.uploadFile({
-        url: app.globalData.URL + "upload/uploadImage.php",
-        filePath: img_url,
-        name: 'file',
-        formData: {
-          version: 1,
-          token: app.globalData.token,
-          picture_id: img_id
-        },
-        success:res=>{
-          if(JSON.parse(res.data).status==0){
-            return resolve(img_id);
-          }else return reject();
-        }
-      })
-    })
-  },
-  registerImage:function(img_path){//注册头像
-    return new Promise((resolve,reject)=>{
-      //获取sh1
-      wx.getFileInfo({
-        filePath: img_path,
-        digestAlgorithm:'sha1',
-        success:res=>{
-          var timestamp = String(Date.parse(new Date())/1000);
-          var data = { "picture_sha1": res.digest}
-          data = JSON.stringify(data)
-          data = util.base64_encode(data)
-          var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-          //注册图片
-          wx.request({
-            url: app.globalData.URL + "upload/registerImage.php",
-            data:{
-              "version": 1,
-              "time": timestamp,
-              "data": data,
-              "sign": sign,
-              "token": app.globalData.token
-            },
-            method: 'POST',
-            header: {"content-type": "application/json"},
-            success:res=>{
-              res=JSON.parse(util.base64_decode(res.data.data))
-              return resolve(res)
-            }
-          })
-        }
-      })//end get file
-    })
-  },
   upLoadBaseInfo:function(){//上传用户基础信息
     return new Promise((resolve,reject)=>{
       //check info
@@ -220,9 +139,11 @@ Page({
         method: 'POST',
         header: { "content-type": "application/json" },
         success: res => {
-          console.log(res)
           if (res.data.status == 0) return resolve();
-          else return reject();
+          else{
+            this.data.errorInputMsg ="微信号，手机号，QQ号不能全部为空"
+            return reject();
+          }
         }
       })
     })

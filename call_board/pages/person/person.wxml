@@ -44,13 +44,9 @@
     </view>
   </view>
 
-  <view class='menu'>
-     <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wxcd6245a555300732"  path="pages/index/index" extra-data="" version="release">
-        <text class='sub-title'>南审小助手</text>
-        <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
-    </navigator>
-   <view class='item' bindtap='toattest'>
-      <text class='sub-title'>学生认证</text>
+  <view class='menu' wx:if='{{myinfo.user_permission==0||myinfo.user_permission>=100}}'>
+   <view class='item' bindtap='toattest' wx:if='{{myinfo.user_permission==0}}'>
+      <text  class='sub-title'>学生认证</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
     <view wx:if='{{myinfo.user_permission>=100}}' class='item' bindtap='toadmin'>
