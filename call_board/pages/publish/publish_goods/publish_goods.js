@@ -6,11 +6,10 @@ Page({
   data: {
     classes: [],
     classes_index: 0,
-    img_url: [],
-    img_info: [],
-    img_id:[],
     imgArr:[],//key 0.. id:..  src:..
-    images: 0,
+    tip: '长按图片可以删除',
+    upLoadImgLock:false,
+    watch:null,
     hideAdd: 0, //0为显示，1为隐藏
     goods_title: null,
     goods_price: null,
@@ -20,38 +19,57 @@ Page({
   },
   submit: function(e) {
     //校验数据有效性
-    wx.showToast({
-      title: '校验数据中...',
-      icon:'loading'
-    })
     if (!this.data.goods_title || /\s/.test(this.data.goods_title)){//名称规则
-      wx.showToast({
+      /*wx.showToast({
         title: '商品名称不能为空或含有空白符',
         icon: 'none',
         duration:4000
+      })*/
+      this.setData({
+        tip:'商品名称不能为空或含有空白符'
       })
       return;
     }
     if(/^\d+(\.\d{0,2})?$/.test(this.data.goods_price+'')==false){//价格规则
-      wx.showToast({
+      /*wx.showToast({
         title: '价格输入错误',
         icon:'none',
+      })*/
+      this.setData({
+        tip: '价格输入错误'
       })
       return;
     }
     if (!this.data.goods_content){
-      wx.showToast({
+      /*wx.showToast({
         title: '描述内容为空',
         icon: 'none',
+      })*/
+      this.setData({
+        tip: '描述内容为空'
       })
       return;
     }
     if(this.data.imgArr.length==0){
-      wx.showToast({
+      /*wx.showToast({
         title: '至少上传一张图片',
         icon: 'none',
+      })*/
+      this.setData({
+        tip: '至少上传一张图片'
       })
       return;
+    }
+    if(this.data.upLoadImgLock){
+      this.setData({
+        tip: '正在上传图片，请稍后'
+      })
+      this.data.watch=setInterval(()=>{
+        if(this.data.upLoadImgLock==false){
+          clearInterval(this.data.watch)
+          this.submit()
+        }
+      },500)
     }
     //submit
     console.log('submit')
@@ -67,10 +85,28 @@ Page({
     app.qkpost('goods/submitNewGoods.php',data).then(res_data=>{
       if (res_data.submit_success){
         //发布成功
-        console.log('发布成功')
+        wx.showModal({
+          title: '发布成功',
+          content: '商品将在被审核后显示，你可以在 个人-我的发布 页面查看审核状态',
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.navigateBack({
+              })
+            }
+          }
+        })
       }else{
-        console.log('发布失败')
-        console.log(res_data.err_state)
+        var errmsg='';
+        switch(res_data.err_state){
+          case 0: errmsg ="请先在‘个人’页面进行‘学生认证’";break;
+          case 1: errmsg ="标题中存在敏感词";break;
+          case 2: errmsg ="内容中存在敏感词";break;
+          default:errmsg="未知错误码："+res_data.err_state;
+        }
+        this.setData({
+          tip: '发布失败! '+errmsg
+        })
       }
     })
   },
@@ -99,6 +135,7 @@ Page({
 
 
   chooseimage: function() {
+    this.setData({ upLoadImgLock:true})//开始上传图片
     var that = this;
     wx.chooseImage({
       count: 5 - this.data.imgArr.length, // 默认5
@@ -115,7 +152,8 @@ Page({
           }
           console.log('promise all')
           that.setData({
-            imgArr:that.data.imgArr
+            imgArr:that.data.imgArr,
+            upLoadImgLock:false,
           })
           if (that.data.imgArr.length >= 5) {
             that.setData({
@@ -123,6 +161,12 @@ Page({
             })
           }
 
+        }).catch(err=>{
+          wx.showModal({
+            title: 'error',
+            content: err,
+            showCancel: false,
+          })
         })
         //console.log(img_info)
       }

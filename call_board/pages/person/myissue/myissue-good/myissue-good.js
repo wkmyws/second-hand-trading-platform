@@ -51,14 +51,17 @@ Page({
     return new Promise((resolve, reject) => {
       var that = this
       var data = {
-        goods_id: parseInt(options.id)
+        goods_id: parseInt(options.id),
+        just_get_info:true
       }
+      console.log('data')
+      console.log(data)
       var timestamp = Date.parse(new Date());
       timestamp = String(timestamp / 1000);
       data = JSON.stringify(data)
       data = util.base64_encode(data)
       var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-
+      
       wx.request({
         url: app.globalData.URL + "goods/getGoodsDetail.php",
         data: {
@@ -73,6 +76,8 @@ Page({
           "content-type": "application/json"
         },
         success: res => {
+          console.log('goods')
+          console.log(res)
           if (res.data.status == 0) {
             var res_data = JSON.parse(util.base64_decode(res.data.data))
             that.setData({

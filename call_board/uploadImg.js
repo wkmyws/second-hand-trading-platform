@@ -5,7 +5,7 @@ var cos = new COS({
   SecretKey: '1nOksZ2UihRVMxwjYAWeXFkiz0rSqztX',
 });
 //upImg
-function registerCOSImage(image_url){//return id
+function registerCOSImage(image_url){//return id 限制上传大小为5MB
   return new Promise((resolve,reject)=>{
   //后缀
   var houZhui;
@@ -15,6 +15,9 @@ function registerCOSImage(image_url){//return id
     filePath: image_url,
     digestAlgorithm: 'sha1',
     success(res) {
+      if(res.size>1024*1024*5){//尺寸大于5MB
+          return reject("文件大于5MB，请压缩后上传")
+      }
       //sha1
       var image_sha1 = res.digest.toUpperCase()
       //检测是否存在图片
@@ -63,6 +66,7 @@ function upLoadImg(maxCount){
 
       var filePath = res.tempFiles[0].path;
       registerCOSImage(filePath).then(res=>{
+        console.log('receiverd:')
         console.log(res)
       })
 
@@ -74,4 +78,4 @@ module.exports={
   registerCOSImage: registerCOSImage
 }
 
-upLoadImg()
+//upLoadImg()

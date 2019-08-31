@@ -8,6 +8,9 @@ Page({
   },
   onShow: function() {
     console.log('show')
+    app.qkpost('user/getUserInfo.php',{}).then(res=>{
+      app.globalData.user_info=res;
+    
     this.setData({
       myinfo: app.globalData.user_info,
       extraData: {
@@ -43,6 +46,7 @@ Page({
         }
       })
     }
+    })
     },
   onLoad: function() {
 

@@ -26,20 +26,24 @@ Page({
   },
   onShow: function (options) {
     console.log('我的发布')
+    app.qkpost('user/getUserSubmit.php', { summary_sub: 1, count: 1, from_id: -1, type: 0 }).then(res => {
+      console.log('ssssss')
+      console.log(res)
+      if (res.goods_list.length == 0) {
+        wx.showToast({
+          title: '暂无发布😥',
+          icon: 'none',
+          duration: 2000,
+        })
+        setTimeout(this.backTo, 2000)
+      }
+    })
     this.setData({
       goods:[]
     })
     wx.showLoading()
     this.getGoodsItem(-1);
-    wx.hideLoading()
-    if(this.data.goods.length==0){
-      wx.showToast({
-        title: '暂无发布😥',
-        icon: 'none',
-        duration: 2000,
-      })
-      setTimeout(this.backTo,2000)
-    }
+    wx.hideLoading() 
   },
 
   getGoodsItem:function(last_id){
