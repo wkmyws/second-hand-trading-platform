@@ -13,7 +13,8 @@ Page({
     goods: [],//存放商品的数组 
     end_goods_id:-1,//已加载的最后一组物品数据，为null则没有了
     user:[],
-    scrollViewHgt: (wx.getSystemInfoSync().windowHeight + 55) * 750 / wx.getSystemInfoSync().windowWidth+"rpx" 
+    scrollViewHgt: (wx.getSystemInfoSync().windowHeight + 55) * 750 / wx.getSystemInfoSync().windowWidth+"rpx" ,
+
     //48为修正值，底部距离过大=》数值增加
   },
   onLoad:function(){

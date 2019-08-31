@@ -21,6 +21,7 @@ Page({
     user_avatar_url: null,
     goods_state_name:null,//审核状态
     goods_id:null,
+  
   },
 
   previewImage: function (e) {

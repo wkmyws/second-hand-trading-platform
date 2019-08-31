@@ -8,6 +8,7 @@ Page({
     currentTab: 0,
     boards:['test'],//存放公告的数组
     goods:[],//存放商品的数组 
+    
   },
 
   onShow: function (options) {

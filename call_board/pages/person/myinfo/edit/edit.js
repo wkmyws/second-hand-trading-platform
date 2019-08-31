@@ -6,7 +6,8 @@ Page({
     my_info:app.globalData.user_info,
     sex: ['未知','男', '女'],
     tempFilePaths: "/images/add.png",
-    errorInputMsg:'未知错误'
+    errorInputMsg:'需完善信息才能成功保存',
+
   },
   change_name(e){
     var my_info = this.data.my_info

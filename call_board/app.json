@@ -57,7 +57,8 @@
     "downloadFile": 10000
   },
   "navigateToMiniProgramAppIdList": [
-    "wx8abaf00ee8c3202e"
+    "wx8abaf00ee8c3202e",
+    "wxcd6245a555300732"
   ],
   "sitemapLocation": "sitemap.json"
 }

@@ -2,7 +2,8 @@ const app = getApp();
 var util = require("../../../utils/util.js");
 Page({
   data: {
-    myinfo:null
+    myinfo:null,
+ 
   },
 
   onShow: function (options) {

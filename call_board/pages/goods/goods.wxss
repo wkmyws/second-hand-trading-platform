@@ -43,7 +43,6 @@ page{
 }
 
 .image {
-  
   width: 120rpx;
   display: inline-block;
   overflow: hidden;
@@ -141,6 +140,8 @@ page{
   opacity: 0;
 }
 .plus_show{
+  border-radius: 100rpx;
+  box-shadow: 6rpx 7rpx 9rpx #ccc;
   position: fixed;
   height: 100rpx;
   width: 100rpx;

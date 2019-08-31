@@ -12,7 +12,8 @@ Page({
     id: null,
     site:[
       "http://mail.stu.nau.edu.cn"
-    ]
+    ],
+    
   },
   exec(){
     app.onLaunch()
