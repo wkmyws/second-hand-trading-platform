@@ -21,10 +21,11 @@ function registerCOSImage(image_url){//return id 限制上传大小为5MB
       //sha1
       var image_sha1 = res.digest.toUpperCase()
       //检测是否存在图片
-      app.qkpost('upload/checkCOSImage.php', { picture_sha1:image_sha1},'NoToken').then(res=>{
+      app.qkpost('upload/registerImage.php', { picture_sha1:image_sha1}).then(res=>{
         if (res.picture_exist) return resolve(res.picture_id)
         else{//注册
           //date
+          var picture_id=res.picture_id
           var currentDate = new Date()
           var year = currentDate.getFullYear()
           var month = currentDate.getMonth() + "";
@@ -44,9 +45,10 @@ function registerCOSImage(image_url){//return id 限制上传大小为5MB
               console.log(JSON.stringify(info));
             }
           }, function (err, data) {
-            app.qkpost('upload/registerCOSImage.php',
-              { picture_sha1: image_sha1, picture_file_name: key }).then(res => {
-                return resolve(res.picture_id)
+            app.qkpost('upload/completeUploadCOSImage.php',
+              { picture_id: picture_id, picture_file_name: key }).then(res => {
+                console.log('图片上传：'+res.status)
+                return resolve(picture_id)
               })
           });//cos post
         }
