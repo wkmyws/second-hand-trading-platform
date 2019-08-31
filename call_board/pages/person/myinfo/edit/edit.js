@@ -3,7 +3,8 @@ var util = require("../../../../utils/util.js");
 var uploadImg=require('../../../../uploadImg.js')
 Page({
   data: {
-    my_info:app.globalData.user_info,
+    my_info_cpy: app.globalData.user_info,
+    my_info:{},
     sex: ['未知','男', '女'],
     tempFilePaths: "/images/add.png",
     errorInputMsg:'需完善信息才能成功保存',
@@ -124,6 +125,13 @@ Page({
   },
   upLoadBaseInfo:function(){//上传用户基础信息
     return new Promise((resolve,reject)=>{
+      if (!this.data.my_info.user_name) this.data.my_info.user_name = this.data.my_info_cpy.user_name
+      if (!this.data.my_info.user_wechat) this.data.my_info.user_wechat = this.data.my_info_cpy.user_wechat
+      if (!this.data.my_info.user_qq) this.data.my_info.user_qq = this.data.my_info_cpy.user_qq
+      if (!this.data.my_info.user_phone) this.data.my_info.user_phone = this.data.my_info_cpy.user_phone
+      this.setData({
+        my_info:this.data.my_info
+      })
       //check info
       console.log('start check')
       if (this.checkInfo(this.data.my_info) == false) return reject();
@@ -141,7 +149,7 @@ Page({
         success: res => {
           if (res.data.status == 0) return resolve();
           else{
-            this.data.errorInputMsg ="微信号，手机号，QQ号不能全部为空"
+            this.data.errorInputMsg ="错误的输入！"
             return reject();
           }
         }
@@ -159,10 +167,10 @@ Page({
     //QQ
     else if ( info.user_qq && /[^\d]/.test(info.user_qq))err="QQ号不全为数字"
     //wx
-    else if (info.user_wechat && /\s/.test(info.user_wechat))err="微信号含有空白符"
+    else if (info.user_wechat && ! /^[a-z0-9\-\_]+$/i.test(info.user_wechat))err="微信号格式错误"
     //tele 简单校验
     else if (info.user_phone && ! /^[\d]+$/.test(info.user_phone))err="电话号码不全为数字"
-
+    else if (!(info.user_qq || info.user_wechat || info.user_phone))err="微信 qq 电话 不能全为空"
     if(err=="")return true;
     else{
       this.setData({
@@ -173,13 +181,22 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      my_info:app.globalData.user_info
+      my_info_cpy:app.globalData.user_info,
+      my_info: { 
+        "user_name": '',
+         "user_sex": app.globalData.user_info.user_sex,
+        "user_phone": '',
+        "user_qq":'',
+        "user_wechat":'',
+        }
     })
-    var my_info = this.data.my_info
-    if(my_info.user_school_name==null){
-      my_info.user_school_name='请选择学校'
+    /*var my_info = this.data.my_info_cpy
+    if(my_info_cpy.user_school_name==null){
+      my_info_cpy.user_school_name='请选择学校'
+      my_info.user_school_name = '请选择学校'
       this.setData({my_info})
-    }
+      this.setData({ my_info_cpy })
+    }*/
   },
 
   change_parent_data: function () {
