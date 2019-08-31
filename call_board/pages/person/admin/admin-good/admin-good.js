@@ -16,6 +16,7 @@ Page({
     ThumbNum: 0, //点赞的数量
     SaveStatus: 'false', //收藏的状态
     ViewNum: 0,//点赞的数量
+
   },
 
   previewImage: function (e) {

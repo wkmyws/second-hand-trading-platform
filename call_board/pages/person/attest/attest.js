@@ -11,7 +11,8 @@ Page({
     id: null,
     site:[
       "http://mail.stu.nau.edu.cn"
-    ]
+    ],
+    
   },
 
   ChangeCollege(e) {

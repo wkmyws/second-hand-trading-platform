@@ -9,6 +9,7 @@ Page({
     currentTab: 0,
     goods:[],
     boards:['test'],
+   
   },
 
   onShow: function (options) {

@@ -174,7 +174,7 @@ Page({
                 if (res_data.err_state == 0) {
                   wx.showModal({
                     title: '发布失败',
-                    content: '用户权限不足',
+                    content: '用户权限不足，请个人认证后发布',
                     showCancel: false
                   })
                 } else

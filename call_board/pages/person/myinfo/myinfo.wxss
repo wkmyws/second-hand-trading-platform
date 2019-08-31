@@ -53,7 +53,7 @@ page {
 }
 
 .butt {
-  position: relative;
+  position: fixed;
   bottom: 5rpx;
   width: 80%;
   margin-left: 10%;

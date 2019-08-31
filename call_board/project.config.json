@@ -14,7 +14,7 @@
 		"checkSiteMap": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.1",
+	"libVersion": "2.8.1",
 	"appid": "wxae3ba814704c5235",
 	"projectname": "call_board",
 	"debugOptions": {
