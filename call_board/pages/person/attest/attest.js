@@ -2,6 +2,7 @@ const app = getApp()
 var util = require("../../../utils/util.js");
 Page({
   data: {
+    doneSend:false,
     selected_school: '南京审计大学',
     mail_example: null,
     college: [],
@@ -13,7 +14,10 @@ Page({
       "http://mail.stu.nau.edu.cn"
     ]
   },
-
+  exec(){
+    app.onLaunch()
+    setTimeout(this.backTo,1000)
+  },
   ChangeCollege(e) {
     var that = this
     this.setData({
@@ -164,6 +168,9 @@ Page({
             wx.showToast({
               title: '验证邮件发送成功',
               icon: 'none',
+            })
+            this.setData({
+              doneSend:true,
             })
           } else {
             wx.showModal({
