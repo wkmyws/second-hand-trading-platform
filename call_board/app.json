@@ -24,7 +24,8 @@
     "pages/person/collect/collect-good/collect-good",
     "pages/board/detail/detail",
     "pages/goods/search/search",
-   "pages/goods/search/search-goods/search-goods"
+    "pages/goods/search/search-goods/search-goods",
+    "pages/otherinfo/otherinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
