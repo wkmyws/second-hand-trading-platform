@@ -39,7 +39,6 @@ page {
   border-radius: 10rpx;
   background-color: #fff;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
-
 }
 
 .menu .item {
@@ -48,14 +47,17 @@ page {
   padding: 20rpx 15rpx;
 }
 
+.item_hover{
+  opacity: 0.7;
+  background-color: #f5f5f5 !important;
+}
+
 .menu .item .arrow {
   float: right;
   height: 32rpx;
   width: 18rpx;
   margin: 16rpx 16rpx;
 }
-
-
 
 .sub-title{
   font-size: 33rpx;

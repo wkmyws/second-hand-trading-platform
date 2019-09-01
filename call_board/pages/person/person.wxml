@@ -11,34 +11,34 @@
     </view>
   </view>
   <view class="menu">
-    <view class='item' bindtap='tomyinfo'>
+    <view class='item' hover-class="item_hover" bindtap='tomyinfo'>
       <text class='sub-title'>个人信息</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
-    <view class="item" bindtap="tomyissue">
+    <view class="item" hover-class="item_hover" bindtap="tomyissue">
       <text class="sub-title">我的发布</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
-    <view class="item" bindtap="tocollect">
+    <view class="item" hover-class="item_hover" bindtap="tocollect">
       <text class="sub-title">我的收藏</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
   </view>
   <view class="menu">
-    <view class="item" bindtap="showabout">
+    <view class="item" hover-class="item_hover" bindtap="showabout">
       <text class="sub-title">关于</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
 
-      <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}" version="0.9.3">
+      <navigator  class="item complain" hover-class="item_hover" target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}" version="0.9.3">
         <text class='sub-title'>我要吐槽</text>
         <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </navigator>
    
-    <view class="item" bindtap="tohelp">
+    <view class="item" hover-class="item_hover"e bindtap="tohelp">
       <text class="sub-title">使用帮助</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
     </view>
