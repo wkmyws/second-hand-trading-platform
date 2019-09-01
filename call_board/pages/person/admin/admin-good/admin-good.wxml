@@ -9,7 +9,7 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">
       <swiper-item>
-        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode='aspectFit'></image>
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode='aspectFill'></image>
       </swiper-item>
     </block>
   </swiper>
