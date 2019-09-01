@@ -261,7 +261,11 @@ Page({
     var that = this
     that.get_detail(options)
   },
-
+  seeOthers:function(){
+    wx.navigateTo({
+      url: '../../otherinfo/otherinfo?other_user_id='+this.data.user_id
+    })
+  },
   backTo: function () {
     wx.navigateBack({
       delta: 1

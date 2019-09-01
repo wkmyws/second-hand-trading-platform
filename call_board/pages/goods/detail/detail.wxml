@@ -31,7 +31,7 @@
     </view>
   </view>
   <view class="detail">
-    <view class="infor">
+    <view class="infor" bindtap="seeOthers">
       <view>商品来自:</view>
       <image class='userhead' src='{{user_avatar_url}}'></image>
       <view class="infor_detail">

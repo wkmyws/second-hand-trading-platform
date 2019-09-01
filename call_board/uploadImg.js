@@ -28,7 +28,7 @@ function registerCOSImage(image_url){//return id 限制上传大小为5MB
           var picture_id=res.picture_id
           var currentDate = new Date()
           var year = currentDate.getFullYear()
-          var month = currentDate.getMonth() + "";
+          var month = currentDate.getMonth() +1+'';
           month = month.length == 1 ? "0" + month : month;
           var day = currentDate.getDate() + "";
           day = day.length == 1 ? "0" + day : day;
