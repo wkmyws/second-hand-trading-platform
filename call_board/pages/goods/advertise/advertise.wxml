@@ -1,3 +1,5 @@
+ <component-topnav inner-title="" is-show-back="false"></component-topnav>
+<component-topnav inner-title="{{title}}"></component-topnav>
 <view wx:for="{{imgUrl}}" wx:key="index">
 <image src="{{item}}" class="img"   mode='widthFix'></image>
 </view>

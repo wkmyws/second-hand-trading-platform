@@ -142,11 +142,7 @@ Page({
       url: '../collect/collect-good/collect-good?id=' + e.currentTarget.dataset.id
     })
   },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
+
 
 
 })

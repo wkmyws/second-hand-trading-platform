@@ -2,5 +2,8 @@
   "navigationBarTitleText": "商品",
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark",
-  "onReachBottomDistance": 50
+  "onReachBottomDistance": 50,
+    "usingComponents": {
+      "component-topnav": "/pages/component/topnav/topnav"
+    }
 }

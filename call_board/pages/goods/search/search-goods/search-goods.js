@@ -255,10 +255,6 @@ Page({
     var that = this
     that.get_detail(options)
   },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
+
 
 })

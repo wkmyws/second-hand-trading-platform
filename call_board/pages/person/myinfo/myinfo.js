@@ -21,9 +21,5 @@ Page({
   change_data(){
     this.onShow();
   },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
+ 
 })

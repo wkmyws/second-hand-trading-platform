@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "审核",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+    "usingComponents": {
+      "component-topnav": "/pages/component/topnav/topnav"
+    }
 }

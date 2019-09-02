@@ -1,0 +1,35 @@
+.ico-back{
+  width: 40rpx;
+  height: 40rpx;
+  background-size: contain;
+  background-image: url("http://image.natal.tech/image/back.png");
+  background-repeat: no-repeat;
+  background-position-x: 20rpx;
+}
+.hh-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #F8F7F7;
+  z-index: 99;
+}
+.hh-title{
+  font-size: 38rpx;
+  text-align: center;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hh-nav-right{
+  width: 116px;
+}
+.hh-nav-back{
+  width: 116px;
+
+}

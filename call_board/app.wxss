@@ -7,34 +7,4 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
-.custom{
-  position:fixed;
-  width: 100%;
-  top:0;
-  left:0;
-  height:45rpx;
-  background: #F8F7F7;
-  z-index: 999;
-}
-.custom text{
-  color: #000;
-  font-size: 34rpx;
-  font-weight: 500;
-  max-width: 280rpx;
-}
-.empty_custom{
-    height:45rpx;
-  width: 100%;
-}
-.head-back{
-  position:fixed;
-  width: 100%;
-  background-color: rgb(248, 247, 247);
-  z-index: 999;
-}
-.back{
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx 20rpx 15rpx 20rpx;
 }

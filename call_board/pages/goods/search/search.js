@@ -125,11 +125,7 @@ Page({
       }
     })
   },
-  backTo: function() {
-   wx.navigateBack({
-     delta:1
-   })
-  },
+
   /**
    * 用户点击右上角分享
    */

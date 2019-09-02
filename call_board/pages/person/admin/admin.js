@@ -92,11 +92,7 @@ Page({
       url: '../admin/admin-good/admin-good?id=' + e.currentTarget.dataset.id
     })
   },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
+
 
 
 })

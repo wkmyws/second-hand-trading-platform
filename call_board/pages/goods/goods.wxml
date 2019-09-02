@@ -1,9 +1,7 @@
 <view style="display:none">
   <image wx:for="{{images}}" wx:key="id" id="{{item.goods_id}}" src="{{item.goods_head_image}}"  bindload="onImageLoad"></image>
 </view>
-<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx"></view>
+ <component-topnav inner-title="" is-show-back="false"></component-topnav>
 <view class='head'>
 <view class='head-top'>
   <!--顶部搜索栏--> 

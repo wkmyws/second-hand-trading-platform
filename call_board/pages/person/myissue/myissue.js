@@ -145,9 +145,4 @@ Page({
    },
    toUpper:function(){},
    scroll:function(){},
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
 })

@@ -191,9 +191,5 @@ Page({
       })
     }
   },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
+
 })

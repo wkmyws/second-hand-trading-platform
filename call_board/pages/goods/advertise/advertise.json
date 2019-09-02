@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "广告"
+  "navigationBarTitleText": "广告",
+    "usingComponents": {
+      "component-topnav": "/pages/component/topnav/topnav"
+    }
 }
