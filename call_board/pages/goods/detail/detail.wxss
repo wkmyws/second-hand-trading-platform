@@ -4,7 +4,6 @@ page {
 
 .scroll{
   padding-bottom: 100rpx;
-  padding-top: 80rpx;
 }
 /* 直接设置swiper属性 */
 

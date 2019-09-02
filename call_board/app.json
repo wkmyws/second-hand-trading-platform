@@ -25,7 +25,8 @@
     "pages/board/detail/detail",
     "pages/goods/search/search",
     "pages/goods/search/search-goods/search-goods",
-    "pages/otherinfo/otherinfo"
+    "pages/otherinfo/otherinfo",
+    "pages/component/topnav/topnav"
   ],
   "window": {
     "backgroundTextStyle": "light",

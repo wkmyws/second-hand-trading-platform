@@ -1,10 +1,6 @@
-<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="head-back">
-<image class="back" src="/images/back.png" bindtap="backTo"></image>
-</view>
+ <component-topnav inner-title="" is-show-back="false"></component-topnav>
+<component-topnav inner-title="{{title}}"></component-topnav>
+
 <view class="publish">
 
   <input bindinput='get_title' class='single-top' maxlength='20' placeholder='商品名称'></input>
@@ -12,8 +8,7 @@
   <picker class='single' bindchange='get_type' range='{{classes}}'>类别：{{classes[classes_index]}}</picker>
   <textarea bindinput='get_content' class='multiple' auto-height="auto"maxlength='200' placeholder='描述宝贝的功能，特点及转手原因等'></textarea>
 
-  <!--图片展示区域-->
-  <view class="tip">👉{{tip}}</view>
+
   <view class="image_content">
     <!--上传的图片-->
     <view class="image" wx:for="{{imgArr}}">
@@ -24,7 +19,8 @@
       <image bindtap="chooseimage" class="moment_img" src="http://xcx.nau.edu.cn/images/add.png?"></image>
     </view>
   </view>
-
+  <!--图片展示区域-->
+  <view class="tip">👉{{tip}}</view>
 </view>
 <view>
   <button class='send' bindtap='submit'>确认发布</button>

@@ -1,6 +1,7 @@
 page{
   background: #F8F7F7;
 }
+
 .head{
   position: sticky;
   z-index: 999;
@@ -25,6 +26,7 @@ page{
 
 .search input {
   margin-top: 15rpx;
+  margin-left: 15rpx;
   width: 55%;
   height: 60rpx;
   background: rgb(248, 247, 247);
@@ -141,7 +143,7 @@ page{
 }
 .plus_show{
   border-radius: 100rpx;
-  box-shadow: 6rpx 7rpx 9rpx #ccc;
+  box-shadow: 6rpx 7rpx 9rpx rgb(95, 95, 95);
   position: fixed;
   height: 100rpx;
   width: 100rpx;

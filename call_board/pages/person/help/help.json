@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "使用帮助"
+  "navigationBarTitleText": "使用帮助",
+    "usingComponents": {
+      "component-topnav": "/pages/component/topnav/topnav"
+    }
 }

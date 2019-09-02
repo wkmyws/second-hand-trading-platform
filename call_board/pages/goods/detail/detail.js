@@ -19,7 +19,7 @@ Page({
     user_id:null,
     user_name:null,
     user_avatar_url:null,
-  
+
   },
 
   previewImage: function(e) {
@@ -274,11 +274,6 @@ Page({
   seeOthers:function(){
     wx.navigateTo({
       url: '../../otherinfo/otherinfo?other_user_id='+this.data.user_id
-    })
-  },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
     })
   },
 })
