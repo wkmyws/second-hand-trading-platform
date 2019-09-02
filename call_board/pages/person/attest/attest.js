@@ -17,7 +17,6 @@ Page({
   },
   exec(){
     app.onLaunch()
-    setTimeout(this.backTo,1000)
   },
   ChangeCollege(e) {
     var that = this

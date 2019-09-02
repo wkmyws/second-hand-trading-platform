@@ -45,12 +45,15 @@ Page({
       })//end request
     }).then(()=>{
       if(this.data.goods.length==0){
-        wx.showToast({
-          title: '暂时没有待审核物品哦',
-          icon:'none',
-          duration:1500
+        wx.showModal({
+          title: "暂无待审核物品",
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.navigateBack({})
+            }
+          }
         })
-        setTimeout(wx.navigateBack,1000)
       }
     }).catch(()=>{
       wx.showToast({

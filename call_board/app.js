@@ -75,10 +75,36 @@ App({
         mask: true
       })
       this.upDataUserInfo().then(()=>{
-        wx.showToast({
-          title: '登录成功',
-          duration:500
-        })
+        if (this.globalData.user_info.user_permission - 0 >= 50) {
+          wx.showToast({
+            title: '登录成功',
+            duration: 500
+          })
+          setTimeout(()=>{
+            wx.navigateTo({
+              url: '/pages/goods/goods'
+            })
+          },500)
+        }else{
+          wx.hideLoading()
+          wx.showModal({
+            title: "登陆提示",
+            content:'您当前是游客的身份，\r\n认证以获得更多权限',
+            cancelText: "随便逛逛",
+            cancelColor: "#000",
+            confirmText: "前去认证",
+            confirmColor: "#0f0",
+            success(res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/person/attest/attest',
+                })
+              }else{
+                //
+              }
+            }
+          })
+        }
       }).catch(()=>{
         wx.showToast({
           title: '个人信息获取失败！',

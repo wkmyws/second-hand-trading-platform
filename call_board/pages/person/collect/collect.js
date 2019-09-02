@@ -45,12 +45,16 @@ Page({
     }).then(()=>{
       //判断收藏是否为0
       if(this.data.goods.length==0){
-        wx.showToast({
-          title: '暂无收藏😥',
-          icon:'none',
-          duration:2000
+        wx.hideLoading()
+        wx.showModal({
+          title: "暂无发布😥",
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.navigateBack({})
+            }
+          }
         })
-        setTimeout(this.backTo,2000)
         return;
       }
       //获取卖家信息

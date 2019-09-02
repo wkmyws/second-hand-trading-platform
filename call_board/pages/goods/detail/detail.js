@@ -244,7 +244,7 @@ Page({
             })
           } else {
             wx.showModal({
-              title: res.data.err_msg,
+              title: "请先在 个人页面->学生认证 进行认证",
               showCancel: false,
               success(res) {
                 if (res.confirm) {
@@ -259,6 +259,16 @@ Page({
   },
   onLoad: function(options) {
     var that = this
+    if (app.globalData.user_info.user_permission<50){
+      wx.showToast({
+        title:'用户权限不够，请先进行 学生认证',
+        icon:'none',
+        mask:true,
+        duration:1000
+      })
+      setTimeout(this.backTo,1000)
+      return;
+    }
     that.get_detail(options)
   },
   seeOthers:function(){
