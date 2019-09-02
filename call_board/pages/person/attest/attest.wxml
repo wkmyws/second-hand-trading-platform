@@ -44,7 +44,6 @@
   <view>
     温馨提醒：</view>
   <view>本小程序是通过学校邮箱来进行身份认证的，在您填写完学号及选好邮箱后缀后，可用浏览器打开下面的学校邮箱网址，进入自己的邮箱进行确认认证。</view>
-  <view>ps:南审学生只需填写学号，点击最下方的认证按钮并在nau邮箱进行验证即可</view>
   <view>例如，南审学生邮箱：</view>
   <view>
     <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(长按可复制）</view>
