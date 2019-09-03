@@ -26,13 +26,13 @@ swiper-item image {
 .detail .title {
   font-size: 37rpx;
   font-weight: 700;
-  margin: 15rpx 25rpx 15rpx 15rpx;
+  margin: 15rpx 10px 15rpx 15rpx;
   color: black;
   text-align: justify;
 }
 
 .title_sort {
-  width: 120rpx;
+  width: 140rpx;
   top: 20rpx;
   text-align: center;
   justify-content: center;
