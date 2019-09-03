@@ -2,7 +2,8 @@ page{
   background-color:rgb(248, 247, 247);
 }
 .lastTip{
-  font-size: 40rpx;
+  margin-top:20rpx;
+  font-size: 33rpx;
   color: rgb(114, 6, 6);
   align-items: center;
   justify-content: center;
