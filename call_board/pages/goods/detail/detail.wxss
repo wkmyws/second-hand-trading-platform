@@ -32,14 +32,13 @@ swiper-item image {
 }
 
 .title_sort {
-  width: 100rpx;
+  width: 120rpx;
   top: 20rpx;
   text-align: center;
   justify-content: center;
   height: 32rpx;
   font-size: 28rpx;
   position: relative;
-  padding: 5rpx;
   color: rgb(145, 143, 143);
 }
 
