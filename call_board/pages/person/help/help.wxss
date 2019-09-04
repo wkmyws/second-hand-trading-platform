@@ -5,7 +5,7 @@ page {
 .page__hd {
   padding: 30rpx 35rpx;
   text-align: center;
-  margin-top:40rpx;
+  margin-top:80rpx;
 }
 
 .page__title {

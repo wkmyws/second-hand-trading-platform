@@ -4,7 +4,7 @@ page{
 .head{
   position: sticky;
   z-index: 999;
-  margin-top: 40rpx;
+  margin-top: 80rpx;
   }
 
 .head-top {

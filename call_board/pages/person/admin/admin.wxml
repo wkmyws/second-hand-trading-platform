@@ -1,7 +1,6 @@
- <component-topnav inner-title="" is-show-back="false"></component-topnav>
 <component-topnav inner-title="{{title}}"></component-topnav>
 
-<view class='page-myissue' style="margin-top:40rpx">
+<view class='page-myissue' style="margin-top:80rpx">
   <view class="swiper-tab">
   <!--
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公告</view>

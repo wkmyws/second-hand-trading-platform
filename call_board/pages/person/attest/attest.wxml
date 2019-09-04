@@ -1,7 +1,6 @@
- <component-topnav inner-title="" is-show-back="false"></component-topnav>
 <component-topnav inner-title="{{title}}"></component-topnav>
 
-<view class="user"style="margin-top:40rpx">
+<view class="user"style="margin-top:80rpx">
   <view class="user-item">
     <text class="name">学校:</text>
     <label class='icon'></label>

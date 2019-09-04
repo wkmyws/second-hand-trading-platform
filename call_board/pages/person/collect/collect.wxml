@@ -1,7 +1,6 @@
- <component-topnav inner-title="" is-show-back="false"></component-topnav>
 <component-topnav inner-title="{{title}}"></component-topnav>
 
-<view class='page-myissue' style="margin-top:40rpx">
+<view class='page-myissue' style="margin-top:80rpx">
   <!--顶部TAB-->
   
   <view class="swiper-tab">
