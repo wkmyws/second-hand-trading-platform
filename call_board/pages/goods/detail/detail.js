@@ -19,7 +19,7 @@ Page({
     user_id:null,
     user_name:null,
     user_avatar_url:null,
-
+    canBuy:true,
   },
 
   previewImage: function(e) {
@@ -209,6 +209,7 @@ Page({
             data = util.base64_encode(data)
 
             var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
+            
             wx.request({
               url: app.globalData.URL + "goods/getSellerInfo.php",
               data: {
@@ -230,18 +231,11 @@ Page({
                     seller_data: seller_data,
                   })
                 } else {
-                  wx.showModal({
-                    title: res.data.err_msg,
-                    showCancel: false,
-                    success(res) {
-                      if (res.confirm) {
-                        wx.navigateBack({})
-                      }
-                    }
-                  })
+                  this.setData({canBuy:false})
                 }
               }
             })
+            
           } else {
             wx.showModal({
               title: "请先在 个人页面->学生认证 进行认证",
@@ -258,17 +252,11 @@ Page({
     })
   },
   onLoad: function(options) {
+    app.qkpost('manage/setUserPermission.php', { "target_user_id":13,"permission_level":0}).then(res=>{
+      console.log('settttttt')
+      console.log(res)
+    })
     var that = this
-    if (app.globalData.user_info.user_permission<50){
-      wx.showToast({
-        title:'用户权限不够，请先进行 学生认证',
-        icon:'none',
-        mask:true,
-        duration:1000
-      })
-      setTimeout(this.backTo,1000)
-      return;
-    }
     that.get_detail(options)
   },
   seeOthers:function(){

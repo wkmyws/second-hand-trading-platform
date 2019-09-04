@@ -190,6 +190,7 @@ Page({
         "user_wechat":'',
         }
     })
+    console.log(this.data.my_info)
     /*var my_info = this.data.my_info_cpy
     if(my_info_cpy.user_school_name==null){
       my_info_cpy.user_school_name='请选择学校'

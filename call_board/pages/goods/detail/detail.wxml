@@ -55,6 +55,7 @@
 -->
 </scroll-view>
 <view class="detail-nav">
+<view wx:if="{{canBuy}}">
   <image wx:if='{{!is_fav}}' class='save' bindtap="set_fav" src='http://image.natal.tech/image/shou.png' hidden='{{hidden}}' />
   <image wx:else src='http://image.natal.tech/image/shou1.png' class='save' bindtap="set_fav"></image>
   <view hidden='{{hidden}}'>收藏</view>
@@ -71,4 +72,6 @@
     <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
   <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
     <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
+    </view>
+    <view wx:if="{{!canBuy}}"> 😥请先进行学生认证以获取更多内容</view>
   </view>
