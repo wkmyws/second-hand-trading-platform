@@ -1,12 +1,9 @@
- <component-topnav inner-title="" is-show-back="false"></component-topnav>
+<component-topnav inner-title="" is-show-back="false"></component-topnav>
 <component-topnav inner-title="{{title}}"></component-topnav>
-
-<view class='content'>
-  <view class='top'>
-    <view>
-      <image class='nickpic' src="{{user_info.user_avatar_url}}"></image>
-      <!--这是头像-->
-    </view>
+<view class='top'>
+  <view class="user">
+    <image class='nickpic' src="{{user_info.user_avatar_url}}"></image>
+    <!--这是头像-->
     <view class='nickname'>
       <view class="name">{{user_info.user_name}}</view>
       <!--<open-data type="userNickName" ></open-data>-->
@@ -16,7 +13,7 @@
     <view class='menu'>
       <view class='item'>
         <text class='left'>所在学校：</text>
-        <text class='right' >{{user_info.user_school_name}}</text>
+        <text class='right'>{{user_info.user_school_name}}</text>
       </view>
       <view class='item'>
         <text class='left'>创建时间：</text>

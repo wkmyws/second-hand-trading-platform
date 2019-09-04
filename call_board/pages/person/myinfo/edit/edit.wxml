@@ -2,7 +2,7 @@
 <component-topnav inner-title="{{title}}"></component-topnav>
 
 <view class='menu'>
-<view class='item'>
+<view class='item' >
     <text class='left'>头像：</text>
     <image class='header' type="userAvatarUrl" src="{{tempFilePaths}}" mode='aspectFill' bindtap="chooseimage"></image>
   </view>
