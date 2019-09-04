@@ -1,11 +1,7 @@
-<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="head-back">
-<image class="back" src="/images/back.png" bindtap="backTo"></image>
-</view>
-<view class='content' style="margin-top:80rpx">
+
+<component-topnav inner-title="{{title}}"></component-topnav>
+
+<view class='content' >
   <view class='top'>
     <view>
        <image class='nickpic'src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->

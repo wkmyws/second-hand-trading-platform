@@ -1,11 +1,8 @@
-<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx"></view>
+ <component-topnav inner-title="" is-show-back="false"></component-topnav>
   <view >
-    <view class="user" style='display:flex'>
+    <view class="user">
       <image  class="avatar"src="{{myinfo.user_avatar_url}}"></image><!--这是头像-->
       <view class="name">{{myinfo.user_name}}</view>
-
       <!--<open-data type="userNickName" class="name"></open-data>-->
       <view class='attest'>{{auth}}</view>
     </view>

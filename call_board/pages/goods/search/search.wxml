@@ -1,12 +1,6 @@
-<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
-</view>
+<component-topnav inner-title="{{title}}"></component-topnav>
   <view class='head'>
 <view class='head-top'>
-<view>
-  <image class="back" src="/images/back.png" bindtap="backTo"></image>
-  </view>
   <view class="search">
    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}' focus='{{inputSearchFocus}}'> 
     </input>

@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "我的发布"
+  "navigationBarTitleText": "我的发布",
+    "usingComponents": {
+      "component-topnav": "/pages/component/topnav/topnav"
+    }
 }

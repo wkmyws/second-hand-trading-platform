@@ -31,12 +31,16 @@ Page({
       console.log('ssssss')
       console.log(res)
       if (res.goods_list.length == 0) {
-        wx.showToast({
-          title: '暂无发布😥',
-          icon: 'none',
-          duration: 2000,
+        wx.showModal({
+          title: "暂无发布😥",
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.navigateBack({})
+            }
+          }
         })
-        setTimeout(this.backTo, 2000)
+        return;
       }
     })
     this.setData({
@@ -145,9 +149,4 @@ Page({
    },
    toUpper:function(){},
    scroll:function(){},
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
 })

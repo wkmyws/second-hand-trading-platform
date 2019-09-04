@@ -18,6 +18,13 @@ Page({
   image_upload: function(img) {
   },
   submit: function(e) {
+    //检验用户权限
+    if (app.globalData.user_info.user_permission<50){
+      this.setData({
+        tip: '用户权限不够，请先到个人页面进行认证'
+      })
+      return;
+    }
     //校验数据有效性
     if (!this.data.goods_title || /\s/.test(this.data.goods_title)){//名称规则
       /*wx.showToast({
@@ -287,10 +294,6 @@ Page({
   onShareAppMessage: function() {
 
   },
-  backTo: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  }
+ 
 
 })

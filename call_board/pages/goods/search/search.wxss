@@ -4,7 +4,7 @@ page{
 .head{
   position: sticky;
   z-index: 999;
-  
+  margin-top: 80rpx;
   }
 
 .head-top {
@@ -32,7 +32,8 @@ page{
   height: 78rpx;
   background: #eee;
   padding-left: 32rpx;
-  margin-top:75rpx;
+  margin-top:10rpx;
+   margin-bottom:10rpx;
   border-top-left-radius: 40rpx;
   border-bottom-left-radius: 40rpx;
   margin-left: 5%;
@@ -54,36 +55,13 @@ page{
   height: 78rpx;
   display: inline-block;
   overflow: hidden;
-  margin-top:75rpx;
+  margin-top:10rpx;
+   margin-bottom:10rpx;
   margin-right: 5%;
   border-top-right-radius: 40rpx;
   border-bottom-right-radius: 40rpx;
 }
 
-.nav {
-  position: relative;
-  height: 88rpx;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-  line-height: 80rpx;
-  background: #fff;
-  font-size: 16px;
-  white-space: nowrap;
-  top: 110rpx;
-  left: 0;
- 
-}
-
-.nav-item {
-  width: 20%;
-  display: inline-block;
-  text-align: center;
-}
-
-.nav-item.active {
-  color: red;
-}
 
 .autoplay {
   flex-direction: column;
@@ -271,7 +249,7 @@ page{
   display: inline-block;
   vertical-align: top;
   width: 48%;
-  margin-top: 165rpx;
+  margin-top:120rpx;
 }
 
 .plus_show{
@@ -289,11 +267,4 @@ page{
 
 .right {
   float: right;
-}
-.back{
-  position:fixed;
-  z-index: 999;
-   width:40rpx;
-  height: 40rpx;
-  margin:20rpx;
 }

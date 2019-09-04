@@ -1,10 +1,6 @@
-<view class="custom flex_center" sytle="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}rpx">
-</view>
-<view class="head-back">
-<image class="back" src="/images/back.png" bindtap="backTo"></image>
-</view>
+
+<component-topnav inner-title="{{title}}"></component-topnav>
+
 <scroll-view scroll-y="true" class="scroll">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">

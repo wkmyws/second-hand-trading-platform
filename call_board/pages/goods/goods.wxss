@@ -1,16 +1,17 @@
 page{
   background: #F8F7F7;
 }
+
 .head{
   position: sticky;
   z-index: 999;
   background: #fff;
-  }
+}
 
 .head-top {
   width: 100%;
   position: fixed;
-    box-shadow: 6rpx 8rpx 9rpx #ccc;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
 .search {
@@ -24,7 +25,8 @@ page{
 }
 
 .search input {
-  margin-top: 15rpx;
+  margin-top: 12rpx;
+  margin-left: 12rpx;
   width: 55%;
   height: 60rpx;
   background: rgb(248, 247, 247);
@@ -60,7 +62,6 @@ page{
   white-space: nowrap;
   top: 0rpx;
   left: 0;
- 
 }
 
 .nav-item {

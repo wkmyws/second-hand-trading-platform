@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "修改信息"
+  "navigationBarTitleText": "修改信息",
+    "usingComponents": {
+      "component-topnav": "/pages/component/topnav/topnav"
+    }
 }

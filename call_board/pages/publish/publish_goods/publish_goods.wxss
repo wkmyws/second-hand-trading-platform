@@ -12,7 +12,7 @@ page {
 }
 .tip {
   font-size: 30rpx;
-  margin: 20rpx;
+  margin: 10rpx 20rpx 110rpx 20rpx;
   color: rgb(83, 34, 5);
 }
 .single-top {

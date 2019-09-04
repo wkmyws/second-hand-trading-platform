@@ -1,9 +1,24 @@
-
 var util = require("utils/util.js");
 App({
   onLaunch: function(options) {
-    
     var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.globalData.platform = res.platform
+        let totalTopHeight = 68
+        if (res.model.indexOf('iPhone X') !== -1) {
+          totalTopHeight = 88
+        } else if (res.model.indexOf('iPhone') !== -1) {
+          totalTopHeight = 64
+        }
+        that.globalData.statusBarHeight = res.statusBarHeight
+        that.globalData.titleBarHeight = totalTopHeight - res.statusBarHeight
+      },
+      failure() {
+        that.globalData.statusBarHeight = 0
+        that.globalData.titleBarHeight = 0
+      }
+    });
     var timestamp = Date.parse(new Date());
     timestamp = String(timestamp / 1000);
     // 登录
@@ -75,10 +90,36 @@ App({
         mask: true
       })
       this.upDataUserInfo().then(()=>{
-        wx.showToast({
-          title: '登录成功',
-          duration:500
-        })
+        if (this.globalData.user_info.user_permission - 0 >= 50) {
+          wx.showToast({
+            title: '登录成功',
+            duration: 500
+          })
+          setTimeout(()=>{
+            wx.navigateTo({
+              url: '/pages/goods/goods'
+            })
+          },500)
+        }else{
+          wx.hideLoading()
+          wx.showModal({
+            title: "登陆提示",
+            content:'您当前是游客的身份，\r\n认证以获得更多权限',
+            cancelText: "随便逛逛",
+            cancelColor: "#AAA",
+            confirmText: "前去认证",
+            confirmColor: "#000",
+            success(res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/person/attest/attest',
+                })
+              }else{
+                //
+              }
+            }
+          })
+        }
       }).catch(()=>{
         wx.showToast({
           title: '个人信息获取失败！',
@@ -88,7 +129,7 @@ App({
     })
   },
   globalData: {
-    statusBarHeight:wx.getSystemInfoSync()['statusBarHeight'],
+  
     user_info: null,
     user_info_wx: null,
     token: "token",
