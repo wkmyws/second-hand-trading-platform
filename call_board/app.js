@@ -1,8 +1,6 @@
-
 var util = require("utils/util.js");
 App({
   onLaunch: function(options) {
-    
     var that = this;
     wx.getSystemInfo({
       success: function (res) {

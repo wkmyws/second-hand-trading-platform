@@ -1,8 +1,6 @@
- <component-topnav inner-title="" is-show-back="false"></component-topnav>
 <component-topnav inner-title="{{title}}"></component-topnav>
-
 <view class='menu'>
-<view class='item'>
+<view class='item' >
     <text class='left'>头像：</text>
     <image class='header' type="userAvatarUrl" src="{{tempFilePaths}}" mode='aspectFill' bindtap="chooseimage"></image>
   </view>
@@ -31,7 +29,7 @@
     <input class='input' type='number' maxlength='11' bindchange='change_phone' value='{{my_info.user_phone}}' placeholder="{{my_info_cpy.user_phone}}"></input>
   </view>
   <view >
-    <button class='butt1' open-type="getUserInfo" bindgetuserinfo="get_user_info">使用微信信息</button>
-    <button class='butt' bindtap='save'>保存修改</button>
+    <button class='butt1' open-type="getUserInfo" bindgetuserinfo="get_user_info" hover-class="button_clickef">使用微信信息</button>
+    <button class='butt' bindtap='save' hover-class="button_clickef">保存修改</button>
   </view>
 </view>

@@ -1,14 +1,9 @@
- <component-topnav inner-title="" is-show-back="false"></component-topnav>
 <component-topnav inner-title="{{title}}"></component-topnav>
-
 <view class="publish">
-
   <input bindinput='get_title' class='single-top' maxlength='20' placeholder='商品名称'></input>
   <input bindinput='get_price' class='single' maxlength='10' placeholder='价格' type='number'></input>
   <picker class='single' bindchange='get_type' range='{{classes}}'>类别：{{classes[classes_index]}}</picker>
   <textarea bindinput='get_content' class='multiple' auto-height="auto"maxlength='200' placeholder='描述宝贝的功能，特点及转手原因等'></textarea>
-
-
   <view class="image_content">
     <!--上传的图片-->
     <view class="image" wx:for="{{imgArr}}">
@@ -23,6 +18,6 @@
   <view class="tip">👉{{tip}}</view>
 </view>
 <view>
-  <button class='send' bindtap='submit'>确认发布</button>
+  <button class='send' bindtap='submit' hover-class="button_clickef">确认发布</button>
 
 </view>

@@ -6,12 +6,12 @@ page{
   position: sticky;
   z-index: 999;
   background: #fff;
-  }
+}
 
 .head-top {
   width: 100%;
   position: fixed;
-    box-shadow: 6rpx 8rpx 9rpx #ccc;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
 }
 
 .search {
@@ -25,8 +25,8 @@ page{
 }
 
 .search input {
-  margin-top: 15rpx;
-  margin-left: 15rpx;
+  margin-top: 12rpx;
+  margin-left: 12rpx;
   width: 55%;
   height: 60rpx;
   background: rgb(248, 247, 247);
@@ -62,7 +62,6 @@ page{
   white-space: nowrap;
   top: 0rpx;
   left: 0;
- 
 }
 
 .nav-item {
@@ -281,4 +280,10 @@ max-height: 500rpx;
 
 .right {
   float: right;
+}
+
+
+.button_clickef{
+  opacity: 0.7;
+  background-color: blue
 }
