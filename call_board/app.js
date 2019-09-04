@@ -108,9 +108,9 @@ App({
             title: "登陆提示",
             content:'您当前是游客的身份，\r\n认证以获得更多权限',
             cancelText: "随便逛逛",
-            cancelColor: "#000",
+            cancelColor: "#AAA",
             confirmText: "前去认证",
-            confirmColor: "#0f0",
+            confirmColor: "#000",
             success(res) {
               if (res.confirm) {
                 wx.navigateTo({
