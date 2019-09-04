@@ -229,6 +229,7 @@ Page({
                   console.log(seller_data)
                   that.setData({
                     seller_data: seller_data,
+                    canBuy:true
                   })
                 } else {
                   this.setData({canBuy:false})
