@@ -48,4 +48,4 @@
   </view>
   </view>
 </view>
-  <button class='butt' bindtap='ToEdit'>编辑信息</button>
+  <button class='butt' bindtap='ToEdit' hover-class="button_clickef">编辑信息</button>
