@@ -1,6 +1,6 @@
 <component-topnav inner-title="{{title}}"></component-topnav>
 
-<view class='page-myissue' style="margin-top:80rpx">
+<view class='page-myissue' style="margin-top:0rpx">
   <!--顶部TAB-->
   
   <view class="swiper-tab">

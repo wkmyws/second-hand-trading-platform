@@ -1,5 +1,4 @@
 
-<component-topnav inner-title="{{title}}"></component-topnav>
 
 <scroll-view scroll-y="true" class="scroll">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">

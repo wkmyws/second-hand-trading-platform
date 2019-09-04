@@ -1,6 +1,4 @@
 
-<component-topnav inner-title="{{title}}"></component-topnav>
-
 <view class='content' >
   <view class='top'>
     <view>

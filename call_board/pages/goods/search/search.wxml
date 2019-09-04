@@ -1,5 +1,4 @@
-<component-topnav inner-title="{{title}}"></component-topnav>
-  <view class='head'>
+<view class='head'>
 <view class='head-top'>
   <view class="search">
    <input class="input" bindconfirm="startSearch" bindinput="bindInputSearch" placeholder="大家都在搜‘access’" cursor="-1" maxlength="20" value='{{searchContent}}' focus='{{inputSearchFocus}}'> 

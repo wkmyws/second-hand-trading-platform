@@ -4,7 +4,7 @@ page{
 .lastTip{
   margin-top:20rpx;
   font-size: 33rpx;
-  color: rgb(114, 6, 6);
+  color: rgb(143, 36, 36);
   align-items: center;
   justify-content: center;
 }

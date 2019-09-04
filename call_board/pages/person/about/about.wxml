@@ -1,4 +1,3 @@
-<component-topnav inner-title="{{title}}"></component-topnav>
 
 <view class="page__hd">
   <image class="weui-media-box__thumb" src="/images/icon.png" />

@@ -1,4 +1,4 @@
-<component-topnav inner-title="{{title}}"></component-topnav>
+
 <view class="publish">
   <input bindinput='get_title' class='single-top' maxlength='20' placeholder='商品名称'></input>
   <input bindinput='get_price' class='single' maxlength='10' placeholder='价格' type='number'></input>

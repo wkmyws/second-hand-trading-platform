@@ -7,7 +7,7 @@ page {
   display: flex;
   flex-direction: column;
 justify-content: center;
-  margin:250rpx 20rpx 20rpx 20rpx;
+  margin:20rpx 20rpx 20rpx 20rpx;
   border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   width: 84%;

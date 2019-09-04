@@ -1,5 +1,3 @@
-<component-topnav inner-title="{{title}}"></component-topnav>
-
 <scroll-view scroll-y="true" class="scroll">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">

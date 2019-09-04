@@ -1,6 +1,2 @@
 {
-  "navigationBarTitleText": "关于",
-    "usingComponents": {
-      "component-topnav": "/pages/component/topnav/topnav"
-    }
-}
+  "navigationBarTitleText": "关于"}

@@ -13,7 +13,7 @@ page {
   border-top-right-radius: 50rpx;
   width: 84%;
   height: 260rpx;
-  margin-top: 80rpx;
+  margin-top: 10rpx;
 }
 
 .nickpic {
