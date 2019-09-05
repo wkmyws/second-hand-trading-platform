@@ -52,6 +52,6 @@
 </scroll-view>
 
 <view>
-  <button class='butt' bindtap="passItem" data-pass='true'>通过</button>
-  <button class='butt1' bindtap="passItem" data-pass="false">否决</button>
+  <button class='butt' bindtap="passItem" data-pass='true' hover-class="button_clickef">通过</button>
+  <button class='butt1' bindtap="passItem" data-pass="false" hover-class="button_clickef">否决</button>
 </view>

@@ -57,7 +57,7 @@
   <image wx:if='{{!is_fav}}' class='save' bindtap="set_fav" src='http://image.natal.tech/image/shou.png' hidden='{{hidden}}' />
   <image wx:else src='http://image.natal.tech/image/shou1.png' class='save' bindtap="set_fav"></image>
   <view hidden='{{hidden}}'>收藏</view>
-  <button class="button-red" bindtap="buy" form-type='submit'>我想购买</button>
+  <button class="button-red" bindtap="buy" form-type='submit' hover-class="button_clickef">我想购买</button>
 </view>
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>

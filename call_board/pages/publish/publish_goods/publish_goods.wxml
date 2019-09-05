@@ -19,5 +19,4 @@
 </view>
 <view>
   <button class='send' bindtap='submit' hover-class="button_clickef">确认发布</button>
-
 </view>

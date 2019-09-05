@@ -161,7 +161,7 @@ Page({
   DoneShow:function(){
     const goods_id=this.data.goods_id-0
     wx.showModal({
-      title: '标记出售',
+      title: '标记已出售',
       content: '确认该商品已经出售？\r\n(不可再次更改状态)',
       success:sm=>{
         if(sm.confirm){//将商品标为已出售

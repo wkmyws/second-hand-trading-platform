@@ -50,7 +50,7 @@ page {
 
 .item_hover{
   opacity: 0.7;
-  background-color: #f5f5f5 !important;
+  background-color: #fdfcfc !important;
 }
 
 .menu .item .arrow {

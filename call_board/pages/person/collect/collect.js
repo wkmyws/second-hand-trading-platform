@@ -47,7 +47,7 @@ Page({
       if(this.data.goods.length==0){
         wx.hideLoading()
         wx.showModal({
-          title: "暂无发布😥",
+          title: "暂无收藏😥",
           showCancel: false,
           success(res) {
             if (res.confirm) {

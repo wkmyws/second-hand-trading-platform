@@ -2,9 +2,10 @@ page {
   background-color: rgb(248, 247, 247);
 }
 
-.scroll{
+.scroll {
   padding-bottom: 100rpx;
 }
+
 /* 直接设置swiper属性 */
 
 swiper {
@@ -20,7 +21,7 @@ swiper-item image {
 .detail {
   margin-bottom: 15rpx;
   background-color: #fff;
-  padding:15rpx;
+  padding: 15rpx;
 }
 
 .detail .title {
@@ -54,15 +55,17 @@ swiper-item image {
   color: black;
   text-align: justify;
   font-weight: 700;
-  margin:15rpx;
+  margin: 15rpx;
 }
-.separate_detail{
-   color: rgb(121, 118, 118);
+
+.separate_detail {
+  color: rgb(121, 118, 118);
   font-size: 34rpx;
-  margin:15rpx;
+  margin: 15rpx;
   text-align: justify;
-   word-break: break-all;
+  word-break: break-all;
 }
+
 .infor {
   display: flex;
   flex-direction: row;
@@ -70,7 +73,7 @@ swiper-item image {
   color: rgb(197, 195, 195);
   text-align: justify;
   padding: 5rpx;
-  margin:15rpx;
+  margin: 15rpx;
 }
 
 .infor_detail {
@@ -104,6 +107,8 @@ swiper-item image {
   bottom: 0;
   width: 100%;
   height: 100rpx;
+  padding-left: 25rpx;
+  color: rgb(83, 34, 5);
 }
 
 .icon {
@@ -113,7 +118,7 @@ swiper-item image {
 .save {
   width: 70rpx;
   height: 70rpx;
-  margin:30rpx;
+  margin: 30rpx;
 }
 
 .button-red {
@@ -156,8 +161,6 @@ text {
   z-index: 1000;
   color: #fff;
 }
-
-
 
 /*评论*/
 
@@ -222,12 +225,15 @@ text {
   overflow: hidden;
   margin: 5rpx 5rpx 5rpx 15rpx;
 }
+
 /*底部弹窗*/
-.user{
-    width: 100rpx;
+
+.user {
+  width: 100rpx;
   height: 100rpx;
-  margin:20rpx 20rpx 0rpx 30rpx;
+  margin: 20rpx 20rpx 0rpx 30rpx;
 }
+
 .choose {
   width: 100%;
   overflow: hidden;
@@ -240,20 +246,24 @@ text {
   border-top-right-radius: 20rpx;
   border-top-left-radius: 20rpx;
 }
-.information{
-  margin:10rpx 30rpx 0rpx 30rpx;
-  font-size: 36rpx;
 
+.information {
+  margin: 10rpx 30rpx 0rpx 30rpx;
+  font-size: 36rpx;
   display: flex;
 }
-.information-next{
-  font-size: 35rpx;
 
-line-height: 50rpx;
-color:rgb(121, 118, 118);
+.information-next {
+  font-size: 35rpx;
+  line-height: 50rpx;
+  color: rgb(121, 118, 118);
 }
-.information-detail{
-  margin:0rpx 30rpx;
-  font-size:36rpx;
-  
+
+.information-detail {
+  margin: 0rpx 30rpx;
+  font-size: 36rpx;
+}
+.button_clickef{
+  opacity: 0.7;
+
 }
