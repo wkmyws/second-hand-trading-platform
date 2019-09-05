@@ -12,7 +12,6 @@ page{
   width: 100%;
   position: fixed;
   box-shadow: 6rpx 8rpx 9rpx #ccc;
-  top:20rpx;
 }
 
 .search {
