@@ -140,6 +140,7 @@ page{
   right: 50rpx;
   opacity: 0;
 }
+
 .plus_show{
   border-radius: 100rpx;
   box-shadow: 6rpx 7rpx 9rpx rgb(95, 95, 95);
@@ -151,9 +152,6 @@ page{
   z-index: 100;
 }
 
-.plus_hide{
-  display: none;
-}
 .content {
   margin: 0 20rpx;
   text-align: justify;
@@ -263,19 +261,6 @@ max-height: 500rpx;
   vertical-align: top;
   width: 48%;
   margin-top: 160rpx;
-}
-
-.plus_show{
-  position: fixed;
-  height: 100rpx;
-  width: 100rpx;
-  bottom: 50rpx;
-  right: 50rpx;
-  z-index: 100;
-}
-
-.plus_hide{
-  display: none;
 }
 
 .right {

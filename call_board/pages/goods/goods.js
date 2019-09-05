@@ -1,6 +1,6 @@
 var util = require('../../utils/util.js');
 var COS = require('../../cos-wx-sdk-v5.js')
-var UPD=require('../../uploadImg.js')
+var UPD = require('../../uploadImg.js')
 const app = getApp()
 const ct_num = 9; //每页显示的最大条数
 Page({
@@ -12,7 +12,8 @@ Page({
     navData: [], //顶部栏的内容
     currentTab: 0,
     scrollTop: 0,
-    showView: true,
+    show: true, //发布图标是否隐藏
+    animationData: {},
     imgUrls: [
       "http://xcx.nau.edu.cn/images/school5.jpg?" + Math.random() / 9999,
       "http://xcx.nau.edu.cn/images/school4.jpg?" + Math.random() / 9999,
@@ -263,12 +264,18 @@ Page({
   },
   onReady: function() { // 生命周期函数--监听页面初次渲染完成  
   },
+
   onShow: function() { // 生命周期函数--监听页面显示  
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'linear'
+    })
+    this.animation = animation
   },
+
   onHide: function() {
     // 生命周期函数--监听页面隐藏   
   },
-
 
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数   
@@ -314,20 +321,29 @@ Page({
   onPageScroll: function(event) {
     let scroll = event.scrollTop; //当前的距离顶部的高度
     let scrollTop = this.data.scrollTop; //记录的距离顶部的高度
+    let show=this.data.show;
+
     //下滑隐藏
-    if (scroll - scrollTop > 40) {
+    if (scroll - scrollTop > 10 && show) {
+      this.animation.translate(80,0).step({duration:400})
       this.setData({
-        showView: false,
-        scrollTop: scroll
+        animationData:this.animation.export(),
+        show: false
       })
     }
+
     //上滑显示
-    else if (scroll - scrollTop < -10) {
+    if (scroll - scrollTop < -10 && !show) {
+      this.animation.translate(0,0).step({duration:400})
       this.setData({
-        showView: true,
-        scrollTop: scroll
+        animationData:this.animation.export(),
+        show: true
       })
     }
+
+    this.setData({
+      scrollTop: scroll
+    })
   }
 
 })
