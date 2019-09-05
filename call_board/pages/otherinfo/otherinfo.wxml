@@ -1,4 +1,4 @@
-<component-topnav inner-title="{{title}}"></component-topnav>
+
 <view class='top'>
   <view class="user">
     <image class='nickpic' src="{{user_info.user_avatar_url}}"></image>

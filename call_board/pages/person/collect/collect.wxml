@@ -1,16 +1,16 @@
 <component-topnav inner-title="{{title}}"></component-topnav>
 
-<view class='page-myissue' style="margin-top:80rpx">
+<view class='page-myissue' style="margin-top:0rpx">
   <!--顶部TAB-->
-  
+   <!--
   <view class="swiper-tab">
-  <!--
+ 
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公告</view>  
  
     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">商品</view>
-     -->
+   
   </view>
-
+  -->
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
     <!--公告-->
     <!-->

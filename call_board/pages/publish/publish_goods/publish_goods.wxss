@@ -7,7 +7,7 @@ page {
   padding: 5rpx;
   background: #fff;
   border-radius: 20rpx;
-  margin:80rpx 5rpx 5rpx 5rpx;
+  margin:5rpx 5rpx 5rpx 5rpx;
   width: 97%;
 }
 .tip {
@@ -92,5 +92,4 @@ page {
 
 .button_clickef{
   opacity: 0.7;
-  background-color: blue
 }

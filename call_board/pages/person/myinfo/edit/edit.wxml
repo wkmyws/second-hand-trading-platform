@@ -1,4 +1,3 @@
-<component-topnav inner-title="{{title}}"></component-topnav>
 <view class='menu'>
 <view class='item' >
     <text class='left'>头像：</text>

@@ -3,7 +3,7 @@ page {
 }
 
 .menu {
-  margin-top: 80rpx;
+  margin-top: 10rpx;
 }
 
 .item {
