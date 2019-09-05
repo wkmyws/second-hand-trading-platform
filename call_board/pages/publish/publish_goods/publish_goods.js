@@ -246,6 +246,14 @@ Page({
         })
       },
     })
+    if (app.globalData.user_info.user_permission < 50){
+      wx.showModal({
+        title: '权限不够',
+        content: '请先进行 学生认证 再进行发布操作',
+        confirmText:'我知道了',
+        showCancel:false
+      })
+    }
   },
 
   /**
