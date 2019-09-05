@@ -36,9 +36,7 @@
 -->
 <view>
   <!--悬浮按钮-->
-  <view hover-class="button_clickef">
-    <image src="http://image.natal.tech/image/plus.png?" class="{{showView?'plus_show':'plus_hide'}}" bindtap="publish"></image>
-  </view>
+  <image animation='{{animationData}}' src="http://image.natal.tech/image/plus.png?" class="plus_show" bindtap="publish"></image>
 
   <view>
     <!--下面的瀑布流-->
