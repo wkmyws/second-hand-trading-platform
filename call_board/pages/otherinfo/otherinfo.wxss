@@ -2,65 +2,280 @@ page {
   background: rgb(248, 247, 247);
 }
 
-.top {
-  background-color: rgb(248, 247, 247);
-  display: flex;
+.otherinfo-top {
+  background: #fff;
   flex-direction: column;
-justify-content: center;
-  margin:20rpx 20rpx 20rpx 20rpx;
-  border-top-left-radius: 50rpx;
-  border-top-right-radius: 50rpx;
-  width: 84%;
-  height: 260rpx;
+  justify-content: center;
+  width: 100%;
+
 }
-.user {
+
+.otherinfo-user {
   width: 100%;
   flex-direction: flex;
-  display:flex;
+  display: flex;
 }
-.nickpic {
-  width: 220rpx;
-  height: 220rpx;
+
+.otherinfo-nickpic {
+  width: 130rpx;
+  height: 130rpx;
   border-radius: 130rpx;
-  margin: 0;
+  margin: 20rpx 50rpx;
   overflow: hidden;
   border: 8rpx solid #fff;
 }
 
-.nickname {
-  text-align: center;
-  margin: 20rpx 0 -140rpx 0;
+.otherinfo-nickname {
+  margin: 40rpx 0 20rpx 0;
   font-weight: 700;
-  font-size: 38rpx;
+  font-size: 35rpx;
 }
 
-.item {
- text-align: center;
-  height: 100rpx;
-  background-color: rgb(248, 247, 247);
+.otherinfo-id {
+  margin-bottom: 20rpx;
+  font-weight: 600;
+}
+
+.otherinfo-sex {
   display: flex;
-  margin-left: 8%;
- 
+  flex-direction: right;
+  margin-top: 105rpx;
+  margin-left: 50rpx;
+  font-size: 35rpx;
 }
 
-.left {
+.otherinfo-item {
+  text-align: center;
+  height: 60rpx;
+  display: flex;
+  margin-left: 50rpx;
+}
+
+.otherinfo-left {
   display: flex;
   align-items: center;
   padding-left: 16rpx;
   font-size: 35rpx;
 }
 
-.right {
+.otherinfo-right {
   display: flex;
   align-items: center;
   color: rgb(136, 136, 136);
   padding-right: 16rpx;
 }
 
-
-.myinfo {
-  margin-top: 130rpx;
+.otherinfo-myinfo {
+  margin-top: 10rpx;
   width: 100%;
-  margin-bottom: 30rpx;
 }
 
+swiper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+swiper-item {
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+
+/*tab的设置*/
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  box-shadow: 4rpx 8rpx 9rpx #ccc;
+}
+
+.swiper-tab-item {
+  margin-left: -25rpx;
+  margin-right: 50rpx;
+  width: 50%;
+  color: #434343;
+}
+
+.active {
+  color: #434343;
+  border-bottom: 3rpx solid #434343;
+}
+
+/*公告的设置*/
+
+.board {
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx #eee;
+  box-shadow: 6rpx 8rpx 9rpx #ccc;
+  padding-bottom: 10rpx;
+}
+
+.body {
+  position: relative;
+  display: flex;
+}
+
+.text1 {
+  position: relative;
+  font-size: 32rpx;
+  margin-left: 25rpx;
+  text-indent: 50rpx;
+  line-height: 50rpx;
+  margin-right: 5rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.text2 {
+  position: relative;
+  font-size: 32rpx;
+  margin-left: 25rpx;
+  text-indent: 50rpx;
+  margin-right: 25rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+/*图片*/
+
+.bottom {
+  height: 80rpx;
+}
+
+.icon {
+  position: absolute;
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.image {
+  margin: 0rpx 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.img {
+  position: relative;
+  width: 220rpx;
+  height: 160rpx;
+  margin: 0 -25rpx 0 -25rpx;
+  float: right;
+  box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);
+  border-radius: 9rpx;
+  overflow: hidden;
+}
+
+.intro {
+  width: 66%;
+  margin-right: 10rpx;
+}
+
+/*用户*/
+
+.top {
+  display: flex;
+  height: 70rpx;
+}
+
+.text1 {
+  position: relative;
+  font-size: 28rpx;
+  margin-left: 25rpx;
+  text-indent: 50rpx;
+  line-height: 50rpx;
+  margin-right: 25rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-align: justify;
+}
+
+.time {
+  font-size: 25rpx;
+  color: #bbb;
+  position: absolute;
+  float: right;
+  right: 25rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 700;
+  margin: 0rpx 25rpx 10rpx 25rpx;
+  overflow: hidden;
+  text-overflow: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.top {
+  display: flex;
+  height: 70rpx;
+}
+
+.intro {
+  width: 66%;
+  margin-right: 10rpx;
+}
+
+.search input {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  padding-left: 32rpx;
+}
+
+.SaveNum {
+  font-size: 25rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 25rpx;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
+}
+
+.userhead {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 80px;
+  box-shadow: 0px 0px 0.5px 1px #eee;
+  margin: 10rpx 15rpx 10rpx 15rpx;
+  display: flex;
+  overflow: hidden;
+}
+
+.username {
+  font-size: 29rpx;
+  font-weight: bold;
+  display: flex;
+  color: rgb(196, 193, 193);
+  align-items: center;
+  margin-top: 8rpx;
+}
