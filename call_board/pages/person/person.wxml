@@ -41,7 +41,7 @@
     </view>
   </view>
 
-  <view class='menu' wx:if='{{myinfo.user_permission==0||myinfo.user_permission>=100}}'>
+  <view class='menu' wx:if='{{myinfo.user_permission==0||myinfo.user_permission>=100||myinfo.user_permission<100}}'>
     <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wxcd6245a555300732" extra-data="" version="">
         <text class='sub-title'>南审小助手</text>
         <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "学生认证",
   "usingComponents": {
     "component-topnav": "/pages/component/topnav/topnav"
   }}

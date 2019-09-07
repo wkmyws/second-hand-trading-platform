@@ -1,13 +1,13 @@
 
 <view class="page__hd">
   <image class="weui-media-box__thumb" src="/images/icon.png" />
-  <view class="page__title">校园微集市</view>
+  <view class="page__title">南审闲市场</view>
   <view class="page__desc">提供南京审计大学在校生买卖二手商品，发布需求信息的功能。</view>
 </view>
 <view class="page__bd">
   <view class="weui-article">
     <view class="weui-article__title">应用介绍</view>
-    <view class="weui-article__p weui-article__pa">“校园微集市”小程序是南审Natal信息与技术协会为南审学生量身打造的校园二手买卖交换及需求发布平台，旨在完善与便捷校园信息见建设，促进校内优质资源的转换率，为南审学子提供便捷服务。
+    <view class="weui-article__p weui-article__pa">“南审闲市场”小程序是南审Natal信息与技术协会为南审学生量身打造的校园二手买卖交换及需求发布平台，旨在完善与便捷校园信息见建设，促进校内优质资源的转换率，为南审学子提供便捷服务。
     </view>
     <view class="weui-article__p weui-article__pa">由于小程序尚处开发阶段，目前版本为公开测试版，若使用过程中难免出现各种问题，还望多多包涵，并通过吐个槽等渠道向我们反映。
     </view>
@@ -25,7 +25,7 @@
     <view class="weui-article__p">宣传投放联系：2944414576（外联QQ)</view>
     <view class="weui-article__title">版权声明：</view>
     <view class="weui-article__p">版本号：1.0.1</view>
-    <view class="weui-article__p">“校园微集市”小程序最终解释权只归Natal团队所有</view>
+    <view class="weui-article__p">“南审闲市场”小程序最终解释权只归Natal团队所有</view>
 
     <view class="weui-center">
       <button class="mini" open-type="contact">联系客服</button>

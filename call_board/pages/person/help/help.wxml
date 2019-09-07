@@ -28,7 +28,7 @@
       <view class="weui-article__section">
       <view class="weui-article__h3">2.1直接添加到桌面</view>
         <view class="weui-article__p">
-         如果是安卓手机，在[校园微集市]中点击右上角「···」，点击添加到桌面，即可将[校园微集市]添加到桌面，之后直接在桌面点击[校园微集市]小程序即可进入。  </view>
+         如果是安卓手机，在[南审闲市场]中点击右上角「···」，点击添加到桌面，即可将[南审闲市场]添加到桌面，之后直接在桌面点击[南审闲市场]小程序即可进入。  </view>
           <view class="weui-article__h3">2.2无法添加到桌面的情况</view>
           <view class="weui-article__p">
           如果有部分安卓手机禁止添加到桌面，可在 手机管家-应用权限-添加桌面快捷方式中，增加微信，设置完成后，可将小程序添加到桌面。
@@ -36,7 +36,7 @@
       
       </view>
     </view>
-    <view class="weui-article__title">3. 如何找到[校园微集市]小程序?</view>
+    <view class="weui-article__title">3. 如何找到[南审闲市场]小程序?</view>
     <view class="weui-article__section">
       <view class="weui-article__section">
         <view class="weui-article__h3">3.1 通过微信打开</view>
@@ -47,7 +47,7 @@
       <view class="weui-article__section">
         <view class="weui-article__h3">3.2 通过搜索打开</view>
         <view class="weui-article__p">
-          进入微信界面，点击右上角搜索图标，输入[校园微集市]即可打开
+          进入微信界面，点击右上角搜索图标，输入[南审闲市场]即可打开
         </view>
       </view>
     </view>
