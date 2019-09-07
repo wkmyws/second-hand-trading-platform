@@ -12,6 +12,7 @@ const app=getApp()
 Page({
   //data
   data: {
+    scrollViewHgt: (wx.getSystemInfoSync().windowHeight + 55) * 750 / wx.getSystemInfoSync().windowWidth + "rpx" ,
     other_user_id:null,
     user_info:null,//其他用户的个人信息 {user_name:'xx',.....}
     goods_list:[],//商品列表
@@ -39,7 +40,7 @@ Page({
   //成功调用后设置this.data.goods_list
   //调用格式：this.getUserSubmit(id).then(res=>console.log('success')).catch(res=>consle.log('error'))
     var data={
-      summary_sub: 20,//返回的商品数量
+      summary_sub: 20,//返回的商品介绍
       count: 10,//返回的商品数量
       from_id:this.data.end_goods_id,
       type:0,
@@ -102,9 +103,9 @@ Page({
       })
     })
   },
-  gotoDetail:function(goods_id){//跳转到商品详情页面
+  gotoDetail:function(e){//跳转到商品详情页面
     wx.navigateTo({
-      url: '../goods/detail/detail?id='+goods_id
+      url: '../goods/detail/detail?id=' + e.currentTarget.dataset.id
     })
   },
   swiperTab: function (e) {
@@ -156,9 +157,13 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  toLower: function () {
+    this.getUserSubmit(this.data.other_user_id)
   },
+  toUpper: function () { 
+  },
+  scroll: function () {
+   },
 
 
 })

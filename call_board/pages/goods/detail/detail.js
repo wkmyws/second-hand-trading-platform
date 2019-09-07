@@ -168,6 +168,8 @@ Page({
       var data = {
         goods_id: parseInt(options.id)
       }
+      console.log('understand??')
+      console.log(options)
       var timestamp = Date.parse(new Date());
       timestamp = String(timestamp / 1000);
       data = JSON.stringify(data)
@@ -188,6 +190,7 @@ Page({
           "content-type": "application/json"
         },
         success: res => {
+          console.log(res)//---------------------------
           if (res.data.status == 0) {
             var res_data = JSON.parse(util.base64_decode(res.data.data))
             that.setData({
@@ -253,10 +256,6 @@ Page({
     })
   },
   onLoad: function(options) {
-    app.qkpost('manage/setUserPermission.php', { "target_user_id":13,"permission_level":0}).then(res=>{
-      console.log('settttttt')
-      console.log(res)
-    })
     var that = this
     that.get_detail(options)
   },
