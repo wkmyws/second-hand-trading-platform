@@ -58,6 +58,7 @@ Page({
           goods_list: arr,
           end_goods_id: end_goods_id
         })
+        console.log(arr)
         return resolve(res.goods_list.length)//返回商品列表长度
       }).catch(err=>reject(err));
     })

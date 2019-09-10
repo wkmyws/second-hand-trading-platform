@@ -102,6 +102,7 @@ App({
           },500)
         }else{
           wx.hideLoading()
+          if(util.getCurrentPageUrl() =="pages/goods/goods")return;//首页不显示要求认证弹窗
           wx.showModal({
             title: "登陆提示",
             content:'您当前是游客的身份，\r\n认证以获得更多权限',
