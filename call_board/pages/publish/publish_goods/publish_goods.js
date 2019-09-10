@@ -94,7 +94,7 @@ Page({
         //发布成功
         wx.showModal({
           title: '发布成功',
-          content: '商品将在被审核后显示，你可以在 个人-我的发布 页面查看审核状态',
+          content: '商品将在被审核后显示，你可以在‘个人-我的发布’页面查看审核状态',
           showCancel: false,
           success(res) {
             if (res.confirm) {
@@ -249,7 +249,7 @@ Page({
     if (app.globalData.user_info.user_permission < 50){
       wx.showModal({
         title: "权限不足",
-        content: '请先进行 学生认证，\r\n再进行发布操作',
+        content: '请先进行‘学生认证’\r\n再进行发布操作',
         cancelText: "我知道了",
         cancelColor: "#AAA",
         confirmText: "前去认证",

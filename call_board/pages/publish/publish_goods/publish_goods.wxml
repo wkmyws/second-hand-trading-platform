@@ -11,7 +11,7 @@
     </view>
     <!--添加图片-->
     <view class='image' style='display:{{hideAdd?"none":"block"}}'>
-      <image bindtap="chooseimage" class="moment_img" src="http://xcx.nau.edu.cn/images/add.png?"></image>
+      <image bindtap="chooseimage" class="moment_img" src="http://image.natal.tech/image/add.png?"></image>
     </view>
   </view>
   <!--图片展示区域-->
