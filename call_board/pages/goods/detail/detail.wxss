@@ -43,6 +43,10 @@ swiper-item image {
   color: rgb(145, 143, 143);
 }
 
+.btn{
+  margin-top:2%;
+  margin-bottom: 2%;
+}
 .detail .price {
   color: red;
   font-size: 44rpx;

@@ -255,6 +255,23 @@ Page({
       })
     })
   },
+
+  /**
+* 用户点击右上角分享
+*/
+  onShareAppMessage: function (ops) {
+    if (ops.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(ops.target)
+    }
+    return {
+      title: this.data.goods_detail.goods_title,
+      path: 'pages/goods/detail/detail?id=' + this.data.goods_detail.goods_id,  // 路径，传递参数到指定页面。
+      imageUrl: this.data.imgUrls[0], // 分享的封面图
+      
+    }
+
+  },
   onLoad: function(options) {
     var that = this
     that.get_detail(options)
