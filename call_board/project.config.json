@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -80,8 +80,8 @@
 				},
 				{
 					"id": 5,
-					"name": "adm",
-					"pathName": "pages/person/admin/admin",
+					"name": "test",
+					"pathName": "pages/goods/goods",
 					"query": "",
 					"scene": null
 				}

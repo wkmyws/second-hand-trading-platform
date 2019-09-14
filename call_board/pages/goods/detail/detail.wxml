@@ -6,7 +6,11 @@
       </swiper-item>
     </block>
   </swiper>
-
+  <view>
+      <button class="btn" open-type="share">
+        分 享
+      </button>
+  </view>
   <view class="detail">
     <view class="price">
       ￥{{goods_detail.goods_price}}
@@ -23,7 +27,6 @@
       <view class="SaveNum">收藏量{{ThumbNum}}</view>
     </view>
   </view>
-  
   <view class="detail">
     <view class="infor" bindtap="seeOthers">
       <view>商品来自:</view>
@@ -63,20 +66,22 @@
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
   <view>
-    <image src='{{user_avatar_url}}' class='user'></image>
-    联系方式</view>
-  <view class="information">手机号：
-    <view class="information-next">(点击可拨打）</view>
-  </view>
-  <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}' class="information-detail">{{seller_data.user_phone}} </text>
-  <view class="information">微信号：
-    <view class="information-next">（长按可复制）</view>
-  </view>
-  <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
-  <view class="information">QQ:
-    <view class="information-next">（长按可复制）</view>
-  </view>
-  <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
+  <image src='{{user_avatar_url}}' class='user'></image>
+  联系方式</view>
 
-</view>
+  <view wx:if="{{seller_data.user_phone}}">
+  <view class="information">手机号：<view class="information-next">(点击可拨打）</view></view>
+    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone}} </text>
+  </view>
+
+  <view wx:if="{{seller_data.user_wechat}}">
+  <view class="information">微信号：<view class="information-next">（长按可复制）</view>  </view>
+    <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
+  </view>
+
+<view wx:if="{{seller_data.user_qq}}">
+  <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
+    <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
+    </view>
+  </view>
 <view class="detail-nav" wx:if="{{!canBuy}}"> 😥请先进行学生认证以获取更多内容</view>
