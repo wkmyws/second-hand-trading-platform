@@ -52,13 +52,13 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 用户点击分享按钮
    */
   onShareAppMessage: function () {
     return {
-      title: '关于课表',
-      desc: '「NAU信息服务」提供南京审计大学在校生各类信息查询服务。',
-      path: '/pages/about/about'
+      title: '南审闲市场',
+      desc: '[南审闲市场：提供南京审计大学在校生线下交易二手商品，发布需求信息的功能]。',
+      path: '/pages/goods/goods'
     }
   }
 })
