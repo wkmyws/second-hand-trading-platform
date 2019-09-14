@@ -263,5 +263,5 @@ Page({
     wx.navigateTo({
       url: '../../otherinfo/otherinfo?other_user_id='+this.data.user_id
     })
-  },
+  }
 })

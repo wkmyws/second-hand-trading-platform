@@ -224,8 +224,6 @@ Page({
 
       }
     })
-
-
   },
 
   switchNav(event) {
