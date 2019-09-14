@@ -12,7 +12,6 @@ Page({
     navData: [], //顶部栏的内容
     currentTab: 0,
     scrollTop: 0,
-    show: true, //发布图标是否隐藏
     animationData: {},
     imgUrls: [
       "http://xcx.nau.edu.cn/images/school5.jpg?" + Math.random() / 9999,
@@ -319,26 +318,24 @@ Page({
   onPageScroll: function(event) {
     let scroll = event.scrollTop; //当前的距离顶部的高度
     let scrollTop = this.data.scrollTop; //记录的距离顶部的高度
-    let show=this.data.show;
 
     //下滑隐藏
-    if (scroll - scrollTop > 10 && show) {
+    if (scroll - scrollTop > 10) {
       this.animation.translate(80,0).step({duration:400})
       this.setData({
-        animationData:this.animation.export(),
-        show: false
+        animationData:this.animation.export()
       })
     }
 
     //上滑显示
-    if (scroll - scrollTop < -10 && !show) {
+    if (scroll - scrollTop < -10) {
       this.animation.translate(0,0).step({duration:400})
       this.setData({
-        animationData:this.animation.export(),
-        show: true
+        animationData:this.animation.export()
       })
     }
 
+    //重新记录顶部的高度
     this.setData({
       scrollTop: scroll
     })
