@@ -45,7 +45,7 @@
   <view>例如，南审学生邮箱：</view>
 
   <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wx0bc2c17d023b213d" extra-data="" version="" style="color:rgb(131, 59, 59)">
-    <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(点击可跳转登录）</navigator>
+    <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(长按复制，点击跳转）</navigator>
   <view>账号为：学号+@stu.nau.edu.cn，初始密码为：Nau+身份证后六位</view>
   <text class="lastTip" wx:if='{{doneSend}}'>请先登陆学校邮箱后完成验证\n然后点击下方按钮‘刷新状态’\n验证登录状态</text>
 </view>
