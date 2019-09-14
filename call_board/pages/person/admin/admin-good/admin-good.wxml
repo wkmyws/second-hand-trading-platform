@@ -52,9 +52,7 @@
 </scroll-view>
 
 <view class="flexrow">
-<view wx:if="{{true}}"><!-->只显示撤回则改为false</-->
   <button class='buttdeny' bindtap="passItem" data-pass="false" hover-class="button_clickef">否决</button>
   <button class='buttpass' bindtap="passItem" data-pass='true' hover-class="button_clickef">通过</button>
 </view>
-  <button class='buttback' bindtap="withdrawInfo" hover-class="button_clickef">撤回</button>
-</view>
+<button class='buttback' bindtap="withdrawInfo" hover-class="button_clickef">撤回</button>
