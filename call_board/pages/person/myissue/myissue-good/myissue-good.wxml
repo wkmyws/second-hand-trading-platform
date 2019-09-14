@@ -54,5 +54,5 @@
 -->
 <button>状态:{{goods_state_name}}</button>
 </scroll-view>
-<button class='butt' bindtap='DoneShow' hover-class="button_clickef">标记已出售</button>
+<button wx:if="{{goods_detail.goods_state-0!=3}}" class='butt' bindtap='DoneShow' hover-class="button_clickef">标记已出售</button>
 <button class='butt' bindtap='ToDelete' hover-class="button_clickef">删除发布</button>

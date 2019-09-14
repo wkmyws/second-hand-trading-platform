@@ -162,14 +162,12 @@ Page({
     }
   },
 
-  get_detail: function(options) {
+  get_detail: function(options) {//获取物品信息
     return new Promise((resolve, reject) => {
       var that = this
       var data = {
         goods_id: parseInt(options.id)
       }
-      console.log('understand??')
-      console.log(options)
       var timestamp = Date.parse(new Date());
       timestamp = String(timestamp / 1000);
       data = JSON.stringify(data)
@@ -193,6 +191,19 @@ Page({
           console.log(res)//---------------------------
           if (res.data.status == 0) {
             var res_data = JSON.parse(util.base64_decode(res.data.data))
+            if (res_data.goods_state-0==3){//商品已经出售
+              wx.showModal({
+                title: "此商品已出售😥",
+                conten: "",
+                showCancel: false,
+              })
+            }else if(res_data.goods_state-0!=2){//其他不可见原因，用于管理员权限组，普通用户status==1
+              wx.showModal({
+                title: "此商品已被隐藏😥",
+                conten: "",
+                showCancel: false,
+              })
+            }
             that.setData({
               goods_detail: res_data,
               ViewNum: res_data.goods_browser_amount,
@@ -242,7 +253,8 @@ Page({
             
           } else {
             wx.showModal({
-              title: "请先在 个人页面->学生认证 进行认证",
+              title: "此商品已被隐藏😥",
+              conten:"",
               showCancel: false,
               success(res) {
                 if (res.confirm) {

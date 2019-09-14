@@ -160,6 +160,17 @@ Page({
   onLoad: function (options) {
     this.get_detail(options)
   },
+  withdrawInfo:function(){//撤回发布商品
+    const type = 0
+    const info_id = this.data.goods_detail.goods_id
+    app.qkpost('manage/withdrawInfo.php', { "type": type, "info_id": info_id}).then(res=>{
+      wx.showToast({
+        title: '撤回成功',
+        icon: 'success',
+      })
+      setTimeout(wx.navigateBack, 500)
+    })
+  },
   passItem:function(e){
     const type=0
     const info_id=this.data.goods_detail.goods_id
