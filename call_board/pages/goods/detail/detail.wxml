@@ -79,7 +79,7 @@
     <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
   </view>
 
-<view wx:if="{{seller_data.user_wechat}}">
+<view wx:if="{{seller_data.user_qq}}">
   <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
     <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
     </view>
