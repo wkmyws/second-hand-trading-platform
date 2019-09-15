@@ -112,9 +112,10 @@ App({
             confirmColor: "#000",
             success(res) {
               if (res.confirm) {
-                wx.navigateTo({
-                  url: '/pages/person/attest/attest',
-                })
+                if (util.getCurrentPageUrl() != "pages/person/attest/attest")//不在认证界面则跳转
+                  wx.navigateTo({
+                    url: 'pages/person/attest/attest',
+                  })
               }else{
                 //
               }

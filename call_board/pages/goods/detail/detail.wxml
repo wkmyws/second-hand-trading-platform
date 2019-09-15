@@ -81,4 +81,4 @@
   <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
     <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq||'无'}}</text>
     </view>
-<view class="detail-nav" wx:if="{{!canBuy}}"> 😥请先进行学生认证以获取更多内容</view>
+<view class="detail-nav" wx:if="{{!canBuy}}" bindtap="gotoAttest"> 😥请先进行学生认证以获取更多内容</view>

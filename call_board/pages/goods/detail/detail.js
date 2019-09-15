@@ -30,6 +30,12 @@ Page({
     })
   },
 
+  gotoAttest:function(){//跳转至发布页面
+    wx.redirectTo({
+      url: '/pages/person/attest/attest'
+    })
+  },
+
   buy: function() {
     this.showModal();
   },
