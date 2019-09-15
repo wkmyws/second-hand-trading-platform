@@ -4,10 +4,10 @@
     <!--这是头像-->
     <view class='otherinfo-nickname'>
     <view class="otherinfo-id">ID:{{user_info.user_id}}</view>
-      <view >性别:{{user_info.user_name}}</view>
+      <view >{{user_info.user_name}}</view>
       <!--<open-data type="userNickName" ></open-data>-->
     </view>
-    <view class="otherinfo-sex">{{user_info.user_sex}}</view>
+    <view class="otherinfo-sex">性别:{{user_info.user_sex}}</view>
   </view>
   <view class="otherinfo-myinfo">
     <view class='menu'>
