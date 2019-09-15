@@ -25,6 +25,16 @@ Page({
       })
       return;
     }
+    //检验联系方式是否存在
+    if (!(app.globalData.user_info.user_phone || //电话
+      app.globalData.user_info.user_qq || //qq
+      app.globalData.user_info.user_wechat)){//微信号
+
+      this.setData({
+        tip: '请先在 个人信息 里填写至少一种联系方式😥'
+      })
+      return;
+    }
     //校验数据有效性
     if (!this.data.goods_title || /\s/.test(this.data.goods_title)){//名称规则
       /*wx.showToast({
@@ -246,7 +256,7 @@ Page({
         })
       },
     })
-    if (app.globalData.user_info.user_permission < 50){
+    if (app.globalData.user_info.user_permission < 50){//检测用户权限
       wx.showModal({
         title: "权限不足",
         content: '请先进行‘学生认证’\r\n再进行发布操作',
@@ -265,6 +275,28 @@ Page({
         }
       })
     }
+    //检测联系方式非空
+    else if(!(app.globalData.user_info.user_phone || //电话
+      app.globalData.user_info.user_qq || //qq
+      app.globalData.user_info.user_wechat)){//微信号
+      wx.showModal({
+        title: "联系方式",
+        content: '请先在‘个人信息’页面\r\n填写至少一种联系方式(电话、QQ、微信)\r\n再进行发布操作',
+        cancelText: "我知道了",
+        cancelColor: "#AAA",
+        confirmText: "前去填写",
+        confirmColor: "#000",
+        success(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/person/myinfo/edit/edit',
+            })
+          } else {
+            //
+          }
+        }
+      })
+      }
   },
 
   /**

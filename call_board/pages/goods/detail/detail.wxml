@@ -69,19 +69,16 @@
   <image src='{{user_avatar_url}}' class='user'></image>
   联系方式</view>
 
-  <view wx:if="{{seller_data.user_phone}}">
+  <!--><view wx:if="{{seller_data.user_phone}}"></-->
   <view class="information">手机号：<view class="information-next">(点击可拨打）</view></view>
-    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone}} </text>
-  </view>
+    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone||'无'}} </text>
 
-  <view wx:if="{{seller_data.user_wechat}}">
+  <!--><view wx:if="{{seller_data.user_wechat}}"></-->
   <view class="information">微信号：<view class="information-next">（长按可复制）</view>  </view>
-    <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat}}</text>
-  </view>
+    <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat||'无'}}</text>
 
-<view wx:if="{{seller_data.user_qq}}">
+  <!--><view wx:if="{{seller_data.user_qq}}"></-->
   <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
-    <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq}}</text>
+    <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq||'无'}}</text>
     </view>
-  </view>
 <view class="detail-nav" wx:if="{{!canBuy}}"> 😥请先进行学生认证以获取更多内容</view>
