@@ -3,7 +3,6 @@ var util = require("../../../../utils/util.js");
 var uploadImg=require('../../../../uploadImg.js')
 Page({
   data: {
-    my_info_cpy: app.globalData.user_info,
     my_info:{},
     sex: ['未知','男', '女'],
     tempFilePaths: "/images/add.png",
@@ -125,10 +124,10 @@ Page({
   },
   upLoadBaseInfo:function(){//上传用户基础信息
     return new Promise((resolve,reject)=>{
-      if (!this.data.my_info.user_name) this.data.my_info.user_name = this.data.my_info_cpy.user_name
-      if (!this.data.my_info.user_wechat) this.data.my_info.user_wechat = this.data.my_info_cpy.user_wechat
-      if (!this.data.my_info.user_qq) this.data.my_info.user_qq = this.data.my_info_cpy.user_qq
-      if (!this.data.my_info.user_phone) this.data.my_info.user_phone = this.data.my_info_cpy.user_phone
+      if (!this.data.my_info.user_name) this.data.my_info.user_name = null
+      if (!this.data.my_info.user_wechat) this.data.my_info.user_wechat = null
+      if (!this.data.my_info.user_qq) this.data.my_info.user_qq = null
+      if (!this.data.my_info.user_phone) this.data.my_info.user_phone = null
       this.setData({
         my_info:this.data.my_info
       })
@@ -181,14 +180,7 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      my_info_cpy:app.globalData.user_info,
-      my_info: { 
-        "user_name": '',
-         "user_sex": app.globalData.user_info.user_sex,
-        "user_phone": '',
-        "user_qq":'',
-        "user_wechat":'',
-        }
+      my_info:app.globalData.user_info,
     })
     console.log(this.data.my_info)
     /*var my_info = this.data.my_info_cpy
