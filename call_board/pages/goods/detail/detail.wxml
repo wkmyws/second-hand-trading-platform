@@ -6,11 +6,6 @@
       </swiper-item>
     </block>
   </swiper>
-  <view wx:if="{{false}}">
-      <button class="btn" open-type="share">
-        分 享
-      </button>
-  </view>
   <view class="detail">
     <view class="price">
       ￥{{goods_detail.goods_price}}

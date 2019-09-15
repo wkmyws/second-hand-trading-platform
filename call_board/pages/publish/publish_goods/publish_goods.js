@@ -1,53 +1,36 @@
 var util = require('../../../utils/util.js');
-var uploadImg=require('../../../uploadImg.js')
+var uploadImg = require('../../../uploadImg.js')
 const app = getApp()
 Page({
   /* 页面的初始数据 */
   data: {
     classes: [],
     classes_index: 0,
-    imgArr:[],//key 0.. id:..  src:..
+    imgArr: [], //key 0.. id:..  src:..
     tip: '长按图片可以删除',
-    upLoadImgLock:false,
-    watch:null,
+    upLoadImgLock: false,
+    watch: null,
     hideAdd: 0, //0为显示，1为隐藏
     goods_title: null,
     goods_price: null,
     goods_content: null,
   },
-  image_upload: function(img) {
-  },
-  submit: function(e) {
-    //检验用户权限
-    if (app.globalData.user_info.user_permission<50){
-      this.setData({
-        tip: '用户权限不够，请先到个人页面进行认证'
-      })
-      return;
-    }
-    //检验联系方式是否存在
-    if (!(app.globalData.user_info.user_phone || //电话
-      app.globalData.user_info.user_qq || //qq
-      app.globalData.user_info.user_wechat)){//微信号
+  image_upload: function(img) {},
 
-      this.setData({
-        tip: '请先在 个人信息 里填写至少一种联系方式😥'
-      })
-      return;
-    }
+  submit: function(e) {
     //校验数据有效性
-    if (!this.data.goods_title || /\s/.test(this.data.goods_title)){//名称规则
+    if (!this.data.goods_title || /\s/.test(this.data.goods_title)) { //名称规则
       /*wx.showToast({
         title: '商品名称不能为空或含有空白符',
         icon: 'none',
         duration:4000
       })*/
       this.setData({
-        tip:'商品名称不能为空或含有空白符'
+        tip: '商品名称不能为空或含有空白符'
       })
       return;
     }
-    if(/^\d+(\.\d{0,2})?$/.test(this.data.goods_price+'')==false){//价格规则
+    if (/^\d+(\.\d{0,2})?$/.test(this.data.goods_price + '') == false) { //价格规则
       /*wx.showToast({
         title: '价格输入错误',
         icon:'none',
@@ -57,7 +40,7 @@ Page({
       })
       return;
     }
-    if (!this.data.goods_content){
+    if (!this.data.goods_content) {
       /*wx.showToast({
         title: '描述内容为空',
         icon: 'none',
@@ -67,7 +50,7 @@ Page({
       })
       return;
     }
-    if(this.data.imgArr.length==0){
+    if (this.data.imgArr.length == 0) {
       /*wx.showToast({
         title: '至少上传一张图片',
         icon: 'none',
@@ -77,16 +60,16 @@ Page({
       })
       return;
     }
-    if(this.data.upLoadImgLock){
+    if (this.data.upLoadImgLock) {
       this.setData({
         tip: '正在上传图片，请稍后'
       })
-      this.data.watch=setInterval(()=>{
-        if(this.data.upLoadImgLock==false){
+      this.data.watch = setInterval(() => {
+        if (this.data.upLoadImgLock == false) {
           clearInterval(this.data.watch)
           this.submit()
         }
-      },500)
+      }, 500)
     }
     //submit
     console.log('submit')
@@ -94,13 +77,15 @@ Page({
     var data = {
       goods_title: that.data.goods_title,
       goods_content: that.data.goods_content,
-      goods_price: that.data.goods_price-0,
+      goods_price: that.data.goods_price - 0,
       goods_type: parseInt(that.data.classes_index) + 1,
-      goods_picture_arr: that.data.imgArr.map((v) => { return v.id - 0 }),
+      goods_picture_arr: that.data.imgArr.map((v) => {
+        return v.id - 0
+      }),
     }
     console.log(data)
-    app.qkpost('goods/submitNewGoods.php',data).then(res_data=>{
-      if (res_data.submit_success){
+    app.qkpost('goods/submitNewGoods.php', data).then(res_data => {
+      if (res_data.submit_success) {
         //发布成功
         wx.showModal({
           title: '发布成功',
@@ -108,21 +93,27 @@ Page({
           showCancel: false,
           success(res) {
             if (res.confirm) {
-              wx.navigateBack({
-              })
+              wx.navigateBack({})
             }
           }
         })
-      }else{
-        var errmsg='';
-        switch(res_data.err_state){
-          case 0: errmsg ="请先在‘个人’页面进行‘学生认证’";break;
-          case 1: errmsg ="标题中存在敏感词";break;
-          case 2: errmsg ="内容中存在敏感词";break;
-          default:errmsg="未知错误码："+res_data.err_state;
+      } else {
+        var errmsg = '';
+        switch (res_data.err_state) {
+          case 0:
+            errmsg = "请先在‘个人’页面进行‘学生认证’";
+            break;
+          case 1:
+            errmsg = "标题中存在敏感词";
+            break;
+          case 2:
+            errmsg = "内容中存在敏感词";
+            break;
+          default:
+            errmsg = "未知错误码：" + res_data.err_state;
         }
         this.setData({
-          tip: '发布失败! '+errmsg
+          tip: '发布失败! ' + errmsg
         })
       }
     })
@@ -152,7 +143,9 @@ Page({
 
 
   chooseimage: function() {
-    this.setData({ upLoadImgLock:true})//开始上传图片
+    this.setData({
+      upLoadImgLock: true
+    }) //开始上传图片
     var that = this;
     wx.chooseImage({
       count: 5 - this.data.imgArr.length, // 默认5
@@ -165,12 +158,15 @@ Page({
         }
         Promise.all(promise_list).then(function(res_data) {
           for (i = 0; i < res_data.length; i++) {
-            that.data.imgArr.push({"id":res_data[i],"url":res.tempFilePaths[i]})
+            that.data.imgArr.push({
+              "id": res_data[i],
+              "url": res.tempFilePaths[i]
+            })
           }
           console.log('promise all')
           that.setData({
-            imgArr:that.data.imgArr,
-            upLoadImgLock:false,
+            imgArr: that.data.imgArr,
+            upLoadImgLock: false,
           })
           if (that.data.imgArr.length >= 5) {
             that.setData({
@@ -178,7 +174,7 @@ Page({
             })
           }
 
-        }).catch(err=>{
+        }).catch(err => {
           wx.showModal({
             title: 'error',
             content: err,
@@ -195,7 +191,9 @@ Page({
     const index = e.target.dataset.index
     wx.previewImage({
       current: this.data.imgArr[index].url, //当前预览的图片
-      urls: this.data.imgArr.map((v)=>{return v.url}) //所有要预览的图片
+      urls: this.data.imgArr.map((v) => {
+        return v.url
+      }) //所有要预览的图片
     })
   },
   //删除图片
@@ -210,7 +208,7 @@ Page({
           console.log('点击确定了');
           that.data.imgArr.splice(index, 1);
           that.setData({
-            imgArr:that.data.imgArr
+            imgArr: that.data.imgArr
           })
           if (that.data.imgArr < 5) {
             that.setData({
@@ -256,7 +254,7 @@ Page({
         })
       },
     })
-    if (app.globalData.user_info.user_permission < 50){//检测用户权限
+    if (app.globalData.user_info.user_permission < 50) { //检测用户权限
       wx.showModal({
         title: "权限不足",
         content: '请先进行‘学生认证’\r\n再进行发布操作',
@@ -276,9 +274,9 @@ Page({
       })
     }
     //检测联系方式非空
-    else if(!(app.globalData.user_info.user_phone || //电话
-      app.globalData.user_info.user_qq || //qq
-      app.globalData.user_info.user_wechat)){//微信号
+    else if (!(app.globalData.user_info.user_phone || //电话
+        app.globalData.user_info.user_qq || //qq
+        app.globalData.user_info.user_wechat)) { //微信号
       wx.showModal({
         title: "联系方式",
         content: '请先在‘个人信息’页面\r\n填写至少一种联系方式(电话、QQ、微信)\r\n再进行发布操作',
@@ -296,7 +294,7 @@ Page({
           }
         }
       })
-      }
+    }
   },
 
   /**
@@ -310,7 +308,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    //检验联系方式是否存在
+    if (!(app.globalData.user_info.user_phone || //电话
+        app.globalData.user_info.user_qq || //qq
+        app.globalData.user_info.user_wechat)) { //微信号
+      wx.showModal({
+        title: '无法发布😥',
+        content: '请在【个人信息】页面至少填写一种联系方式',
+        showCancel: false,
+        success(res) {
+          if (res.confirm)
+            wx.navigateBack({})
+        }
+      })
+      return;
+    }
 
+    //检验用户权限
+    if (app.globalData.user_info.user_permission < 50) {
+      wx.showModal({
+        title: '未认证',
+        content: '请先到【个人】页面进行验证',
+        showCancel: false,
+        success(res) {
+          if (res.confirm)
+            wx.navigateBack({})
+        }
+      })
+    }
   },
 
   /**
@@ -345,6 +370,6 @@ Page({
   onShareAppMessage: function() {
 
   },
- 
+
 
 })

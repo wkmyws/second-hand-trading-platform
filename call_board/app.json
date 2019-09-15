@@ -33,7 +33,6 @@
     "navigationBarBackgroundColor": "#F8F7F7",
     "navigationBarTitleText": "Natal",
     "navigationBarTextStyle": "black"
-
   },
   "tabBar": {
     "color": "#aaaaaa",
