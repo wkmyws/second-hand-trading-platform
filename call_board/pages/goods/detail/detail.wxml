@@ -6,7 +6,6 @@
       </swiper-item>
     </block>
   </swiper>
-
   <view class="detail">
     <view class="price">
       ￥{{goods_detail.goods_price}}
