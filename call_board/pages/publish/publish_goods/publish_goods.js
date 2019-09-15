@@ -6,11 +6,11 @@ Page({
   data: {
     classes: [],
     classes_index: 0,
-    imgArr: [], //key 0.. id:..  src:..
-    tip: '长按图片可以删除',
+    imgArr: [], //图片的数组 key 0.. id:..  src:..
+    tip: '长按图片可以删除', //底部提示
     upLoadImgLock: false,
     watch: null,
-    hideAdd: 0, //0为显示，1为隐藏
+    hideAdd: 0, //是否隐藏加号，0为显示，1为隐藏
     goods_title: null,
     goods_price: null,
     goods_content: null,
@@ -21,12 +21,12 @@ Page({
     //校验数据有效性
     if (!this.data.goods_title || /\s/.test(this.data.goods_title)) { //名称规则
       /*wx.showToast({
-        title: '商品名称不能为空或含有空白符',
+        title: '商品名称不能为空或含有空格',
         icon: 'none',
         duration:4000
       })*/
       this.setData({
-        tip: '商品名称不能为空或含有空白符'
+        tip: '商品名称不能为空或含有空格或表情'
       })
       return;
     }
@@ -141,14 +141,11 @@ Page({
 
   },
 
-
+  //上传图片
   chooseimage: function() {
-    this.setData({
-      upLoadImgLock: true
-    }) //开始上传图片
     var that = this;
     wx.chooseImage({
-      count: 5 - this.data.imgArr.length, // 默认5
+      count: 5 - this.data.imgArr.length, // 最多5张
       sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function(res) {
@@ -168,12 +165,12 @@ Page({
             imgArr: that.data.imgArr,
             upLoadImgLock: false,
           })
+          //图片达到5张后，自动隐藏加号
           if (that.data.imgArr.length >= 5) {
             that.setData({
               hideAdd: 1
             })
           }
-
         }).catch(err => {
           wx.showModal({
             title: 'error',
@@ -196,6 +193,7 @@ Page({
       }) //所有要预览的图片
     })
   },
+
   //删除图片
   Delete: function(e) {
     var that = this;
@@ -210,6 +208,7 @@ Page({
           that.setData({
             imgArr: that.data.imgArr
           })
+          //如果图片数量小于5张，显示加号
           if (that.data.imgArr < 5) {
             that.setData({
               hideAdd: 0
@@ -240,26 +239,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this
-    wx.getStorage({
-      key: 'goods_classes',
-      success: function(res) {
-        console.log(res.data)
-        var data = []
-        for (var i in res.data) {
-          data.push(res.data[i].type_name)
-        }
-        that.setData({
-          classes: data
-        })
-      },
-    })
-    if (app.globalData.user_info.user_permission < 50) { //检测用户权限
+
+    //检测用户权限
+    if (app.globalData.user_info.user_permission < 50) {
       wx.showModal({
         title: "权限不足",
-        content: '请先进行‘学生认证’\r\n再进行发布操作',
-        cancelText: "我知道了",
-        cancelColor: "#AAA",
+        content: '请先进行“学生认证”再进行发布操作',
+        showCancel: false,
         confirmText: "前去认证",
         confirmColor: "#000",
         success(res) {
@@ -267,8 +253,6 @@ Page({
             wx.navigateTo({
               url: '/pages/person/attest/attest',
             })
-          } else {
-            //
           }
         }
       })
@@ -279,9 +263,8 @@ Page({
         app.globalData.user_info.user_wechat)) { //微信号
       wx.showModal({
         title: "联系方式",
-        content: '请先在‘个人信息’页面\r\n填写至少一种联系方式(电话、QQ、微信)\r\n再进行发布操作',
-        cancelText: "我知道了",
-        cancelColor: "#AAA",
+        content: '请先在【个人信息】页面填写至少一种联系方式(电话、QQ、微信)再进行发布操作',
+        showCancel: false,
         confirmText: "前去填写",
         confirmColor: "#000",
         success(res) {
@@ -289,8 +272,6 @@ Page({
             wx.navigateTo({
               url: '/pages/person/myinfo/edit/edit',
             })
-          } else {
-            //
           }
         }
       })
@@ -308,34 +289,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    //检验联系方式是否存在
-    if (!(app.globalData.user_info.user_phone || //电话
-        app.globalData.user_info.user_qq || //qq
-        app.globalData.user_info.user_wechat)) { //微信号
-      wx.showModal({
-        title: '无法发布😥',
-        content: '请在【个人信息】页面至少填写一种联系方式',
-        showCancel: false,
-        success(res) {
-          if (res.confirm)
-            wx.navigateBack({})
-        }
-      })
-      return;
-    }
 
-    //检验用户权限
-    if (app.globalData.user_info.user_permission < 50) {
-      wx.showModal({
-        title: '未认证',
-        content: '请先到【个人】页面进行验证',
-        showCancel: false,
-        success(res) {
-          if (res.confirm)
-            wx.navigateBack({})
-        }
-      })
-    }
   },
 
   /**
