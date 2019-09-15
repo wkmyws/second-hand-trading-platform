@@ -20,6 +20,7 @@ Page({
     user_name:null,
     user_avatar_url:null,
     canBuy:true,
+    canAdmin: false,//是否可以删除商品等（审核员）
   },
 
   previewImage: function(e) {
@@ -274,6 +275,36 @@ Page({
     })
   },
 
+  withdrawInfo:function(){//撤回商品
+    var that=this
+    wx.showModal({
+      title: '确认操作',
+      content: '确定从列表撤回此商品？\r\n此操作不可逆！',
+      success(res){
+        if(res.confirm)
+        wx.showModal({
+          title: '再次确认',
+          content: '撤回此商品？',
+          success(res){
+            if(res.confirm){
+              app.qkpost('manage/withdrawInfo.php', 
+              { "type": 0, "info_id": that.data.goods_detail.goods_id}).then(()=>{//撤回成功
+                  wx.showToast({
+                    title: '撤回成功！',
+                  })
+                  setTimeout(wx.navigateBack,500)
+              }).catch(()=>{//撤回失败
+                  wx.showToast({
+                    title: '撤回失败',
+                  })
+              })
+            }
+          }
+        })
+      }
+    })
+  },
+
   /**
 * 用户点击右上角分享
 */
@@ -292,6 +323,9 @@ Page({
   },
   onLoad: function(options) {
     var that = this
+    that.setData({
+      canAdmin: app.globalData.user_info.user_permission >= 100,
+    })
     that.get_detail(options)
   },
   seeOthers:function(){

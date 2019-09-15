@@ -69,25 +69,41 @@ Page({
         target_user_id: target_user_id,
         permission_level: permission_level,
       }
-      aqq.qkpost('manage/setUserPermission.php',data).then(res=>{
+      app.qkpost('manage/setUserPermission.php',data).then(res=>{
         if(res.status==0)return resolve()
         else return reject('没有权限进行操作');
       })
     })
   },
   set50Permission:function(){//设为 已注册
-    return new Promise((resolve,reject)=>{
-      this.setUserPermission(this.data.other_user_id,50).then(res=>resolve()).catch(res=>reject())
+    this.setUserPermission(this.data.other_user_id, 50).then(res => {//设置成功
+      wx.showToast({
+        title: '设置成功',
+      })
+      setTimeout(wx.navigateBack, 500)
+    }).catch(res => {//设置失败
+      console.log(res)
+      wx.showToast({
+        title: '设置失败',
+      })
     })
   },
   set100Permission: function () {//设为 审核员
-    return new Promise((resolve, reject) => {
-      this.setUserPermission(this.data.other_user_id, 100).then(res => resolve()).catch(res => reject())
-    })
+      this.setUserPermission(this.data.other_user_id, 100).then(res => {//设置成功
+        wx.showToast({
+          title: '设置成功',
+        })
+        setTimeout(wx.navigateBack, 500)
+      }).catch(res => {//设置失败
+      console.log(res)
+        wx.showToast({
+          title: '设置失败',
+        })
+      })
   },
   /* 生命周期函数--监听页面加载*/
   onLoad: function (options) {//get id
-    const id=options.other_user_id-0
+    let id=options.other_user_id-0
     this.setData({
       other_user_id:id
     })
@@ -148,12 +164,7 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
 
-  },
 
   /**
    * 页面上拉触底事件的处理函数

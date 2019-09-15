@@ -44,6 +44,10 @@
     <view class="separate">商品详情</view>
     <view class="separate_detail">{{goods_detail.goods_content}}</view>
   </view>
+  <!-->审核员显示的操作</-->
+  <view wx:if="{{canAdmin}}">
+    <button class="btn" bindtap="withdrawInfo">撤回当前发布的商品</button>
+  </view>
   <!--
   <view class="comment">
     <view class="separate">商品评论</view>
