@@ -186,7 +186,7 @@ page{
   width: 100%;
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
-max-height: 500rpx;
+  max-height: 500rpx;
 }
 
 .item-tit {

@@ -40,31 +40,45 @@
   <view>
     <!--下面的瀑布流-->
     <view class="content">
+      <!--左-->
       <view class="left">
         <block wx:for="{{col1}}" wx:key="">
           <template is="item" data="{{...item}}" bindtap='switchDetail'></template>
         </block>
       </view>
 
+      <!--右-->
       <view class="right">
         <block wx:for="{{col2}}" wx:key="">
           <template is="item" data="{{...item}}" bindtap='switchDetail'></template>
         </block>
       </view>
     </view>
+
+    <!--商品细节-->
     <template name="item">
       <view class="item">
         <navigator url='../goods/detail/detail?id={{goods_id}}'>
+        <!--商品图片-->
           <image class="item-img" src="{{goods_head_image}}" mode="widthFix"></image>
+
+          <!--商品标题-->
           <view class="item-title-box">
             <view class="item-tit">{{goods_title}}</view>
           </view>
+
+          <!--商品简介-->
           <view class="item-title-box">
             <view class="item-title">{{goods_summary}}</view>
           </view>
+
           <view class="name">
+            <!--用户-->
+            <!--头像-->
             <image class="item-ava" src="{{user_avatar_url}}"></image>
             <text class="name-title">{{user_name}}</text>
+
+            <!--收藏-->
             <view>
               <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
               <text>{{goods_collection_amount}}</text>
