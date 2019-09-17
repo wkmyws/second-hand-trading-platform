@@ -131,7 +131,7 @@ App({
     })
   },
   globalData: {
-    useAdmin:false,//是否开启审核员权限
+    useAdmin:true,//是否开启审核员权限
     user_info: null,
     user_info_wx: null,
     token: "token",
