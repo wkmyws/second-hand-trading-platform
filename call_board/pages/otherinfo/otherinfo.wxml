@@ -1,4 +1,4 @@
-<view class='otherinfo-top'>
+<view class='otherinfo-top' id="_otherinfo">
   <view class="otherinfo-user">
     <image class='otherinfo-nickpic' src="{{user_info.user_avatar_url}}"></image>
     <!--这是头像-->
@@ -76,7 +76,7 @@
 
   <!--商品-->
   <swiper-item>
-    <scroll-view style="height:{{scrollViewHgt}}" scroll-y bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="{{100}}">
+    <scroll-view style="height:{{scrollViewHgt}}" scroll-with-animation scroll-y scroll-x="{{false}}" bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="{{100}}">
       <block wx:for="{{goods_list}}" wx:key="other_user_id">
         <view class='board' bindtap="gotoDetail" data-id='{{item.goods_id}}'>
           <!--头像昵称-->
