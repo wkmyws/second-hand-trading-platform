@@ -7,6 +7,7 @@ Page({
     needAdmin:'',//是否有新的待审核商品
  
   },
+
   onShow: function() {
     console.log('show')
     app.qkpost('user/getUserInfo.php',{}).then(res=>{
@@ -91,7 +92,11 @@ Page({
     wx.navigateTo({
       url: '../person/attest/attest'
     })
-  }
+  },
 
+  switchAdminChange:function(e){
+    app.globalData.useAdmin = e.detail.value;
+    this.setData({ useAdmin: app.globalData.useAdmin})
+  }
 
 })

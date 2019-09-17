@@ -18,6 +18,7 @@ Page({
   image_upload: function(img) {},
 
   submit: function(e) {
+    this.setData({tip:'正在校验'})
     //校验数据有效性
     if (!this.data.goods_title || /\s/.test(this.data.goods_title)) { //名称规则
       /*wx.showToast({
@@ -26,8 +27,14 @@ Page({
         duration:4000
       })*/
       this.setData({
-        tip: '商品名称不能为空或含有空格或表情'
+        tip: '商品名称不能为空或含有空格'
       })
+      return;
+    }
+    //过滤表情
+    if (/\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g.test(this.data.goods_title)||
+      /\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g.test(this.data.goods_content)){
+      this.setData({tip:'输入不能含有表情符号'})
       return;
     }
     if (/^\d+(\.\d{0,2})?$/.test(this.data.goods_price + '') == false) { //价格规则
@@ -116,6 +123,11 @@ Page({
           tip: '发布失败! ' + errmsg
         })
       }
+    }).catch(err=>{
+      console.log(err)
+      this.setData({
+        tip: '发布失败! 原因:' + err.data.err_msg
+      })
     })
   },
 

@@ -21,6 +21,7 @@ Page({
     user_avatar_url:null,
     canBuy:true,
     canAdmin: false,//是否可以删除商品等（审核员）
+    useAdmin:false,//是否使用审核员权限
   },
 
   previewImage: function(e) {
@@ -325,6 +326,7 @@ Page({
     var that = this
     that.setData({
       canAdmin: app.globalData.user_info.user_permission >= 100,
+      useAdmin:app.globalData.useAdmin,
     })
     that.get_detail(options)
   },

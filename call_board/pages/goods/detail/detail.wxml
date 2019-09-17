@@ -15,7 +15,7 @@
         ￥{{goods_detail.goods_price}}
       </view>
       <!--管理员删除-->
-      <view class="delete" bindtap="">删除商品</view>
+      <view wx:if="{{canAdmin&&useAdmin}}" class="delete" bindtap="withdrawInfo">删除商品</view>
     </view>
 
     <view class="top">

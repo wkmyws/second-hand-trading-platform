@@ -24,7 +24,7 @@
 
 </view>
 <!-->管理员显示的操作</-->
-  <view wx:if="{{canSetUserPermission}}">
+  <view wx:if="{{canSetUserPermission&&useAdmin}}">
     <text class='otherinfo-item'>当前用户权限等级为：{{user_info.user_permission==50?'普通用户':user_info.user_permission==100?'审核员':'未知'}}</text>
     <button wx:if="{{canSet50Permission}}" class="btn" bindtap="set50Permission">设为普通用户</button>
     <button wx:if="{{canSet100Permission}}" class="btn" bindtap="set100Permission">设为审核员</button>

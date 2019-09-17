@@ -13,6 +13,7 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
 /*获取当前页url*/
 function getCurrentPageUrl() {
   var pages = getCurrentPages()    //获取加载的页面

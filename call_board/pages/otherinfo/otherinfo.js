@@ -20,6 +20,7 @@ Page({
     canSet50Permission: false,//能否设为 已注册 若可以，调用 set50Permission()
     canSet100Permission:false,//能否设为 审核员 若可以，调用 set100Permission()
     end_goods_id:-1,
+    useAdmin:false,//是否使用管理员权限
   },
 
   getUserInfo:function(id){//获取用户信息
@@ -105,7 +106,8 @@ Page({
   onLoad: function (options) {//get id
     let id=options.other_user_id-0
     this.setData({
-      other_user_id:id
+      other_user_id:id,
+      useAdmin: app.globalData.useAdmin
     })
     this.getUserInfo(id).then(res=>{//获取个人信息
     if(app.globalData.user_info.user_permission>=150&&this.data.user_info.user_permission<150){//能否更改权限

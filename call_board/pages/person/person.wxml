@@ -52,8 +52,12 @@
     </view>
     <view wx:if='{{myinfo.user_permission>=100}}' class='item' bindtap='toadmin'>
       <!--><text class='sub-title'>管理员审核{{needAdmin}}</text></-->
-      <text class='sub-title'>管理员审核</text>
+      <text class='sub-title'>管理员审核(即将弃用)</text>
       <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+    </view>
+    <view wx:if='{{myinfo.user_permission>=100}}' class='item'>
+      <text class='sub-title'>审核员权限:({{useAdmin?'开启':'关闭'}})</text>
+      <switch checked="{{false}}" bindchange="switchAdminChange"/>
     </view>
   </view>
 
