@@ -3,8 +3,8 @@
     <image class='otherinfo-nickpic' src="{{user_info.user_avatar_url}}"></image>
     <!--这是头像-->
     <view class='otherinfo-nickname'>
-    <view class="otherinfo-id">ID:{{user_info.user_id}}</view>
-      <view >{{user_info.user_name}}</view>
+      <view class="otherinfo-id">ID:{{user_info.user_id}}</view>
+      <view>{{user_info.user_name}}</view>
       <!--<open-data type="userNickName" ></open-data>-->
     </view>
     <view class="otherinfo-sex">性别:{{user_info.user_sex}}</view>
@@ -20,67 +20,63 @@
         <text class='otherinfo-right'>{{user_info.user_create_time}}</text>
       </view>
     </view>
- 
-
-</view>
-<!-->管理员显示的操作</-->
+  </view>
+  <!-->管理员显示的操作</-->
   <view wx:if="{{canSetUserPermission&&useAdmin}}">
     <text class='otherinfo-item'>当前用户权限等级为：{{user_info.user_permission==50?'普通用户':user_info.user_permission==100?'审核员':'未知'}}</text>
     <button wx:if="{{canSet50Permission}}" class="btn" bindtap="set50Permission">设为普通用户</button>
     <button wx:if="{{canSet100Permission}}" class="btn" bindtap="set100Permission">设为审核员</button>
   </view>
   <view class="swiper-tab">
- 
-
-    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" >已发布的商品</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1">已发布的商品</view>
     <!--
 <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">已发布的公告</view>  
  -->
   </view>
-     </view>
-   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
-    <!--公告-->
-    <!-->
-    <swiper-item>
-      <block wx:for="{{boards}}" wx:key="">
-        <view class="board" bindtap='go'>
-          <!--头像昵称-->
+</view>
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+  <!--公告-->
+  <!-->
+  <swiper-item>
+    <block wx:for="{{boards}}" wx:key="">
+      <view class="board" bindtap='go'>
+        <!--头像昵称-->
+        <!-->
+        <view class='top'>
+          <image class='userhead' src='/images/test/user1.jpg'></image>
+          <text class='username'>你未来的男朋友</text>
+          <!--推荐-->
           <!-->
-          <view class='top'>
-            <image class='userhead' src='/images/test/user1.jpg'></image>
-            <text class='username'>你未来的男朋友</text>
-            <!--推荐-->
-            <!-->
-            <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
-          </view>
+          <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
+        </view>
 
-          <view class="title">约拼车的小伙伴，求带？</view>
+        <view class="title">约拼车的小伙伴，求带？</view>
 
-          <view class='body'>
-            <!--公告的简介-->
-            <!-->
-            <view class="intro">
-              <view class='text1'>2月31号晚上8点技术
-              </view>
-            </view>
-            <view class='image'>
-              <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
+        <view class='body'>
+          <!--公告的简介-->
+          <!-->
+          <view class="intro">
+            <view class='text1'>2月31号晚上8点技术
             </view>
           </view>
-
-          <view class="SaveNum">
-            点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
-            <!--时间显示栏-->
-            <!-->
-            <text class='time'>2019-02-15 16:22:14</text>
+          <view class='image'>
+            <image class='img' src='/images/test/1.png' mode='aspectFill'></image>
           </view>
         </view>
-      </block>
-    </swiper-item>
 
-    <!--商品-->
-    <swiper-item>
-    <scroll-view style="height:{{scrollViewHgt}}" scroll-y bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="{{100}}">
+        <view class="SaveNum">
+          点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
+          <!--时间显示栏-->
+          <!-->
+          <text class='time'>2019-02-15 16:22:14</text>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+
+  <!--商品-->
+  <swiper-item>
+    <scroll-view style="height:{{scrollViewHgt}}" scroll-y bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="100">
       <block wx:for="{{goods_list}}" wx:key="other_user_id">
         <view class='board' bindtap="gotoDetail" data-id='{{item.goods_id}}'>
           <!--头像昵称-->
@@ -107,6 +103,6 @@
           </view>
         </view>
       </block>
-      </scroll-view>
-    </swiper-item>
-  </swiper>
+    </scroll-view>
+  </swiper-item>
+</swiper>
