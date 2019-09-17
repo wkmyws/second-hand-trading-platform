@@ -76,7 +76,7 @@
 
   <!--商品-->
   <swiper-item>
-    <scroll-view style="height:{{scrollViewHgt}}" scroll-y bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="100">
+    <scroll-view style="height:{{scrollViewHgt}}" scroll-y bindscrolltoupper="toUpper" bindscrolltolower="toLower" bindscroll="scroll" scroll-top="{{100}}">
       <block wx:for="{{goods_list}}" wx:key="other_user_id">
         <view class='board' bindtap="gotoDetail" data-id='{{item.goods_id}}'>
           <!--头像昵称-->
@@ -95,10 +95,10 @@
             </view>
           </view>
           <view class="SaveNum">浏览量
-            <text class='ThumbNum'>{{item.goods_browser_amount}}</text>
+            <text class='SaveNum'>{{item.goods_browser_amount}}</text>
             <!--点赞-->
             收藏量
-            <text class='ThumbNum'>{{item.goods_collection_amount}}</text>
+            <text class='SaveNum'>{{item.goods_collection_amount}}</text>
             <text class='time'>{{item.goods_publish_time}}</text>
           </view>
         </view>
