@@ -1,4 +1,5 @@
 <scroll-view scroll-y="true" class="scroll">
+  <!--图片展示-->
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{goods_detail.goods_image_list}}" wx:key="index">
       <swiper-item>
@@ -6,15 +7,21 @@
       </swiper-item>
     </block>
   </swiper>
+
+  <!--商品详情-->
   <view class="detail">
-    <view class="price">
-      ￥{{goods_detail.goods_price}}
+    <view class="top">
+      <view class="price">
+        ￥{{goods_detail.goods_price}}
+      </view>
+      <!--管理员删除-->
+      <view class="delete" bindtap="">删除商品</view>
     </view>
+
     <view class="top">
       <view class="title">
         {{goods_detail.goods_title}}
       </view>
-
       <view class="title_sort">{{goods_detail.goods_type_name}}</view>
     </view>
     <view class="top">
@@ -65,19 +72,31 @@
 <view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view class='choose' wx:if="{{showModalStatus}}" animation='{{animationData}}'>
   <view>
-  <image src='{{user_avatar_url}}' class='user'></image>
-  联系方式</view>
+    <image src='{{user_avatar_url}}' class='user'></image>
+    联系方式</view>
 
-  <!--><view wx:if="{{seller_data.user_phone}}"></-->
-  <view class="information">手机号：<view class="information-next">(点击可拨打）</view></view>
-    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}'  class="information-detail">{{seller_data.user_phone||'无'}} </text>
-
-  <!--><view wx:if="{{seller_data.user_wechat}}"></-->
-  <view class="information">微信号：<view class="information-next">（长按可复制）</view>  </view>
-    <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat||'无'}}</text>
-
-  <!--><view wx:if="{{seller_data.user_qq}}"></-->
-  <view  class="information">QQ:<view class="information-next">（长按可复制）</view></view>
-    <text  class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq||'无'}}</text>
+  <!-->
+  <view wx:if="{{seller_data.user_phone}}">
+    </-->
+    <view class="information">手机号：
+      <view class="information-next">(点击可拨打）</view>
     </view>
-<view class="detail-nav" wx:if="{{!canBuy}}" bindtap="gotoAttest"> 😥请先进行学生认证以获取更多内容</view>
+    <text catchtap='callPhone' catchlongpress="copyIt" id='{{seller_data.user_phone}}' class="information-detail">{{seller_data.user_phone||'无'}} </text>
+
+    <!-->
+    <view wx:if="{{seller_data.user_wechat}}">
+      </-->
+      <view class="information">微信号：
+        <view class="information-next">（长按可复制）</view>
+      </view>
+      <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_wechat}}'>{{seller_data.user_wechat||'无'}}</text>
+
+      <!-->
+      <view wx:if="{{seller_data.user_qq}}">
+        </-->
+        <view class="information">QQ:
+          <view class="information-next">（长按可复制）</view>
+        </view>
+        <text class="information-detail" catchlongpress="copyIt" id='{{seller_data.user_qq}}'>{{seller_data.user_qq||'无'}}</text>
+      </view>
+      <view class="detail-nav" wx:if="{{!canBuy}}" bindtap="gotoAttest"> 😥请先进行学生认证以获取更多内容</view>

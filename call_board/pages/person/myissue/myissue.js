@@ -101,6 +101,8 @@ Page({
       }
     })
   },
+
+  //点击切换TAB
   swiperTab: function (e) {
     var that = this;
     that.setData({

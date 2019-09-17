@@ -47,11 +47,26 @@ swiper-item image {
   margin-top:2%;
   margin-bottom: 2%;
 }
-.detail .price {
+
+.delete{
+  width: 140rpx;
+  right: 20rpx;
+  font-size: 29rpx;
+  color: #bbb;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  border: 3rpx solid rgb(145, 143, 143);
+}
+
+.price {
+  width: 200rpx;
   color: red;
   font-size: 44rpx;
   margin: 10rpx;
   font-weight: 900;
+  display: flex;
 }
 
 .separate {
@@ -123,6 +138,14 @@ swiper-item image {
   width: 70rpx;
   height: 70rpx;
   margin: 30rpx;
+}
+
+.SaveNum {
+  font-size: 29rpx;
+  color: #bbb;
+  position: relative;
+  margin-left: 15rpx;
+  margin-bottom: 3rpx;
 }
 
 .button-red {
@@ -212,14 +235,6 @@ text {
 
 .top {
   display: flex;
-}
-
-.SaveNum {
-  font-size: 29rpx;
-  color: #bbb;
-  position: relative;
-  margin-left: 15rpx;
-  margin-bottom: 3rpx;
 }
 
 .userhead {
