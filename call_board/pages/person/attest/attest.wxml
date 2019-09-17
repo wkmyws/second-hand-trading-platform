@@ -1,4 +1,3 @@
-
 <view class="user">
   <view class="user-item">
     <text class="name">学校:</text>
@@ -28,7 +27,7 @@
   <view class="title">
     <text>最终用户许可协议</text>
   </view>
-  <view class="content"style=" font-weight: 700;">免责声明</view>
+  <view class="content" style=" font-weight: 700;">免责声明</view>
   <view class="content content-item">本微信小程序由“Natal团队"提供，不提供任何形式的担保。拒绝承认任何明示、暗示或法定的担保，包括但不限于对适销性、特定用途的适用性、所有权、非侵权性的暗示担保，拒绝承认小程序将不间断或无错误地运行或由于贸易惯例或使用过程而产生的责任。与您使用本小程序相关的全部风险由您承担。
   </view>
   <view class="content" style=" font-weight: 700;">责任限制和赔偿责任限制</view>
@@ -44,8 +43,12 @@
   <view>本小程序是通过学校邮箱来进行身份认证的，在您填写完学号及选好邮箱后缀后，可用打开并登陆学校邮箱，进入自己的邮箱进行确认认证。</view>
   <view>例如，南审学生邮箱：</view>
 
-  <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wx0bc2c17d023b213d" extra-data="" version="" style="color:rgb(131, 59, 59)">
-    <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(长按复制，点击跳转）</navigator>
-  <view>账号为：学号+@stu.nau.edu.cn，初始密码为：Nau+身份证后六位</view>
+  <navigator class="item complain" target="miniProgram" open-type="navigate" app-id="wx0bc2c17d023b213d" extra-data="" version="" style="color:rgb(131, 59, 59)">
+    <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(点击可跳转）</navigator>
+  <view style="display:flex;">账号为：学号+
+    <view catchlongtap="copyIt" style="display:flex;">@stu.nau.edu.cn</view>
+    （长按可复制）
+  </view>
+  <view>初始密码为：Nau+身份证后六位</view>
   <text class="lastTip" wx:if='{{doneSend}}'>请先登陆学校邮箱后完成验证\n然后点击下方按钮‘刷新状态’\n验证登录状态</text>
 </view>
