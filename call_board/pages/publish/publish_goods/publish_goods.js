@@ -143,6 +143,9 @@ Page({
 
   //上传图片
   chooseimage: function() {
+    this.setData({
+      upLoadImgLock: true
+    }) //开始上传图片
     var that = this;
     wx.chooseImage({
       count: 5 - this.data.imgArr.length, // 最多5张
@@ -239,7 +242,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var that = this
+    wx.getStorage({
+      key: 'goods_classes',
+      success: function(res) {
+        console.log(res.data)
+        var data = []
+        for (var i in res.data) {
+          data.push(res.data[i].type_name)
+        }
+        that.setData({
+          classes: data
+        })
+      },
+    })
     //检测用户权限
     if (app.globalData.user_info.user_permission < 50) {
       wx.showModal({
