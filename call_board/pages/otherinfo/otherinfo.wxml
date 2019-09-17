@@ -19,16 +19,22 @@
         <text class='otherinfo-left'>创建时间：</text>
         <text class='otherinfo-right'>{{user_info.user_create_time}}</text>
       </view>
+      <!-- 管理员显示的信息/-->
+      <view class="otherinfo-item" wx:if="{{canSetUserPermission&&useAdmin}}">
+      <text class='otherinfo-left'>用户权限等级：</text>
+    <text class='otherinfo-right'>{{user_info.user_permission==50?'普通用户':user_info.user_permission==100?'审核员':'未知'}}</text>
+      </view>
     </view>
   </view>
   <!-->管理员显示的操作</-->
   <view wx:if="{{canSetUserPermission&&useAdmin}}">
-    <text class='otherinfo-item'>当前用户权限等级为：{{user_info.user_permission==50?'普通用户':user_info.user_permission==100?'审核员':'未知'}}</text>
     <button wx:if="{{canSet50Permission}}" class="btn" bindtap="set50Permission">设为普通用户</button>
     <button wx:if="{{canSet100Permission}}" class="btn" bindtap="set100Permission">设为审核员</button>
   </view>
   <view class="swiper-tab">
+  <!-->
     <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1">已发布的商品</view>
+    </-->
     <!--
 <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">已发布的公告</view>  
  -->
