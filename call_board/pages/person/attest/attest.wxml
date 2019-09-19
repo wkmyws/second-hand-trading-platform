@@ -44,9 +44,9 @@
   <view>例如，南审学生邮箱：</view>
 
   <navigator class="item complain" target="miniProgram" open-type="navigate" app-id="wx0bc2c17d023b213d" extra-data="" version="" style="color:rgb(131, 59, 59)">
-    <text catchlongpress="copyIt" id='{{site}}'>{{site}}</text>，(点击可跳转）</navigator>
+    <text id='{{site}}'>{{site}}</text>，(点击可跳转）</navigator>
   <view style="display:flex;">账号为：学号+
-    <view catchlongtap="copyIt" style="display:flex;">@stu.nau.edu.cn</view>
+    <view catchlongpress="copyIt" style="display:flex;" data-copycontent='@stu.nau.edu.cn'>@stu.nau.edu.cn</view>
     （长按可复制）
   </view>
   <view>初始密码为：Nau+身份证后六位</view>
