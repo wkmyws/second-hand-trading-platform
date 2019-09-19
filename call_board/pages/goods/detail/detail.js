@@ -5,7 +5,7 @@ Page({
     hidden: false,
     is_fav: true,
     showModalStatus: false,
-    animationData: {}, 
+    animationData: {},
     imgUrls: [],
     indicatorDots: true,
     autoplay: true,
@@ -15,13 +15,13 @@ Page({
     seller_data: null,
     ThumbStatus: 'false', //点赞的状态
     ThumbNum: 20, //点赞(收藏)的数量
-    ViewNum: 20,//浏览的数量
-    user_id:null,
-    user_name:null,
-    user_avatar_url:null,
-    canBuy:true,
-    canAdmin: false,//是否可以删除商品等（审核员）
-    useAdmin:false,//是否使用审核员权限
+    ViewNum: 20, //浏览的数量
+    user_id: null,
+    user_name: null,
+    user_avatar_url: null,
+    canBuy: true,
+    canAdmin: false, //是否可以删除商品等（审核员）
+    useAdmin: false, //是否使用审核员权限
   },
 
   previewImage: function(e) {
@@ -32,7 +32,7 @@ Page({
     })
   },
 
-  gotoAttest:function(){//跳转至发布页面
+  gotoAttest: function() { //跳转至发布页面
     wx.redirectTo({
       url: '/pages/person/attest/attest'
     })
@@ -101,9 +101,9 @@ Page({
 
   set_fav: function() {
     wx.showToast({
-      title: (this.data.is_fav?'取消':'')+'收藏中...',
-      icon:'loading',
-      mask:false
+      title: (this.data.is_fav ? '取消' : '') + '收藏中...',
+      icon: 'loading',
+      mask: false
     })
     var data = {
       goods_id: this.data.goods_detail.goods_id,
@@ -138,23 +138,23 @@ Page({
           })
         } else {
           this.setData({
-            is_fav:!this.data.is_fav
+            is_fav: !this.data.is_fav
           })
           wx.showToast({
-            title: (this.data.is_fav?'':'取消')+'收藏成功',
+            title: (this.data.is_fav ? '' : '取消') + '收藏成功',
             duration: 2000,
             mask: false
           })
           this.setData({
-            ThumbNum: this.data.ThumbNum + (this.data.is_fav?1:-1)
+            ThumbNum: this.data.ThumbNum + (this.data.is_fav ? 1 : -1)
           })
         }
       }
     })
-    
+
 
   },
- ChangeThumb: function () {
+  ChangeThumb: function() {
     var sta = this.data.ThumbStatus
     var num = this.data.ThumbNum
     if (sta) {
@@ -170,7 +170,7 @@ Page({
     }
   },
 
-  get_detail: function(options) {//获取物品信息
+  get_detail: function(options) { //获取物品信息
     return new Promise((resolve, reject) => {
       var that = this
       var data = {
@@ -196,20 +196,25 @@ Page({
           "content-type": "application/json"
         },
         success: res => {
-          console.log(res)//---------------------------
+          console.log(res) //---------------------------
           if (res.data.status == 0) {
             var res_data = JSON.parse(util.base64_decode(res.data.data))
-            if (res_data.goods_state-0==3){//商品已经出售
+            if (res_data.goods_state - 0 == 3) { //商品已经出售
               wx.showModal({
                 title: "此商品已出售😥",
                 conten: "",
                 showCancel: false,
               })
-            }else if(res_data.goods_state-0!=2){//其他不可见原因，用于管理员权限组，普通用户status==1
+            } else if (res_data.goods_state - 0 != 2) { //其他不可见原因，用于管理员权限组，普通用户status==1
               wx.showModal({
                 title: "此商品已被隐藏😥",
                 conten: "",
                 showCancel: false,
+                success(res) {
+                  if (res.confirm) {
+                    wx.navigateBack({})
+                  }
+                }
               })
             }
             that.setData({
@@ -231,7 +236,7 @@ Page({
             data = util.base64_encode(data)
 
             var sign = util.sha1(data + timestamp + app.globalData.user_info.user_id)
-            
+
             wx.request({
               url: app.globalData.URL + "goods/getSellerInfo.php",
               data: {
@@ -251,18 +256,20 @@ Page({
                   console.log(seller_data)
                   that.setData({
                     seller_data: seller_data,
-                    canBuy:true
+                    canBuy: true
                   })
                 } else {
-                  this.setData({canBuy:false})
+                  this.setData({
+                    canBuy: false
+                  })
                 }
               }
             })
-            
+
           } else {
             wx.showModal({
               title: "此商品已被隐藏😥",
-              conten:"",
+              conten: "",
               showCancel: false,
               success(res) {
                 if (res.confirm) {
@@ -276,49 +283,51 @@ Page({
     })
   },
 
-  withdrawInfo:function(){//撤回商品
-    var that=this
+  withdrawInfo: function() { //撤回商品
+    var that = this
     wx.showModal({
       title: '确认操作',
       content: '确定从列表撤回此商品？\r\n此操作不可逆！',
-      success(res){
-        if(res.confirm)
-        wx.showModal({
-          title: '再次确认',
-          content: '撤回此商品？',
-          success(res){
-            if(res.confirm){
-              app.qkpost('manage/withdrawInfo.php', 
-              { "type": 0, "info_id": that.data.goods_detail.goods_id}).then(()=>{//撤回成功
+      success(res) {
+        if (res.confirm)
+          wx.showModal({
+            title: '再次确认',
+            content: '撤回此商品？',
+            success(res) {
+              if (res.confirm) {
+                app.qkpost('manage/withdrawInfo.php', {
+                  "type": 0,
+                  "info_id": that.data.goods_detail.goods_id
+                }).then(() => { //撤回成功
                   wx.showToast({
                     title: '撤回成功！',
                   })
-                  setTimeout(wx.navigateBack,500)
-              }).catch(()=>{//撤回失败
+                  setTimeout(wx.navigateBack, 500)
+                }).catch(() => { //撤回失败
                   wx.showToast({
                     title: '撤回失败',
                   })
-              })
+                })
+              }
             }
-          }
-        })
+          })
       }
     })
   },
 
   /**
-* 用户点击右上角分享
-*/
-  onShareAppMessage: function (ops) {
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function(ops) {
     if (ops.from === 'button') {
       // 来自页面内转发按钮
       console.log(ops.target)
     }
     return {
       title: this.data.goods_detail.goods_title,
-      path: 'pages/goods/detail/detail?id=' + this.data.goods_detail.goods_id,  // 路径，传递参数到指定页面。
+      path: 'pages/goods/detail/detail?id=' + this.data.goods_detail.goods_id, // 路径，传递参数到指定页面。
       imageUrl: this.data.imgUrls[0], // 分享的封面图
-      
+
     }
 
   },
@@ -326,13 +335,13 @@ Page({
     var that = this
     that.setData({
       canAdmin: app.globalData.user_info.user_permission >= 100,
-      useAdmin:app.globalData.useAdmin,
+      useAdmin: app.globalData.useAdmin,
     })
     that.get_detail(options)
   },
-  seeOthers:function(){
+  seeOthers: function() {
     wx.navigateTo({
-      url: '../../otherinfo/otherinfo?other_user_id='+this.data.user_id
+      url: '../../otherinfo/otherinfo?other_user_id=' + this.data.user_id
     })
   }
 })
