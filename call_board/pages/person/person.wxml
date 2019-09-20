@@ -10,50 +10,50 @@
   <view class="menu">
     <view class='item' hover-class="item_hover" bindtap='tomyinfo'>
       <text class='sub-title'>个人信息</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
 
     <view class="item" hover-class="item_hover" bindtap="tomyissue">
       <text class="sub-title">我的发布</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
 
     <view class="item" hover-class="item_hover" bindtap="tocollect">
       <text class="sub-title">我的收藏</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
 
   </view>
   <view class="menu">
     <view class="item" hover-class="item_hover" bindtap="showabout">
       <text class="sub-title">关于</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
 
       <navigator  class="item complain" hover-class="item_hover" target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}" version="0.9.3">
         <text class='sub-title'>我要吐槽</text>
-        <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+        <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </navigator>
    
     <view class="item" hover-class="item_hover"e bindtap="tohelp">
       <text class="sub-title">使用帮助</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
   </view>
 
   <view class='menu' wx:if='{{myinfo.user_permission==0||myinfo.user_permission>=100||myinfo.user_permission<100}}'>
     <navigator  class="item complain"target="miniProgram" open-type="navigate" app-id="wxcd6245a555300732" extra-data="" version="">
         <text class='sub-title'>南审小助手</text>
-        <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+        <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </navigator>
    <view class='item' bindtap='toattest' wx:if='{{myinfo.user_permission==0}}'>
       <text  class='sub-title'>学生认证</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
     <view wx:if='{{0&&myinfo.user_permission>=100}}' class='item' bindtap='toadmin'>
       <!--><text class='sub-title'>管理员审核{{needAdmin}}</text></-->
       <text class='sub-title'>管理员审核(即将弃用)</text>
-      <image src="http://xcx.nau.edu.cn/images/btn_next@2x.png" class="arrow"></image>
+      <image src="http://image.natal.tech/image/btn_next@2x.png" class="arrow"></image>
     </view>
     
     <view wx:if='{{myinfo.user_permission>=100}}' class='item'>

@@ -49,15 +49,17 @@ swiper-item image {
 }
 
 .delete{
-  width: 140rpx;
+  width: 150rpx;
   right: 20rpx;
-  font-size: 29rpx;
-  color: #bbb;
+  font-size:30rpx;
+    margin: 17rpx 10rpx 17rpx 10rpx;
+  color: rgb(145, 143, 143);
   display: flex;
   text-align: center;
   justify-content: center;
   position: absolute;
-  border: 3rpx solid rgb(145, 143, 143);
+  border: 3rpx solid #bbb;
+  border-radius: 30rpx;
 }
 
 .price {
