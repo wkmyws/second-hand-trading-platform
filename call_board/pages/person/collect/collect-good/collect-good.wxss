@@ -33,7 +33,7 @@ swiper-item image {
 
 
 .title_sort {
-  width: 100rpx;
+  width: 140rpx;
   top: 20rpx;
   text-align: center;
   justify-content: center;
