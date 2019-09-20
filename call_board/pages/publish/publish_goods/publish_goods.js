@@ -96,7 +96,6 @@ Page({
         //发布成功
         wx.showModal({
           title: '发布成功',
-          content: '商品将在被审核后显示，你可以在‘个人-我的发布’页面查看审核状态',
           showCancel: false,
           success(res) {
             if (res.confirm) {

@@ -12,6 +12,7 @@ Page({
     interval: 3000,
     duration: 1000,
     goods_detail: null,
+    goods_state:null,
     seller_data: null,
     ThumbStatus: 'false', //点赞的状态
     ThumbNum: 20, //点赞(收藏)的数量
@@ -89,6 +90,7 @@ Page({
               user_name: res_data.user_name,
               user_avatar_url: res_data.user_avatar_url,
               is_fav: res_data.is_user_favourite,
+              goods_state: res_data.goods_state-0,
             })
             var data = {
               goods_id: res_data.goods_id,
@@ -152,6 +154,8 @@ Page({
     console.log('options')
     console.log(options)
     this.get_detail(options)
+    console.log("????")
+    console.log(options)
     this.setData({
       goods_state_name: options.goods_state_name,
       goods_id:options.id

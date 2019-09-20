@@ -122,9 +122,9 @@ Page({
       }
     }
   },
-  copyIt: function (event) {
+  copyIt: function (event) {//<text data-copycontent='content' />
     wx.setClipboardData({
-      data: event.target.id
+      data: event.currentTarget.dataset.copycontent
     })
     wx.showToast({
       title: '已复制到粘贴版',

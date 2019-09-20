@@ -52,8 +52,8 @@
 				},
 				{
 					"id": 1,
-					"name": "dialog",
-					"pathName": "components/dialog/dialog",
+					"name": "pages/person/attest/attest",
+					"pathName": "pages/person/attest/attest",
 					"query": "",
 					"scene": null
 				},

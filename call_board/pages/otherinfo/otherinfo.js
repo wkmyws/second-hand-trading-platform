@@ -12,7 +12,7 @@ const app=getApp()
 Page({
   //data
   data: {
-    scrollViewHgt: (wx.getSystemInfoSync().windowHeight + 55) * 750 / wx.getSystemInfoSync().windowWidth + "rpx" ,
+    scrollViewHgt: (wx.getSystemInfoSync().windowHeight) * 750 / wx.getSystemInfoSync().windowWidth + "rpx" ,
     other_user_id:null,
     user_info:null,//其他用户的个人信息 {user_name:'xx',.....}
     goods_list:[],//商品列表
@@ -120,6 +120,18 @@ Page({
       this.getUserSubmit(id).then(res=>{//获取第一批商品列表
         console.log('load success')
       })
+    })
+    setTimeout(()=>{//设置商品列表的长度
+      this.setGoodsListHeight()
+      
+    },1000)
+  },
+  setGoodsListHeight:function(){//设置商品列表高度
+    var query = wx.createSelectorQuery();
+    var that = this;
+    query.select('#_otherinfo').boundingClientRect()
+    query.exec(function (res) {
+      that.setData({ scrollViewHgt: (wx.getSystemInfoSync().windowHeight - res[0].height) * 750 / wx.getSystemInfoSync().windowWidth + "rpx" })
     })
   },
   gotoDetail:function(e){//跳转到商品详情页面
