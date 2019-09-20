@@ -80,7 +80,7 @@
 
             <!--收藏-->
             <view>
-              <image class="heart" src="http://xcx.nau.edu.cn/images/dianzan.png?" catchtap='switchDetail'></image>
+              <image class="heart" src="http://image.natal.tech/image/dianzan.png?" catchtap='switchDetail'></image>
               <text>{{goods_collection_amount}}</text>
             </view>
           </view>
