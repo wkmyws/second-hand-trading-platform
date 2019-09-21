@@ -285,7 +285,7 @@ Page({
       })
     }
     //检测联系方式非空
-    else if (!(app.globalData.user_info.user_phone==null &&
+    else if ((app.globalData.user_info.user_phone==null &&
         app.globalData.user_info.user_qq==null &&
         app.globalData.user_info.user_wechat==null)) {
       wx.showModal({
