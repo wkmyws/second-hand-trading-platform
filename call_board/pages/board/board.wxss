@@ -14,8 +14,6 @@ page {
   position: relative;
   display: flex;
 }
-
-
 /*图片*/
 
 .image {
@@ -64,7 +62,7 @@ page {
 
 .nav {
   padding-top: 60rpx;
-  position: sticky;
+  position: relative;
   z-index: 999;
 }
 
@@ -78,7 +76,7 @@ page {
   background-image: linear-gradient(-45deg, #db86bd 20%, #0991c1 100%);
   box-shadow: 6rpx 8rpx 9rpx #ccc;
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 0;
   padding-top: 15rpx;
   padding-bottom: 12rpx;

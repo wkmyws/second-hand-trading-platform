@@ -56,7 +56,7 @@ navbarTap:function(e){
 
   //跳转至【商品发布】页面
 
-  plus: function() {
+  publish: function() {
     wx.navigateTo({
       url: '../publish/publish_board/publish_board',
     })

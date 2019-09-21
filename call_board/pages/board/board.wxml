@@ -1,3 +1,4 @@
+<component-topnav inner-title="" is-show-back="false"></component-topnav>
 <!--导航栏-->
 <view class='nav'>
   <view class="navbar">
@@ -10,33 +11,34 @@
 
 <view hidden='{{currentTab !==0}}' class='content'>
   <!--公告栏视图1: 有图片的模板-->
-  <view class="board" bindtap='go'>
-    <!--头像昵称-->
-    <view class='top'>
-      <image class='userhead' src='/images/head.jpg'></image>
-      <text class='username'>你未来的男朋友</text>
-      <!--推荐-->
-      <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
-    </view>
-    <!--标题-->
-    <view class="title">约拼车的小伙伴，求带？</view>
-    <view class='body'>
-      <!--公告的简介-->
-      <view class="intro">
-        <view class='text1'>2月31号晚上8点技术2月31号晚上8点技术2月31号晚上8点技术2月31号晚上8点技术
+  <navigator url='../board/detail/detail'>
+    <view class="board" bindtap='go'>
+      <!--头像昵称-->
+      <view class='top'>
+        <image class='userhead' src='/images/head.jpg'></image>
+        <text class='username'>你未来的男朋友</text>
+        <!--推荐-->
+        <image class='icon' src="http://image.natal.tech/image/fire.jpg?" mode='aspectFill'></image>
+      </view>
+      <!--标题-->
+      <view class="title">约拼车的小伙伴，求带？</view>
+      <view class='body'>
+        <!--公告的简介-->
+        <view class="intro">
+          <view class='text1'>2月31号晚上8点技术2月31号晚上8点技术2月31号晚上8点技术2月31号晚上8点技术
+          </view>
+        </view>
+        <!--图片-->
+        <view class='image'>
+          <image class='img' src='/images/pic1.jpg' mode='aspectFill'></image>
         </view>
       </view>
-      <!--图片-->
-      <view class='image'>
-        <image class='img' src='/images/pic1.jpg' mode='aspectFill'></image>
+      <view class="SaveNum">
+        点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
+        <!--时间显示栏-->
+        <text class='time'>2019-02-15 16:22:14</text>
       </view>
-    </view>
-    <view class="SaveNum">
-      点赞量：{{ThumbNum}} 收藏量：{{SaveNum}}
-      <!--时间显示栏-->
-      <text class='time'>2019-02-15 16:22:14</text>
-    </view>
-    <!--
+      <!--
     <image wx:if='{{SaveStatus}}' src='/images/save.png' class='save1' catchtap='ChangeSave'></image>
     <image wx:else src='/images/save1.png' class='save1' catchtap='ChangeSave'></image>
     <text class='SaveNum'>{{SaveNum}}</text>
@@ -44,7 +46,8 @@
     <image wx:else src='/images/点赞1.png' class='thumbs_up1' catchtap='ChangeThumb'></image>
     <text class='ThumbNum'>{{ThumbNum}}</text> 
     -->
-  </view>
+    </view>
+  </navigator>
 
   <!--公告栏视图2：没有图片的模板-->
   <view class="board">
@@ -58,7 +61,7 @@
       <image class='butt' src="/images/longpic.jpeg" mode='scaleToFill'></image>
     </view>
     <!--正文-->
-    <view class="text2">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
+    <view class="text1">今天路过男生澡堂的时候看见有一个非常漂亮的小哥哥，希望能得到他的联系方式。他大概长这个样子：囧神经是额吉僧的二个IE</view>
     <view class="SaveNum">点赞量
       <text class='ThumbNum'>{{ThumbNum}}</text>
       <!--点赞-->

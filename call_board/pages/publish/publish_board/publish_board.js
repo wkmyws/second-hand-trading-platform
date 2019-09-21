@@ -53,7 +53,7 @@ Page({
     var img_url = this.data.img_url;
     var i = 0;
     wx.chooseImage({
-      count: 6 - img, // 默认6
+      count: 5 - img, // 默认5
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function(res) {
@@ -66,7 +66,7 @@ Page({
         })
         img += i;
         console.log(img);
-        if (img >= 6) {
+        if (img >= 5) {
           that.setData({
             hideAdd: 1
           })
