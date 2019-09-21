@@ -52,8 +52,8 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/person/attest/attest",
-					"pathName": "pages/person/attest/attest",
+					"name": "pages/board/board",
+					"pathName": "pages/board/board",
 					"query": "",
 					"scene": null
 				},

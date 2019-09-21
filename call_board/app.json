@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/goods/goods",
     "pages/board/board",
+    "pages/goods/goods",
     "pages/logs/logs",
     "pages/person/person",
     "pages/person/attest/attest",
@@ -38,6 +38,12 @@
     "color": "#aaaaaa",
     "selectedColor": "#000000",
     "list": [
+      {
+        "pagePath": "pages/board/board",
+        "text": "公告板",
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board1.png"
+      },
       {
         "pagePath": "pages/goods/goods",
         "text": "商品",
