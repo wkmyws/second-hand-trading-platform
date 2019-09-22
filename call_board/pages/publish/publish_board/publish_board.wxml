@@ -7,7 +7,7 @@
 
   <!--展示联系方式-->
   <view class="contact">
-    <text class='sub-title'>是否展示联系方式:({{useAdmin?'开启':'关闭'}})</text>
+    <text class='sub-title'>是否展示联系方式:({{UserContact?'开启':'关闭'}})</text>
     <switch class="switch" checked="{{false}}" bindchange="switchAdminChange" />
   </view>
 

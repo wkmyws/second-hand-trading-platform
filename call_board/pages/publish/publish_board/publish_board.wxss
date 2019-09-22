@@ -32,7 +32,7 @@ page {
 
 .image_content {
   background: white;
-  width: 98%;
+  width: 97%;
   display: flex;
   padding: 10rpx;
   flex-wrap: wrap;
