@@ -13,7 +13,7 @@
     <view class='board'>
       <view class='top'>
         <!--头像昵称-->
-        <image class='userhead' src='/images/test/user1.jpg'></image>
+        <image class='userhead' src='/images/head.jpg'></image>
         <text class='username'>你未来的男朋友</text>
         <!--举报功能-->
         <view bindtap='ToReport'>
