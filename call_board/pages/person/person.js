@@ -5,7 +5,6 @@ Page({
     myinfo: null,
     balance: null,
     needAdmin:'',//是否有新的待审核商品
- 
   },
 
   onShow: function() {

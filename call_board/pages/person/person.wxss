@@ -1,6 +1,7 @@
 page {
   background: rgb(248, 247, 247);
 }
+
 .user {
   width: 100%;
   flex-direction: flex;

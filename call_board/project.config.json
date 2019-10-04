@@ -52,15 +52,15 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/person/attest/attest",
-					"pathName": "pages/person/attest/attest",
+					"name": "pages/goods/goods",
+					"pathName": "pages/goods/goods",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "myissue",
-					"pathName": "pages/person/myissue/myissue",
+					"name": "pages/publish/publish_board/publish_board",
+					"pathName": "pages/publish/publish_board/publish_board",
 					"query": "",
 					"scene": null
 				},

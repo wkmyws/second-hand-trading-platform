@@ -8,11 +8,12 @@ Page({
   data: {
     userN: '',
     SaveNum: 10, //收藏的数量
-    ThumbNum: 20 ,//点赞的数量
+    ThumbNum: 20, //点赞的数量
     navbar:['首页','热榜','搜索'],
     currentTab:0,
     scrollTop: 0,
     showView: true,
+    animationData: {} //动画效果
   },
 navbarTap:function(e){
   this.setData({
@@ -55,7 +56,7 @@ navbarTap:function(e){
 
   //跳转至【商品发布】页面
 
-  plus: function() {
+  publish: function() {
     wx.navigateTo({
       url: '../publish/publish_board/publish_board',
     })
@@ -88,7 +89,11 @@ navbarTap:function(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'linear'
+    })
+    this.animation = animation
   },
 
   /**
@@ -111,22 +116,33 @@ navbarTap:function(e){
   onPullDownRefresh: function() {
 
   },
+
+  //发布按钮，下滑隐藏，上滑显示
   onPageScroll: function (event) {
     let scroll = event.scrollTop; //当前的距离顶部的高度
-    let scrollTop = this.data.scrollTop;  //记录的距离顶部的高度
+    let scrollTop = this.data.scrollTop; //记录的距离顶部的高度
+    let show = this.data.show;
+
     //下滑隐藏
-    if (scroll - scrollTop > 40) {
+    if (scroll - scrollTop > 10 && show) {
+      this.animation.translate(80, 0).step({ duration: 400 })
       this.setData({
-        showView: false,
-        scrollTop: scroll
+        animationData: this.animation.export(),
+        show: false
       })
     }
+
     //上滑显示
-    else if (scroll - scrollTop < -10) {
+    if (scroll - scrollTop < -10 && !show) {
+      this.animation.translate(0, 0).step({ duration: 400 })
       this.setData({
-        showView: true,
-        scrollTop: scroll
+        animationData: this.animation.export(),
+        show: true
       })
     }
+
+    this.setData({
+      scrollTop: scroll
+    })
   }
 })

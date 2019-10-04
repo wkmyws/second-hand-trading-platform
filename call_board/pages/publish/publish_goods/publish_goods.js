@@ -285,13 +285,13 @@ Page({
       })
     }
     //检测联系方式非空
-    else if (!(app.globalData.user_info.user_phone || //电话
-        app.globalData.user_info.user_qq || //qq
-        app.globalData.user_info.user_wechat)) { //微信号
+    else if ((app.globalData.user_info.user_phone==null &&
+        app.globalData.user_info.user_qq==null &&
+        app.globalData.user_info.user_wechat==null)) {
       wx.showModal({
         title: "联系方式",
         content: '请先在【个人信息】页面填写至少一种联系方式(电话、QQ、微信)再进行发布操作',
-        showCancel: false,
+        cancelText:"返回",
         confirmText: "前去填写",
         confirmColor: "#000",
         success(res) {
@@ -299,6 +299,8 @@ Page({
             wx.navigateTo({
               url: '/pages/person/myinfo/edit/edit',
             })
+          }else{
+            wx.navigateBack({})
           }
         }
       })
